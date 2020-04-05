@@ -1,0 +1,14 @@
+#!/bin/sh
+# cleanup unused brew dependencies
+
+if ! `hash brew 2> /dev/null`; then
+  echo "${RED}brew not found... Abort execution...${NORMAL}"
+  exit 1
+fi
+
+ORIGIN_WORKING_DIRECTORY=`pwd`
+
+cd /tmp
+brew bundle dump --force
+brew bundle cleanup --force
+cd ${ORIGIN_WORKING_DIRECTORY}
