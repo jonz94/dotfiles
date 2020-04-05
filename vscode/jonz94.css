@@ -1,0 +1,14 @@
+.linux,
+.mac,
+.windows {
+  font-family: 'Sarasa Nerd Font', 'Sarasa NF', 'Sarasa Mono TC',
+    'Noto San CJK TC', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* overwrite inline-style of sidebar */
+.sidebar .view-lines {
+  font-family: 'Sarasa Nerd Font', 'Sarasa NF', 'Sarasa Mono TC',
+    'Noto San CJK TC', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont,
+    sans-serif !important;
+}

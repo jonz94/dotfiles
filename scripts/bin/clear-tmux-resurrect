@@ -1,0 +1,17 @@
+#!/bin/sh
+# clear tmux resurrect file except the last one
+
+TMUX_RESURRECT_DIR=${HOME}/.tmux/resurrect
+
+if [ ! -d ${TMUX_RESURRECT_DIR} ]; then
+  echo "${RED}${TMUX_RESURRECT_DIR} not found...${NORMAL}"
+  exit 1
+fi
+
+REAL_LAST=$(ls -l ${TMUX_RESURRECT_DIR}/last | awk -F\  '{print $NF}')
+
+find ${TMUX_RESURRECT_DIR} \
+  -not -name ${REAL_LAST} \
+  -not -name 'last' \
+  -type f \
+  -exec rm -f {} +

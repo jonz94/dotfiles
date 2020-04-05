@@ -1,0 +1,7 @@
+if exists('g:GuiLoaded')
+  " Disable nvim-qt GUI tabline, and using default tabline instead.
+  GuiTabline 0
+
+  " Change nvim-qt font family with font height equal to 14
+  silent! Guifont PragmataPro for Powerline:h14
+endif
