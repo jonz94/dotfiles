@@ -128,7 +128,7 @@ $ cd ~/dotfiles && bash bootstrap.sh
 $ umask 0022
 ```
 
-* clone this repo to `/c/Users/Windows_Username/dotfiles`, this will make sure that all the files are save in **Windows file system**, also make sure that all files are using `LF` as EOL.
+* clone this repo to `/c/Users/<WindowsUserName>/dotfiles`, this will make sure that all the files are save in **Windows file system**, also make sure that all files are using `LF` as EOL.
 
 ```bash
 # via https
@@ -160,11 +160,11 @@ $ cd ~/dotfiles && bash bootstrap.sh
 
 ### PowerShell setup
 
-* Clone this repo to `~\dotflies`
+* Clone this repo to `$HOME\dotflies`
 
 ```powershell
 # via https
-PS> git clone --depth 1 https://gitlab.com/jonz94/dotfiles.git ~\dotfiles
+PS> git clone --depth 1 https://gitlab.com/jonz94/dotfiles.git $HOME\dotfiles
 ```
 
 * Run or double-click `bootstrap.ps1` script
