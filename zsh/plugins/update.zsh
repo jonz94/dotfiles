@@ -1,12 +1,17 @@
 #!/bin/sh
 
 dug() {
-  # update dotfiles
-  echo -e ${BLUE}"[Updating]" dotfiles${NORMAL}
+  echo ${BLUE}"[dotfiles]" updating...${NORMAL}
   git -C ${DOTS} fetch --all --prune
   git -C ${DOTS} pull
 
-  # update zsh plugins via zplug
+  echo ${BLUE}"[zplug]" clean up${NORMAL}
+  zplug clean
+
+  echo ${BLUE}"[zplug]" clear cache${NORMAL}
+  zplug clear
+
+  echo ${BLUE}"[zplug]" updating...${NORMAL}
   zplug update
   echo
 }
