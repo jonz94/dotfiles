@@ -28,11 +28,17 @@ if [ -f ~/.zplug/init.zsh ]; then
   # zplug self management
   zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-  # from local
-  zplug "${DOTS}/zsh/plugins", from:local, defer:2
-  zplug "${DOTS}/shell/aliases", use:'*.sh', from:local, defer:2
-  zplug "${DOTS}/local", use:'local.zsh', from:local, if:"[ -f ${DOTS}/local/local.zsh ]", defer:2
-  zplug "${DOTS}/local", use:'theme.zsh', from:local, if:"[ -f ${DOTS}/local/theme.zsh ]", defer:2
+  # custom plugins
+  zplug "${DOTS}/zsh/plugins", from:local
+
+  # custom shell aliases
+  zplug "${DOTS}/shell/aliases", use:'*.sh', from:local, defer:1
+
+  # local zshrc
+  zplug "${DOTS}/local", use:'local.zsh', from:local, if:"[ -f ${DOTS}/local/local.zsh ]", defer:1
+
+  # local theming
+  zplug "${DOTS}/local", use:'theme.zsh', from:local, if:"[ -f ${DOTS}/local/theme.zsh ]", defer:1
 
   # scripts
   zplug "${DOTS}/scripts", use:"bin/*", as:command, from:local, defer:2
