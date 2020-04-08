@@ -7,6 +7,8 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# History file configuration
+[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
 SAVEHIST=10000000
 
