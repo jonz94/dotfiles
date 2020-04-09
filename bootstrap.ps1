@@ -45,6 +45,10 @@ $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 # Install vim plugins
 nvim.exe -c PlugInstall -c qa
 
+# Install fzf
+scoop install fzf *> $null
+
+# Install powershell modules
 Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
 Install-Module PSFzf -Scope CurrentUser
