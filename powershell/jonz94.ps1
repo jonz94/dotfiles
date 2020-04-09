@@ -1,4 +1,4 @@
-﻿# UTF-8 for printing
+# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Fix git log output encoding issues
@@ -143,9 +143,7 @@ function gbv { git branch -v $args }
 
 function gbvv { git branch -vv $args }
 
-if ($PSVersionTable.PSVersion.Major -lt 7) {
-  Remove-Item Alias:\gc -Force
-}
+Remove-Item Alias:\gc -Force *> $null
 function gc { git commit -v $args }
 
 function gc! { git commit -v --amend $args }
@@ -158,9 +156,7 @@ function gcb { git checkout -b $args }
 
 function gcl { git clone --recurse-submodules $args }
 
-if ($PSVersionTable.PSVersion.Major -lt 7) {
-  Remove-Item Alias:\gcm -Force
-}
+Remove-Item Alias:\gcm -Force *> $null
 function gcm { git checkout master $args }
 
 function gcmsg { git commit -m $args }
@@ -177,9 +173,7 @@ function gds { git diff --staged $args }
 
 function gfa { git fetch --all --prune $args }
 
-if ($PSVersionTable.PSVersion.Major -lt 7) {
-  Remove-Item Alias:\gl -Force
-}
+Remove-Item Alias:\gl -Force *> $null
 function gl { git pull $args }
 
 function glg { git log --stat $args }
@@ -190,9 +184,7 @@ function glo { git log --oneline --decorate $args }
 
 function gloga { git log --oneline --decorate --graph --all $args }
 
-if ($PSVersionTable.PSVersion.Major -lt 7) {
-  Remove-Item Alias:\gp -Force
-}
+Remove-Item Alias:\gp -Force *> $null
 function gp { git push $args }
 
 function gr { git remote $args }
@@ -221,9 +213,7 @@ function gsts { git stash show $args }
 function scl { scoop cleanup }
 function scl* { scoop cleanup * }
 
-if ($PSVersionTable.PSVersion.Major -lt 7) {
-  Remove-Item Alias:\sls -Force
-}
+Remove-Item Alias:\sls -Force *> $null
 function sls { scoop list }
 
 function sst { scoop status }
