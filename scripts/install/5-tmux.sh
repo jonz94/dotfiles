@@ -13,4 +13,8 @@ if `hash brew 2> /dev/null`; then
   brew install tmux
 fi
 
+if `hash pacman 2> /dev/null`; then
+  yes | sudo pacman -S tmux
+fi
+
 echo 'tmux is ready!'
