@@ -4,12 +4,12 @@ git config --global user.email "jody16888@gmail.com"
 
 # Create local profile if it does not exist
 if (-Not $(Test-Path "$HOME\dotfiles\local\local.ps1")) {
-  New-Item "$HOME\dotfiles\local\local.ps1" -ItemType File -Force | Out-Null
+  New-Item "$HOME\dotfiles\local\local.ps1" -ItemType File -Force *> $null
 }
 
 # Create $PROFILE file if it does not exists
 if (-Not $(Test-Path "$PROFILE")) {
-  New-Item "$PROFILE" -ItemType File -Force | Out-Null
+  New-Item "$PROFILE" -ItemType File -Force *> $null
 }
 
 # Source our custom profiles
