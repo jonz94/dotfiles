@@ -13,4 +13,8 @@ if `hash brew 2>/dev/null`; then
   brew install neovim
 fi
 
+if `hash pacman 2> /dev/null`; then
+  yes | sudo pacman -S neovim
+fi
+
 echo 'neovim is ready!'
