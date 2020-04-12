@@ -1,0 +1,14 @@
+// cSpell Settings
+{
+  // Version of the setting file. Always 0.1
+  "version": "0.1",
+
+  // English
+  "language": "en",
+
+  "allowCompoundWords": true,
+
+  "ignorePaths": [".cspell.json"],
+
+  "ignoreRegExpList": ["[Ss]arasa"]
+}
