@@ -12,6 +12,7 @@ if `hash docker 2>/dev/null`; then
   alias dn='docker network'
   alias dp='docker pull'
   alias dpa='docker container ls'
+  alias dr='docker run --interactive --tty --rm'
   alias dv='docker volume'
 
   dst () {
