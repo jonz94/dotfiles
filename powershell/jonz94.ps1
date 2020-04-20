@@ -1,4 +1,4 @@
-# UTF-8 for printing
+﻿# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Fix git log output encoding issues
