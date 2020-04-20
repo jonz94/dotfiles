@@ -28,8 +28,10 @@ if !exists('g:vscode')
 
   " indentLine setting
   silent! Plug 'Yggdroot/indentLine'
+  silent! Plug 'lukas-reineke/indent-blankline.nvim'
   " use one of ¦, ┆, │, ⎸, or ▏
   let g:indentLine_char = '│'
+
 
   " make tabs, trailing whitespace, and non-breaking spaces visible
   set list
