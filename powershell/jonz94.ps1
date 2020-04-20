@@ -152,6 +152,7 @@ function gca { git commit -v -a $args }
 
 function gca! { git commit -v -a --amend $args }
 
+Remove-Item Alias:\gcb -Force *> $null
 function gcb { git checkout -b $args }
 
 function gcl { git clone --recurse-submodules $args }
