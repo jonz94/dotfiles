@@ -13,7 +13,6 @@ if [ -f ~/.zplug/init.zsh ]; then
 
   zplug 'zsh-users/zsh-autosuggestions'
   zplug 'zsh-users/zsh-syntax-highlighting'
-  zplug 'oldratlee/hacker-quotes'
 
   # from oh-my-zsh
   zplug 'lib/completion', from:oh-my-zsh
