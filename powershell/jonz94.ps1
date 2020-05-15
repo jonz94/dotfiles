@@ -190,6 +190,12 @@ function gp { git push $args }
 
 function gr { git remote $args }
 
+function grb { git rebase $args }
+
+function grbi { git rebase -i $args }
+
+function grbm { git rebase master $args }
+
 function grv { git remote -v $args }
 
 function grh { git reset $args }
