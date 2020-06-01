@@ -202,6 +202,8 @@ function grh { git reset $args }
 
 function grhh { git reset --hard $args }
 
+function grhs { git reset --soft $args }
+
 function gst { git status $args }
 
 function gsta { git stash push $args }
