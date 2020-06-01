@@ -216,6 +216,12 @@ function gstp { git stash pop $args }
 
 function gsts { git stash show $args }
 
+function gwip {
+  git add -A;
+  git rm $(git ls-files --deleted) 2> $null;
+  git commit --no-verify --no-gpg-sign -m "🚧 WIP: work in progress...";
+}
+
 # scoop aliases
 function scl { scoop cleanup }
 function scl* { scoop cleanup * }
