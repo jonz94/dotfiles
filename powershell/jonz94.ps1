@@ -185,6 +185,16 @@ function glo { git log --oneline --decorate $args }
 
 function gloga { git log --oneline --decorate --graph --all $args }
 
+# show graph for git reflog command
+# Credit: https://gist.github.com/matthewmccullough/988077
+function glggr {
+  git log --graph --decorate $(git reflog --format=format:%h);
+}
+
+function glogr {
+  git log --oneline --graph --decorate $(git reflog --format=format:%h);
+}
+
 Remove-Item Alias:\gp -Force *> $null
 function gp { git push $args }
 
