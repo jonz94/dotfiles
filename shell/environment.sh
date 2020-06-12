@@ -14,6 +14,11 @@ else
   export EDITOR=nvim
 fi
 
+# add ~/.local/bin to $PATH
+if [ -d ${HOME}/.local/bin ]; then
+  export PATH="${HOME}/.local/bin:${PATH}"
+fi
+
 # bat
 if `hash bat 2>/dev/null`; then
   export BAT_CONFIG_PATH=${DOTS}/shell/bat.conf
