@@ -1,4 +1,4 @@
-# jonz94's dotfiles
+# JoNz94's dotfiles
 
 - [Pre-Requirements](#pre-requirements)
     - [Linux or WSL](#linux-or-wsl)
