@@ -10,5 +10,5 @@
 
   "ignorePaths": [".cspell.json"],
 
-  "ignoreRegExpList": ["[Ss]arasa"]
+  "ignoreRegExpList": ["[Ss]arasa", "[Jj]o[Nn]z94"]
 }
