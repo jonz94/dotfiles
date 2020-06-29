@@ -1,7 +1,7 @@
 # vscode & vscode-insiders command aliases
 
 if `hash code 2>/dev/null`; then
-  if `uname -r | grep -i microsoft`; then
+  if [ `uname -r | grep -i microsoft` ]; then
     alias c.='code . &'
     alias c,='code . &'
   else
@@ -11,7 +11,7 @@ if `hash code 2>/dev/null`; then
 fi
 
 if `hash code-insiders 2>/dev/null`; then
-  if `uname -r | grep -i microsoft`; then
+  if [ `uname -r | grep -i microsoft` ]; then
     alias ci.='code-insiders . &'
     alias ci,='code-insiders . &'
   else

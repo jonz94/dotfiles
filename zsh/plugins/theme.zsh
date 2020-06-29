@@ -21,7 +21,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RAM_BACKGROUND='black'
 POWERLEVEL9K_RAM_FOREGROUND='249'
 
-if `uname -r | grep -i microsoft`; then
+if [ `uname -r | grep -i microsoft` ] ; then
   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
 else
   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram battery)
