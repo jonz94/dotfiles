@@ -20,8 +20,17 @@ backup() {
 setup_zsh() {
   echo 'setting up zsh...'
 
-  backup ~/.zshrc
-  echo 'source $HOME/dotfiles/zsh/jonz94.zsh' >> ~/.zshrc
+  rm $HOME/.zshenv
+  ln -s $HOME/dotfiles/zsh/zim/.zshenv $HOME/.zshenv
+
+  rm $HOME/.zshrc
+  ln -s $HOME/dotfiles/zsh/zim/.zshrc $HOME/.zshrc
+
+  rm $HOME/.zlogin
+  ln -s $HOME/dotfiles/zsh/zim/.zlogin $HOME/.zlogin
+
+  rm $HOME/.zimrc
+  ln -s $HOME/dotfiles/zsh/zim/.zimrc $HOME/.zimrc
 
   echo 'zsh is ready!'
 }
@@ -47,6 +56,7 @@ setup_git() {
 
   git config --global user.name ${GIT_NAME}
   git config --global user.email ${GIT_MAIL}
+  git config --global pull.rebase false
   git config --global core.editor nvim
 
   echo 'git is ready!'
