@@ -1,11 +1,11 @@
 # (neo)vim command aliases
 
 # For me, neovim is the best, vim is better, vi is good.
-if `hash nvim 2>/dev/null`; then
+if type nvim &> /dev/null; then
   alias v='nvim'
   alias vi='nvim'
   alias vim='nvim'
-elif `hash vim 2>/dev/null`; then
+elif type vim &> /dev/null; then
   alias v='vim'
   alias vi='vim'
 else

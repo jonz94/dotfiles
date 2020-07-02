@@ -1,6 +1,6 @@
 # composer command aliases
 
-if `hash composer 2>/dev/null`; then
+if type composer &> /dev/null; then
   alias cr='composer require'
   alias crd='composer require --dev'
   alias cso='composer show -o'

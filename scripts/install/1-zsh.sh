@@ -1,14 +1,14 @@
 echo 'installing zsh...'
 
-if `hash apt-get 2> /dev/null`; then
+if type apt-get &> /dev/null; then
   sudo apt install -y zsh
 fi
 
-if `hash brew 2> /dev/null`; then
+if type brew &> /dev/null; then
   brew install zsh
 fi
 
-if `hash pacman 2> /dev/null`; then
+if type pacman &> /dev/null; then
   yes | sudo pacman -S zsh
 fi
 

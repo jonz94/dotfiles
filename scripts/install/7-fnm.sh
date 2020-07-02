@@ -1,6 +1,6 @@
 echo 'installing fnm...'
 
-if `hash brew 2> /dev/null`; then
+if type brew &> /dev/null; then
   brew install Schniz/tap/fnm
 fi
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 # cleanup unused brew dependencies
 
-if ! `hash brew 2> /dev/null`; then
+if ! type brew &> /dev/null; then
   echo "${RED}brew not found... Abort execution...${NORMAL}"
   exit 1
 fi

@@ -1,6 +1,6 @@
 # Git command aliases
 
-if `hash git 2>/dev/null`; then
+if type git &> /dev/null; then
   alias gbv='git branch -v'
   alias gbvv='git branch -vv'
   alias gcot='git checkout --track'
