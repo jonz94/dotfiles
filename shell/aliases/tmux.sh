@@ -1,6 +1,6 @@
 # tmux command aliases
 
-if `hash tmux 2>/dev/null`; then
+if type tmux &> /dev/null; then
   # Make sure to execute the following command:
   # $ tic /path/to/dotfiles/scripts/screen-256color.terminfo
   alias tmux='env TERM=screen-256color tmux'

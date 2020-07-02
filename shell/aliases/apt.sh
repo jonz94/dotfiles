@@ -1,6 +1,6 @@
 # apt command aliases
 
-if `hash apt-get 2>/dev/null`; then
+if type apt-get &> /dev/null; then
   alias i='sudo apt install'
 
   alias aarm='sudo apt autoremove'

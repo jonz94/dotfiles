@@ -1,6 +1,6 @@
 # npm command aliases
 
-if `hash npm 2>/dev/null`; then
+if type npm &> /dev/null; then
   alias nid='npm i --save-dev'
   alias nig='npm i -g'
   alias nis='npm i --save'

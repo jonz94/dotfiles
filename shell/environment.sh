@@ -20,7 +20,7 @@ if [ -d ${HOME}/.local/bin ]; then
 fi
 
 # bat
-if `hash bat 2>/dev/null`; then
+if type bat &> /dev/null; then
   export BAT_CONFIG_PATH=${DOTS}/shell/bat.conf
 fi
 

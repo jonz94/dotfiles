@@ -1,6 +1,6 @@
 # docker command aliases
 
-if `hash docker 2>/dev/null`; then
+if type docker &> /dev/null; then
   alias d='docker'
   alias de='docker exec --interactive --tty'
   alias dei='docker exec --interactive'
@@ -37,13 +37,13 @@ if `hash docker 2>/dev/null`; then
 fi
 
 # docker-compose
-if `hash docker-compose 2>/dev/null`; then
+if type docker-compose &> /dev/null; then
   alias dc='docker-compose'
   alias dcd='docker-compose down'
   alias dcu='docker-compose up'
 fi
 
 # docker-machine
-if `hash docker-machine 2>/dev/null`; then
+if type docker-machine &> /dev/null; then
   alias dm='docker-machine'
 fi
