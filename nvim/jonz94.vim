@@ -39,6 +39,7 @@ silent! Plug 'tpope/vim-obsession'
 silent! Plug 'tpope/vim-repeat'
 silent! Plug 'tpope/vim-surround'
 silent! Plug 'wsdjeg/vim-fetch'
+silent! Plug 'Xvezda/vim-nobin'
 silent! call plug#end()
 
 for s:file in split(globpath('~/dotfiles/nvim/settings', '*.vim'), '\n')
