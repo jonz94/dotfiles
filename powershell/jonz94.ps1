@@ -37,6 +37,9 @@ Import-Module PSFzf
 # tab completion for docker commands
 Import-Module DockerCompletion
 
+# A cd that learns
+Import-Module ZLocation
+
 # clear
 Set-Alias -Name c -Value Clear-Host
 
