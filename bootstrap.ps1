@@ -1,6 +1,8 @@
 # setting up git
 git config --global user.name "jonz94"
 git config --global user.email "jody16888@gmail.com"
+git config --global pull.rebase false
+git config --global init.defaultBranch main
 
 # Create local profile if it does not exist
 if (-Not $(Test-Path "$HOME\dotfiles\local\local.ps1")) {

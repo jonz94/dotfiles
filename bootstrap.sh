@@ -1,7 +1,7 @@
 #!/bin/bash
 
-GIT_NAME="jonz94"
-GIT_MAIL="jody16888@gmail.com"
+GIT_NAME=${GIT_NAME:-"jonz94"}
+GIT_MAIL=${GIT_MAIL:-:"jody16888@gmail.com"}
 
 install() {
   for INSTALL_SCRIPT in ~/dotfiles/scripts/install/*.sh; do
@@ -58,6 +58,7 @@ setup_git() {
   git config --global user.email ${GIT_MAIL}
   git config --global pull.rebase false
   git config --global core.editor nvim
+  git config --global init.defaultBranch main
 
   echo 'git is ready!'
 }
