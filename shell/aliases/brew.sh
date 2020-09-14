@@ -2,5 +2,5 @@
 
 if type brew &> /dev/null; then
   alias ud='brew update'
-  alias ug='brew upgrade && brew cask upgrade'
+  alias ug='brew upgrade'
 fi
