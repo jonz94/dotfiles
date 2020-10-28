@@ -1,7 +1,7 @@
 echo 'installing fnm...'
 
 if type brew &> /dev/null; then
-  brew install Schniz/tap/fnm
+  brew install fnm
 fi
 
 if [ `uname` = 'Linux' ]; then
