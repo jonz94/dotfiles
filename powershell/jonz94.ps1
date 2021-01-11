@@ -1,4 +1,4 @@
-# UTF-8 for printing
+﻿# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Fix git log output encoding issues
@@ -58,6 +58,9 @@ function e. { explorer.exe . }
 function e { explorer.exe $args }
 function o. { explorer.exe . }
 function open { explorer.exe $args }
+
+# echo path in pretty format
+function echopath { (echo $Env:PATH).split(';') }
 
 # Open recycle bin directory in file explorer
 function trash { Start-Process shell:RecycleBinFolder }
