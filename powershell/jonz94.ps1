@@ -1,4 +1,4 @@
-﻿# UTF-8 for printing
+# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Fix git log output encoding issues
@@ -43,9 +43,6 @@ Import-Module ZLocation
 # clear
 Set-Alias -Name c -Value Clear-Host
 
-# Open WSL's zsh
-function zsh { bash.exe -c zsh }
-
 # poweroff
 function poweroff { shutdown /s /t 0 }
 
@@ -64,9 +61,6 @@ function open { explorer.exe $args }
 
 # Open recycle bin directory in file explorer
 function trash { Start-Process shell:RecycleBinFolder }
-
-# cd to home
-function home { Set-Location $HOME }
 
 # cd to dotfiles
 function dot { Set-Location $HOME\dotfiles }
