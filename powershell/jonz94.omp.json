@@ -1,0 +1,74 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh3/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "diamond",
+          "foreground": "#EACA8D",
+          "background": "#343A43",
+          "trailing_diamond": "\uE0B0"
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#343A43",
+          "background": "#71BDF2",
+          "properties": {
+            "style": "agnoster_full",
+            "prefix": " \uF07C  "
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#343A43",
+          "background": "#A7CB8B",
+          "properties": {
+            "branch_icon": "\uF126 ",
+            "stash_count_icon": "\u25CF ",
+            "local_staged_icon": " \uF046 ",
+            "local_working_icon": " \uF044 "
+          }
+        }
+      ]
+    },
+    {
+      "type": "newline"
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#000000",
+          "background": "#FFFFFF",
+          "properties": {
+            "prefix": "",
+            "text": " ",
+            "postfix": ""
+          }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "#000000",
+          "properties": {
+            "prefix": "",
+            "text": "\uE0B0",
+            "postfix": ""
+          }
+        }
+      ]
+    }
+  ],
+  "final_space": true
+}

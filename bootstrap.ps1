@@ -18,6 +18,10 @@ if (-Not $(Test-Path "$PROFILE")) {
 Add-Content "$PROFILE" -Encoding UTF8 -Value '. $HOME\dotfiles\powershell\jonz94.ps1'
 Add-Content "$PROFILE" -Encoding UTF8 -Value '. $HOME\dotfiles\local\local.ps1'
 
+# Install oh-my-posh3
+scoop install oh-my-posh3
+
+# Install NeoVim
 scoop install neovim *> $null
 
 # Create neovim's init.vim if it does not exist
@@ -51,8 +55,6 @@ nvim.exe -c PlugInstall -c qa
 scoop install fzf *> $null
 
 # Install powershell modules
-Install-Module posh-git -Scope CurrentUser
-Install-Module oh-my-posh -Scope CurrentUser
 Install-Module PSFzf -Scope CurrentUser
 Install-Module DockerCompletion -Scope CurrentUser
 Install-Module ZLocation -Scope CurrentUser
