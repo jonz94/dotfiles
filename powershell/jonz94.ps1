@@ -6,16 +6,9 @@
 $Env:LESSCHARSET = 'utf-8'
 $Env:LC_ALL = 'C.UTF-8'
 
-if ( Test-Administrator ) { Set-Location $HOME }
-
-# Powershell Module for Git prompt
-# https://github.com/dahlbyk/posh-git
-Import-Module posh-git
-
-# Oh My Powershell
-# https://github.com/JanDeDobbeleer/oh-my-posh
-Import-Module oh-my-posh
-Set-Theme Paradox
+# Oh My Powershell 3
+# https://github.com/JanDeDobbeleer/oh-my-posh3
+Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powershell/jonz94.omp.json)
 
 # Use Emacs mode, just like unix-y environment
 Set-PSReadlineOption -EditMode Emacs
