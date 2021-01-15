@@ -33,6 +33,9 @@ Import-Module DockerCompletion
 # A cd that learns
 Import-Module ZLocation
 
+# Load fnm
+fnm env --use-on-cd | Out-String | Invoke-Expression
+
 # clear
 Set-Alias -Name c -Value Clear-Host
 
