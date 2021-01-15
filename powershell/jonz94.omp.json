@@ -31,9 +31,10 @@
           "background": "#A7CB8B",
           "properties": {
             "branch_icon": "\uF126 ",
-            "stash_count_icon": "\u25CF ",
             "local_staged_icon": " \uF046 ",
-            "local_working_icon": " \uF044 "
+            "local_working_icon": " \uF044 ",
+            "stash_count_icon": "\u25CF ",
+            "tag_icon": "\uF412 "
           }
         }
       ]
