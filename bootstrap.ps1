@@ -54,6 +54,9 @@ nvim.exe -c PlugInstall -c qa
 # Install fzf
 scoop install fzf *> $null
 
+# Install fnm
+scoop install fnm *> $null
+
 # Install powershell modules
 Install-Module PSFzf -Scope CurrentUser
 Install-Module DockerCompletion -Scope CurrentUser
