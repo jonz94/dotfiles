@@ -58,6 +58,7 @@ scoop install fzf *> $null
 scoop install fnm *> $null
 
 # Install powershell modules
+PowerShellGet\Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
 Install-Module PSFzf -Scope CurrentUser
 Install-Module DockerCompletion -Scope CurrentUser
 Install-Module ZLocation -Scope CurrentUser
