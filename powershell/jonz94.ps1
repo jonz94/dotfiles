@@ -198,6 +198,8 @@ function glogr {
 Remove-Item Alias:\gp -Force *> $null
 function gp { git push $args }
 
+function gpoat { git push origin --all && git push origin --tags }
+
 # Get-GitBranch is a helper from posh-git module
 function gpsup { git push -u origin $((Get-GitStatus).Branch) }
 
