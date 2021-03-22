@@ -251,8 +251,13 @@ function sls { scoop list }
 function ss { scoop search $args }
 function sst { scoop status }
 
+function sud { scoop update && scoop status }
+function ud { scoop update && scoop status }
+
 function sup { scoop update $args }
+
 function sup* { scoop update * }
+function ug { scoop update * }
 
 function which { scoop which $args }
 
