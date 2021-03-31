@@ -10,10 +10,6 @@ $Env:LC_ALL = 'C.UTF-8'
 # https://github.com/JanDeDobbeleer/oh-my-posh3
 Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powershell/jonz94.omp.json)
 
-# Powershell Module for Git prompt
-# https://github.com/dahlbyk/posh-git
-Import-Module posh-git
-
 # Use Emacs mode, just like unix-y environment
 Set-PSReadlineOption -EditMode Emacs
 
