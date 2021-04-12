@@ -1,9 +1,13 @@
+:root {
+  --prefer-fonts: 'Sarasa Nerd Font', 'Sarasa NF', 'Sarasa Mono TC',
+    'Noto San CJK TC', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
+
 .linux,
 .mac,
 .windows {
-  font-family: 'Sarasa Nerd Font', 'Sarasa NF', 'Sarasa Mono TC',
-    'Noto San CJK TC', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont,
-    sans-serif;
+  font-family: var(--prefer-fonts);
 }
 
 /* inline-style of sidebar */
@@ -14,9 +18,7 @@
 
 /* inline-style of commit message's placeholder */
 .scm-editor-placeholder {
-  font-family: 'Sarasa Nerd Font', 'Sarasa NF', 'Sarasa Mono TC',
-    'Noto San CJK TC', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont,
-    sans-serif !important;
+  font-family: var(--prefer-fonts) !important;
 }
 
 /* hide indicator of custom css js extention */
