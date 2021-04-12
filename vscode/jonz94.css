@@ -16,6 +16,9 @@
 /* right-click context menu */
 .shadow-root-host,
 
+/* search bar of user's setting panel */
+.search-container .view-lines,
+
 /* inline-style of commit message's placeholder */
 .scm-editor-placeholder {
   font-family: var(--prefer-fonts) !important;
