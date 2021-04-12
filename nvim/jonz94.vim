@@ -76,6 +76,9 @@ nnoremap <leader>h :help<space>
 " edit current dir
 nnoremap <leader>e. :e<space>.<CR>
 nnoremap <leader>e, :e<space>.<CR>
+" show next matched string at the center of screen
+nnoremap n nzz
+nnoremap N Nzz
 " sort
 vnoremap <leader>ss :sort<CR>
 vnoremap <leader>si :sort i<CR>
