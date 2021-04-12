@@ -6,8 +6,14 @@
     sans-serif;
 }
 
-/* overwrite inline-style of sidebar */
-.sidebar .view-lines {
+/* inline-style of sidebar */
+.sidebar .view-lines,
+
+/* right-click context menu */
+.shadow-root-host,
+
+/* inline-style of commit message's placeholder */
+.scm-editor-placeholder {
   font-family: 'Sarasa Nerd Font', 'Sarasa NF', 'Sarasa Mono TC',
     'Noto San CJK TC', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont,
     sans-serif !important;
