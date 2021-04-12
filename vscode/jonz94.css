@@ -1,5 +1,5 @@
 :root {
-  --prefer-fonts: 'Sarasa Nerd Font', 'Sarasa NF', 'Sarasa Mono TC',
+  --prefer-fonts: codicon, 'Sarasa Nerd Font', 'Sarasa NF', 'Sarasa Mono TC',
     'Noto San CJK TC', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont,
     sans-serif;
 }
