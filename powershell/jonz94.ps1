@@ -154,7 +154,8 @@ function gcb { git checkout -b $args }
 function gcl { git clone --recurse-submodules $args }
 
 Remove-Item Alias:\gcm -Force *> $null
-function gcm { git checkout master $args }
+function gcm { git checkout main $args }
+function gcM { git checkout master $args }
 
 function gcmsg { git commit -m $args }
 
