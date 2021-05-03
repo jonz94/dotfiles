@@ -27,12 +27,6 @@ Remove-PSReadlineKeyHandler 'Ctrl+t'
 Remove-PSReadlineKeyHandler 'Ctrl+r'
 Import-Module PSFzf
 
-# tab completion for docker commands
-Import-Module DockerCompletion
-
-# A cd that learns
-Import-Module ZLocation
-
 # Load fnm
 fnm env --use-on-cd | Out-String | Invoke-Expression
 
