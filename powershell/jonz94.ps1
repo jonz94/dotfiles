@@ -253,15 +253,10 @@ function ug { scoop update * }
 function which { scoop which $args }
 
 # neovim aliases
-function v { nvim-qt $args }
-
-function vi { nvim-qt $args }
-
-function vim { nvim-qt $args }
-
-function nvim { nvim-qt $args }
-
-function v. { nvim-qt . }
+function v { nvim $args }
+function vi { nvim $args }
+function vim { nvim $args }
+function v. { nvim . }
 
 # npm
 function nid { npm install --save-dev $args }
