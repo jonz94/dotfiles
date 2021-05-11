@@ -5,5 +5,5 @@ if type brew &> /dev/null; then
 fi
 
 if [ `uname` = 'Linux' ]; then
-  curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
+  curl -fsSL https://fnm.vercel.app/install | bash
 fi
