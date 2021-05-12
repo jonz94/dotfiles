@@ -1,7 +1,3 @@
-" prevent utf-8 characters issue
-scriptencoding utf-8
-set encoding=utf-8
-
 " import separate preset configurations inside presets diretory
 for s:file in split(globpath('~/dotfiles/nvim/presets', '*.vim'), '\n')
   exe 'source' s:file
