@@ -17,3 +17,10 @@ if ! type curl &> /dev/null; then
     yes | sudo pacman -s curl
   fi
 fi
+
+# unzip
+if ! type unzip &> /dev/null; then
+  if type apt-get &> /dev/null; then
+    sudo apt install unzip
+  fi
+fi
