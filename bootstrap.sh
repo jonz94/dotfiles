@@ -12,13 +12,13 @@ install() {
 backup() {
   if [ -f ${1} ]; then
     mkdir -p `dirname ${1}`
-    echo "backup old ${1} to ${1}.backup."`date +"%Y-%m-%d,%H:%M:%S"`
+    echo "Backup old ${1} to ${1}.backup."`date +"%Y-%m-%d,%H:%M:%S"`
     mv ${1} ${1}.backup.`date +"%Y-%m-%d,%H:%M:%S"`
   fi
 }
 
 setup_zsh() {
-  echo 'setting up zsh...'
+  echo 'Setting up zsh...'
 
   rm $HOME/.zshenv
   ln -s $HOME/dotfiles/zsh/zim/.zshenv $HOME/.zshenv
@@ -37,7 +37,7 @@ setup_zsh() {
   touch ~/dotfiles/local/local.zsh
   touch ~/dotfiles/local/theme.zsh
 
-  echo 'installing zsh modules...'
+  echo 'Installing zsh modules...'
   zsh -c "source ${HOME}/.zshrc && zimfw install"
 
   # disable Powerlevel10k configuration wizard
@@ -47,7 +47,7 @@ setup_zsh() {
 }
 
 setup_neovim() {
-  echo 'setting up neovim...'
+  echo 'Setting up neovim...'
   mkdir -p ~/.config/nvim
 
   backup ~/.config/nvim/init.vim
@@ -56,14 +56,14 @@ setup_neovim() {
   backup ~/.config/nvim/ginit.vim
   echo 'source $HOME/dotfiles/nvim/jonz94.gvim' >> ~/.config/nvim/ginit.vim
 
-  echo 'installing neovim plugins...'
+  echo 'Installing neovim plugins...'
   nvim -c PlugInstall -c qa
 
   echo 'neovim is ready!'
 }
 
 setup_git() {
-  echo 'setting up git...'
+  echo 'Setting up git...'
 
   git config --global user.name ${GIT_NAME}
   git config --global user.email ${GIT_MAIL}
@@ -75,7 +75,7 @@ setup_git() {
 }
 
 setup_tmux() {
-  echo 'setting up tmux...'
+  echo 'Setting up tmux...'
 
   backup ~/.tmux.conf
   echo 'source-file $HOME/dotfiles/tmux/jonz94.tmux.conf' >> ~/.tmux.conf

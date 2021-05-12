@@ -21,7 +21,7 @@ Add-Content "$PROFILE" -Encoding UTF8 -Value '. $HOME\dotfiles\local\local.ps1'
 # Install oh-my-posh3
 scoop install oh-my-posh3
 
-# Install NeoVim
+# Install neovim
 scoop install neovim *> $null
 
 # Create neovim's init.vim if it does not exist

@@ -68,7 +68,7 @@ PS> scoop install git curl
 ```bash
 $ sudo add-apt-repository ppa:git-core/ppa
 $ sudo apt update && sudo apt upgrade -y
-$ sudo apt install git -y
+$ sudo apt install -y git
 ```
 
 ### Note for WSL 1 (Windows Subsystem for Linux version 1)
