@@ -98,11 +98,22 @@ setup_tmux() {
   echo 'tmux is ready!'
 }
 
+setup_fnm_completions_for_linux() {
+  if [ `uname` = "Linux" ]; then
+    export PATH="$HOME/.fnm:$PATH"
+    eval "`fnm env`"
+
+    rm -f ~/dotfiles/zsh/functions/_fnm
+    fnm completions --shell zsh > ~/dotfiles/zsh/functions/_fnm
+  fi
+}
+
 install
 setup_zsh
 setup_neovim
 setup_git
 setup_tmux
+setup_fnm_completions_for_linux
 
 echo '🎉 All Done!'
 echo '🙌 Some changes might need re-login to take effects.'
