@@ -5,6 +5,12 @@ if [ -d ~/.zim ]; then
   exit 0
 fi
 
-curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+URL='https://raw.githubusercontent.com/zimfw/install/master/install.zsh'
+
+if [ `uname -r | grep -i microsoft` ]; then
+  curl.exe -fsSL $URL | zsh
+else
+  curl -fsSL $URL | zsh
+fi
 
 echo 'zim is ready!'
