@@ -32,6 +32,11 @@ setup_zsh() {
   rm $HOME/.zimrc
   ln -s $HOME/dotfiles/zsh/zim/.zimrc $HOME/.zimrc
 
+  # setup local configurations for zsh
+  mkdir -p ~/dotfiles/local
+  touch ~/dotfiles/local/local.zsh
+  touch ~/dotfiles/local/theme.zsh
+
   echo 'zsh is ready!'
 }
 
@@ -63,19 +68,25 @@ setup_git() {
   echo 'git is ready!'
 }
 
-setup_local() {
+setup_tmux() {
+  echo 'setting up tmux...'
+
+  backup ~/.tmux.conf
+  echo 'source-file $HOME/dotfiles/tmux/jonz94.tmux.conf' >> ~/.tmux.conf
+
+  # setup local configurations for tmux
   mkdir -p ~/dotfiles/local
-  touch ~/dotfiles/local/local.zsh
-  touch ~/dotfiles/local/theme.tmux.conf
-  touch ~/dotfiles/local/theme.zsh
-  touch ~/dotfiles/local/themepack.tmux.conf
+  cat ~/dotfiles/tmux/theme.tmux.conf >> ~/dotfiles/local/theme.tmux.conf
+  cat ~/dotfiles/tmux/themepack.tmux.conf >> ~/dotfiles/local/themepack.tmux.conf
+
+  echo 'tmux is ready!'
 }
 
 install
 setup_zsh
 setup_neovim
 setup_git
-setup_local
+setup_tmux
 
 echo '🎉 All Done!'
 echo '🙌 Some changes might need re-login to take effects.'
