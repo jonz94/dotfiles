@@ -35,7 +35,6 @@ silent! Plug 'mzlogin/vim-markdown-toc'
 silent! Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 silent! Plug 'tpope/vim-dispatch'
 silent! Plug 'tpope/vim-fugitive'
-silent! Plug 'tpope/vim-obsession'
 silent! Plug 'tpope/vim-repeat'
 silent! Plug 'tpope/vim-surround'
 silent! Plug 'wsdjeg/vim-fetch'
@@ -97,8 +96,6 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>zf zfip
 " quickly hidden search highlight
 nnoremap <leader>nh :nohl<CR>
-" obsession
-nnoremap <leader>ob :Obsession<CR>:!echo session.vim >> .gitignore<CR><CR>
 " git
 nnoremap <silent> <leader><leader>g :G<CR><C-w>o
 nnoremap <silent> <leader>gp :Dispatch! git push<CR>
