@@ -1,4 +1,4 @@
-echo 'Install vim-plug for NeoVim...'
+echo 'Install vim-plug for neovim...'
 
 PLUGIN_DIR="${HOME}/.local/share/nvim/site/autoload"
 URL='https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
