@@ -85,8 +85,15 @@ setup_tmux() {
 
   # setup local configurations for tmux
   mkdir -p ~/dotfiles/local
-  cat ~/dotfiles/tmux/theme.tmux.conf >> ~/dotfiles/local/theme.tmux.conf
-  cat ~/dotfiles/tmux/themepack.tmux.conf >> ~/dotfiles/local/themepack.tmux.conf
+
+  backup ~/dotfiles/local/theme.tmux.conf
+  cp ~/dotfiles/tmux/theme.tmux.conf ~/dotfiles/local/theme.tmux.conf
+
+  backup ~/dotfiles/local/themepack.tmux.conf
+  cp ~/dotfiles/tmux/themepack.tmux.conf ~/dotfiles/local/themepack.tmux.conf
+
+  echo 'Installing tmux plugins...'
+  ~/.tmux/plugins/tpm/bin/install_plugins
 
   echo 'tmux is ready!'
 }
