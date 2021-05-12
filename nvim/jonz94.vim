@@ -34,14 +34,3 @@ silent! call plug#end()
 for s:file in split(globpath('~/dotfiles/nvim/settings', '*.vim'), '\n')
   exe 'source' s:file
 endfor
-
-if !exists('g:vscode')
-  " ===[ Highlight effect to limit 80 characters in single line ]===
-  " note: this setting must put in the bottom of the file.
-  " Put a light-grey vertical line on column 81
-  highlight ColorColumn ctermbg=245 guibg=#2c2d27
-  call matchadd('ColorColumn', '\%81v', 100)
-  highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-  match OverLength /\%81v.\+/
-  highlight CursorLineNr cterm=bold ctermfg=Green
-endif
