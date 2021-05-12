@@ -256,7 +256,14 @@ function which { scoop which $args }
 function v { nvim $args }
 function vi { nvim $args }
 function vim { nvim $args }
-function v. { nvim . }
+function \vim { vim.exe $args }
+function v. {
+  if (Test-Path .\Session.vim -PathType Leaf) {
+    nvim -S Session.vim
+  } else {
+    nvim .
+  }
+}
 
 # npm
 function nid { npm install --save-dev $args }
