@@ -23,8 +23,8 @@ setup_zsh() {
   rm $HOME/.zshenv
   ln -s $HOME/dotfiles/zsh/zim/.zshenv $HOME/.zshenv
 
-  rm $HOME/.zshrc
-  ln -s $HOME/dotfiles/zsh/zim/.zshrc $HOME/.zshrc
+  backup $HOME/.zshrc
+  echo "source $HOME/dotfiles/zsh/zim/.zshrc" > $HOME/.zshrc
 
   rm $HOME/.zlogin
   ln -s $HOME/dotfiles/zsh/zim/.zlogin $HOME/.zlogin
@@ -39,6 +39,9 @@ setup_zsh() {
 
   echo 'installing zsh modules...'
   zsh -c "source ${HOME}/.zshrc && zimfw install"
+
+  # disable Powerlevel10k configuration wizard
+  zsh -c "echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' >>! ~/.zshrc"
 
   echo 'zsh is ready!'
 }
