@@ -78,11 +78,6 @@ nnoremap <leader>zf zfip
 " quickly hidden search highlight
 nnoremap <leader>nh :nohl<CR>
 
-" git
-nnoremap <silent> <leader><leader>g :G<CR><C-w>o
-nnoremap <silent> <leader>gp :Dispatch! git push<CR>
-nnoremap <silent> <leader>gl :Dispatch! git pull<CR>
-
 " plugin management
 nnoremap <silent> <leader>pi :PlugInstall<CR>
 nnoremap <silent> <leader>pu :PlugUpdate<CR>
