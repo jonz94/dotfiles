@@ -65,7 +65,9 @@ nnoremap <S-CR> <CR>
 " write file
 nnoremap <C-s> :w<CR>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>W :w!<CR>
 nnoremap <leader><leader>w :wall<CR>
+nnoremap <leader><leader>W :wall!<CR>
 " write file in insert mode
 inoremap <C-M-s> <C-o>:w<CR>
 inoremap ;;w <C-o>:w<CR>
@@ -74,11 +76,14 @@ inoremap <C-s> <Esc>:w<CR>l
 inoremap ;w <Esc>:w<CR>l
 " quit file
 nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q!<CR>
 nnoremap <leader><leader>q :qall<CR>
-nnoremap <leader><leader>Q :q!<CR>
+nnoremap <leader><leader>Q :qall!<CR>
 " map `Q` as `quit file`
 " note: we can still enter ex mode via `gQ`
 nnoremap Q :q<CR>
+" map `ctrl` + `Q` as `quit all`
+nnoremap <C-q> :qall<CR>
 " write and quit
 nnoremap <leader><Tab> :wq<CR>
 " quickly type :help<space>
