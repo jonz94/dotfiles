@@ -1,13 +1,17 @@
 " appearance
 
 if !exists('g:vscode')
-  " onedark theme
-  silent! Plug 'joshdick/onedark.vim'
+  " show absolute line number on current line
+  set number
+
+  " show relative line number on non-current line
+  set relativenumber
 
   " show cursor line
   set cursorline
-  set number relativenumber
-  set ruler
+
+  " onedark theme
+  silent! Plug 'joshdick/onedark.vim'
 
   " italic comment
   let g:onedark_terminal_italics = 1
