@@ -37,6 +37,9 @@ setup_zsh() {
   touch ~/dotfiles/local/local.zsh
   touch ~/dotfiles/local/theme.zsh
 
+  echo 'installing zsh modules...'
+  zsh -c "source ${HOME}/.zshrc && zimfw install"
+
   echo 'zsh is ready!'
 }
 
