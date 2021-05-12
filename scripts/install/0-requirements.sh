@@ -12,7 +12,7 @@ fi
 # curl
 if ! type curl &> /dev/null; then
   if type apt-get &> /dev/null; then
-    sudo apt install curl
+    sudo apt install -y curl
   elif type pacman &> /dev/null; then
     yes | sudo pacman -s curl
   fi
@@ -21,6 +21,6 @@ fi
 # unzip
 if ! type unzip &> /dev/null; then
   if type apt-get &> /dev/null; then
-    sudo apt install unzip
+    sudo apt install -y unzip
   fi
 fi
