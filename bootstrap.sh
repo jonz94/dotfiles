@@ -12,8 +12,11 @@ install() {
 backup() {
   if [ -f ${1} ]; then
     mkdir -p `dirname ${1}`
-    echo "Backup old ${1} to ${1}.backup."`date +"%Y-%m-%d,%H:%M:%S"`
-    mv ${1} ${1}.backup.`date +"%Y-%m-%d,%H:%M:%S"`
+
+    TIMESTAMP=`date +"%Y-%m-%d,%H:%M:%S"`
+
+    echo "Backup old ${1} to ${1}.backup.${TIMESTAMP}"
+    mv ${1} ${1}.backup.${TIMESTAMP}
   fi
 }
 
