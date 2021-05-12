@@ -36,7 +36,7 @@ if !exists('g:vscode')
   " indentLine setting
   if has('nvim-0.5')
     silent! Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
-  elseif has ('nvim')
+  elseif has('nvim')
     silent! Plug 'Yggdroot/indentLine'
     silent! Plug 'lukas-reineke/indent-blankline.nvim'
   else
