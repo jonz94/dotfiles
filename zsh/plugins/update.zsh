@@ -9,5 +9,9 @@ dug() {
   zimfw install
   zimfw update
   zimfw upgrade
+
+  echo ${BLUE}"[tpm]" updating...${NORMAL}
+  ~/.tmux/plugins/tpm/bin/update_plugins all
+
   echo
 }
