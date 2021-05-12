@@ -2,19 +2,10 @@
 scriptencoding utf-8
 set encoding=utf-8
 
-" basic
-set nocompatible
-set autoindent
-set expandtab
-set mouse=a
-set shiftwidth=2
-set tabstop=2
-set path+=**
-set wildmenu
-set endofline
-set fixendofline
-set hlsearch
-set incsearch
+" import separate preset configurations inside presets diretory
+for s:file in split(globpath('~/dotfiles/nvim/presets', '*.vim'), '\n')
+  exe 'source' s:file
+endfor
 
 " set leader key
 let mapleader=" "
