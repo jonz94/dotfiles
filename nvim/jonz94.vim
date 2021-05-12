@@ -72,6 +72,9 @@ inoremap ;w <Esc>:w<CR>l
 nnoremap <leader>q :q<CR>
 nnoremap <leader><leader>q :qall<CR>
 nnoremap <leader><leader>Q :q!<CR>
+" map `Q` as `quit file`
+" note: we can still enter ex mode via `gQ`
+nnoremap Q :q<CR>
 " write and quit
 nnoremap <leader><Tab> :wq<CR>
 " quickly type :help<space>
