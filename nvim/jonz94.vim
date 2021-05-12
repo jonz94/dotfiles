@@ -111,7 +111,7 @@ nnoremap <silent> <leader>gl :Dispatch! git pull<CR>
 nnoremap <silent> <leader>pi :PlugInstall<CR>
 nnoremap <silent> <leader>pu :PlugUpdate<CR>
 nnoremap <silent> <leader>pU :PlugUpgrade<CR>
-noremap <silent> <leader>pc :PlugClean<CR>
+nnoremap <silent> <leader>pc :PlugClean<CR>
 
 if !exists('g:vscode')
   " ===[ Highlight effect to limit 80 characters in single line ]===
