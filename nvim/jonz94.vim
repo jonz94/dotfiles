@@ -18,6 +18,7 @@ let mapleader=" "
 " vim-plug
 silent! call plug#begin('~/.local/share/nvim/plugged')
 
+" import separate plugin configurations inside plugins diretory
 for s:file in split(globpath('~/dotfiles/nvim/plugins', '*.vim'), '\n')
   exe 'source' s:file
 endfor
@@ -41,6 +42,7 @@ silent! Plug 'wsdjeg/vim-fetch'
 silent! Plug 'Xvezda/vim-nobin'
 silent! call plug#end()
 
+" import separate configurations inside plugins diretory
 for s:file in split(globpath('~/dotfiles/nvim/settings', '*.vim'), '\n')
   exe 'source' s:file
 endfor
@@ -52,6 +54,7 @@ endfor
 "nnoremap  ;  :
 "vnoremap  :  ;
 "vnoremap  ;  :
+" press Enter to quickly enter command mode
 nnoremap <CR> :
 nnoremap <S-CR> <CR>
 " write file
