@@ -7,9 +7,6 @@ for s:file in split(globpath('~/dotfiles/nvim/presets', '*.vim'), '\n')
   exe 'source' s:file
 endfor
 
-" set leader key
-let mapleader=" "
-
 " vim-plug
 silent! call plug#begin('~/.local/share/nvim/plugged')
 
