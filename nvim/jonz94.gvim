@@ -3,5 +3,5 @@ if exists('g:GuiLoaded')
   GuiTabline 0
 
   " Change nvim-qt font family with font height equal to 14
-  Guifont Sarasa NF:h14
+  Guifont Sarasa Nerd Font:h14
 endif
