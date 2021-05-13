@@ -29,13 +29,13 @@ if (-Not $(scoop which nvim) ) {
 }
 
 # Create neovim's init.vim if it does not exist
-if (-Not $(Test-Path "$HOME\AppData\nvim\init.vim")) {
-  New-Item "$HOME\AppData\nvim\init.vim" -ItemType File -Force *> $null
+if (-Not $(Test-Path "$HOME\AppData\Local\nvim\init.vim" -PathType Leaf)) {
+  New-Item "$HOME\AppData\Local\nvim\init.vim" -ItemType File -Force *> $null
 }
 
 # Create neovim's ginit.vim if it does not exists
-if (-Not $(Test-Path "$HOME\AppData\nvim\ginit.vim")) {
-  New-Item "$HOME\AppData\nvim\ginit.vim" -ItemType File -Force *> $null
+if (-Not $(Test-Path "$HOME\AppData\Local\nvim\ginit.vim" -PathType Leaf)) {
+  New-Item "$HOME\AppData\Local\nvim\ginit.vim" -ItemType File -Force *> $null
 }
 
 # Source neovim configuration files
