@@ -5,12 +5,12 @@ git config --global pull.rebase false
 git config --global init.defaultBranch main
 
 # Create local profile if it does not exist
-if (-Not $(Test-Path "$HOME\dotfiles\local\local.ps1")) {
+if (-Not $(Test-Path "$HOME\dotfiles\local\local.ps1" -PathType Leaf)) {
   New-Item "$HOME\dotfiles\local\local.ps1" -ItemType File -Force *> $null
 }
 
 # Create $PROFILE file if it does not exists
-if (-Not $(Test-Path "$PROFILE")) {
+if (-Not $(Test-Path "$PROFILE" -PathType Leaf)) {
   New-Item "$PROFILE" -ItemType File -Force *> $null
 }
 
@@ -19,10 +19,14 @@ Add-Content "$PROFILE" -Encoding UTF8 -Value '. $HOME\dotfiles\powershell\jonz94
 Add-Content "$PROFILE" -Encoding UTF8 -Value '. $HOME\dotfiles\local\local.ps1'
 
 # Install oh-my-posh3
-scoop install oh-my-posh3
+if (-Not $(scoop which oh-my-posh) ) {
+  scoop install oh-my-posh3
+}
 
 # Install neovim
-scoop install neovim *> $null
+if (-Not $(scoop which nvim) ) {
+  scoop install neovim
+}
 
 # Create neovim's init.vim if it does not exist
 if (-Not $(Test-Path "$HOME\AppData\nvim\init.vim")) {
@@ -39,23 +43,29 @@ Add-Content "$HOME\AppData\nvim\init.vim" -Encoding UTF8 -Value 'source $HOME/do
 Add-Content "$HOME\AppData\nvim\ginit.vim" -Encoding UTF8 -Value 'source $HOME/dotfiles/nvim/jonz94.gvim'
 
 # Install vim-plug
-md ~\AppData\Local\nvim\autoload
-$uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-(New-Object Net.WebClient).DownloadFile(
-  $uri,
-  $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
-    "~\AppData\Local\nvim\autoload\plug.vim"
+if (-Not $(Test-Path "$HOME\AppData\Local\nvim\autoload\plug.vim" -PathType Leaf)) {
+  md ~\AppData\Local\nvim\autoload
+  $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  (New-Object Net.WebClient).DownloadFile(
+    $uri,
+    $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
+      "~\AppData\Local\nvim\autoload\plug.vim"
+    )
   )
-)
+}
 
 # Install vim plugins
 nvim.exe -c PlugInstall -c qa
 
 # Install fzf
-scoop install fzf *> $null
+if (-Not $(scoop which fzf) ) {
+  scoop install fzf
+}
 
 # Install fnm
-scoop install fnm *> $null
+if (-Not $(scoop which fnm) ) {
+  scoop install fnm
+}
 
 # Install powershell modules
 Install-Module posh-git -Scope CurrentUser
