@@ -60,3 +60,7 @@ scoop install fnm *> $null
 # Install powershell modules
 Install-Module posh-git -Scope CurrentUser
 Install-Module PSFzf -Scope CurrentUser
+
+# Load fnm & generate fnm's completions file
+fnm env --use-on-cd | Out-String | Invoke-Expression
+fnm completions --shell powershell > $HOME\dotfiles\powershell\completions\fnm.completions.ps1
