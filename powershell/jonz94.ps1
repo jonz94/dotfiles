@@ -189,8 +189,6 @@ function glogr {
 Remove-Item Alias:\gp -Force *> $null
 function gp { git push $args }
 
-function gpoat { git push origin --all && git push origin --tags }
-
 # Get-GitBranch is a helper from posh-git module
 function gpsup { git push -u origin $((Get-GitStatus).Branch) $args }
 
@@ -241,9 +239,6 @@ function sls { scoop list }
 
 function ss { scoop search $args }
 function sst { scoop status }
-
-function sud { scoop update && scoop status }
-function ud { scoop update && scoop status }
 
 function sup { scoop update $args }
 
@@ -303,3 +298,18 @@ Get-ChildItem –Path "~/dotfiles/powershell/completions" -Recurse -Filter *.ps1
 
 # whatis
 function whatis { ((Get-Command $args[0]).Definition).Trim() }
+
+# add backwards compatibility for older powershell
+if ( $HOST.Version.Major -ge 7 ) {
+  # only source this profile when powershell major version number is >= 7
+  . $HOME\dotfiles\powershell\pwsh.ps1
+} else {
+  function gpoat {
+    if ( $(git push origin --all) ) {
+      git push origin --tags
+    }
+  }
+
+  function sud { scoop update; scoop status }
+  function ud { scoop update; scoop status }
+}
