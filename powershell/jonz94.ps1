@@ -296,5 +296,10 @@ function cug { composer global update --with-all-dependencies $args }
 function cup { composer update --with-all-dependencies $args }
 function cw { composer why $args }
 
+# completions
+Get-ChildItem –Path "~/dotfiles/powershell/completions" -Recurse -Filter *.ps1 | Foreach-Object {
+  . $_.FullName
+}
+
 # whatis
 function whatis { ((Get-Command $args[0]).Definition).Trim() }
