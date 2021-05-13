@@ -1,5 +1,5 @@
 " enwise
-silent! Plug 'jonz94/enwise'
+silent! Plug 'mapkts/enwise'
 
 " enable enwise globally
 let g:enwise_enable_globally = 1
