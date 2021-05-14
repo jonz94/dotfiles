@@ -34,3 +34,8 @@ silent! call plug#end()
 for s:file in split(globpath('~/dotfiles/nvim/settings', '*.vim'), '\n')
   exe 'source' s:file
 endfor
+
+" neovide specific setting
+if exists('g:neovide')
+  source $HOME/dotfiles/nvim/neovide.vim
+endif
