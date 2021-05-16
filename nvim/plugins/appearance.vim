@@ -19,16 +19,29 @@ if !exists('g:vscode')
   set t_ZR=[23m
   highlight Comment cterm=italic
 
-  " vim-airline
-  silent! Plug 'vim-airline/vim-airline'
-  let g:airline_theme = 'onedark'
-  let g:airline_extensions = ['branch', 'tabline', 'ctrlp']
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline_powerline_fonts = 1
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
+  if has('nvim-0.5')
+    " icons
+    silent! Plug 'kyazdani42/nvim-web-devicons'
+
+    " tabline
+    silent! Plug 'romgrk/barbar.nvim'
+
+    " status line
+    silent! Plug 'glepnir/galaxyline.nvim'
+  else
+    " icons
+    silent! Plug 'ryanoasis/vim-devicons'
+    " vim-airline
+    silent! Plug 'vim-airline/vim-airline'
+    let g:airline_theme = 'onedark'
+    let g:airline_extensions = ['branch', 'tabline', 'ctrlp']
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_powerline_fonts = 1
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+  endif
 
   " true colors
   if exists('+termguicolors')
