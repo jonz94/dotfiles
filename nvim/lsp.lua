@@ -69,7 +69,6 @@ local function setup_sumneko_lua()
   })
 end
 
-
 local function pre_setup()
   if vim.fn.has('win32') == 1 then -- 0: false, 1: true
     setup_vimls_for_windows()
