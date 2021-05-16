@@ -14,9 +14,6 @@ for s:file in split(globpath('~/dotfiles/nvim/plugins', '*.vim'), '\n')
   exe 'source' s:file
 endfor
 
-" vim-devicons
-silent! Plug 'ryanoasis/vim-devicons'
-
 silent! Plug 'editorconfig/editorconfig-vim'
 silent! Plug 'farmergreg/vim-lastplace'
 silent! Plug 'mattn/emmet-vim'
