@@ -45,21 +45,48 @@ local function setup_sumneko_lua_for_windows()
   })
 end
 
-local function pre_setup_for_windows()
-  setup_vimls_for_windows()
-  setup_sumneko_lua_for_windows()
+local function setup_sumneko_lua()
+  require'lspinstall/servers'.lua = vim.tbl_deep_extend('force', require'lspinstall/servers'.lua, {
+    default_config = {
+      settings = {
+        Lua = {
+          runtime = {
+            version = 'LuaJIT',
+            path = vim.split(package.path, ';'),
+          },
+          diagnostics = {
+            globals = { 'vim' },
+          },
+          workspace = {
+            library = {
+              [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+              [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+            },
+          },
+        },
+      },
+    },
+  })
+end
+
+
+local function pre_setup()
+  if vim.fn.has('win32') == 1 then -- 0: false, 1: true
+    setup_vimls_for_windows()
+    setup_sumneko_lua_for_windows()
+  else
+    setup_sumneko_lua()
+  end
 end
 
 local function setup_servers()
-  local installed_servers = require'lspinstall'.installed_servers()
+  local servers = require'lspinstall'.installed_servers()
 
-  if vim.fn.has('win32') == 1 then -- 0: false, 1: true
-    pre_setup_for_windows()
-  end
+  pre_setup()
 
   require'lspinstall'.setup()
 
-  for _, server in pairs(installed_servers) do
+  for _, server in pairs(servers) do
     require'lspconfig'[server].setup{}
   end
 end
