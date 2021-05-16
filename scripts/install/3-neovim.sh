@@ -5,15 +5,13 @@ if type nvim &> /dev/null; then
   exit 0
 fi
 
-if type apt-get &> /dev/null; then
+if type pkg &> /dev/null; then
+  pkg install -y neovim
+elif type apt-get &> /dev/null; then
   sudo apt install -y neovim
-fi
-
-if type brew &> /dev/null; then
+elif type brew &> /dev/null; then
   brew install neovim
-fi
-
-if type pacman &> /dev/null; then
+elif type pacman &> /dev/null; then
   yes | sudo pacman -S neovim
 fi
 
