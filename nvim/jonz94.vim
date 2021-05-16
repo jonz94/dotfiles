@@ -34,6 +34,10 @@ for s:file in split(globpath('~/dotfiles/nvim/settings', '*.vim'), '\n')
   exe 'source' s:file
 endfor
 
+if has('nvim-0.5')
+  luafile ~/dotfiles/nvim/lsp.lua
+endif
+
 " neovide specific setting
 if exists('g:neovide')
   source $HOME/dotfiles/nvim/neovide.vim
