@@ -23,16 +23,16 @@ backup() {
 setup_zsh() {
   echo 'Setting up zsh...'
 
-  rm $HOME/.zshenv
+  backup $HOME/.zshenv
   ln -s $HOME/dotfiles/zsh/zim/.zshenv $HOME/.zshenv
 
   backup $HOME/.zshrc
   echo "source $HOME/dotfiles/zsh/zim/.zshrc" > $HOME/.zshrc
 
-  rm $HOME/.zlogin
+  backup $HOME/.zlogin
   ln -s $HOME/dotfiles/zsh/zim/.zlogin $HOME/.zlogin
 
-  rm $HOME/.zimrc
+  backup $HOME/.zimrc
   ln -s $HOME/dotfiles/zsh/zim/.zimrc $HOME/.zimrc
 
   # setup local configurations for zsh
