@@ -12,3 +12,5 @@ set endofline
 set fixendofline
 set hlsearch
 set incsearch
+set splitbelow
+set splitright
