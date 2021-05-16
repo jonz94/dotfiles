@@ -19,7 +19,6 @@ silent! Plug 'ryanoasis/vim-devicons'
 
 silent! Plug 'editorconfig/editorconfig-vim'
 silent! Plug 'farmergreg/vim-lastplace'
-silent! Plug 'konfekt/fastfold'
 silent! Plug 'mattn/emmet-vim'
 silent! Plug 'matze/vim-move'
 silent! Plug 'mzlogin/vim-markdown-toc'
