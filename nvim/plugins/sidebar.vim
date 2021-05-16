@@ -4,46 +4,11 @@ if !exists('g:vscode')
   if has('nvim-0.5')
     silent! Plug 'kyazdani42/nvim-tree.lua'
 
-    " shows indent markers when folders are open
-    let g:nvim_tree_indent_markers = 1
-
-    " opens the tree when entering vim
-    let g:nvim_tree_auto_open = 0
-
-    " append a trailing slash to folder names
-    let g:nvim_tree_add_trailing = 1
-
-    " customize icon
-    let g:nvim_tree_icons = {
-          \ 'default': '',
-          \ 'symlink': '',
-          \ 'git': {
-            \   'unstaged': "",
-            \   'staged': "✓",
-            \   'unmerged': "",
-            \   'renamed': "",
-            \   'untracked': "",
-            \   'ignored': "",
-            \   },
-            \ 'folder': {
-              \   'default': "",
-              \   'open': "",
-              \   'empty': "",
-              \   'empty_open': "",
-              \   'symlink': "",
-              \   'symlink_open': "",
-              \   },
-              \   'lsp': {
-                \     'hint': "",
-                \     'info': "",
-                \     'warning': "",
-                \     'error': "",
-                \   },
-                \ }
+    luafile ~/dotfiles/nvim/plugins/sidebar.lua
 
     " key mappings
-    nnoremap <C-n> <cmd>NvimTreeToggle<CR>
-    nnoremap <leader>nr <cmd>NvimTreeRefresh<CR>
+    nnoremap <C-n> <Cmd>NvimTreeToggle<CR>
+    nnoremap <leader>nr <Cmd>NvimTreeRefresh<CR>
   else
     " main plugin
     silent! Plug 'preservim/nerdtree'
