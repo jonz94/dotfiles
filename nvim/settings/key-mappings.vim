@@ -43,7 +43,7 @@ nnoremap <C-q> :qall<CR>
 nnoremap <leader><Tab> :wq<CR>
 
 " quickly type :help<space>
-nnoremap <leader>h :help<space>
+nnoremap <leader>he :help<space>
 
 " edit current dir
 nnoremap <leader>e. :e<space>.<CR>
