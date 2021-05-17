@@ -11,6 +11,8 @@ elif type apt-get &> /dev/null; then
   sudo apt install -y neovim
 elif type brew &> /dev/null; then
   brew install neovim
+elif type apk &> /dev/null; then
+  apk add neovim
 elif type pacman &> /dev/null; then
   yes | sudo pacman -S neovim
 fi

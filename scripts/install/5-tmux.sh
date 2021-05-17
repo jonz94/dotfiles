@@ -11,6 +11,8 @@ elif type apt-get &> /dev/null; then
   sudo apt install -y tmux
 elif type brew &> /dev/null; then
   brew install tmux
+elif type apk &> /dev/null; then
+  apk add tmux
 elif type pacman &> /dev/null; then
   yes | sudo pacman -S tmux
 fi
