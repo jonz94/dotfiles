@@ -17,12 +17,14 @@ zmodule utility
 #
 # Prompt
 #
-# Exposes to prompts how long the last command took to execute, used by asciiship.
-zmodule duration-info
-# Exposes git repository status information to prompts, used by asciiship.
-zmodule git-info
-# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
-zmodule asciiship
+if [ `uname -r | grep -i ish` ]; then
+  # Exposes to prompts how long the last command took to execute, used by asciiship.
+  zmodule duration-info
+  # Exposes git repository status information to prompts, used by asciiship.
+  zmodule git-info
+  # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
+  zmodule asciiship
+fi
 
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions
@@ -40,7 +42,9 @@ zmodule zsh-users/zsh-history-substring-search
 # }}} End configuration added by Zim install
 
 # use powerlevel10k as prompt
-zmodule romkatv/powerlevel10k
+if [ `uname -r | grep -v -i ish` ]; then
+  zmodule romkatv/powerlevel10k
+fi
 
 # from oh-my-zsh
 zmodule ohmyzsh/ohmyzsh -s 'lib/directories.zsh'
