@@ -41,7 +41,7 @@ setup_zsh() {
   touch ~/dotfiles/local/theme.zsh
 
   echo 'Installing zsh modules...'
-  zsh -c "source ${HOME}/.zshrc && zimfw install"
+  zsh ~/.zim/zimf.zsh install
 
   # disable Powerlevel10k configuration wizard
   zsh -c "echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' >>! ~/.zshrc"
