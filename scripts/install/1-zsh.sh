@@ -11,6 +11,8 @@ elif type apt-get &> /dev/null; then
   sudo apt install -y zsh
 elif type brew &> /dev/null; then
   brew install zsh
+elif type apk &> /dev/null; then
+  apk add zsh
 elif type pacman &> /dev/null; then
   yes | sudo pacman -S zsh
 fi
