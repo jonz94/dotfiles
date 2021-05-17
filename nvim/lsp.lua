@@ -45,6 +45,15 @@ local function setup_sumneko_lua_for_windows()
   })
 end
 
+local function setup_tsserver_for_windows()
+  local config = require"lspinstall/util".extract_config("tsserver")
+  config.default_config.cmd[1] = "./node_modules/.bin/typescript-language-server.cmd"
+
+  require'lspinstall/servers'.typescript = vim.tbl_extend('error', config, {
+    install_script = 'npm init -y --scope=lspinstall && npm install typescript-language-server@latest typescript@latest',
+  })
+end
+
 local function setup_sumneko_lua()
   require'lspinstall/servers'.lua = vim.tbl_deep_extend('force', require'lspinstall/servers'.lua, {
     default_config = {
@@ -73,6 +82,7 @@ local function pre_setup()
   if vim.fn.has('win32') == 1 then -- 0: false, 1: true
     setup_vimls_for_windows()
     setup_sumneko_lua_for_windows()
+    setup_tsserver_for_windows()
   else
     setup_sumneko_lua()
   end
