@@ -9,4 +9,7 @@ else
   eval "`fnm env`"
 
   fnm install --lts
+
+  echo 'updating npm to latest version'
+  npm i -g npm@latest
 fi
