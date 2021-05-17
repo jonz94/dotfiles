@@ -10,6 +10,8 @@ else
 
   fnm install --lts
 
+  fnm alias lts-latest default
+
   echo 'updating npm to latest version'
   npm i -g npm@latest
 fi
