@@ -63,6 +63,9 @@ if !exists('g:vscode')
   " use one of ¦, ┆, │, ⎸, or ▏
   let g:indentLine_char = '│'
 
+  " do not show indent lines on these type of buffer
+  let g:indent_blankline_buftype_exclude = ['terminal', 'nofile', 'help']
+
   " make tabs, trailing whitespace, and non-breaking spaces visible
   set list
   set listchars=tab:→\ ,nbsp:.,trail:⋅,extends:❯,precedes:❮
