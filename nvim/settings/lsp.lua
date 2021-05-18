@@ -1,5 +1,5 @@
 -- ignore this file if neovim is running inside vscode
-if vim.fn.exists('g:vscode') == 1 then
+if vim.fn.exists('g:vscode') == 1 then -- 0: false, 1: true
   return
 end
 
@@ -46,8 +46,8 @@ local function setup_sumneko_lua_for_windows()
 end
 
 local function setup_tsserver_for_windows()
-  local config = require"lspinstall/util".extract_config("tsserver")
-  config.default_config.cmd[1] = "./node_modules/.bin/typescript-language-server.cmd"
+  local config = require'lspinstall/util'.extract_config('tsserver')
+  config.default_config.cmd[1] = './node_modules/.bin/typescript-language-server.cmd'
 
   require'lspinstall/servers'.typescript = vim.tbl_extend('error', config, {
     install_script = 'npm init -y --scope=lspinstall && npm install typescript-language-server@latest typescript@latest',
