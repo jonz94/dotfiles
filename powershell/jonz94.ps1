@@ -36,6 +36,14 @@ if ( $(scoop which fnm) ) {
   fnm env --use-on-cd | Out-String | Invoke-Expression
 }
 
+# Load zoxide
+if ( $(scoop which zoxide) ) {
+  Invoke-Expression (& {
+    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+    (zoxide init --hook $hook powershell) -join "`n"
+  })
+}
+
 # clear
 Set-Alias -Name c -Value Clear-Host
 

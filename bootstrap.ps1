@@ -83,6 +83,11 @@ if (-Not $(scoop which fnm) ) {
   scoop install fnm
 }
 
+# Install zoxide
+if (-Not $(scoop which zoxide) ) {
+  scoop install zoxide
+}
+
 # Install posh-git modules
 if (-Not $(Get-InstalledModule).Name.contains('posh-git') ) {
   Install-Module 'posh-git' -Scope CurrentUser
