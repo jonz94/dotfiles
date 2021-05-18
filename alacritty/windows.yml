@@ -15,9 +15,6 @@ font:
 colors:
   primary:
     background: '#000000'
-  cursor:
-    text: CellForeground
-    cursor: '#39c5bb'
   normal:
     black: '#000000'
 
