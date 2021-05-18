@@ -6,29 +6,29 @@ vim.g.nvim_tree_add_trailing = 1
 
 -- customize icon
 vim.g.nvim_tree_icons = {
-  default= '',
-  symlink= '',
+  default = '',
+  symlink = '',
   git= {
-    unstaged= "",
-    staged= "✓",
-    unmerged= "",
-    renamed= "",
-    untracked= "",
-    ignored= "",
+    unstaged = '',
+    staged = '✓',
+    unmerged = '',
+    renamed = '',
+    untracked = '',
+    ignored = '',
   },
   folder= {
-    default= "",
-    open= "",
-    empty= "",
-    empty_open= "",
-    symlink= "",
-    symlink_open= "",
+    default = '',
+    open = '',
+    empty = '',
+    empty_open = '',
+    symlink = '',
+    symlink_open = '',
   },
   lsp= {
-    hint= "",
-    info= "",
-    warning= "",
-    error= "",
+    hint = '',
+    info = '',
+    warning = '',
+    error = '',
   },
 }
 
