@@ -4,7 +4,13 @@ for s:file in split(globpath('~/dotfiles/nvim/presets', '*.vim'), '\n')
 endfor
 
 " vim-plug
-silent! call plug#begin('~/.local/share/nvim/plugged')
+if has('nvim-0.5')
+  silent! call plug#begin(stdpath('data') . '/plugged-nightly')
+elseif has('nvim')
+  silent! call plug#begin(stdpath('data') . '/plugged')
+else
+  silent! call plug#begin('~/.vim/plugged')
+endif
 
 if !exists('g:vscode')
   " run command inside vim asynchronously
