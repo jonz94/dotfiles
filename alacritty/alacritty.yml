@@ -197,9 +197,9 @@ colors:
   #
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
+  cursor:
+    text: CellForeground
+    cursor: '#39c5bb'
 
   # Vi mode cursor colors
   #
