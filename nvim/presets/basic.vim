@@ -1,4 +1,3 @@
-
 " basic
 set nocompatible
 set autoindent
@@ -14,3 +13,6 @@ set hlsearch
 set incsearch
 set splitbelow
 set splitright
+set scrolloff=3
+set ignorecase
+set smartcase
