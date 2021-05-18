@@ -53,15 +53,15 @@ if exists('g:neovide')
 endif
 
 " use pwsh or powershell as default shell on windows environment
-if has('win32')
-  if executable('pwsh')
-    let &shell = 'pwsh'
-  else
-    let &shell = 'powershell'
-  endif
-  set shellquote=
-  set shellpipe=\|
-  set shellxquote=
-  set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
-  set shellredir=\|\ Out-File\ -Encoding\ UTF8
-endif
+"if has('win32')
+"  if executable('pwsh')
+"    let &shell = 'pwsh'
+"  else
+"    let &shell = 'powershell'
+"  endif
+"  set shellquote=
+"  set shellpipe=\|
+"  set shellxquote=
+"  set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
+"  set shellredir=\|\ Out-File\ -Encoding\ UTF8
+"endif
