@@ -1,4 +1,4 @@
-﻿# UTF-8 for printing
+# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Fix git log output encoding issues
@@ -8,7 +8,9 @@ $Env:LC_ALL = 'C.UTF-8'
 
 # Oh My Powershell 3
 # https://github.com/JanDeDobbeleer/oh-my-posh3
-Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powershell/jonz94.omp.json)
+if ( $(scoop which oh-my-posh) ) {
+  Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powershell/jonz94.omp.json)
+}
 
 # Use Emacs mode, just like unix-y environment
 Set-PSReadlineOption -EditMode Emacs
@@ -25,10 +27,14 @@ Set-PSReadlineKeyHandler -Key Ctrl+V -Function Paste
 # Powershell Module for fzf
 Remove-PSReadlineKeyHandler 'Ctrl+t'
 Remove-PSReadlineKeyHandler 'Ctrl+r'
-Import-Module PSFzf
+if ( $(Get-InstalledModule).Name.contains('PSFzf') ) {
+  Import-Module PSFzf
+}
 
 # Load fnm
-fnm env --use-on-cd | Out-String | Invoke-Expression
+if ( $(scoop which fnm) ) {
+  fnm env --use-on-cd | Out-String | Invoke-Expression
+}
 
 # clear
 Set-Alias -Name c -Value Clear-Host
