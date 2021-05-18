@@ -56,8 +56,6 @@ gls.left[l] = {
     provider = function() return '  ' end,
     condition = condition.check_git_workspace,
     highlight = { colors.violet, colors.bg, 'bold' },
-    separator = ' ',
-    separator_highlight = { 'NONE', colors.bg },
   },
 }
 
