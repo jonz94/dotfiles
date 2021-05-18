@@ -43,7 +43,7 @@ endif
 
 " neovide specific setting
 if exists('g:neovide')
-  source $HOME/dotfiles/nvim/neovide.vim
+  source $HOME/dotfiles/nvim/jonz94.gvim
 endif
 
 " use pwsh or powershell as default shell on windows environment
