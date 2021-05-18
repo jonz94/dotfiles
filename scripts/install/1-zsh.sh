@@ -1,6 +1,6 @@
 echo 'installing zsh...'
 
-if type nvim &> /dev/null; then
+if type zsh &> /dev/null; then
   echo 'zsh has been installed, skip installation.'
   exit 0
 fi
