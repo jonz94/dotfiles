@@ -45,6 +45,7 @@ endfor
 if has('nvim-0.5')
   luafile ~/dotfiles/nvim/settings/lsp.lua
   luafile ~/dotfiles/nvim/settings/galaxyline.lua
+  luafile ~/dotfiles/nvim/settings/tree-sitter.lua
 endif
 
 " neovide specific setting
