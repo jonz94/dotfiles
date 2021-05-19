@@ -1,12 +1,7 @@
 " fix input method issue
 
-if has('mac') && filereadable('/usr/local/lib/libxkbswitch.dylib')
-  " xkb-switch for macOS
-  silent! Plug 'lyokha/vim-xkbswitch'
-  let g:XkbSwitchEnabled = 1
-  let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.dylib'
-elseif has('unix')
-  " barbaric for Linux
+if has('unix')
+  " vim-barbaric for Linux or macOS
   silent! Plug 'rlue/vim-barbaric'
 elseif has('win64') && filereadable('C:\Windows\System32\libxkbswitch64.dll')
   " xkb-switch for 64-bits Windows
