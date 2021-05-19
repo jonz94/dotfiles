@@ -10,6 +10,9 @@ if !exists('g:vscode')
   " show cursor line
   set cursorline
 
+  " always show sign column
+  set signcolumn=yes
+
   " onedark theme
   silent! Plug 'joshdick/onedark.vim'
 
