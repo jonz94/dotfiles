@@ -15,9 +15,7 @@ else
 fi
 
 # add ~/.local/bin to $PATH
-if [ -d ${HOME}/.local/bin ]; then
-  export PATH="${HOME}/.local/bin:${PATH}"
-fi
+export PATH="${HOME}/.local/bin:${PATH}"
 
 # bat
 if type bat &> /dev/null; then
