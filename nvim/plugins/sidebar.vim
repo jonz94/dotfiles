@@ -1,34 +1,37 @@
 " sidebar
 
-if !exists('g:vscode')
-  if has('nvim-0.5')
-    silent! Plug 'kyazdani42/nvim-tree.lua'
+" ignore this file if neovim is running inside vscode
+if exists('g:vscode')
+  finish
+endif
 
-    luafile ~/dotfiles/nvim/plugins/sidebar.lua
+if has('nvim-0.5')
+  silent! Plug 'kyazdani42/nvim-tree.lua'
 
-    " key mappings
-    nnoremap <C-n> <Cmd>NvimTreeToggle<CR>
-    nnoremap <leader>nr <Cmd>NvimTreeRefresh<CR>
-  else
-    " main plugin
-    silent! Plug 'preservim/nerdtree'
+  luafile ~/dotfiles/nvim/plugins/sidebar.lua
 
-    " git plugin
-    silent! Plug 'Xuyuanp/nerdtree-git-plugin'
+  " key mappings
+  nnoremap <C-n> <Cmd>NvimTreeToggle<CR>
+  nnoremap <leader>nr <Cmd>NvimTreeRefresh<CR>
+else
+  " main plugin
+  silent! Plug 'preservim/nerdtree'
 
-    " syntax highlight plugin
-    silent! Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  " git plugin
+  silent! Plug 'Xuyuanp/nerdtree-git-plugin'
 
-    " enable line numbers
-    let NERDTreeShowLineNumbers=1
+  " syntax highlight plugin
+  silent! Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-    " make sure relative line numbers are used
-    autocmd FileType nerdtree setlocal number relativenumber
+  " enable line numbers
+  let NERDTreeShowLineNumbers=1
 
-    " open NERDTree when entering neovim and put the cursor back in the other window.
-    autocmd VimEnter * NERDTree | wincmd p
+  " make sure relative line numbers are used
+  autocmd FileType nerdtree setlocal number relativenumber
 
-    " key mappings
-    map <C-n> :NERDTreeToggle<CR>
-  endif
+  " open NERDTree when entering neovim and put the cursor back in the other window.
+  autocmd VimEnter * NERDTree | wincmd p
+
+  " key mappings
+  map <C-n> :NERDTreeToggle<CR>
 endif
