@@ -29,9 +29,6 @@ else
   " make sure relative line numbers are used
   autocmd FileType nerdtree setlocal number relativenumber
 
-  " open NERDTree when entering neovim and put the cursor back in the other window.
-  autocmd VimEnter * NERDTree | wincmd p
-
   " key mappings
   map <C-n> :NERDTreeToggle<CR>
 endif
