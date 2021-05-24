@@ -6,8 +6,8 @@
 $Env:LESSCHARSET = 'utf-8'
 $Env:LC_ALL = 'C.UTF-8'
 
-# Oh My Powershell 3
-# https://github.com/JanDeDobbeleer/oh-my-posh3
+# Oh My Powershell
+# https://github.com/JanDeDobbeleer/oh-my-posh
 # enable posh-git module
 $env:POSH_GIT_ENABLED = $true
 if ( $(scoop which oh-my-posh) ) {
