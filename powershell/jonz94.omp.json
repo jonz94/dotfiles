@@ -30,21 +30,25 @@
           "foreground": "#343A43",
           "background": "#A7CB8B",
           "properties": {
-            "branch_icon": "\uF126 ",
-            "local_staged_icon": " \uF046 ",
-            "local_working_icon": " \uF044 ",
+            "display_status": true,
+            "display_status_detail": true,
+            "display_stash_count": true,
+            "branch_icon": " ",
+            "local_working_icon": "  ",
+            "local_staged_icon": "  ",
             "stash_count_icon": "\u25CF ",
-            "tag_icon": "\uF412 "
+            "tag_icon": "\uF412 ",
+            "display_upstream_icon": true,
+            "github_icon": "  ",
+            "git_icon": " "
           }
         }
       ]
     },
     {
-      "type": "newline"
-    },
-    {
       "type": "prompt",
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
           "type": "text",
