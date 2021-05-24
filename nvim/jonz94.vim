@@ -3,14 +3,23 @@ for s:file in split(globpath('~/dotfiles/nvim/presets', '*.vim'), '\n')
   exe 'source' s:file
 endfor
 
-" vim-plug
+" setup path where vim-plug install plugins
 if has('nvim-0.5')
-  silent! call plug#begin(stdpath('data') . '/plugged-nightly')
+  " seperate install location for normal neovim and nightly neovim
+  " because most of bleeding edge plugins only support neovim nightly
+  let s:plugins_install_path = stdpath('data') . '/plugged-nightly'
 elseif has('nvim')
-  silent! call plug#begin(stdpath('data') . '/plugged')
+  let s:plugins_install_path = stdpath('data') . '/plugged'
+elseif has('unix')
+  " on Linux and macOS, make vim-plug install plugins at ~/.vim for vim
+  let s:plugins_install_path = '~/.vim/plugged'
 else
-  silent! call plug#begin('~/.vim/plugged')
+  " on Windows, make vim-plug install plugins at ~/vimfiles for vim
+  let s:plugins_install_path = '~/vimfiles/plugged'
 endif
+
+" vim-plug
+silent! call plug#begin(s:plugins_install_path)
 
 if !exists('g:vscode')
   " run command inside vim asynchronously
