@@ -44,6 +44,11 @@ endif
 
 silent! Plug 'tpope/vim-repeat'
 silent! Plug 'tpope/vim-surround'
+
+if has('nvim-0.5')
+  silent! Plug 'famiu/nvim-reload'
+endif
+
 silent! call plug#end()
 
 " import separate configurations inside plugins diretory
