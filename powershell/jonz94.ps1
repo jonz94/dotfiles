@@ -1,4 +1,4 @@
-﻿# UTF-8 for printing
+# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Fix git log output encoding issues
@@ -8,6 +8,8 @@ $Env:LC_ALL = 'C.UTF-8'
 
 # Oh My Powershell 3
 # https://github.com/JanDeDobbeleer/oh-my-posh3
+# enable posh-git module
+$env:POSH_GIT_ENABLED = $true
 if ( $(scoop which oh-my-posh) ) {
   Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powershell/jonz94.omp.json)
 }
