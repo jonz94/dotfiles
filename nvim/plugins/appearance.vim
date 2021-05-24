@@ -41,7 +41,13 @@ else
   " vim-airline
   silent! Plug 'vim-airline/vim-airline'
   let g:airline_theme = 'onedark'
-  let g:airline_extensions = ['branch', 'tabline', 'ctrlp']
+
+  if has('nvim')
+    let g:airline_extensions = ['branch', 'tabline']
+  else
+    let g:airline_extensions = ['branch', 'tabline', 'ctrlp']
+  endif
+
   let g:airline#extensions#tabline#enabled = 1
   let g:airline_powerline_fonts = 1
   let g:airline_left_sep = ''
