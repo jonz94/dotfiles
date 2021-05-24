@@ -1,14 +1,15 @@
 " language server protocol
 
-" ignore this file if neovim is running inside vscode
-if exists('g:vscode')
+" ignore this file if neovim is running inside vscode or neovim is not 0.5+
+if exists('g:vscode') || !has('nvim-0.5')
   finish
 endif
 
-if has('nvim-0.5')
-  " main plugin
-  silent! Plug 'neovim/nvim-lspconfig'
+" main plugin
+silent! Plug 'neovim/nvim-lspconfig'
 
-  " automatic install languague server
-  silent! Plug 'jonz94/nvim-lspinstall', { 'branch': 'windows' }
-endif
+" automatically install languague server
+silent! Plug 'jonz94/nvim-lspinstall', { 'branch': 'windows' }
+
+" automatically change the current working directory
+silent! Plug 'ahmedkhalf/lsp-rooter.nvim'
