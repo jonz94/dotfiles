@@ -66,18 +66,33 @@ endif
 " indentLine setting
 if has('nvim-0.5')
   silent! Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+
+  " do not show indent lines on these type of file
+  let g:indent_blankline_filetype_exclude = ['dashboard']
+
+  " do not show indent lines on these type of buffer
+  let g:indent_blankline_buftype_exclude = ['terminal', 'nofile', 'help']
 elseif has('nvim')
   silent! Plug 'Yggdroot/indentLine'
   silent! Plug 'lukas-reineke/indent-blankline.nvim'
+
+  " do not show indent lines on these type of file
+  let g:indentLine_fileTypeExclude = ['dashboard']
+
+  " do not show indent lines on these type of buffer
+  let g:indentLine_bufTypeExclude = ['terminal', 'nofile', 'help']
 else
   silent! Plug 'Yggdroot/indentLine'
+
+  " do not show indent lines on these type of file
+  let g:indentLine_fileTypeExclude = ['startify']
+
+  " do not show indent lines on these type of buffer
+  let g:indentLine_bufTypeExclude = ['terminal', 'nofile', 'help']
 endif
 
 " use one of ¦, ┆, │, ⎸, or ▏
 let g:indentLine_char = '│'
-
-" do not show indent lines on these type of buffer
-let g:indent_blankline_buftype_exclude = ['terminal', 'nofile', 'help']
 
 " make tabs, trailing whitespace, and non-breaking spaces visible
 set list
