@@ -60,7 +60,7 @@ if has('nvim-0.5')
   luafile ~/dotfiles/nvim/settings/lsp.lua
   luafile ~/dotfiles/nvim/settings/galaxyline.lua
   luafile ~/dotfiles/nvim/settings/tree-sitter.lua
-  lua require('neoscroll').setup()
+  luafile ~/dotfiles/nvim/settings/neoscroll.lua
 endif
 
 " neovide specific setting
