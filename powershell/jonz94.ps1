@@ -163,10 +163,6 @@ function gcb { git checkout -b $args }
 
 function gcl { git clone --recurse-submodules $args }
 
-Remove-Item Alias:\gcm -Force *> $null
-function gcm { git checkout main $args }
-function gcM { git checkout master $args }
-
 function gcmsg { git commit -m $args }
 
 function gco { git checkout $args }
@@ -323,6 +319,13 @@ if ( $HOST.Version.Major -ge 7 ) {
   function gpoat {
     if ( $(git push origin --all) ) {
       git push origin --tags
+    }
+  }
+
+  Remove-Item Alias:\gcm -Force *> $null
+  function gcm {
+    if (-Not $(git checkout main $args) ) {
+      git checkout master $args
     }
   }
 
