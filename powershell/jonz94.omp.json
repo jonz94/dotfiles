@@ -6,27 +6,36 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "session",
-          "style": "diamond",
-          "foreground": "#EACA8D",
+          "type": "root",
+          "style": "plain",
+          "foreground": "#ffff66",
           "background": "#343A43",
-          "trailing_diamond": "\uE0B0"
+          "properties": {
+            "root_icon": "",
+            "postfix": ""
+          }
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "foreground": "#EACA8D",
+          "background": "#343A43"
         },
         {
           "type": "path",
           "style": "powerline",
-          "powerline_symbol": "\uE0B0",
+          "powerline_symbol": "",
           "foreground": "#343A43",
           "background": "#71BDF2",
           "properties": {
             "style": "agnoster_full",
-            "prefix": " \uF07C  "
+            "prefix": "   "
           }
         },
         {
           "type": "git",
           "style": "powerline",
-          "powerline_symbol": "\uE0B0",
+          "powerline_symbol": "",
           "foreground": "#343A43",
           "background": "#A7CB8B",
           "properties": {
@@ -36,11 +45,37 @@
             "branch_icon": " ",
             "local_working_icon": "  ",
             "local_staged_icon": "  ",
-            "stash_count_icon": "\u25CF ",
-            "tag_icon": "\uF412 ",
+            "stash_count_icon": "● ",
+            "tag_icon": "​ ",
             "display_upstream_icon": true,
             "github_icon": "  ",
             "git_icon": " "
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "exit",
+          "style": "plain",
+          "foreground": "#ffffff",
+          "properties": {
+            "display_exit_code": true,
+            "always_enabled": false,
+            "error_color": "#e91e63",
+            "color_background": true
+          }
+        },
+        {
+          "type": "battery",
+          "style": "plain",
+          "foreground": "#ffffff",
+          "background": "#343A43",
+          "properties": {
+            "postfix": "% "
           }
         }
       ]
@@ -65,10 +100,9 @@
           "type": "text",
           "style": "plain",
           "foreground": "#FFFFFF",
-          "background": "#000000",
           "properties": {
             "prefix": "",
-            "text": "\uE0B0",
+            "text": "",
             "postfix": ""
           }
         }
