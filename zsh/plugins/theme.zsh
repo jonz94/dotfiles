@@ -21,6 +21,9 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RAM_BACKGROUND='black'
 POWERLEVEL9K_RAM_FOREGROUND='249'
 
+# remove extra space of the right prompt
+ZLE_RPROMPT_INDENT=0
+
 if [ `uname -r | grep -i microsoft` ] ; then
   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
 else
