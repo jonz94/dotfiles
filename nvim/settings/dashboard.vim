@@ -17,6 +17,19 @@ elseif has('nvim')
   let g:dashboard_session_directory = stdpath('data') . '/dashboard-sessions'
 endif
 
+" customize header
+let g:dashboard_custom_header = [
+      \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+      \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+      \ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+      \ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+      \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+      \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+      \]
+
+" customize footer
+let g:dashboard_custom_footer = []
+
 " key mappings
 nnoremap <leader>ss :<C-u>SessionSave<CR>
 nnoremap <leader>sl :<C-u>SessionLoad<CR>
