@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GIT_NAME=${GIT_NAME:-"jonz94"}
-GIT_MAIL=${GIT_MAIL:-:"jody16888@gmail.com"}
+GIT_MAIL=${GIT_MAIL:-"jody16888@gmail.com"}
 
 install() {
   for INSTALL_SCRIPT in ~/dotfiles/scripts/install/*.sh; do
