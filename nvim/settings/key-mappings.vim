@@ -7,10 +7,6 @@
 "vnoremap  :  ;
 "vnoremap  ;  :
 
-" press Enter to quickly enter command mode
-nnoremap <CR> :
-nnoremap <S-CR> <CR>
-
 if exists('g:vscode')
   nnoremap <leader>w <cmd>Write<CR>
 else
@@ -38,9 +34,6 @@ else
   " map `Q` as `quit file`
   " note: we can still enter ex mode via `gQ`
   nnoremap Q :q<CR>
-
-  " map `ctrl` + `Q` as `quit all`
-  nnoremap <C-q> :qall<CR>
 
   " write and quit
   nnoremap <leader><Tab> :wq<CR>
