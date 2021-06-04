@@ -104,10 +104,10 @@ PS> sudo net stop LxssManager
 
 ```bash
 # via https
-$ git clone --depth 1 https://gitlab.com/jonz94/dotfiles.git ~/dotfiles
+$ git clone --depth 1 https://github.com/jonz94/dotfiles.git ~/dotfiles
 
 # via ssh
-$ git clone --depth 1 git@gitlab.com:jonz94/dotfiles.git ~/dotfiles
+$ git clone --depth 1 git@github.com:jonz94/dotfiles.git ~/dotfiles
 ```
 
 * run `bootstrap.sh` via `bash`
@@ -132,10 +132,10 @@ $ umask 0022
 
 ```bash
 # via https
-PS> git clone --depth 1 https://gitlab.com/jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
+PS> git clone --depth 1 https://github.com/jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
 
 # via ssh
-PS> git clone --depth 1 git@gitlab.com:jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
+PS> git clone --depth 1 git@github.com:jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
 ```
 
 * **In WSL 1**, create a symbolic link via following command:
@@ -164,7 +164,7 @@ $ cd ~/dotfiles && bash bootstrap.sh
 
 ```powershell
 # via https
-PS> git clone --depth 1 https://gitlab.com/jonz94/dotfiles.git $HOME\dotfiles
+PS> git clone --depth 1 https://github.com/jonz94/dotfiles.git $HOME\dotfiles
 ```
 
 * Run or double-click `bootstrap.ps1` script
