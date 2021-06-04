@@ -3,6 +3,8 @@
 alias c='clear'
 alias echopath='echo $PATH | tr ":" "\n"'
 alias h='history | less'
+alias l='ls -lhF'
+alias la='ls -AlhF'
 alias ll='ls -alhF'
 alias m='make'
 alias now='date +"%Y-%m-%d %H:%M:%S"'
