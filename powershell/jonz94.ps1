@@ -29,7 +29,7 @@ Set-PSReadlineKeyHandler -Key Ctrl+V -Function Paste
 # Powershell Module for fzf
 Remove-PSReadlineKeyHandler 'Ctrl+t'
 Remove-PSReadlineKeyHandler 'Ctrl+r'
-if ( $(Get-InstalledModule).Name.contains('PSFzf') ) {
+if ( $(Get-InstalledModule) -and $(Get-InstalledModule).Name.contains('PSFzf') ) {
   Import-Module PSFzf
 }
 

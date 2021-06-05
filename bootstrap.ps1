@@ -89,12 +89,12 @@ if (-not $(scoop which zoxide)) {
 }
 
 # Install posh-git modules
-if (-not $(Get-InstalledModule).Name.contains('posh-git')) {
+if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contains('posh-git')) ) {
   Install-Module 'posh-git' -Scope CurrentUser
 }
 
 # Install PSFzf modules
-if (-not $(Get-InstalledModule).Name.contains('PSFzf')) {
+if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contains('PSFzf')) ) {
   Install-Module 'PSFzf' -Scope CurrentUser
 }
 
