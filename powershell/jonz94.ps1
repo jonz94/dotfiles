@@ -324,7 +324,7 @@ if ( $HOST.Version.Major -ge 7 ) {
 
   Remove-Item Alias:\gcm -Force *> $null
   function gcm {
-    if (-Not $(git checkout main $args) ) {
+    if (-not $(git checkout main $args)) {
       git checkout master $args
     }
   }
