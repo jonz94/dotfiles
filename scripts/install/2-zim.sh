@@ -23,11 +23,7 @@ backup $HOME/.zimrc
 
 URL='https://raw.githubusercontent.com/zimfw/install/master/install.zsh'
 
-if [ `uname -r | grep -i microsoft` ]; then
-  curl.exe -fsSL $URL | zsh
-else
-  curl -fsSL $URL | zsh
-fi
+curl -fsSL $URL | zsh
 
 # remove templates provides by zimfw installer
 rm $HOME/.zshenv $HOME/.zshrc $HOME/.zlogin $HOME/.zimrc
