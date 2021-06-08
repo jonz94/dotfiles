@@ -48,7 +48,7 @@ fi
 
 # from oh-my-zsh
 zmodule ohmyzsh/ohmyzsh -s 'lib/directories.zsh'
-zmodule ohmyzsh/ohmyzsh -s 'lib/git.zsh'
-zmodule ohmyzsh/ohmyzsh -s 'lib/grep.zsh'
-zmodule ohmyzsh/ohmyzsh -s 'lib/theme-and-appearance.zsh'
-zmodule ohmyzsh/ohmyzsh -s 'plugins/git/git.plugin.zsh'
+zmodule ohmyzsh/ohmyzsh -z -s 'lib/git.zsh'
+zmodule ohmyzsh/ohmyzsh -z -s 'lib/grep.zsh'
+zmodule ohmyzsh/ohmyzsh -z -s 'lib/theme-and-appearance.zsh'
+zmodule ohmyzsh/ohmyzsh -z -s 'plugins/git/git.plugin.zsh'
