@@ -12,9 +12,9 @@ else
   alias vim='vi'
 fi
 
-alias vd='vim $HOME/dotfiles'
-alias vz='vim $DOTS/local/local.zsh'
-alias vv='vim $DOTS/nvim/jonz94.vim'
+alias vd="vim -c 'cd ${DOTS}' ${DOTS}"
+alias vz="vim -c 'cd ${DOTS}' ${DOTS}/local/local.zsh"
+alias vv="vim -c 'cd ${DOTS}' ${DOTS}/nvim/jonz94.vim"
 
 # With sudo
 alias sv.='sudo vim .'
