@@ -1,0 +1,17 @@
+#!/bin/bash
+
+rm -f /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+
+echo "Start downloading..."
+curl --silent "https://api.github.com/repos/jonz94/Sarasa-Mono-TC-Nerd-Font/releases/latest" | \
+  grep "browser_download_url.*Sarasa-Mono-TC-Nerd-Font-Complete.ttf" | \
+  cut -d '"' -f 4 | \
+  xargs curl -L -o /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+
+if [ `uname` = "Linux" ]; then
+  echo "Installing..."
+  rm -f ~/.local/share/fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+  mv /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf ~/.local/share/fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+fi
+
+echo "🎉 Done!"
