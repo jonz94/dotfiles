@@ -22,4 +22,9 @@ if type bat &> /dev/null; then
   export BAT_CONFIG_PATH=${DOTS}/shell/bat.conf
 fi
 
+# paru
+if type paru &> /dev/null; then
+  export PARU_CONF=${DOTS}/shell/paru.conf
+fi
+
 export LANG=en_US.UTF-8
