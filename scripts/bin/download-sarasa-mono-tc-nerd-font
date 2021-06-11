@@ -8,10 +8,13 @@ curl --silent "https://api.github.com/repos/jonz94/Sarasa-Mono-TC-Nerd-Font/rele
   cut -d '"' -f 4 | \
   xargs curl -L -o /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
 
+echo "Installing..."
 if [ `uname` = "Linux" ]; then
-  echo "Installing..."
   rm -f ~/.local/share/fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
   mv /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf ~/.local/share/fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+else
+  rm -f ~/Library/Fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+  mv /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf ~/Library/Fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
 fi
 
 echo "🎉 Done!"
