@@ -55,6 +55,8 @@ local function setup_tsserver_for_windows()
 end
 
 local function setup_sumneko_lua()
+  local is_awesome_wm_exist = vim.fn.executable('awesome')
+
   require'lspinstall/servers'.lua = vim.tbl_deep_extend('force', require'lspinstall/servers'.lua, {
     default_config = {
       settings = {
@@ -64,12 +66,13 @@ local function setup_sumneko_lua()
             path = vim.split(package.path, ';'),
           },
           diagnostics = {
-            globals = { 'vim' },
+            globals = is_awesome_wm_exist and { 'vim', 'awesome', 'client', 'root', 'screen' } or { 'vim' },
           },
           workspace = {
             library = {
               [vim.fn.expand('$VIMRUNTIME/lua')] = true,
               [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+              ['/usr/share/awesome/lib'] = is_awesome_wm_exist,
             },
           },
         },
