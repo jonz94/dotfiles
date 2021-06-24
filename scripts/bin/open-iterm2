@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# detects if iTerm2 is running
+if ! pgrep -f "iTerm" > /dev/null 2>&1; then
+  # open a new iTerm2 instance
+  open -a "/Applications/iTerm.app"
+else
+  # create a new window from existed iTerm2 instance
+  osascript -e 'tell application "iTerm2" to create window with default profile'
+fi
