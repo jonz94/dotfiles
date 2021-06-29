@@ -20,15 +20,3 @@ alias vv="vim -c 'cd ${DOTS}' ${DOTS}/nvim/jonz94.vim"
 alias sv.='sudo vim .'
 alias sv,='sudo vim .'
 alias sv='sudo vim'
-
-v. () {
-  if [ -f Session.vim ]; then
-    vim -S Session.vim
-  else
-    vim .
-  fi
-}
-
-v, () { v. }
-
-vs () { v. }
