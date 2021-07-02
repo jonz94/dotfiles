@@ -1,11 +1,6 @@
 ﻿# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-# Fix git log output encoding issues
-# Credit: https://stackoverflow.com/questions/41139067/git-log-output-encoding-issues-on-windows-10-command-prompt
-$Env:LESSCHARSET = 'utf-8'
-$Env:LC_ALL = 'C.UTF-8'
-
 # Oh My Powershell
 # https://github.com/JanDeDobbeleer/oh-my-posh
 # enable posh-git module
