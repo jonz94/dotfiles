@@ -1,6 +1,9 @@
 ﻿# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
+# Disable less history file
+$env:LESSHISTFILE = '-'
+
 # Oh My Powershell
 # https://github.com/JanDeDobbeleer/oh-my-posh
 # enable posh-git module
