@@ -17,6 +17,9 @@ fi
 # add ~/.local/bin to $PATH
 export PATH="${HOME}/.local/bin:${PATH}"
 
+# Disable less history file
+export LESSHISTFILE=-
+
 # bat
 if type bat &> /dev/null; then
   export BAT_CONFIG_PATH=${DOTS}/shell/bat.conf
