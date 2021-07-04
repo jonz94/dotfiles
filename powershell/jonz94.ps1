@@ -72,6 +72,16 @@ function trash { Start-Process shell:RecycleBinFolder }
 # cd to dotfiles
 function dot { Set-Location $HOME\dotfiles }
 
+# make a directory and then cd into it
+function take {
+  if ($args.length -lt 1) {
+    return
+  }
+
+  New-Item -ItemType Directory -ErrorAction SilentlyContinue $args[0]
+  Set-Location $args[0]
+}
+
 # kill process
 function pkill { taskkill.exe /IM $args }
 
