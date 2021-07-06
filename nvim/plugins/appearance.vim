@@ -65,7 +65,7 @@ endif
 
 " indentLine setting
 if has('nvim-0.5')
-  silent! Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+  silent! Plug 'lukas-reineke/indent-blankline.nvim'
 
   " do not show indent lines on these type of file
   let g:indent_blankline_filetype_exclude = ['dashboard']
