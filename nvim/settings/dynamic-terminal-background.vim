@@ -20,7 +20,7 @@ if has('mac')
 endif
 
 " for WSL using Windows Terminal
-if has('wsl')
+if has('wsl') || system('uname -r | grep -i microsoft')
   let s:settings = expand('/mnt/c/Users/' . $USER . '/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json')
   if filereadable(s:settings)
     autocmd VimEnter * :call system('sed -i "s/121212/282c34/g" ' . s:settings)
