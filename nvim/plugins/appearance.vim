@@ -18,13 +18,20 @@ set cursorline
 set signcolumn=yes
 
 " onedark theme
-silent! Plug 'joshdick/onedark.vim'
+if has('nvim-0.5')
+  silent! Plug 'navarasu/onedark.nvim'
 
-" italic comment
-let g:onedark_terminal_italics = 1
-set t_ZH=[3m
-set t_ZR=[23m
-highlight Comment cterm=italic
+  " italic comment
+  let g:onedark_terminal_italics = 1
+else
+  silent! Plug 'joshdick/onedark.vim'
+
+  " italic comment
+  let g:onedark_terminal_italics = 1
+  set t_ZH=[3m
+  set t_ZR=[23m
+  highlight Comment cterm=italic
+endif
 
 if has('nvim-0.5')
   " icons
