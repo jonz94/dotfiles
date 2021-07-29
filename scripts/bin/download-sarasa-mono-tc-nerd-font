@@ -1,22 +1,27 @@
 #!/bin/bash
 
-rm -f /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+set -e
+
+rm -f /tmp/sarasa-mono-tc-nerd-font.zip
 
 echo "Start downloading..."
 curl --silent "https://api.github.com/repos/jonz94/Sarasa-Mono-TC-Nerd-Font/releases/latest" | \
-  grep "browser_download_url.*Sarasa-Mono-TC-Nerd-Font-Complete.ttf" | \
+  grep "browser_download_url.*sarasa-mono-tc-nerd-font.zip" | \
+  head -n 1 | \
   cut -d '"' -f 4 | \
-  xargs curl -L -o /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+  xargs curl -L -o /tmp/sarasa-mono-tc-nerd-font.zip
+
+unzip -d /tmp /tmp/sarasa-mono-tc-nerd-font.zip
 
 echo "Installing..."
 if [ `uname` = "Linux" ]; then
-  rm -f ~/.local/share/fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+  find /tmp -name 'sarasa-mono-tc-*-nerd-font.ttf' 2>/dev/null | cut -d '/' -f 3 | xargs -I {} rm -f ~/.local/share/fonts/{}
   mkdir -p ~/.local/share/fonts
-  mv /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf ~/.local/share/fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+  find /tmp -name 'sarasa-mono-tc-*-nerd-font.ttf' 2>/dev/null | xargs -I {} mv {} ~/.local/share/fonts
 else
-  rm -f ~/Library/Fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+  find /tmp -name 'sarasa-mono-tc-*-nerd-font.ttf' 2>/dev/null | cut -d '/' -f 3 | xargs -I {} rm -f ~/Library/Fonts/{}
   mkdir -p ~/Library/Fonts
-  mv /tmp/Sarasa-Mono-TC-Nerd-Font-Complete.ttf ~/Library/Fonts/Sarasa-Mono-TC-Nerd-Font-Complete.ttf
+  find /tmp -name 'sarasa-mono-tc-*-nerd-font.ttf' 2>/dev/null | xargs -I {} mv {} ~/Library/Fonts/{}
 fi
 
 echo "🎉 Done!"
