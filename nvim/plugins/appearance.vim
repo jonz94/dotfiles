@@ -41,7 +41,7 @@ if has('nvim-0.5')
   silent! Plug 'romgrk/barbar.nvim'
 
   " status line
-  silent! Plug 'glepnir/galaxyline.nvim'
+  silent! Plug 'hoob3rt/lualine.nvim'
 else
   " icons
   silent! Plug 'ryanoasis/vim-devicons'
