@@ -22,7 +22,7 @@ if ! type curl &> /dev/null; then
   elif type apk &> /dev/null; then
     apk add curl
   elif type pacman &> /dev/null; then
-    yes | sudo pacman -s curl
+    yes | sudo pacman -S curl
   fi
 fi
 
@@ -34,6 +34,8 @@ if ! type unzip &> /dev/null; then
     sudo apt install -y unzip
   elif type apk &> /dev/null; then
     apk add unzip
+  elif type pacman &> /dev/null; then
+    yes | sudo pacman -S unzip
   fi
 fi
 
