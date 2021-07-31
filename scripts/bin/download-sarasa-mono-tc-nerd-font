@@ -19,9 +19,9 @@ if [ `uname` = "Linux" ]; then
   mkdir -p ~/.local/share/fonts
   find /tmp -name 'sarasa-mono-tc-*-nerd-font.ttf' 2>/dev/null | xargs -I {} mv {} ~/.local/share/fonts
 else
-  find /tmp -name 'sarasa-mono-tc-*-nerd-font.ttf' 2>/dev/null | cut -d '/' -f 3 | xargs -I {} rm -f ~/Library/Fonts/{}
+  find -L /tmp -name 'sarasa-mono-tc-*-nerd-font.ttf' 2>/dev/null | cut -d '/' -f 3 | xargs -I {} rm -f ~/Library/Fonts/{}
   mkdir -p ~/Library/Fonts
-  find /tmp -name 'sarasa-mono-tc-*-nerd-font.ttf' 2>/dev/null | xargs -I {} mv {} ~/Library/Fonts/{}
+  find -L /tmp -name 'sarasa-mono-tc-*-nerd-font.ttf' 2>/dev/null | xargs -I {} mv {} ~/Library/Fonts/
 fi
 
 echo "🎉 Done!"
