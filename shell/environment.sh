@@ -30,4 +30,9 @@ if type paru &> /dev/null; then
   export PARU_CONF=${DOTS}/shell/paru.conf
 fi
 
+# gpg settings for macOS
+if [ `uname` = "Darwin" ]; then
+  export GPG_TTY=$(tty)
+fi
+
 export LANG=en_US.UTF-8
