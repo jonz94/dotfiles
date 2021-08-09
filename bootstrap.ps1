@@ -99,7 +99,7 @@ if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contain
 }
 
 # Load fnm & generate fnm's completions file
-$fnmCompletionsPs1Path = "$HOME\dotfiles\powershell\completions\fnm.completions.ps1"
+$fnmCompletionsPs1Path = "$HOME\dotfiles\powershell\completions\_fnm.completions.ps1"
 if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
   powershell.exe -NoProfile -Command "fnm env --use-on-cd | Out-String | Invoke-Expression; fnm completions --shell powershell > $fnmCompletionsPs1Path"
 }
