@@ -9,7 +9,7 @@ require'lualine'.setup {
     theme = 'onedark',
     component_separators = '',
     section_separators = '',
-    disabled_filetypes = {}
+    disabled_filetypes = { 'vim-plug' }
   },
   sections = {
     lualine_a = { 'mode' },
