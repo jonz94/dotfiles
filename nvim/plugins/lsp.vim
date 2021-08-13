@@ -12,4 +12,4 @@ silent! Plug 'neovim/nvim-lspconfig'
 silent! Plug 'jonz94/nvim-lspinstall', { 'branch': 'windows' }
 
 " automatically change the current working directory
-silent! Plug 'ahmedkhalf/lsp-rooter.nvim'
+silent! Plug 'ahmedkhalf/project.nvim'
