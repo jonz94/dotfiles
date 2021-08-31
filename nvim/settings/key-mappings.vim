@@ -9,6 +9,9 @@
 
 if exists('g:vscode')
   nnoremap <leader>w <cmd>Write<CR>
+  nnoremap <leader>q <cmd>Quit<CR>
+  nnoremap <leader><leader>q <cmd>Qall<CR>
+  nnoremap <leader><Tab> <cmd>Write<CR><cmd>Quit<CR>
 else
   " write file
   nnoremap <C-s> :w<CR>
