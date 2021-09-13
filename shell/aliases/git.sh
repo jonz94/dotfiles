@@ -5,11 +5,12 @@ if type git &> /dev/null; then
   alias gbvv='git branch -vv'
   alias gcot='git checkout --track'
   alias gdc='git diff --cached'
-  alias gstaa='git stash push --include-untracked'
   alias grsh='git reset --soft'
+  alias gstaa='git stash push --include-untracked'
   alias gstai='git stash push --include-untracked'
   alias gstau='git stash push --include-untracked'
   alias gsw-='git switch -'
+  alias gundo='git reset --soft HEAD~1'
   alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "🚧 WIP: work in progress..."'
 
   # show graph for git reflog command
