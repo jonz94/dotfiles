@@ -35,4 +35,9 @@ if [ `uname` = "Darwin" ]; then
   export GPG_TTY=$(tty)
 fi
 
+# gpg settings for WSL 2
+if [ `uname -r | grep -i microsoft` ]; then
+  export GPG_TTY=$(tty)
+fi
+
 export LANG=en_US.UTF-8
