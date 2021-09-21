@@ -9,7 +9,7 @@ curl -fsSL "https://api.github.com/repos/jonz94/Sarasa-Gothic-Nerd-Font/releases
   grep "browser_download_url.*sarasa-mono-tc-nerd-font.zip" | \
   head -n 1 | \
   cut -d '"' -f 4 | \
-  xargs curl -fsSL -o /tmp/sarasa-mono-tc-nerd-font.zip
+  xargs curl -L -o /tmp/sarasa-mono-tc-nerd-font.zip
 
 unzip -d /tmp /tmp/sarasa-mono-tc-nerd-font.zip
 
