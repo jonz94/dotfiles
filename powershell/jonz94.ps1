@@ -301,6 +301,16 @@ function nr { npm run $args }
 # quickly install prettier related packages via npm
 function nap { npm install --save-dev prettier prettier-plugin-packagejson prettier-plugin-organize-imports typescript }
 
+# yarn
+function ya { yarn add }
+function yad { yarn add --dev }
+function ylso { yarn outdated }
+function yr { yarn run }
+function yrm { yarn remove }
+
+# quickly install prettier related packages via yarn
+function yap { yarn add --dev prettier prettier-plugin-packagejson prettier-plugin-organize-imports typescript }
+
 # always typo br
 function br { npm run $args }
 
