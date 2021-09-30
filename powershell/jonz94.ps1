@@ -50,6 +50,10 @@ Set-Alias -Name c -Value Clear-Host
 # poweroff
 function poweroff { shutdown /s /t 0 }
 
+# shutdown WSL
+function wslshutdown { wsl.exe --shutdown }
+function wslpoweroff { wsl.exe --shutdown }
+
 # Open current directory in vscode
 function c. { code . }
 
