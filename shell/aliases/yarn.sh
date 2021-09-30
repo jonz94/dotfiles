@@ -7,6 +7,9 @@ if type yarn &> /dev/null; then
   alias yr='yarn run'
   alias yrm='yarn remove'
 
+  # equivalent of `npm ci`
+  alias yci='yarn install --frozen-lockfile'
+
   # quickly install prettier related packages
   alias yap='yarn add --dev prettier prettier-plugin-packagejson prettier-plugin-organize-imports typescript'
 fi
