@@ -1,7 +1,7 @@
 // cSpell Settings
 {
-  // Version of the setting file. Always 0.1
-  "version": "0.1",
+  // Version of the setting file. Always 0.2
+  "version": "0.2",
 
   // English
   "language": "en",
@@ -10,5 +10,28 @@
 
   "ignorePaths": [".cspell.json"],
 
-  "ignoreRegExpList": ["[Ss]arasa", "[Jj]o[Nn]z94"]
+  "patterns": [
+    {
+      "name": "myFavoriteCodingFontFace",
+      "pattern": "[Ss]arasa"
+    },
+    {
+      "name": "myUserName",
+      "pattern": "[Jj]o[Nn]z94"
+    },
+    {
+      "name": "comment-single-line",
+      "pattern": "/#.*/g"
+    },
+    {
+      "name": "comment-multi-line",
+      "pattern": "/(?:\\/\\*[\\s\\S]*?\\*\\/)/g"
+    },
+    {
+      "name": "comments",
+      "pattern": ["comment-single-line", "comment-multi-line"]
+    }
+  ],
+
+  "ignoreRegExpList": ["myFavoriteCodingFontFace", "myUserName", "comments"]
 }
