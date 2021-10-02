@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ ! `uname` = "Linux" ]; then
+  echo -e "${RED}This installer only support Linux.${NORMAL}"
+  exit 1
+fi
+
+# get latest version number via github api
+if [ -z ${YQ_VERSION} ]; then
+  YQ_VERSION=$(curl -fsSL "https://api.github.com/repos/mikefarah/yq/releases/latest" | grep tag_name | cut -d '"' -f 4 | cut -d v -f 2)
+fi
+
+rm -f /tmp/yq.tar.gz
+rm -rf /tmp/yq
+
+curl -L https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64.tar.gz -o /tmp/yq.tar.gz
+tar xf /tmp/yq.tar.gz --directory=/tmp
+mv /tmp/yq_linux_amd64 /tmp/yq
+
+mkdir -p ~/.local/opt/yq
+cp /tmp/yq ~/.local/opt/yq/yq
+
+mkdir -p ~/.local/bin/
+ln -sf ~/.local/opt/yq/yq ~/.local/bin/yq
