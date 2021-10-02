@@ -303,7 +303,7 @@ function nlso { npm outdated }
 function nr { npm run $args }
 
 # quickly install prettier related packages via npm
-function nap { npm install --save-dev prettier prettier-plugin-packagejson prettier-plugin-organize-imports typescript }
+function nip { npm install --save-dev prettier prettier-plugin-packagejson prettier-plugin-organize-imports typescript }
 
 # yarn
 function ya { yarn add }
