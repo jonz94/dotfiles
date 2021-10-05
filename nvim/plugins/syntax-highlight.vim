@@ -7,7 +7,7 @@ endif
 
 if has('nvim-0.5')
   if $IS_TRIGGERD_BY_AUTOMATED_TASK == 'yes'
-    silent! Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdateSync' }
+    silent! Plug 'nvim-treesitter/nvim-treesitter'
   else
     silent! Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   endif
