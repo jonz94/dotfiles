@@ -1,6 +1,9 @@
 ﻿# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
+# Opt-out powershell telemetry
+$env:POWERSHELL_TELEMETRY_OPTOUT = true
+
 # Disable less history file
 $env:LESSHISTFILE = '-'
 
