@@ -8,8 +8,6 @@ endif
 if has('nvim-0.5')
   silent! Plug 'kyazdani42/nvim-tree.lua'
 
-  luafile ~/dotfiles/nvim/plugins/sidebar.lua
-
   " key mappings
   nnoremap <C-n> <Cmd>NvimTreeToggle<CR>
   nnoremap <leader>nr <Cmd>NvimTreeRefresh<CR>
