@@ -1,3 +1,8 @@
+-- ignore this file if neovim is running inside vscode
+if vim.fn.exists('g:vscode') == 1 then -- 0: false, 1: true
+  return
+end
+
 -- shows indent markers when folders are open
 vim.g.nvim_tree_indent_markers = 1
 
@@ -32,3 +37,4 @@ vim.g.nvim_tree_icons = {
   },
 }
 
+require'nvim-tree'.setup()

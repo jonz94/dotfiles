@@ -58,6 +58,7 @@ endfor
 
 if has('nvim-0.5')
   luafile ~/dotfiles/nvim/settings/lsp.lua
+  luafile ~/dotfiles/nvim/settings/sidebar.lua
   luafile ~/dotfiles/nvim/settings/status-line.lua
   luafile ~/dotfiles/nvim/settings/tree-sitter.lua
 endif
