@@ -2,7 +2,6 @@
 
 alias docker='docker.exe'
 alias docker-compose='docker-compose.exe'
-alias docker-machine='docker-machine.exe'
 
 alias d='docker.exe'
 alias de='docker.exe exec --interactive --tty'
@@ -26,7 +25,3 @@ drm () {
 alias dc='docker-compose.exe'
 alias dcd='docker-compose.exe down'
 alias dcu='docker-compose.exe up'
-
-alias dm='docker-machine.exe'
-
-alias dcon='. ${DOTS}/wsl/connect_docker_machine.sh'
