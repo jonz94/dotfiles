@@ -1,4 +1,4 @@
-﻿# UTF-8 for printing
+# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Opt-out powershell telemetry
@@ -26,13 +26,6 @@ Set-PSReadlineOption -HistoryNoDuplicate
 
 # Ctrl + Shift + v for paste
 Set-PSReadlineKeyHandler -Key Ctrl+V -Function Paste
-
-# Powershell Module for fzf
-Remove-PSReadlineKeyHandler 'Ctrl+t'
-Remove-PSReadlineKeyHandler 'Ctrl+r'
-if ( $(Get-InstalledModule) -and $(Get-InstalledModule).Name.contains('PSFzf') ) {
-  Import-Module PSFzf
-}
 
 # Load fnm
 if ( $(scoop which fnm) ) {

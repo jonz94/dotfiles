@@ -1,4 +1,4 @@
-﻿# setting up git
+# setting up git
 git config --global user.name "jonz94"
 git config --global user.email "jody16888@gmail.com"
 git config --global pull.rebase false
@@ -91,11 +91,6 @@ if (-not $(scoop which zoxide)) {
 # Install posh-git modules
 if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contains('posh-git')) ) {
   Install-Module 'posh-git' -Scope CurrentUser
-}
-
-# Install PSFzf modules
-if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contains('PSFzf')) ) {
-  Install-Module 'PSFzf' -Scope CurrentUser
 }
 
 # Load fnm & generate fnm's completions file
