@@ -28,6 +28,9 @@ Set-PSReadlineOption -BellStyle None
 # Make shell history cleaner
 Set-PSReadlineOption -HistoryNoDuplicate
 
+# Show predictive suggestions from command history
+Set-PSReadLineOption -PredictionSource History
+
 # Ctrl + Shift + v for paste
 Set-PSReadlineKeyHandler -Key Ctrl+V -Function Paste
 
