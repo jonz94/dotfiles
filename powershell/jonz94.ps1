@@ -1,4 +1,4 @@
-# UTF-8 for printing
+﻿# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Opt-out powershell telemetry
@@ -14,6 +14,10 @@ $env:POSH_GIT_ENABLED = $true
 if ( $(scoop which oh-my-posh) ) {
   Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powershell/jonz94.omp.json)
 }
+
+# Terminal Icons for Powershell
+# https://github.com/devblackops/Terminal-Icons
+Import-Module 'Terminal-Icons'
 
 # Use Emacs mode, just like unix-y environment
 Set-PSReadlineOption -EditMode Emacs
