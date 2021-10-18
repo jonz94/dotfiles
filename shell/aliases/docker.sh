@@ -42,8 +42,3 @@ if type docker-compose &> /dev/null; then
   alias dcd='docker-compose down'
   alias dcu='docker-compose up'
 fi
-
-# docker-machine
-if type docker-machine &> /dev/null; then
-  alias dm='docker-machine'
-fi

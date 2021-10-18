@@ -135,11 +135,6 @@ function dv { docker.exe volume $args }
 # docker compose aliases
 function dc { docker-compose.exe $args }
 
-# docker machine aliases
-function dm { docker-machine.exe $args }
-
-function dcon { docker-machine.exe env | Invoke-Expression }
-
 # git aliases
 function g { git $args }
 
