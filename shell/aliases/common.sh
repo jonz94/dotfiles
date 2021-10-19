@@ -2,6 +2,7 @@
 
 alias c='clear'
 alias echopath='echo $PATH | tr ":" "\n"'
+alias edit-last-command-in-editor='fc'
 alias h='history | less'
 alias l='ls -lhF'
 alias la='ls -AlhF'
