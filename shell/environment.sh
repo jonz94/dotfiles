@@ -7,12 +7,8 @@ export VAR_DIR=${DOTS}/shell/variables
 # Italic Font Setting for tmux
 export TERM=xterm-256color
 
-# Preferred editor for local and remote sessions
-if [ -n ${SSH_CONNECTION} ]; then
-  export EDITOR=vim
-else
-  export EDITOR=nvim
-fi
+# Set neovim as preferred editor
+export EDITOR=nvim
 
 # add ~/.local/bin to $PATH
 export PATH="${HOME}/.local/bin:${PATH}"
