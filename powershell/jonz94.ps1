@@ -31,6 +31,24 @@ Set-PSReadlineOption -HistoryNoDuplicate
 # Show predictive suggestions from command history
 Set-PSReadLineOption -PredictionSource History
 
+# Any command with spaces or tabs at the beginning of the line is not added to the PSReadLine history
+# Credit: https://github.com/PowerShell/PowerShell/issues/10403#issuecomment-523833700
+Set-PSReadLineOption -AddToHistoryHandler {
+  param($line)
+  $line -notmatch '^\s+'
+}
+
+# Print out PSReadline history instead of using powershell's Get-History
+Remove-Item Alias:\history -Force *> $null
+function history {
+  Get-Content (Get-PSReadLineOption).HistorySavePath
+}
+
+# Edit PSReadLine history file via vscode
+function edit-history {
+  code (Get-PSReadLineOption).HistorySavePath
+}
+
 # Ctrl + Shift + v for paste
 Set-PSReadlineKeyHandler -Key Ctrl+V -Function Paste
 
@@ -79,7 +97,16 @@ function trash { Start-Process shell:RecycleBinFolder }
 # cd to dotfiles
 function dot { Set-Location $HOME\dotfiles }
 
-# make a directory and then cd into it
+# make a directory with `-p` flag (no error if existing, make parent directories as needed)
+function mkdirp {
+  if ($args.length -lt 1) {
+    return
+  }
+
+  New-Item -ItemType Directory -ErrorAction SilentlyContinue $args[0]
+}
+
+# make a directory with `-p` flag and then cd into it
 function take {
   if ($args.length -lt 1) {
     return
