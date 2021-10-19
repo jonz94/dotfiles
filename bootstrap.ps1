@@ -88,6 +88,21 @@ if (-not $(scoop which zoxide)) {
   scoop install zoxide
 }
 
+# Install busybox
+# Note: the `sed` command provided by busybox is better when using `-i` flag
+if (-not $(scoop which busybox)) {
+  scoop install busybox
+}
+
+# Install less
+if (-not $(scoop which less)) {
+  scoop install less
+} else {
+  # if less has already installed
+  # using `scoop reset less` to overwrite shim to less.exe installed from busybox
+  scoop reset less
+}
+
 # Install posh-git module
 if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contains('posh-git')) ) {
   Install-Module 'posh-git' -Scope CurrentUser
