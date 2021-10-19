@@ -15,5 +15,7 @@ nnoremap <silent> <leader>gl :Dispatch! git pull<CR>
 nnoremap <silent> <leader>gp :Dispatch! git push<CR>
 
 " abort git commit when editing the commit log message
-command AbortGitCommit :cq
-command GitAbortCommit :cq
+command AbortGitCommit :cq!
+command CancelGitCommit :cq!
+command GitAbortCommit :cq!
+command GitCancelCommit :cq!
