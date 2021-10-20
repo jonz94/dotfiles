@@ -1,4 +1,4 @@
-﻿# UTF-8 for printing
+# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Opt-out powershell telemetry
@@ -63,6 +63,12 @@ if ( $(scoop which zoxide) ) {
     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
     (zoxide init --hook $hook powershell) -join "`n"
   })
+}
+
+# test if current powershell is running with administrator privileges
+function Test-Administrator {
+  $user = [Security.Principal.WindowsIdentity]::GetCurrent()
+  (New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
 }
 
 # clear
