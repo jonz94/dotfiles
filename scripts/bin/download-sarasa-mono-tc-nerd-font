@@ -5,7 +5,7 @@ set -e
 rm -f /tmp/sarasa-mono-tc-nerd-font.zip
 
 echo "Start downloading..."
-curl -fsSL "https://api.github.com/repos/jonz94/Sarasa-Gothic-Nerd-Font/releases/latest" | \
+curl -fsSL "https://api.github.com/repos/jonz94/Sarasa-Gothic-Nerd-Fonts/releases/latest" | \
   grep "browser_download_url.*sarasa-mono-tc-nerd-font.zip" | \
   head -n 1 | \
   cut -d '"' -f 4 | \
