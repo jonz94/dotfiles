@@ -294,6 +294,11 @@ function gwip {
   git commit --no-verify --no-gpg-sign -m "🚧 WIP: work in progress...";
 }
 
+# fix `warning: ignoring broken ref refs/remotes/origin/HEAD` message
+function git-fix-ignoring-broken-ref-warning {
+  git remote set-head origin $((Get-GitStatus).Branch)
+}
+
 # scoop aliases
 function i { scoop install $args }
 function scl { scoop cleanup $args }
