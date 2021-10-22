@@ -18,4 +18,7 @@ if type git &> /dev/null; then
   # Credit: https://gist.github.com/matthewmccullough/988077
   alias glggr='git log --graph --decorate `git reflog --format=format:%h`'
   alias glogr='git log --oneline --graph --decorate `git reflog --format=format:%h`'
+
+  # fix `warning: ignoring broken ref refs/remotes/origin/HEAD` issue
+  alias git-fix-ignoring-broken-ref-warning='git remote set-head origin $(git_current_branch)'
 fi
