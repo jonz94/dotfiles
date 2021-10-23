@@ -5,6 +5,7 @@ if type git &> /dev/null; then
   alias gbvv='git branch -vv'
   alias gcot='git checkout --track'
   alias gdc='git diff --cached'
+  alias gls='git log --show-signature'
   alias gpD='git push --delete'
   alias grsh='git reset --soft'
   alias gstaa='git stash push --include-untracked'
