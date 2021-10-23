@@ -5,7 +5,12 @@ if exists('g:vscode')
   finish
 endif
 
-silent! Plug 'airblade/vim-gitgutter'
+if has('nvim-0.5')
+  silent! Plug 'lewis6991/gitsigns.nvim'
+else
+  silent! Plug 'airblade/vim-gitgutter'
+endif
+
 silent! Plug 'tpope/vim-fugitive'
 
 " related key mappings

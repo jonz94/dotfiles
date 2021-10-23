@@ -61,10 +61,11 @@ for s:file in split(globpath('~/dotfiles/nvim/settings', '*.vim'), '\n')
 endfor
 
 if has('nvim-0.5')
-  luafile ~/dotfiles/nvim/settings/lsp.lua
-  luafile ~/dotfiles/nvim/settings/sidebar.lua
-  luafile ~/dotfiles/nvim/settings/status-line.lua
-  luafile ~/dotfiles/nvim/settings/tree-sitter.lua
+  silent! luafile ~/dotfiles/nvim/settings/gitsigns.lua
+  silent! luafile ~/dotfiles/nvim/settings/lsp.lua
+  silent! luafile ~/dotfiles/nvim/settings/sidebar.lua
+  silent! luafile ~/dotfiles/nvim/settings/status-line.lua
+  silent! luafile ~/dotfiles/nvim/settings/tree-sitter.lua
 endif
 
 " neovide specific setting
