@@ -39,6 +39,8 @@
           "foreground": "#343A43",
           "background": "#A7CB8B",
           "properties": {
+            "branch_ahead_icon": " ",
+            "branch_behind_icon": " ",
             "display_status": true,
             "display_status_detail": true,
             "display_stash_count": true,
