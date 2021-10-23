@@ -7,8 +7,6 @@ endif
 
 if has('nvim-0.5')
   " use telescope for neovim nightly
-  silent! Plug 'nvim-lua/popup.nvim'
-  silent! Plug 'nvim-lua/plenary.nvim'
   silent! Plug 'nvim-telescope/telescope.nvim'
 elseif has('nvim')
   " use fzf for neovim stable
