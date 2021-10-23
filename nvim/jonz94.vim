@@ -26,6 +26,10 @@ if !exists('g:vscode')
   silent! Plug 'tpope/vim-dispatch'
 endif
 
+if has('nvim-0.5')
+  silent! Plug 'nvim-lua/plenary.nvim'
+endif
+
 " import separate plugin configurations inside plugins diretory
 for s:file in split(globpath('~/dotfiles/nvim/plugins', '*.vim'), '\n')
   exe 'source' s:file
