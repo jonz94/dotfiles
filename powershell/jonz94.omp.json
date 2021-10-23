@@ -45,7 +45,7 @@
             "branch_icon": " ",
             "local_working_icon": "  ",
             "local_staged_icon": "  ",
-            "stash_count_icon": "● ",
+            "stash_count_icon": " ",
             "tag_icon": "​ ",
             "display_upstream_icon": true,
             "github_icon": "  ",
