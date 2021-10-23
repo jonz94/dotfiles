@@ -288,6 +288,8 @@ function gstp { git stash pop $args }
 
 function gsts { git stash show $args }
 
+function gundo { git reset --soft HEAD~1 }
+
 function gwip {
   git add -A;
   git rm $(git ls-files --deleted) 2> $null;
