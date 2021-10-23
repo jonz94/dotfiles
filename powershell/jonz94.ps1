@@ -240,6 +240,8 @@ function glo { git log --oneline --decorate $args }
 
 function gloga { git log --oneline --decorate --graph --all $args }
 
+function gls { git log --show-signature }
+
 # show graph for git reflog command
 # Credit: https://gist.github.com/matthewmccullough/988077
 function glggr {
