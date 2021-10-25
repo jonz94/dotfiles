@@ -24,7 +24,7 @@ POWERLEVEL9K_RAM_BACKGROUND='black'
 POWERLEVEL9K_RAM_FOREGROUND='249'
 
 # check if current os is ubuntu
-if [ $(lsb_release -i 2>/dev/null | cut -f 2) = "Ubuntu" ]; then
+if [[ $(lsb_release -i 2>/dev/null | cut -f 2) == "Ubuntu" ]]; then
   # use `nf-linux-ubuntu_inverse` as ubuntu's os icon
   POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=' '
 else
