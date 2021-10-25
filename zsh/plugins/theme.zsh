@@ -23,8 +23,14 @@ POWERLEVEL9K_OS_ICON_FOREGROUND='black'
 POWERLEVEL9K_RAM_BACKGROUND='black'
 POWERLEVEL9K_RAM_FOREGROUND='249'
 
-# add extra space at the end of os icon
-POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='${P9K_CONTENT} '
+# check if current os is ubuntu
+if [ $(lsb_release -i 2>/dev/null | cut -f 2) = "Ubuntu" ]; then
+  # use `nf-linux-ubuntu_inverse` as ubuntu's os icon
+  POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=' '
+else
+  # add extra space at the end of os icon
+  POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='${P9K_CONTENT} '
+fi
 
 # remove extra space of the right prompt
 ZLE_RPROMPT_INDENT=0
