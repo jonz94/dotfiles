@@ -22,6 +22,17 @@
           "background": "#343A43"
         },
         {
+          "type": "os",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#343A43",
+          "background": "#DCDFE4",
+          "properties": {
+            "prefix": " ",
+            "postfix": "  "
+          }
+        },
+        {
           "type": "path",
           "style": "powerline",
           "powerline_symbol": "",
@@ -63,7 +74,7 @@
         {
           "type": "exit",
           "style": "plain",
-          "foreground": "#ffffff",
+          "foreground": "#DCDFE4",
           "properties": {
             "display_exit_code": true,
             "always_enabled": false,
@@ -74,7 +85,7 @@
         {
           "type": "battery",
           "style": "plain",
-          "foreground": "#ffffff",
+          "foreground": "#DCDFE4",
           "background": "#343A43",
           "properties": {
             "postfix": "% "
@@ -91,7 +102,7 @@
           "type": "text",
           "style": "plain",
           "foreground": "#000000",
-          "background": "#FFFFFF",
+          "background": "#DCDFE4",
           "properties": {
             "prefix": "",
             "text": " ",
@@ -101,7 +112,7 @@
         {
           "type": "text",
           "style": "plain",
-          "foreground": "#FFFFFF",
+          "foreground": "#DCDFE4",
           "properties": {
             "prefix": "",
             "text": "",
