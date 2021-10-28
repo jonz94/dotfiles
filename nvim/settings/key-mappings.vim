@@ -12,6 +12,8 @@ if exists('g:vscode')
   nnoremap <leader><Tab> <cmd>Write<CR>
   nnoremap <leader>q <cmd>Quit<CR>
   nnoremap <leader><leader>q <cmd>Qall<CR>
+
+  nnoremap <leader>d <cmd>Quit<CR>
 else
   " write file
   nnoremap <C-s> :w<CR>
@@ -40,6 +42,18 @@ else
 
   " write and quit
   nnoremap <leader><Tab> :wq<CR>
+
+  " list buffer
+  nnoremap <leader>ls :ls<CR>
+
+  " move through buffer
+  nnoremap <leader>bn :bn<CR>
+  nnoremap <leader>nn :bn<CR>
+  nnoremap <leader>bp :bp<CR>
+  nnoremap <leader>pp :bp<CR>
+
+  " delete buffer
+  nnoremap <leader>d :bd<CR>
 endif
 
 " quickly type :help<space>
@@ -59,18 +73,6 @@ vnoremap <leader>si :sort i<CR>
 
 " reload vimrc
 nnoremap <leader>r :source $MYVIMRC<CR>
-
-" list buffer
-nnoremap <leader>ls :ls<CR>
-
-" move through buffer
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>nn :bn<CR>
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>pp :bp<CR>
-
-" delete buffer
-nnoremap <leader>d :bd<CR>
 
 " fold
 nnoremap <leader>zf zfip
