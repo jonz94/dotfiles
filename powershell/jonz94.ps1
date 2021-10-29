@@ -336,6 +336,7 @@ function v. {
 }
 
 # npm
+function nci { npm ci }
 function nid { npm install --save-dev $args }
 function nig { npm install -g $args }
 function nis { npm install --save $args }
