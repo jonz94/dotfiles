@@ -1,6 +1,7 @@
 # npm command aliases
 
 if type npm &> /dev/null; then
+  alias nci='npm ci'
   alias nid='npm i --save-dev'
   alias nig='npm i -g'
   alias nis='npm i --save'
