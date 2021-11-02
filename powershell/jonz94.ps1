@@ -2,7 +2,8 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Opt-out powershell telemetry
-$env:POWERSHELL_TELEMETRY_OPTOUT = true
+# https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_telemetry
+$env:POWERSHELL_TELEMETRY_OPTOUT = 'yes'
 
 # Disable less history file
 $env:LESSHISTFILE = '-'
