@@ -29,7 +29,14 @@ if has('wsl') || system('uname -r | grep -i microsoft')
 endif
 
 " for windows using Windows Terminal
-if has('win32') && executable('sed')
+" prefer using busybox's sed implementation, because it would not generate temporary files
+if has('win32') && executable('busybox')
+  let s:settings = expand('~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json')
+  if filereadable(s:settings)
+    autocmd VimEnter * :call system('busybox sed -i "s/121212/282c34/g" ' . s:settings)
+    autocmd VimLeave * :call system('busybox sed -i "s/282c34/121212/g" ' . s:settings)
+  endif
+elseif has('win32') && executable('sed')
   let s:settings = expand('~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json')
   if filereadable(s:settings)
     autocmd VimEnter * :call system('sed -i "s/121212/282c34/g" ' . s:settings)
