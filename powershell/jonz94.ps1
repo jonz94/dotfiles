@@ -1,4 +1,4 @@
-﻿# UTF-8 for printing
+# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Opt-out powershell telemetry
@@ -97,6 +97,11 @@ function open { explorer.exe $args }
 
 # echo path in pretty format
 function echopath { (echo $Env:PATH).split(';') }
+
+# echo powershell's escape character, because I've always thought it is backslash...
+function echo-powershell-escape-character {
+  Write-Host "Powershell's escape character is backquote ``"
+}
 
 # Open recycle bin directory in file explorer
 function trash { Start-Process shell:RecycleBinFolder }
