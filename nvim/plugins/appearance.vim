@@ -104,3 +104,6 @@ let g:indentLine_char = '│'
 " make tabs, trailing whitespace, and non-breaking spaces visible
 set list
 set listchars=tab:→\ ,nbsp:.,trail:⋅,extends:❯,precedes:❮
+
+" hide ~ symbol on the end of buffer
+let &fillchars='eob: '
