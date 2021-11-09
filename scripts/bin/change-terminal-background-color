@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# dynamic chaning terminal's background color using ANSI escape sequences
+# see: https://github.com/alacritty/alacritty/issues/656
+# @param COLOR - hex color number in #RRGGBB format (e.g. #282c34)
+change-terminal-background-color() {
+  local COLOR="$1"
+
+  # chekc if current terminal is not iTerm2
+  if [[ "${LC_TERMINAL}" != "iTerm2" ]]; then
+    # chekc if current seesion is not inside tmux
+    if [ -z $TMUX ]; then
+      # use ANSI escape sequences to set terminal background color
+      echo -ne "\033]11;$COLOR\007"
+      return
+    fi
+
+    # tmux can be forced to pass an escape sequence through
+    # by wrapping it in a special form of the DCS sequence
+    # see: https://github.com/tmux/tmux/wiki/FAQ#what-is-the-passthrough-escape-sequence-and-how-do-i-use-it
+    echo -ne "\033Ptmux;\033\033]11;$COLOR\007\033\\"
+    return
+  fi
+
+  # iTerm2 has its own proprietary escape codes
+  # see: https://iterm2.com/documentation-escape-codes.html
+  local RR=$(echo $COLOR | cut -c 2-3)
+  local GG=$(echo $COLOR | cut -c 4-5)
+  local BB=$(echo $COLOR | cut -c 6-7)
+
+  # chekc if current seesion is not inside tmux
+  if [ -z $TMUX ]; then
+    # iTerm2's proprietary escape codes to set terminal background color
+    echo -ne "\033]4;-2;rgb:$RR/$GG/$BB\007"
+    return
+  fi
+
+  # using iTerm2, and is inside tmux
+  echo -ne "\033Ptmux;\033\033]4;-2;rgb:$RR/$GG/$BB\007\033\\"
+  return
+}
+
+change-terminal-background-color "$1"
