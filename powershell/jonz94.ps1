@@ -1,4 +1,4 @@
-# UTF-8 for printing
+﻿# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Opt-out powershell telemetry
@@ -328,10 +328,34 @@ function ug { scoop update * }
 
 function which { scoop which $args }
 
+# change terminal background color by using special ansi escape sequences
+#
+# example usage 1:
+#     change-terminal-background-color -Color "#282c34"
+#
+# example usage 2:
+#     change-terminal-background-color -Color "#121212"
+#
+# credit: https://github.com/alacritty/alacritty/issues/656
+function change-terminal-background-color {
+  param(
+    [string]$Color
+  )
+
+  Write-Host "`e]11;${Color}`a" -NoNewline
+}
+
+function nvim-with-dynamic-terminal-background-color {
+  change-terminal-background-color -Color "#282c34"
+  nvim.exe $args
+  change-terminal-background-color -Color "#121212"
+}
+
 # neovim aliases
-function v { nvim $args }
-function vi { nvim $args }
-function vim { nvim $args }
+function v { nvim-with-dynamic-terminal-background-color $args }
+function vi { nvim-with-dynamic-terminal-background-color $args }
+function vim { nvim-with-dynamic-terminal-background-color $args }
+function nvim { nvim-with-dynamic-terminal-background-color $args }
 
 # in case the need to use vim
 function \vim { vim.exe $args }
