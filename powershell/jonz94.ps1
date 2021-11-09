@@ -1,4 +1,4 @@
-﻿# UTF-8 for printing
+# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Opt-out powershell telemetry
@@ -332,14 +332,9 @@ function which { scoop which $args }
 function v { nvim $args }
 function vi { nvim $args }
 function vim { nvim $args }
+
+# in case the need to use vim
 function \vim { vim.exe $args }
-function v. {
-  if (Test-Path .\Session.vim -PathType Leaf) {
-    nvim -S Session.vim
-  } else {
-    nvim .
-  }
-}
 
 # npm
 function nci { npm ci }
