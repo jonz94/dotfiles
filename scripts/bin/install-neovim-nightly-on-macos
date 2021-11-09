@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ "$(uname)" != "Darwin" ]]; then
+  echo -e "${RED}This installer only support macOS.${NORMAL}"
+  exit 1
+fi
+
+rm -fr "/tmp/nvim-macos.tar.gz" "/tmp/nvim-osx64" "${HOME}/.local/opt/neovim-nightly"
+
+curl -L "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz" -o "/tmp/nvim-macos.tar.gz"
+
+tar vf "/tmp/nvim-macos.tar.gz" --directory=/tmp
+
+mkdir -p "${HOME}/.local/bin" "${HOME}/.local/opt"
+
+mv "/tmp/nvim-osx64" "${HOME}/.local/opt/neovim-nightly"
+
+ln -sf "${HOME}/.local/opt/neovim-nightly/bin/nvim" "${HOME}/.local/bin/nvim"
