@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# dynamic chaning terminal's background color using escape sequences
+# credits: https://medium.com/@joao.paulo.silvasouza/change-your-terminals-background-color-dynamically-using-escape-sequences-aba6e5ed2b29
+change-terminal-background() {
+  local COLOR="$1"
+
+  if [ -z $TMUX ]; then
+    # not tmux
+    echo -ne "\\033]11;$COLOR\\007"
+  else
+    # tmux
+    echo -ne "\\ePtmux;\\e\\033]11;$COLOR\\007\\e\\\\"
+  fi
+}
+
+change-terminal-background "$1"
