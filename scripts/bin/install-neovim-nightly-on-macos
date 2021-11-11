@@ -9,7 +9,7 @@ rm -fr "/tmp/nvim-macos.tar.gz" "/tmp/nvim-osx64" "${HOME}/.local/opt/neovim-nig
 
 curl -L "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz" -o "/tmp/nvim-macos.tar.gz"
 
-tar vf "/tmp/nvim-macos.tar.gz" --directory=/tmp
+tar xf "/tmp/nvim-macos.tar.gz" --directory=/tmp
 
 mkdir -p "${HOME}/.local/bin" "${HOME}/.local/opt"
 
