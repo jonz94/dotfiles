@@ -1,4 +1,4 @@
-﻿# UTF-8 for printing
+# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Opt-out powershell telemetry
@@ -12,6 +12,8 @@ $env:LESSHISTFILE = '-'
 # https://github.com/JanDeDobbeleer/oh-my-posh
 # enable posh-git module
 $env:POSH_GIT_ENABLED = $true
+# disable Az.Accounts module
+$env:AZ_ENABLED = $false
 if ( $(scoop which oh-my-posh) ) {
   Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powershell/jonz94.omp.json)
 }
