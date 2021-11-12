@@ -11,7 +11,7 @@ if type apt-get &> /dev/null; then
 fi
 
 # termux emulator
-if [ -n "`uname -a | grep Android`" ]; then
+if [ -n "$(uname -a | grep Android)" ]; then
   alias i='apt install'
 
   alias aarm='apt autoremove'

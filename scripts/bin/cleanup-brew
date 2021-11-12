@@ -6,7 +6,7 @@ if ! type brew &> /dev/null; then
   exit 1
 fi
 
-ORIGIN_WORKING_DIRECTORY=`pwd`
+ORIGIN_WORKING_DIRECTORY=$(pwd)
 
 cd /tmp
 brew bundle dump --force

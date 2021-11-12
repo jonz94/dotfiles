@@ -10,6 +10,6 @@
 # #Allow members of group sudo to execute this command without password
 # %sudo ALL=(root) NOPASSWD: /usr/sbin/ip link set eth0 mtu 1480
 
-if [[ -z `ip addr | grep "eth0.*mtu 1480 "` ]]; then
+if [[ -z $(ip addr | grep "eth0.*mtu 1480 ") ]]; then
   sudo /usr/sbin/ip link set eth0 mtu 1480
 fi

@@ -27,12 +27,12 @@ if type paru &> /dev/null; then
 fi
 
 # gpg settings for macOS
-if [ `uname` = "Darwin" ]; then
+if [ $(uname) = "Darwin" ]; then
   export GPG_TTY=$(tty)
 fi
 
 # gpg settings for WSL 2
-if [ `uname -r | grep -i microsoft` ]; then
+if [ $(uname -r | grep -i microsoft) ]; then
   export GPG_TTY=$(tty)
 fi
 

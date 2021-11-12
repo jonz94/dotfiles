@@ -11,9 +11,9 @@ install() {
 
 backup() {
   if [ -f ${1} ]; then
-    mkdir -p `dirname ${1}`
+    mkdir -p $(dirname ${1})
 
-    TIMESTAMP=`date +"%Y-%m-%d,%H:%M:%S"`
+    TIMESTAMP=$(date +"%Y-%m-%d,%H:%M:%S")
 
     echo "Backup old ${1} to ${1}.backup.${TIMESTAMP}"
     mv ${1} ${1}.backup.${TIMESTAMP}
@@ -92,9 +92,9 @@ setup_tmux() {
 }
 
 setup_fnm_completions_for_linux() {
-  if [ `uname` = "Linux" ]; then
+  if [ $(uname) = "Linux" ]; then
     export PATH="$HOME/.fnm:$PATH"
-    eval "`fnm env`"
+    eval "$(fnm env)"
 
     rm -f ~/dotfiles/zsh/functions/_fnm
     fnm completions --shell zsh > ~/dotfiles/zsh/functions/_fnm

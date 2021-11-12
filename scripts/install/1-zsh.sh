@@ -19,7 +19,7 @@ fi
 
 read -p 'Change default login shell to Zsh? [y/N]: ' answer
 case $answer in
-  [Yy]* ) chsh -s `which zsh`;;
+  [Yy]* ) chsh -s $(which zsh);;
   * ) ;;
 esac
 

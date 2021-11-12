@@ -17,7 +17,7 @@ zmodule utility
 #
 # Prompt
 #
-if [ `uname -r | grep -i ish` ]; then
+if [ $(uname -r | grep -i ish) ]; then
   # Exposes to prompts how long the last command took to execute, used by asciiship.
   zmodule duration-info
   # Exposes git repository status information to prompts, used by asciiship.
@@ -42,7 +42,7 @@ zmodule zsh-users/zsh-history-substring-search
 # }}} End configuration added by Zim install
 
 # use powerlevel10k as prompt
-if [ `uname -r | grep -v -i ish` ]; then
+if [ $(uname -r | grep -v -i ish) ]; then
   zmodule romkatv/powerlevel10k
 fi
 

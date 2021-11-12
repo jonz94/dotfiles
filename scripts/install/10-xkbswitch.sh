@@ -1,6 +1,6 @@
 echo 'installing xkbswitch...'
 
-if [ ! `uname` = "Darwin" ]; then
+if [ ! $(uname) = "Darwin" ]; then
   echo 'xkbswitch only needed for macOS, skip installation.'
   exit 0
 fi

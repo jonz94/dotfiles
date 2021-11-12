@@ -40,6 +40,6 @@ if ! type unzip &> /dev/null; then
 fi
 
 # fix network issue on WSL 2
-if [ `uname -r | grep -i microsoft` ]; then
+if [ $(uname -r | grep -i microsoft) ]; then
   bash $HOME/dotfiles/wsl/_set_eth0_mtu_size_to_1480.sh
 fi

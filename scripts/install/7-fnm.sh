@@ -1,6 +1,6 @@
 echo 'installing fnm...'
 
-if [ `uname -r | grep -i ish` ]; then
+if [ $(uname -r | grep -i ish) ]; then
   echo 'fnm does not work on ish currently, skip installation.'
   exit 0
 fi
