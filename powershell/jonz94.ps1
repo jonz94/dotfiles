@@ -1,4 +1,4 @@
-# UTF-8 for printing
+﻿# UTF-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Opt-out powershell telemetry
@@ -361,6 +361,9 @@ function nvim { nvim-with-dynamic-terminal-background-color $args }
 
 # in case the need to use vim
 function \vim { vim.exe $args }
+
+# open neovim normally without changing terminal background color
+function \nvim { nvim.exe $args }
 
 # npm
 function nci { npm ci }
