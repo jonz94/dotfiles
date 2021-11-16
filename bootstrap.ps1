@@ -4,39 +4,39 @@ git config --global user.email 'jody16888@gmail.com'
 git config --global pull.rebase true
 git config --global init.defaultBranch main
 
-# Create local profile if it does not exist
+# create local profile if it does not exist
 if (-not $(Test-Path "$HOME\dotfiles\local\local.ps1" -PathType Leaf)) {
   New-Item "$HOME\dotfiles\local\local.ps1" -ItemType File -Force *> $null
 }
 
-# Create $PROFILE file if it does not exists
+# create $PROFILE file if it does not exists
 if (-not $(Test-Path $PROFILE -PathType Leaf)) {
   New-Item $PROFILE -ItemType File -Force *> $null
 }
 
-# Source main profile
+# source main profile
 if (-not $(Select-String -Path $PROFILE -Pattern '^\. \$HOME\\dotfiles\\powershell\\jonz94\.ps1$')) {
   Add-Content $PROFILE -Encoding UTF8 -Value '. $HOME\dotfiles\powershell\jonz94.ps1'
 }
 
-# Source local profile
+# source local profile
 if (-not $(Select-String -Path $PROFILE -Pattern '^\. \$HOME\\dotfiles\\local\\local\.ps1$')) {
   Add-Content $PROFILE -Encoding UTF8 -Value '. $HOME\dotfiles\local\local.ps1'
 }
 
-# Install oh-my-posh3
+# install oh-my-posh3
 if (-not $(scoop which oh-my-posh)) {
   scoop install oh-my-posh3
 }
 
-# Install neovim
+# install neovim
 if (-not $(scoop which nvim)) {
   scoop install neovim
 }
 
 $initDotVimPath = "$HOME\AppData\Local\nvim\init.vim"
 
-# Create neovim's init.vim if it does not exist
+# create neovim's init.vim if it does not exist
 if (-not $(Test-Path $initDotVimPath -PathType Leaf)) {
   New-Item $initDotVimPath -ItemType File -Force *> $null
 }
@@ -47,7 +47,7 @@ if (-not $(Select-String -Path $PROFILE -Pattern '^source \$HOME\/dotfiles\/nvim
 
 $ginitDotVimPath = "$HOME\AppData\Local\nvim\ginit.vim"
 
-# Create neovim's ginit.vim if it does not exists
+# create neovim's ginit.vim if it does not exists
 if (-not $(Test-Path $ginitDotVimPath -PathType Leaf)) {
   New-Item $ginitDotVimPath -ItemType File -Force *> $null
 }
@@ -58,7 +58,7 @@ if (-not $(Select-String -Path $PROFILE -Pattern '^\source \$HOME\/dotfiles\/nvi
 
 $plugDotVimPath = "$HOME\AppData\Local\nvim\autoload\plug.vim"
 
-# Install vim-plug
+# install vim-plug
 if (-not $(Test-Path $plugDotVimPath -PathType Leaf)) {
   md ~\AppData\Local\nvim\autoload
   $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -70,46 +70,46 @@ if (-not $(Test-Path $plugDotVimPath -PathType Leaf)) {
   )
 }
 
-# Install vim plugins
+# install vim plugins
 nvim.exe -c PlugInstall -c qa
 
-# Install fzf
+# install fzf
 if (-not $(scoop which fzf)) {
   scoop install fzf
 }
 
-# Install fnm
+# install fnm
 if (-not $(scoop which fnm)) {
   scoop install fnm
 }
 
-# Install zoxide
+# install zoxide
 if (-not $(scoop which zoxide)) {
   scoop install zoxide
 }
 
-# Install busybox-lean
+# install busybox-lean
 # Note: the `sed` command provided by busybox is better when using `-i` flag
 if (-not $(scoop which busybox)) {
   scoop install busybox-lean
 }
 
-# Install less
+# install less
 if (-not $(scoop which less)) {
   scoop install less
 }
 
-# Install posh-git module
+# install posh-git module
 if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contains('posh-git')) ) {
   Install-Module 'posh-git' -Scope CurrentUser
 }
 
-# Install Terminal-Icons module
+# install Terminal-Icons module
 if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contains('Terminal-Icons')) ) {
   Install-Module 'Terminal-Icons' -Scope CurrentUser
 }
 
-# Load fnm & generate fnm's completions file
+# load fnm & generate fnm's completions file
 $fnmCompletionsPs1Path = "$HOME\dotfiles\powershell\completions\_fnm.completions.ps1"
 if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
   powershell.exe -NoProfile -Command "Set-ExecutionPolicy RemoteSigned -scope CurrentUser; fnm env --use-on-cd | Out-String | Invoke-Expression; fnm completions --shell powershell > $fnmCompletionsPs1Path"

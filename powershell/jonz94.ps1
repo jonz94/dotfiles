@@ -1,14 +1,14 @@
-﻿# UTF-8 for printing
+﻿# utf-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-# Opt-out powershell telemetry
+# opt-out powershell telemetry
 # https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_telemetry
 $env:POWERSHELL_TELEMETRY_OPTOUT = 'yes'
 
-# Disable less history file
+# disable less history file
 $env:LESSHISTFILE = '-'
 
-# Oh My Powershell
+# oh my posh
 # https://github.com/JanDeDobbeleer/oh-my-posh
 # enable posh-git module
 $env:POSH_GIT_ENABLED = $true
@@ -18,49 +18,49 @@ if ( $(scoop which oh-my-posh) ) {
   Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powershell/jonz94.omp.json)
 }
 
-# Terminal Icons for Powershell
+# terminal icons for powershell
 # https://github.com/devblackops/Terminal-Icons
 Import-Module 'Terminal-Icons'
 
-# Use Emacs mode, just like unix-y environment
+# use Emacs mode, just like unix-y environment
 Set-PSReadlineOption -EditMode Emacs
 
-# No More Beep
+# no more beep
 Set-PSReadlineOption -BellStyle None
 
-# Make shell history cleaner
+# make shell history cleaner
 Set-PSReadlineOption -HistoryNoDuplicate
 
-# Show predictive suggestions from command history
+# show predictive suggestions from command history
 Set-PSReadLineOption -PredictionSource History
 
-# Any command with spaces or tabs at the beginning of the line is not added to the PSReadLine history
-# Credit: https://github.com/PowerShell/PowerShell/issues/10403#issuecomment-523833700
+# any command with spaces or tabs at the beginning of the line is not added to the PSReadLine history
+# credit: https://github.com/PowerShell/PowerShell/issues/10403#issuecomment-523833700
 Set-PSReadLineOption -AddToHistoryHandler {
   param($line)
   $line -notmatch '^\s+'
 }
 
-# Print out PSReadline history instead of using powershell's Get-History
+# print out PSReadline history instead of using powershell's Get-History
 Remove-Item Alias:\history -Force *> $null
 function history {
   Get-Content (Get-PSReadLineOption).HistorySavePath
 }
 
-# Edit PSReadLine history file via vscode
+# edit PSReadLine history file via vscode
 function edit-history {
   code (Get-PSReadLineOption).HistorySavePath
 }
 
-# Ctrl + Shift + v for paste
+# ctrl + shift + v for paste
 Set-PSReadlineKeyHandler -Key Ctrl+V -Function Paste
 
-# Load fnm
+# load fnm
 if ( $(scoop which fnm) ) {
   fnm env --use-on-cd | Out-String | Invoke-Expression
 }
 
-# Load zoxide
+# load zoxide
 if ( $(scoop which zoxide) ) {
   Invoke-Expression (& {
     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
@@ -84,10 +84,10 @@ function poweroff { shutdown /s /t 0 }
 function wslshutdown { wsl.exe --shutdown }
 function wslpoweroff { wsl.exe --shutdown }
 
-# Open current directory in vscode
+# open current directory in vscode
 function c. { code . }
 
-# Open current directory in vscode-insiders
+# open current directory in vscode-insiders
 function ci. { code-insiders . }
 function ci { code-insiders }
 
@@ -105,7 +105,7 @@ function echo-powershell-escape-character {
   Write-Host "Powershell's escape character is backquote ``"
 }
 
-# Open recycle bin directory in file explorer
+# open recycle bin directory in file explorer
 function trash { Start-Process shell:RecycleBinFolder }
 
 # cd to dotfiles
@@ -251,7 +251,7 @@ function gloga { git log --oneline --decorate --graph --all $args }
 function gls { git log --show-signature }
 
 # show graph for git reflog command
-# Credit: https://gist.github.com/matthewmccullough/988077
+# credit: https://gist.github.com/matthewmccullough/988077
 function glggr {
   git log --graph --decorate $(git reflog --format=format:%h);
 }
@@ -265,7 +265,7 @@ function gp { git push $args }
 
 function gpD { git push --delete $args }
 
-# Get-GitBranch is a helper from posh-git module
+# Note: `Get-GitBranch` is a helper from posh-git module
 function gpsup { git push -u origin $((Get-GitStatus).Branch) $args }
 
 function gr { git remote $args }
