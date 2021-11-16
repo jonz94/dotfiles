@@ -63,7 +63,7 @@ setup_git() {
 
   git config --global user.name ${GIT_NAME}
   git config --global user.email ${GIT_MAIL}
-  git config --global pull.rebase false
+  git config --global pull.rebase true
   git config --global core.editor nvim
   git config --global init.defaultBranch main
 
