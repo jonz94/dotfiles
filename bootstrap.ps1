@@ -88,19 +88,15 @@ if (-not $(scoop which zoxide)) {
   scoop install zoxide
 }
 
-# Install busybox
+# Install busybox-lean
 # Note: the `sed` command provided by busybox is better when using `-i` flag
 if (-not $(scoop which busybox)) {
-  scoop install busybox
+  scoop install busybox-lean
 }
 
 # Install less
 if (-not $(scoop which less)) {
   scoop install less
-} else {
-  # if less has already installed
-  # using `scoop reset less` to overwrite shim to less.exe installed from busybox
-  scoop reset less
 }
 
 # Install posh-git module
