@@ -328,8 +328,6 @@ function sup { scoop update $args }
 function sug { scoop upgrade }
 function ug { scoop upgrade }
 
-function which { scoop which $args }
-
 # change terminal background color by using special ansi escape sequences
 #
 # example usage 1:
