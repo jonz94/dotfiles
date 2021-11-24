@@ -325,8 +325,8 @@ function sst { scoop status }
 
 function sup { scoop update $args }
 
-function sup* { scoop update * }
-function ug { scoop update * }
+function sug { scoop upgrade }
+function ug { scoop upgrade }
 
 function which { scoop which $args }
 
