@@ -1,4 +1,4 @@
-﻿# utf-8 for printing
+# utf-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # opt-out powershell telemetry
@@ -15,7 +15,8 @@ $env:POSH_GIT_ENABLED = $true
 # disable Az.Accounts module
 $env:AZ_ENABLED = $false
 if ( $(scoop which oh-my-posh) ) {
-  Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powershell/jonz94.omp.json)
+  $config = Join-Path $PSScriptRoot 'jonz94.omp.json'
+  Invoke-Expression (oh-my-posh --init --shell pwsh --config $config)
 }
 
 # terminal icons for powershell
@@ -71,7 +72,8 @@ if ( $(scoop which zoxide) ) {
 # test if current powershell is running with administrator privileges
 function Test-Administrator {
   $user = [Security.Principal.WindowsIdentity]::GetCurrent()
-  (New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
+  $admin = [Security.Principal.WindowsBuiltinRole]::Administrator
+  (New-Object Security.Principal.WindowsPrincipal $user).IsInRole($admin)
 }
 
 # clear
@@ -98,7 +100,7 @@ function o. { explorer.exe . }
 function open { explorer.exe $args }
 
 # echo path in pretty format
-function echopath { (echo $Env:PATH).split(';') }
+function echopath { (Write-Output $Env:PATH).split(';') }
 
 # echo powershell's escape character, because I've always thought it is backslash...
 function echo-powershell-escape-character {
@@ -328,16 +330,16 @@ function sup { scoop update $args }
 function sug { scoop upgrade }
 function ug { scoop upgrade }
 
-# change terminal background color by using special ansi escape sequences
+# update terminal background color by using special ansi escape sequences
 #
 # example usage 1:
-#     change-terminal-background-color -Color "#282c34"
+#     update-terminal-background-color -Color "#282c34"
 #
 # example usage 2:
-#     change-terminal-background-color -Color "#121212"
+#     update-terminal-background-color -Color "#121212"
 #
 # credit: https://github.com/alacritty/alacritty/issues/656
-function change-terminal-background-color {
+function update-terminal-background-color {
   param(
     [string]$Color
   )
@@ -346,9 +348,9 @@ function change-terminal-background-color {
 }
 
 function nvim-with-dynamic-terminal-background-color {
-  change-terminal-background-color -Color "#282c34"
+  update-terminal-background-color -Color "#282c34"
   nvim.exe $args
-  change-terminal-background-color -Color "#121212"
+  update-terminal-background-color -Color "#121212"
 }
 
 # neovim aliases
@@ -429,7 +431,7 @@ function cup { composer update --with-all-dependencies $args }
 function cw { composer why $args }
 
 # completions
-Get-ChildItem –Path "~/dotfiles/powershell/completions" -Recurse -Filter *.ps1 | Foreach-Object {
+Join-Path $PSScriptRoot 'completions' | Get-ChildItem -File -Filter '*.ps1' | Foreach-Object {
   . $_.FullName
 }
 
@@ -464,7 +466,7 @@ function invoke-vcvarsall {
 
   Push-Location $VcvarsallDir
 
-  cmd.exe /c "vcvarsall.bat ${Architecture} & set" | foreach {
+  cmd.exe /c "vcvarsall.bat ${Architecture} & set" | ForEach-Object {
     if ($_ -match "(.*?)=(.*)") {
       Set-Item -Force -Path "ENV:\$($matches[1])" -Value "$($matches[2])"
     }
@@ -480,7 +482,7 @@ function invoke-vcvarsall {
 # add backwards compatibility for older powershell
 if ( $HOST.Version.Major -ge 7 ) {
   # only source this profile when powershell major version number is >= 7
-  . $HOME\dotfiles\powershell\pwsh.ps1
+  . $(Join-Path $PSScriptRoot pwsh.ps1)
 } else {
   function gpoat {
     if ( $(git push origin --all) ) {
