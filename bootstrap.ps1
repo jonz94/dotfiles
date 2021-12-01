@@ -5,8 +5,9 @@ git config --global pull.rebase true
 git config --global init.defaultBranch main
 
 # create local profile if it does not exist
-if (-not $(Test-Path "$HOME\dotfiles\local\local.ps1" -PathType Leaf)) {
-  New-Item "$HOME\dotfiles\local\local.ps1" -ItemType File -Force *> $null
+$localScript = Join-Path $PSScriptRoot 'local' 'local.ps1'
+if (-not $(Test-Path $localScript -PathType Leaf)) {
+  New-Item $localScript -ItemType File -Force *> $null
 }
 
 # create $PROFILE file if it does not exists
@@ -34,7 +35,8 @@ if (-not $(scoop which nvim)) {
   scoop install neovim
 }
 
-$initDotVimPath = "$HOME\AppData\Local\nvim\init.vim"
+$neovimUserDataDirectory = Join-Path $env:LOCALAPPDATA 'nvim'
+$initDotVimPath = Join-Path $neovimUserDataDirectory 'init.vim'
 
 # create neovim's init.vim if it does not exist
 if (-not $(Test-Path $initDotVimPath -PathType Leaf)) {
@@ -45,7 +47,7 @@ if (-not $(Select-String -Path $PROFILE -Pattern '^source \$HOME\/dotfiles\/nvim
   Add-Content $initDotVimPath -Encoding UTF8 -Value 'source $HOME/dotfiles/nvim/jonz94.vim'
 }
 
-$ginitDotVimPath = "$HOME\AppData\Local\nvim\ginit.vim"
+$ginitDotVimPath = Join-Path $neovimUserDataDirectory 'ginit.vim'
 
 # create neovim's ginit.vim if it does not exists
 if (-not $(Test-Path $ginitDotVimPath -PathType Leaf)) {
@@ -56,11 +58,12 @@ if (-not $(Select-String -Path $PROFILE -Pattern '^\source \$HOME\/dotfiles\/nvi
   Add-Content $ginitDotVimPath -Encoding UTF8 -Value 'source $HOME/dotfiles/nvim/jonz94.gvim'
 }
 
-$plugDotVimPath = "$HOME\AppData\Local\nvim\autoload\plug.vim"
+$neovimAutoloadDirectory = Join-Path $neovimUserDataDirectory 'autoload'
+$plugDotVimPath = Join-Path $neovimAutoloadDirectory 'plug.vim'
 
 # install vim-plug
 if (-not $(Test-Path $plugDotVimPath -PathType Leaf)) {
-  md ~\AppData\Local\nvim\autoload
+  New-Item $neovimAutoloadDirectory -ItemType Directory -ErrorAction SilentlyContinue
   $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   (New-Object Net.WebClient).DownloadFile(
     $uri,
@@ -110,7 +113,14 @@ if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contain
 }
 
 # load fnm & generate fnm's completions file
-$fnmCompletionsPs1Path = "$HOME\dotfiles\powershell\completions\_fnm.completions.ps1"
+$fnmCompletionsPs1Path = Join-Path $PSScriptRoot 'powershell' 'completions' '_fnm.completions.ps1'
+
 if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
-  powershell.exe -NoProfile -Command "Set-ExecutionPolicy RemoteSigned -scope CurrentUser; fnm env --use-on-cd | Out-String | Invoke-Expression; fnm completions --shell powershell > $fnmCompletionsPs1Path"
+  $command = @'
+    Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+    fnm env --use-on-cd | Out-String | Invoke-Expression
+    fnm completions --shell powershell
+'@
+
+  powershell.exe -NoProfile -Command "$command > $fnmCompletionsPs1Path"
 }
