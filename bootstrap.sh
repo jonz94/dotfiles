@@ -44,16 +44,17 @@ setup_zsh() {
 
 setup_neovim() {
   echo 'Setting up neovim...'
-  mkdir -p ~/.config/nvim
+  NVIM_CONFIG_DIR="$HOME/.config/nvim"
 
-  backup ~/.config/nvim/init.vim
-  echo 'source $HOME/dotfiles/nvim/jonz94.vim' >> ~/.config/nvim/init.vim
+  # backup
+  if [ -e $NVIM_CONFIG_DIR ]; then
+    TIMESTAMP=$(date +"%Y-%m-%d,%H:%M:%S")
 
-  backup ~/.config/nvim/ginit.vim
-  echo 'source $HOME/dotfiles/nvim/jonz94.gvim' >> ~/.config/nvim/ginit.vim
+    echo "Backup ${NVIM_CONFIG_DIR} to ${NVIM_CONFIG_DIR}.backup.${TIMESTAMP}"
+    mv ${NVIM_CONFIG_DIR} ${NVIM_CONFIG_DIR}.backup.${TIMESTAMP}
+  fi
 
-  echo 'Installing neovim plugins...'
-  nvim -c PlugInstall -c qa
+  ln -s $HOME/dotfiles/nvim $NVIM_CONFIG_DIR
 
   echo 'neovim is ready!'
 }
