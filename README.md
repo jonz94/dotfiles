@@ -1,183 +1,206 @@
-# JoNz94's dotfiles
+# jonz94's dotfiles
 
 - [Pre-Requirements](#pre-requirements)
     - [Linux or WSL](#linux-or-wsl)
     - [macOS](#macos)
     - [Windows](#windows)
     - [Note for Ubuntu/Linux to install latest git](#note-for-ubuntulinux-to-install-latest-git)
-    - [Note for WSL 1 (Windows Subsystem for Linux version 1)](#note-for-wsl-1-windows-subsystem-for-linux-version-1)
-- [Usage](#usage)
-    - [For Linux and macOS](#for-linux-and-macos)
-    - [For WSL 1](#for-wsl-1)
-    - [PowerShell setup](#powershell-setup)
-    - [CMD (Command Prompt) setup](#cmd-command-prompt-setup)
+    - [Note for WSL 1](#note-for-wsl-1)
+- [Bootstrap](#bootstrap)
+    - [Linux, macOS, and WSL 2](#linux-macos-and-wsl-2)
+    - [PowerShell on Windows](#powershell-on-windows)
+    - [WSL 1](#wsl-1)
+    - [CMD (Command Prompt) on Windows](#cmd-command-prompt-on-windows)
 
 ## Pre-Requirements
 
 ### Linux or WSL
 
-* Install `git` and `curl` via package manager
+- Install `git` via package manager
 
 ### macOS
 
-* Install `Homebrew` via terminal
-    * https://brew.sh/
-    * https://docs.brew.sh/Installation
+- Install `Homebrew`
+    - https://brew.sh/
+    - https://docs.brew.sh/Installation
 
 ```bash
-$ xcode-select --install
+xcode-select --install
 # or just install entire Xcode from Apple App Store
 
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-* Then install `git` and `curl` via `Homebrew`
+- Then install `git` via `brew`
 
 ```bash
-$ brew install git curl
+brew install git
 ```
 
 ### Windows
 
-* Install `scoop` via powershell
-    * https://scoop.sh/
+- Install `scoop` via powershell
+    - https://scoop.sh/
 
 ```powershell
-PS> Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-PS> iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 ```
 
-* Install `openssh`
-    * [Install Windows 10's OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse)
-    * Or install `openssh` via `scoop`
+- Install `mingit` or `git` via `scoop`
+
+    - `mingit`: minimal git for Windows
+
     ```powershell
-    PS> scoop install openssh
+    scoop install mingit
     ```
 
-* Install `git` and `curl`
+    - `git`: standard git
 
-```powershell
-PS> scoop install git curl
-```
+    ```powershell
+    scoop install git
+    ```
 
 ### Note for Ubuntu/Linux to install latest git
 
-* Latest `git` can be installed via **git-core ppa**
-* https://launchpad.net/~git-core/+archive/ubuntu/ppa
+- Latest `git` can be installed via **git-core ppa**
+    - https://launchpad.net/~git-core/+archive/ubuntu/ppa
 
 ```bash
-$ sudo add-apt-repository ppa:git-core/ppa
-$ sudo apt update && sudo apt upgrade -y
-$ sudo apt install -y git
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y git
 ```
 
-### Note for WSL 1 (Windows Subsystem for Linux version 1)
+### Note for WSL 1
 
-* Create `/etc/wsl.conf` inside the WSL system
+- Create `/etc/wsl.conf` inside the WSL system
 
-* Copy the content of [wsl.conf](wsl/wsl.conf) into `/etc/wsl.conf`
+- Copy the content of [wsl.conf](wsl/wsl.conf) into `/etc/wsl.conf`
 
-* Restart WSL via this powershell (with Administrator permissoin) command:
+- Restart WSL via the following powershell command (Administrator permissoin is required):
 
 ```powershell
-# make sure you have Administrator permission
-PS> net stop LxssManager
+net stop LxssManager
 ```
 
-* Or use [sudo](https://github.com/lukesampson/psutils/blob/master/sudo.ps1), made by author of `scoop`.
+- Or use [gsudo](https://github.com/gerardog/gsudo)
 
-```powershell
-# install sudo
-PS> scoop install sudo
-# or install psutils (including sudo, with other cool utilities)
-PS> scoop install psutils
+    - Install `gsudo`
 
-# use sudo to get Administrator permission
-PS> sudo net stop LxssManager
+    ```powershell
+    scoop install gsudo
+    ```
+
+    - Use `sudo` to get Administrator permission
+
+    ```powershell
+    sudo net stop LxssManager
+    ```
+
+## Bootstrap
+
+### Linux, macOS, and WSL 2
+
+- Clone this repo to your `~/dotfiles`
+
+    - via https
+
+    ```bash
+    git clone https://github.com/jonz94/dotfiles.git ~/dotfiles
+    ```
+
+    - or via ssh
+
+    ```bash
+    git clone git@github.com:jonz94/dotfiles.git ~/dotfiles
+    ```
+
+- Execute `bootstrap.sh` via `bash`
+
+```
+cd ~/dotfiles && bash bootstrap.sh
 ```
 
-## Usage
+- Done 🎉
 
-### For Linux and macOS
+### PowerShell on Windows
 
-* Clone this repo to your `~/dotfiles`
+- Clone this repo to `$HOME\dotflies`
+
+    - via https
+
+    ```powershell
+    git clone https://github.com/jonz94/dotfiles.git $HOME\dotfiles
+    ```
+
+    - or via ssh
+
+    ```powershell
+    git clone git@github.com:jonz94/dotfiles.git $HOME\dotfiles
+    ```
+
+- Execute `bootstrap.ps1` script
+
+    - for powershell version < 7
+
+    ```powershell
+    cd \dotfiles; .\bootstrap.ps1
+    ```
+
+    - for powershell version >= 7
+
+    ```powershell
+    cd ~\dotfiles && .\bootstrap.ps1
+    ```
+
+- Done 🎉
+
+### WSL 1
+
+> NOTE: ALL STEP SHOULD BE DONE INSIDE WSL 1!
+
+- Set `umask` to 0022
 
 ```bash
-# via https
-$ git clone --depth 1 https://github.com/jonz94/dotfiles.git ~/dotfiles
-
-# via ssh
-$ git clone --depth 1 git@github.com:jonz94/dotfiles.git ~/dotfiles
+umask 0022
 ```
 
-* run `bootstrap.sh` via `bash`
+- Clone this repo to `/c/Users/<WindowsUserName>/dotfiles`, this will make sure that all the files are save in **Windows file system**, also make sure that all files are using `LF` as EOL.
 
-```
-$ cd ~/dotfiles && bash bootstrap.sh
-```
+    - via https
 
-* DONE!
+    ```bash
+    git clone https://github.com/jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
+    ```
 
-### For WSL 1
+    - or via ssh
 
->NOTE: ALL STEP SHOULD BE DONE INSIDE WSL 1!
+    ```bash
+    git clone git@github.com:jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
+    ```
 
-* set umask to 0022
+- **In WSL 1**, create a symbolic link via following command:
 
 ```bash
-$ umask 0022
+ln -s /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles ~/dotfiles
 ```
 
-* clone this repo to `/c/Users/<WindowsUserName>/dotfiles`, this will make sure that all the files are save in **Windows file system**, also make sure that all files are using `LF` as EOL.
-
-```bash
-# via https
-PS> git clone --depth 1 https://github.com/jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
-
-# via ssh
-PS> git clone --depth 1 git@github.com:jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
-```
-
-* **In WSL 1**, create a symbolic link via following command:
-
-```bash
-$ ln -s /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles ~/dotfiles
-```
-
->These step are important! And the reason is [Do not change Linux files using Windows apps and tools](https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/)
+> These step are important! And the reason is [Do not change Linux files using Windows apps and tools](https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/)
 >
 > If you want to use **both Windows Tools and Linux Tools** to changing some files or directories in WSL. The solution I found is:
-> * Put those thing in Windows file system. (This makes Windows Tools happy.)
-> * In WSL, **create a symbolic link** which points to file/directory in Windows file system. (This makes Linux Tools happy.)
+> - Put those thing in Windows file system. (This makes Windows Tools happy.)
+> - In WSL, **create a symbolic link** which points to file/directory in Windows file system. (This makes Linux Tools happy.)
 
-* run `bootstrap.sh` via `bash` to settting up WSL.
+- Execute `bootstrap.sh` via `bash` to settting up WSL.
 
 ```bash
-$ cd ~/dotfiles && bash bootstrap.sh
+cd ~/dotfiles && bash bootstrap.sh
 ```
 
-* DONE!
+- Done 🎉
 
-### PowerShell setup
-
-* Clone this repo to `$HOME\dotflies`
-
-```powershell
-# via https
-PS> git clone --depth 1 https://github.com/jonz94/dotfiles.git $HOME\dotfiles
-```
-
-* Run or double-click `bootstrap.ps1` script
-
-```powershell
-# for powershell version < 7
-PS> cd \dotfiles; .\bootstrap.ps1
-
-# for powershell version >= 7
-PS> cd ~\dotfiles && .\bootstrap.ps1
-```
-
-### CMD (Command Prompt) setup
+### CMD (Command Prompt) on Windows
 
 1. Press `Win` + `r`
 2. Type `regedit` and press `Enter`
