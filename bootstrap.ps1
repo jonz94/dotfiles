@@ -30,51 +30,15 @@ if (-not $(scoop which oh-my-posh)) {
   scoop install oh-my-posh3
 }
 
-# install neovim
+# install gsudo
+if (-not $(scoop which gsudo)) {
+  scoop install gsudo
+}
+
+# install neovim nightly
 if (-not $(scoop which nvim)) {
-  scoop install neovim
+  scoop install neovim-nightly
 }
-
-$neovimUserDataDirectory = Join-Path $env:LOCALAPPDATA 'nvim'
-$initDotVimPath = Join-Path $neovimUserDataDirectory 'init.vim'
-
-# create neovim's init.vim if it does not exist
-if (-not $(Test-Path $initDotVimPath -PathType Leaf)) {
-  New-Item $initDotVimPath -ItemType File -Force *> $null
-}
-
-if (-not $(Select-String -Path $PROFILE -Pattern '^source \$HOME\/dotfiles\/nvim\/jonz94\.vim$')) {
-  Add-Content $initDotVimPath -Encoding UTF8 -Value 'source $HOME/dotfiles/nvim/jonz94.vim'
-}
-
-$ginitDotVimPath = Join-Path $neovimUserDataDirectory 'ginit.vim'
-
-# create neovim's ginit.vim if it does not exists
-if (-not $(Test-Path $ginitDotVimPath -PathType Leaf)) {
-  New-Item $ginitDotVimPath -ItemType File -Force *> $null
-}
-
-if (-not $(Select-String -Path $PROFILE -Pattern '^\source \$HOME\/dotfiles\/nvim\/jonz94\.gvim$')) {
-  Add-Content $ginitDotVimPath -Encoding UTF8 -Value 'source $HOME/dotfiles/nvim/jonz94.gvim'
-}
-
-$neovimAutoloadDirectory = Join-Path $neovimUserDataDirectory 'autoload'
-$plugDotVimPath = Join-Path $neovimAutoloadDirectory 'plug.vim'
-
-# install vim-plug
-if (-not $(Test-Path $plugDotVimPath -PathType Leaf)) {
-  New-Item $neovimAutoloadDirectory -ItemType Directory -ErrorAction SilentlyContinue
-  $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  (New-Object Net.WebClient).DownloadFile(
-    $uri,
-    $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
-      $plugDotVimPath
-    )
-  )
-}
-
-# install vim plugins
-nvim.exe -c PlugInstall -c qa
 
 # install fzf
 if (-not $(scoop which fzf)) {
@@ -124,3 +88,7 @@ if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
 
   powershell.exe -NoProfile -Command "$command > $fnmCompletionsPs1Path"
 }
+
+Write-Host "`nINFO: execute following script to setup neovim:`n" -f Cyan
+Write-Host "    .\powershell\scripts\setup-neovim.ps1`n" -f Blue
+Write-Host 'Done! 🎉'
