@@ -27,11 +27,11 @@ function drm {
 }
 
 function dst {
-  Write-Host "`n【Container 容器執行狀態列表】"
+  Write-Host "`n[Container list]"
   docker.exe container ls -a
-  Write-Host "`n【Volume 儲存空間列表】"
+  Write-Host "`n[Volume list]"
   docker.exe volume ls
-  Write-Host "`n【Network 網路列表】"
+  Write-Host "`n[Network list]"
   docker.exe network ls
   Write-Host ""
 }

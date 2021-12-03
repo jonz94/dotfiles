@@ -5,7 +5,7 @@ git config --global pull.rebase true
 git config --global init.defaultBranch main
 
 # create local profile if it does not exist
-$localScript = Join-Path $PSScriptRoot 'local' 'local.ps1'
+$localScript = Join-Path $PSScriptRoot 'local\local.ps1'
 if (-not $(Test-Path $localScript -PathType Leaf)) {
   New-Item $localScript -ItemType File -Force *> $null
 }
@@ -77,7 +77,7 @@ if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contain
 }
 
 # load fnm & generate fnm's completions file
-$fnmCompletionsPs1Path = Join-Path $PSScriptRoot 'powershell' 'completions' '_fnm.completions.ps1'
+$fnmCompletionsPs1Path = Join-Path $PSScriptRoot 'powershell\completions\_fnm.completions.ps1'
 
 if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
   $command = @'
