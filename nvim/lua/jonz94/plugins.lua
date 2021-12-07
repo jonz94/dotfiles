@@ -265,7 +265,7 @@ local plugins = function(use)
     disable = is_windows,
   })
   use({
-    'lyokha/vim-xkbswitch',
+    'jonz94/vim-xkbswitch',
     disable = not is_windows,
     setup = function()
       vim.g.XkbSwitchEnabled = 1
