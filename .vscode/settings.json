@@ -1,9 +1,8 @@
 {
   "[powershell]": {
     // hide n reference(s) on top of the function declaration
-    "editor.codeLens": false,
-
-    // disable code formatting for powershell
-    "editor.formatOnSave": false
-  }
+    "editor.codeLens": false
+  },
+  "powershell.codeFormatting.preset": "OTBS",
+  "powershell.codeFormatting.useCorrectCasing": true
 }
