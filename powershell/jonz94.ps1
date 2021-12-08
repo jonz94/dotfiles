@@ -24,13 +24,13 @@ if ( $(scoop which oh-my-posh) ) {
 Import-Module 'Terminal-Icons'
 
 # use Emacs mode, just like unix-y environment
-Set-PSReadlineOption -EditMode Emacs
+Set-PSReadLineOption -EditMode Emacs
 
 # no more beep
-Set-PSReadlineOption -BellStyle None
+Set-PSReadLineOption -BellStyle None
 
 # make shell history cleaner
-Set-PSReadlineOption -HistoryNoDuplicate
+Set-PSReadLineOption -HistoryNoDuplicate
 
 # show predictive suggestions from command history
 Set-PSReadLineOption -PredictionSource History
@@ -54,7 +54,7 @@ function edit-history {
 }
 
 # ctrl + shift + v for paste
-Set-PSReadlineKeyHandler -Key Ctrl+V -Function Paste
+Set-PSReadLineKeyHandler -Key Ctrl+V -Function Paste
 
 # load fnm
 if ( $(scoop which fnm) ) {
@@ -63,10 +63,8 @@ if ( $(scoop which fnm) ) {
 
 # load zoxide
 if ( $(scoop which zoxide) ) {
-  Invoke-Expression (& {
-    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-    (zoxide init --hook $hook powershell) -join "`n"
-  })
+  $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+  Invoke-Expression (& { (zoxide init --hook $hook powershell) -join "`n" })
 }
 
 # test if current powershell is running with administrator privileges
@@ -77,24 +75,24 @@ function Test-Administrator {
 }
 
 # aliases
-Join-Path $PSScriptRoot 'aliases' | Get-ChildItem -File -Filter '*.ps1' | Foreach-Object {
+Join-Path $PSScriptRoot 'aliases' | Get-ChildItem -File -Filter '*.ps1' | ForEach-Object {
   . $_.FullName
 }
 
 # completions
-Join-Path $PSScriptRoot 'completions' | Get-ChildItem -File -Filter '*.ps1' | Foreach-Object {
+Join-Path $PSScriptRoot 'completions' | Get-ChildItem -File -Filter '*.ps1' | ForEach-Object {
   . $_.FullName
 }
 
 # settings
-Join-Path $PSScriptRoot 'settings' | Get-ChildItem -File -Filter '*.ps1' | Foreach-Object {
+Join-Path $PSScriptRoot 'settings' | Get-ChildItem -File -Filter '*.ps1' | ForEach-Object {
   . $_.FullName
 }
 
 # add backwards compatibility for older powershell
 if ( $HOST.Version.Major -ge 7 ) {
   # only source this profile when powershell major version number is >= 7
-  . $(Join-Path $PSScriptRoot pwsh.ps1)
+  . $(Join-Path $PSScriptRoot 'pwsh.ps1')
 } else {
   function gpoat {
     if ( $(git push origin --all) ) {

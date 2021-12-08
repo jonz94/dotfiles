@@ -10,16 +10,16 @@
 # credit: https://stackoverflow.com/a/21652729/9979122
 function invoke-vcvarsall {
   param(
-    [parameter(Mandatory, HelpMessage="See https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line#vcvarsall-syntax for available architecture")]
-    [ValidateSet("x86", "x86_amd64", "x86_x64", "x86_arm", "amd64", "x64", "amd64_x86", "x64_x86", "amd64_arm", "x64_arm", "amd64_arm64", "x64_arm64")]
-    [string]$Architecture,
-    [string]$VcvarsallDir = "${Env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build",
-    [switch]$ShowLogs
+    [parameter(Mandatory, HelpMessage = 'See https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line#vcvarsall-syntax for available architecture')]
+    [ValidateSet('x86', 'x86_amd64', 'x86_x64', 'x86_arm', 'amd64', 'x64', 'amd64_x86', 'x64_x86', 'amd64_arm', 'x64_arm', 'amd64_arm64', 'x64_arm64')]
+    [string] $Architecture,
+    [string] $VcvarsallDir = "${Env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build",
+    [switch] $ShowLogs
   )
 
-  $vcvarsallPath = (Join-Path $VcvarsallDir "vcvarsall.bat")
+  $vcvarsallPath = (Join-Path $VcvarsallDir 'vcvarsall.bat')
   if (!(Test-Path $vcvarsallPath)) {
-    Write-Host "[Error]: Invoke-VcVarsAll failed." -ForegroundColor Red
+    Write-Host '[Error]: Invoke-VcVarsAll failed.' -ForegroundColor Red
     Write-Host "${vcvarsallPath}: No such file." -ForegroundColor Red
     return
   }
@@ -27,7 +27,7 @@ function invoke-vcvarsall {
   Push-Location $VcvarsallDir
 
   cmd.exe /c "vcvarsall.bat ${Architecture} & set" | ForEach-Object {
-    if ($_ -match "(.*?)=(.*)") {
+    if ($_ -match '(.*?)=(.*)') {
       Set-Item -Force -Path "ENV:\$($matches[1])" -Value "$($matches[2])"
     }
   }

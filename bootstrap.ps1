@@ -80,15 +80,15 @@ if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contain
 $fnmCompletionsPs1Path = Join-Path $PSScriptRoot 'powershell\completions\_fnm.completions.ps1'
 
 if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
-  $command = @'
+  $commands = @'
     Set-ExecutionPolicy RemoteSigned -scope CurrentUser
     fnm env --use-on-cd | Out-String | Invoke-Expression
     fnm completions --shell powershell
 '@
 
-  powershell.exe -NoProfile -Command "$command > $fnmCompletionsPs1Path"
+  powershell.exe -NoProfile -Command "$commands > $fnmCompletionsPs1Path"
 }
 
-Write-Host "`nINFO: execute following script to setup neovim:`n" -f Cyan
-Write-Host "    .\powershell\scripts\setup-neovim.ps1`n" -f Blue
+Write-Host "`nINFO: execute following script to setup neovim:`n" -ForegroundColor Cyan
+Write-Host "    .\powershell\scripts\setup-neovim.ps1`n" -ForegroundColor Blue
 Write-Host 'Done! 🎉'

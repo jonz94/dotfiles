@@ -9,16 +9,16 @@
 # credit: https://github.com/alacritty/alacritty/issues/656
 function update-terminal-background-color {
   param(
-    [string]$Color
+    [string] $Color
   )
 
   Write-Host "`e]11;${Color}`a" -NoNewline
 }
 
 function nvim-with-dynamic-terminal-background-color {
-  update-terminal-background-color -Color "#282c34"
+  update-terminal-background-color -Color '#282c34'
   nvim.exe $args
-  update-terminal-background-color -Color "#121212"
+  update-terminal-background-color -Color '#121212'
 }
 
 # neovim aliases
