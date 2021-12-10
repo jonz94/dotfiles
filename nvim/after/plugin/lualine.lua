@@ -50,7 +50,7 @@ require('lualine').setup({
     lualine_x = {
       {
         'diagnostics',
-        sources = { 'nvim_lsp', 'coc' },
+        sources = { 'nvim_diagnostic' },
         symbols = icons,
         padding = 2,
       },
