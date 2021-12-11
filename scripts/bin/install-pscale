@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ ! $(uname) = "Linux" ]; then
-  echo -e "${RED}This installer only support Linux.${NORMAL}"
+  printf "${RED}This installer only support Linux.${NORMAL}"
   exit 1
 fi
 

@@ -1,16 +1,16 @@
 #!/bin/sh
 
 dug() {
-  echo ${BLUE}"[dotfiles]" updating...${NORMAL}
+  printf "${BLUE}[dotfiles] updating...${NORMAL}\n"
   git -C ${DOTS} fetch --all --prune
   git -C ${DOTS} pull
 
-  echo ${BLUE}"[zim]" updating...${NORMAL}
+  printf "${BLUE}[zim] updating...${NORMAL}\n"
   zsh ~/.zim/zimfw.zsh install
   zsh ~/.zim/zimfw.zsh update
   zsh ~/.zim/zimfw.zsh upgrade
 
-  echo ${BLUE}"[tpm]" updating...${NORMAL}
+  printf "${BLUE}[tpm] updating...${NORMAL}\n"
   ~/.tmux/plugins/tpm/bin/update_plugins all
 
   echo

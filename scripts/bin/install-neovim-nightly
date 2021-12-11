@@ -18,11 +18,11 @@ install_neovim_nightly_on_macos() {
   ln -sf "${HOME}/.local/opt/neovim-nightly/bin/nvim" "${HOME}/.local/bin/nvim"
 }
 
-if [[ "$(uname)" == "Linux" ]]; then
+if [ "$(uname)" = "Linux" ]; then
   install_neovim_nightly_on_linux
-elif [[ "$(uname)" == "Darwin" ]]; then
+elif [ "$(uname)" = "Darwin" ]; then
   install_neovim_nightly_on_macos
 else
-  echo -e "${RED}This installer only support Linux or macOS.${NORMAL}"
+  printf "${RED}This installer only support Linux or macOS.${NORMAL}\n"
   exit 1
 fi

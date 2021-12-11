@@ -1,15 +1,15 @@
 #!/bin/sh
 
 if [ ! $(uname) = "Linux" ]; then
-  echo "${RED}The script in only work for Linux... Abort execution...${NORMAL}"
+  printf "${RED}The script in only work for Linux... Abort execution...${NORMAL}\n"
   exit 1
 fi
 
 FILE=/sys/module/hid_apple/parameters/swap_opt_cmd
 
 if [ ! -f $FILE ]; then
-  echo "${RED}Unsupport OS! File: ${FILE} not found...${NORMAL}"
-  exit 2
+  printf "${RED}Unsupport OS! File: ${FILE} not found...${NORMAL}\n"
+  exit 1
 fi
 
 if [ "$(cat $FILE)" = 0 ]; then

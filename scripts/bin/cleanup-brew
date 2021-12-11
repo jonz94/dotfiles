@@ -2,7 +2,7 @@
 # cleanup unused brew dependencies
 
 if ! type brew &> /dev/null; then
-  echo "${RED}brew not found... Abort execution...${NORMAL}"
+  printf "${RED}brew not found... Abort execution...${NORMAL}\n"
   exit 1
 fi
 
