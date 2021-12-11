@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ ! $(uname) = "Linux" ]; then
+  echo -e "${RED}This installer only support Linux.${NORMAL}"
+  exit 1
+fi
+
+# get latest version number via github api
+if [ -z ${PSCALE_VERSION} ]; then
+  PSCALE_VERSION=$(curl -fsSL "https://api.github.com/repos/planetscale/cli/releases/latest" | grep tag_name | cut -d '"' -f 4 | cut -d v -f 2)
+fi
+
+rm -f /tmp/pscale.tar.gz
+rm -rf /tmp/pscale
+
+curl -L https://github.com/planetscale/cli/releases/download/v${PSCALE_VERSION}/pscale_${PSCALE_VERSION}_linux_amd64.tar.gz -o /tmp/pscale.tar.gz
+mkdir -p /tmp/pscale
+tar xf /tmp/pscale.tar.gz --directory=/tmp/pscale
+
+mkdir -p ~/.local/opt/pscale
+cp /tmp/pscale/pscale ~/.local/opt/pscale/pscale
+
+mkdir -p ~/.local/bin/
+ln -sf ~/.local/opt/pscale/pscale ~/.local/bin/pscale
+
+cp /tmp/pscale/completions/pscale.zsh $HOME/dotfiles/zsh/functions/_pscale
