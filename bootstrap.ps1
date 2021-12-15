@@ -1,4 +1,4 @@
-﻿# setting up git
+# setting up git
 git config --global user.name 'jonz94'
 git config --global user.email 'jody16888@gmail.com'
 git config --global pull.rebase true
@@ -61,9 +61,19 @@ if (-not $(scoop which busybox)) {
   scoop install busybox-lean
 }
 
+# install grep
+if (-not $(scoop which grep)) {
+  scoop install grep
+}
+
 # install less
 if (-not $(scoop which less)) {
   scoop install less
+}
+
+# install sed
+if (-not $(scoop which sed)) {
+  scoop install sed
 }
 
 # install posh-git module
