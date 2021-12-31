@@ -1,6 +1,9 @@
 ﻿# utf-8 for printing
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
+# improve powershell performance
+$ProgressPreference = 'SilentlyContinue'
+
 # opt-out powershell telemetry
 # https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_telemetry
 $env:POWERSHELL_TELEMETRY_OPTOUT = 'yes'

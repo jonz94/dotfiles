@@ -1,4 +1,7 @@
-﻿# setting up git
+﻿# improve powershell performance
+$ProgressPreference = 'SilentlyContinue'
+
+# settiPg up git
 git config --global user.name 'jonz94'
 git config --global user.email 'jody16888@gmail.com'
 git config --global pull.rebase true
