@@ -173,7 +173,6 @@ local plugins = function(use)
   -- line maniuplation
   use({ 'matze/vim-move' })
 
-
   -- terminal
   use({
     'akinsho/nvim-toggleterm.lua',
