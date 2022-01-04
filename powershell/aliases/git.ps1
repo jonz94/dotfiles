@@ -95,6 +95,8 @@ function grbi { git rebase -i $args }
 
 function grbm { git rebase master $args }
 
+function grmv { git remote rename $args }
+
 function grv { git remote -v $args }
 
 function grh { git reset $args }
