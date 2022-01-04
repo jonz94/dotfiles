@@ -19,9 +19,9 @@ local theme = {
     b = { fg = colors.fg, bg = '#3e4452' },
     c = { fg = colors.fg, bg = '#2c323d' },
   },
-  visual  = { a = { fg = colors.bg, bg = colors.purple, gui = 'bold' } },
-  replace = { a = { fg = colors.bg, bg = colors.red,    gui = 'bold' } },
-  insert  = { a = { fg = colors.bg, bg = colors.blue,   gui = 'bold' } },
+  visual = { a = { fg = colors.bg, bg = colors.purple, gui = 'bold' } },
+  replace = { a = { fg = colors.bg, bg = colors.red, gui = 'bold' } },
+  insert = { a = { fg = colors.bg, bg = colors.blue, gui = 'bold' } },
   command = { a = { fg = colors.bg, bg = colors.yellow, gui = 'bold' } },
   inactive = {
     a = { fg = colors.gray, bg = colors.bg, gui = 'bold' },
@@ -59,14 +59,14 @@ require('lualine').setup({
       {
         'diff',
         diff_color = {
-          added    = { fg = colors.green },
+          added = { fg = colors.green },
           modified = { fg = colors.yellow },
-          removed  = { fg = colors.red },
+          removed = { fg = colors.red },
         },
         symbols = {
-          added    = '+',
+          added = '+',
           modified = '~',
-          removed  = '-',
+          removed = '-',
         },
       },
       { 'branch', icon = '' },

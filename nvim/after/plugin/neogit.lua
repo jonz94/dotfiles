@@ -19,5 +19,6 @@ neogit.setup({
   },
 })
 
+-- stylua: ignore start
 nnoremap({ '<Leader>gg',        function () neogit.open() end })
 nnoremap({ '<Leader><Leader>g', function () neogit.open() end })

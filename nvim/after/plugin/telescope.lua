@@ -21,7 +21,7 @@ telescope.setup({
         height = 0.9,
         preview_cutoff = 120,
         preview_width = 0.6,
-        width = 0.9
+        width = 0.9,
       },
     },
   },
@@ -33,6 +33,7 @@ if not is_win then
   end
 end
 
+-- stylua: ignore start
 nnoremap({ '<C-p>',      function() builtin.find_files()   end })
 nnoremap({ '<Leader>fd', function() builtin.find_files()   end })
 nnoremap({ '<Leader>fg', function() builtin.live_grep()    end })

@@ -31,7 +31,7 @@ cmp.setup({
     { name = 'path' },
   },
   formatting = {
-    format = require('lspkind').cmp_format {
+    format = require('lspkind').cmp_format({
       with_text = true,
       menu = {
         buffer = '[buf]',
@@ -40,7 +40,7 @@ cmp.setup({
         path = '[path]',
         luasnip = '[snip]',
       },
-    },
+    }),
   },
   documentation = {
     border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },

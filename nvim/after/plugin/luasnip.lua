@@ -16,7 +16,7 @@ luasnip.config.set_config({
 
 require('luasnip.loaders.from_vscode').load()
 
-vim.cmd [[
+vim.cmd([[
   imap <silent><expr> <c-j> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<c-j>'
   inoremap <silent> <c-k> <cmd>lua require('luasnip').jump(-1)<CR>
 
@@ -24,4 +24,4 @@ vim.cmd [[
 
   snoremap <silent> <c-j> <cmd>lua require('luasnip').jump(1)<CR>
   snoremap <silent> <c-k> <cmd>lua require('luasnip').jump(-1)<CR>
-]]
+]])

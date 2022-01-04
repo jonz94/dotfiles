@@ -16,7 +16,7 @@ require('jonz94.disable-builtin')
 vim.g.mapleader = ' '
 
 -- force loading of astronauta first
-vim.cmd [[runtime plugin/astronauta.vim]]
+vim.cmd([[runtime plugin/astronauta.vim]])
 
 -- load plugins
 require('jonz94.load-plugins')

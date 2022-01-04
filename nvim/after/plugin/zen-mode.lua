@@ -27,8 +27,6 @@ zen.setup({
   },
 })
 
-nnoremap({ '<Leader>zz', function() zen.toggle() end })
-
 nnoremap({
   '<Leader><Leader>z',
   function()
@@ -39,3 +37,6 @@ nnoremap({
     })
   end,
 })
+
+-- stylua: ignore start
+nnoremap({ '<Leader>zz', function() zen.toggle() end })

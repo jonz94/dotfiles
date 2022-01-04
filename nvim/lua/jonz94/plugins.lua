@@ -43,7 +43,7 @@ local plugins = function(use)
   -- telescope
   use({
     'nvim-telescope/telescope.nvim',
-    requires = 'nvim-lua/plenary.nvim'
+    requires = 'nvim-lua/plenary.nvim',
   })
   use({
     'nvim-telescope/telescope-fzf-native.nvim',
@@ -66,19 +66,19 @@ local plugins = function(use)
         default = '',
         symlink = '',
         git = {
-          unstaged  = '',
-          staged    = '✓',
-          unmerged  = '',
-          renamed   = '',
+          unstaged = '',
+          staged = '✓',
+          unmerged = '',
+          renamed = '',
           untracked = '',
-          ignored   = '',
+          ignored = '',
         },
         folder = {
-          default      = '',
-          open         = '',
-          empty        = '',
-          empty_open   = '',
-          symlink      = '',
+          default = '',
+          open = '',
+          empty = '',
+          empty_open = '',
+          symlink = '',
           symlink_open = '',
         },
       }
@@ -127,7 +127,7 @@ local plugins = function(use)
   })
 
   -- comments
-  use { 'numToStr/Comment.nvim' }
+  use({ 'numToStr/Comment.nvim' })
 
   -- highlight todo comments
   use({
@@ -269,7 +269,7 @@ local plugins = function(use)
     setup = function()
       vim.g.XkbSwitchEnabled = 1
       vim.g.XkbSwitchLib = vim.env.HOME .. '\\xkb-switch-win\\bin\\libxkbswitch64.dll'
-    end
+    end,
   })
 end
 

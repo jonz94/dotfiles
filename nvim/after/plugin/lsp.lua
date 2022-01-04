@@ -14,9 +14,9 @@ lsp_installer.settings({
     icons = {
       server_installed = ' ',
       server_pending = ' ',
-      server_uninstalled = ' '
-    }
-  }
+      server_uninstalled = ' ',
+    },
+  },
 })
 
 lsp_installer.on_server_ready(function(server)
@@ -31,6 +31,7 @@ lsp_installer.on_server_ready(function(server)
   server:setup(options)
 end)
 
+-- stylua: ignore start
 -- go to definition
 nnoremap({ '<Leader>gd', function() vim.lsp.buf.definition() end })
 nnoremap({ '<Leader>dj', function() vim.diagnostic.next() end })

@@ -21,5 +21,5 @@ local signs = {
 }
 
 for hl, icon in pairs(signs) do
-  vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end

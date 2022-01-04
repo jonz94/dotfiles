@@ -13,29 +13,29 @@ local is_win = vim.fn.has('win32')
 onedarkpro.setup({
   colors = {
     onedark = {
-      bg    = colors.bg,
+      bg = colors.bg,
       black = colors.black,
       -- additional colors
-      cursorline   = colors.cursorline,
-      selection    = colors.selection,
+      cursorline = colors.cursorline,
+      selection = colors.selection,
       color_column = colors.color_column,
-      indentline   = colors.indentline,
-      menu         = colors.menu,
-      menu_scroll  = colors.menu_scroll,
+      indentline = colors.indentline,
+      menu = colors.menu,
+      menu_scroll = colors.menu_scroll,
     },
   },
   styles = {
-    strings   = 'NONE',
-    comments  = 'italic',
-    keywords  = 'bold',
+    strings = 'NONE',
+    comments = 'italic',
+    keywords = 'bold',
     functions = 'NONE',
     variables = 'NONE',
   },
   options = {
-    bold       = true,
-    italic     = true,
-    underline  = false,
-    undercurl  = false, -- curly underline
+    bold = true,
+    italic = true,
+    underline = false,
+    undercurl = false, -- curly underline
     cursorline = true,
   },
   hlgroups = {

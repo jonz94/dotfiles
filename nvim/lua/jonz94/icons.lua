@@ -1,8 +1,8 @@
 local icons = {
   error = ' ',
-  hint  = ' ',
-  info  = ' ',
-  warn  = ' ',
+  hint = ' ',
+  info = ' ',
+  warn = ' ',
 }
 
 return icons

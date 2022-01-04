@@ -25,4 +25,5 @@ nvim_tree.setup({
   },
 })
 
+-- stylua: ignore start
 nnoremap({ '<C-n>', function() nvim_tree.toggle() end })
