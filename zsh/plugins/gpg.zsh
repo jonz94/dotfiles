@@ -1,4 +1,4 @@
-# workaround to make gpg worked with WSL and vscode
+# gpg helpers
 
 gpg-login() {
   export GPG_TTY=$(tty)
