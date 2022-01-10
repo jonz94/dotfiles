@@ -7,7 +7,6 @@ if not pcall(require, 'neogit') then
 end
 
 local neogit = require('neogit')
-local nnoremap = vim.keymap.nnoremap
 
 neogit.setup({
   disable_context_highlighting = true,
@@ -19,6 +18,10 @@ neogit.setup({
   },
 })
 
--- stylua: ignore start
-nnoremap({ '<Leader>gg',        function () neogit.open() end })
-nnoremap({ '<Leader><Leader>g', function () neogit.open() end })
+vim.keymap.set('n', '<Leader>gg', function()
+  neogit.open()
+end)
+
+vim.keymap.set('n', '<Leader><Leader>g', function()
+  neogit.open()
+end)

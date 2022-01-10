@@ -10,9 +10,6 @@ local plugins = function(use)
   -- neovim's lua functions library
   use({ 'nvim-lua/plenary.nvim' })
 
-  -- lua keymap DSL
-  use({ 'tjdevries/astronauta.nvim' })
-
   -- editorconfig
   use({ 'editorconfig/editorconfig-vim' })
 

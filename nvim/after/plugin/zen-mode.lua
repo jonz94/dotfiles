@@ -13,7 +13,6 @@ end
 require('twilight').setup()
 
 local zen = require('zen-mode')
-local nnoremap = vim.keymap.nnoremap
 
 zen.setup({
   window = {
@@ -27,16 +26,14 @@ zen.setup({
   },
 })
 
-nnoremap({
-  '<Leader><Leader>z',
-  function()
-    zen.toggle({
-      window = {
-        width = 120,
-      },
-    })
-  end,
-})
+vim.keymap.set('n', '<Leader><Leader>z', function()
+  zen.toggle({
+    window = {
+      width = 120,
+    },
+  })
+end)
 
--- stylua: ignore start
-nnoremap({ '<Leader>zz', function() zen.toggle() end })
+vim.keymap.set('n', '<Leader>zz', function()
+  zen.toggle()
+end)

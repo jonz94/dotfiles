@@ -8,7 +8,6 @@ end
 
 local nvim_tree = require('nvim-tree')
 local icons = require('jonz94.icons')
-local nnoremap = vim.keymap.nnoremap
 
 nvim_tree.setup({
   update_focused_file = {
@@ -25,5 +24,6 @@ nvim_tree.setup({
   },
 })
 
--- stylua: ignore start
-nnoremap({ '<C-n>', function() nvim_tree.toggle() end })
+vim.keymap.set('n', '<C-n>', function()
+  nvim_tree.toggle()
+end)

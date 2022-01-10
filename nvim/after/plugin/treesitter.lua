@@ -48,7 +48,5 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
-local options = { noremap = true }
-
-vim.api.nvim_set_keymap('n', '<Leader>tp', '<Cmd>TSPlaygroundToggle<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>th', '<Cmd>TSHighlightCapturesUnderCursor<CR>', options)
+vim.keymap.set('n', '<Leader>tp', '<Cmd>TSPlaygroundToggle<CR>')
+vim.keymap.set('n', '<Leader>th', '<Cmd>TSHighlightCapturesUnderCursor<CR>')

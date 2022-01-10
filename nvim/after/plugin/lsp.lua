@@ -7,7 +7,6 @@ if not pcall(require, 'nvim-lsp-installer') then
 end
 
 local lsp_installer = require('nvim-lsp-installer')
-local nnoremap = vim.keymap.nnoremap
 
 lsp_installer.settings({
   ui = {
@@ -31,8 +30,15 @@ lsp_installer.on_server_ready(function(server)
   server:setup(options)
 end)
 
--- stylua: ignore start
 -- go to definition
-nnoremap({ '<Leader>gd', function() vim.lsp.buf.definition() end })
-nnoremap({ '<Leader>dj', function() vim.diagnostic.next() end })
-nnoremap({ '<Leader>dk', function() vim.diagnostic.prev() end })
+vim.keymap.set('n', '<Leader>gd', function()
+  vim.lsp.buf.definition()
+end)
+
+vim.keymap.set('n', '<Leader>dj', function()
+  vim.diagnostic.next()
+end)
+
+vim.keymap.set('n', '<Leader>dk', function()
+  vim.diagnostic.prev()
+end)
