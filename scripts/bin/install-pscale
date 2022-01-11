@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 if [ ! $(uname) = "Linux" ]; then
   printf "${RED}This installer only support Linux.${NORMAL}"
   exit 1
@@ -13,7 +15,7 @@ fi
 rm -f /tmp/pscale.tar.gz
 rm -rf /tmp/pscale
 
-curl -L https://github.com/planetscale/cli/releases/download/v${PSCALE_VERSION}/pscale_${PSCALE_VERSION}_linux_amd64.tar.gz -o /tmp/pscale.tar.gz
+curl -fL https://github.com/planetscale/cli/releases/download/v${PSCALE_VERSION}/pscale_${PSCALE_VERSION}_linux_amd64.tar.gz -o /tmp/pscale.tar.gz
 mkdir -p /tmp/pscale
 tar xf /tmp/pscale.tar.gz --directory=/tmp/pscale
 

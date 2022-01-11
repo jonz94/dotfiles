@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 if [ ! $(uname) = "Linux" ]; then
   printf "${RED}This installer only support Linux.${NORMAL}\n"
   exit 1
@@ -13,7 +15,7 @@ fi
 rm -f /tmp/yq.tar.gz
 rm -rf /tmp/yq
 
-curl -L https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64.tar.gz -o /tmp/yq.tar.gz
+curl -fL https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64.tar.gz -o /tmp/yq.tar.gz
 tar xf /tmp/yq.tar.gz --directory=/tmp
 mv /tmp/yq_linux_amd64 /tmp/yq
 
