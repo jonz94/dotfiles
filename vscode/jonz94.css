@@ -1,7 +1,6 @@
 :root {
-  --prefer-fonts: codicon, 'Sarasa Mono TC Nerd Font', 'Sarasa Nerd Font',
-    'Sarasa NF', 'Sarasa Mono TC', 'Noto San CJK TC', 'Noto Color Emoji',
-    -apple-system, BlinkMacSystemFont, sans-serif;
+  --prefer-fonts: codicon, 'Sarasa Mono TC Nerd Font', 'Sarasa Mono TC', 'Source Han Sans TC',
+    'Noto San CJK TC', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .linux,
