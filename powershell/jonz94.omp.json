@@ -62,6 +62,8 @@
             "tag_icon": "​ ",
             "display_upstream_icon": true,
             "github_icon": "  ",
+            "gitlab_icon": "  ",
+            "bitbucket_icon": "  ",
             "git_icon": " "
           }
         }
