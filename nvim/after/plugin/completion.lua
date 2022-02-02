@@ -2,7 +2,7 @@ if vim.g.vscode then
   return
 end
 
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.opt.completeopt = { 'menu', 'menuone' }
 vim.opt.shortmess:append('c')
 
 if not pcall(require, 'cmp') then
