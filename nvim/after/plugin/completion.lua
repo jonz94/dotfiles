@@ -9,6 +9,14 @@ if not pcall(require, 'cmp') then
   return
 end
 
+if not pcall(require, 'luasnip') then
+  return
+end
+
+if not pcall(require, 'lspkind') then
+  return
+end
+
 local cmp = require('cmp')
 
 cmp.setup({
@@ -32,7 +40,7 @@ cmp.setup({
   },
   formatting = {
     format = require('lspkind').cmp_format({
-      with_text = true,
+      mode = 'symbol_text',
       menu = {
         buffer = '[buf]',
         nvim_lsp = '[LSP]',
