@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 1,
   "blocks": [
     {
       "type": "prompt",
@@ -11,15 +12,17 @@
           "foreground": "#ffff66",
           "background": "#343A43",
           "properties": {
-            "root_icon": "",
-            "postfix": ""
+            "template": " "
           }
         },
         {
           "type": "session",
           "style": "powerline",
           "foreground": "#EACA8D",
-          "background": "#343A43"
+          "background": "#343A43",
+          "properties": {
+            "template": " {{ if .SSHSession }} {{ end }}{{ .UserName }}@{{ .HostName }} "
+          }
         },
         {
           "type": "os",
@@ -28,8 +31,7 @@
           "foreground": "#343A43",
           "background": "#DCDFE4",
           "properties": {
-            "prefix": " ",
-            "postfix": "  "
+            "template": " {{.Icon}}  "
           }
         },
         {
@@ -38,9 +40,10 @@
           "powerline_symbol": "",
           "foreground": "#343A43",
           "background": "#71BDF2",
+
           "properties": {
             "style": "agnoster_full",
-            "prefix": "   "
+            "template": " {{ if eq .Path \"~\" }} {{ else }} {{ end }} {{ .Path }} "
           }
         },
         {
@@ -50,21 +53,18 @@
           "foreground": "#343A43",
           "background": "#A7CB8B",
           "properties": {
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
             "branch_ahead_icon": " ",
             "branch_behind_icon": " ",
-            "display_status": true,
-            "display_status_detail": true,
-            "display_stash_count": true,
             "branch_icon": " ",
-            "local_working_icon": "  ",
-            "local_staged_icon": "  ",
-            "stash_count_icon": " ",
-            "tag_icon": "​ ",
-            "display_upstream_icon": true,
+            "tag_icon": " ",
             "github_icon": "  ",
             "gitlab_icon": "  ",
             "bitbucket_icon": "  ",
-            "git_icon": " "
+            "git_icon": " ",
+            "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }} {{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} | {{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} {{ .WorktreeCount }}{{ end }}"
           }
         }
       ]
@@ -76,21 +76,12 @@
         {
           "type": "exit",
           "style": "plain",
-          "foreground": "#DCDFE4",
+          "foreground_templates": ["{{ if gt .Code 0 }}#DCDFE4{{ else }}#A7CB8B{{ end }}"],
+          "background_templates": ["{{ if gt .Code 0 }}#E91E63{{ end }}"],
           "properties": {
             "display_exit_code": true,
-            "always_enabled": false,
-            "error_color": "#e91e63",
-            "color_background": true
-          }
-        },
-        {
-          "type": "battery",
-          "style": "plain",
-          "foreground": "#DCDFE4",
-          "background": "#343A43",
-          "properties": {
-            "postfix": "% "
+            "always_enabled": true,
+            "template": " {{ if gt .Code 0 }} {{ .Meaning }}{{ else }}{{ end }} "
           }
         }
       ]
@@ -103,26 +94,12 @@
         {
           "type": "text",
           "style": "plain",
-          "foreground": "#000000",
-          "background": "#DCDFE4",
-          "properties": {
-            "prefix": "",
-            "text": " ",
-            "postfix": ""
-          }
-        },
-        {
-          "type": "text",
-          "style": "plain",
           "foreground": "#DCDFE4",
           "properties": {
-            "prefix": "",
-            "text": "",
-            "postfix": ""
+            "template": "█ "
           }
         }
       ]
     }
-  ],
-  "final_space": true
+  ]
 }
