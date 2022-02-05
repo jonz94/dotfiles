@@ -1,8 +1,11 @@
 local packer = require('packer')
 local plugins = require('jonz94.plugins')
 
+local is_win = vim.fn.has('win32')
+
 -- initialize packer settings
 packer.init({
+  maxjobs = is_win and 10 or nil,
   display = {
     working_sym = ' ',
     error_sym = ' ',
