@@ -46,6 +46,9 @@ require('nvim-treesitter.configs').setup({
       show_help = '?',
     },
   },
+  endwise = {
+    enable = true,
+  },
 })
 
 vim.keymap.set('n', '<Leader>tp', '<Cmd>TSPlaygroundToggle<CR>')

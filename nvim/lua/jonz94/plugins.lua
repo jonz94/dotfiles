@@ -30,6 +30,10 @@ local plugins = function(use)
     'nvim-treesitter/playground',
     requires = 'nvim-treesitter/nvim-treesitter',
   })
+  use({
+    'RRethy/nvim-treesitter-endwise',
+    requires = 'nvim-treesitter/nvim-treesitter',
+  })
 
   -- lsp
   use({ 'neovim/nvim-lspconfig' })
