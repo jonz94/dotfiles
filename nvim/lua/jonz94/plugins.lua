@@ -92,6 +92,17 @@ local plugins = function(use)
   -- indentation guide line
   use({ 'lukas-reineke/indent-blankline.nvim' })
 
+  -- virtual text color column
+  use({
+    'lukas-reineke/virt-column.nvim',
+    setup = function()
+      vim.opt.colorcolumn = '81'
+    end,
+    config = function()
+      require('virt-column').setup()
+    end,
+  })
+
   -- colorschemes
   use({ 'olimorris/onedarkpro.nvim' })
 

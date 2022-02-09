@@ -84,6 +84,9 @@ onedarkpro.setup({
       style = is_win and 'NONE' or 'bold',
     },
     NvimTreeOpenedFile = { fg = colors.yellow, style = 'italic' },
+
+    -- virtual color column
+    VirtColumn = { fg = colors.cursorline, bg = colors.bg },
   },
 })
 
