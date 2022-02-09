@@ -90,14 +90,7 @@ local plugins = function(use)
   use({ 'kyazdani42/nvim-web-devicons' })
 
   -- indentation guide line
-  use({
-    'lukas-reineke/indent-blankline.nvim',
-    setup = function()
-      -- workaround for strange ghost highlighting
-      -- https://github.com/lukas-reineke/indent-blankline.nvim/issues/59
-      vim.opt.colorcolumn = '99999'
-    end,
-  })
+  use({ 'lukas-reineke/indent-blankline.nvim' })
 
   -- colorschemes
   use({ 'olimorris/onedarkpro.nvim' })
