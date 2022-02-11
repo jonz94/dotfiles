@@ -1,4 +1,8 @@
 {
+  "files.associations": {
+    "**/vscode/snippets/*.json": "jsonc"
+  },
+
   "[powershell]": {
     // hide n reference(s) on top of the function declaration
     "editor.codeLens": false

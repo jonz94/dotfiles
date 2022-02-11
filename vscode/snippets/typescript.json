@@ -1,0 +1,93 @@
+{
+  // Angular DI
+
+  "angular http client DI": {
+    "prefix": ";ng-http-di",
+    "body": ["private http: HttpClient$1, $0"]
+  },
+  "angular router DI": {
+    "prefix": ";ng-router-di",
+    "body": ["private router: Router$1, $0"]
+  },
+
+  // Ionic DI
+
+  "ionic action sheet controller DI": {
+    "prefix": ";ionic-action-sheet-controller-di",
+    "body": ["private actionSheetController: ActionSheetController$1, $0"]
+  },
+  "ionic alert controller DI": {
+    "prefix": ";ionic-alert-controller-di",
+    "body": ["private alertController: AlertController$1, $0"]
+  },
+  "ionic animation controller DI": {
+    "prefix": ";ionic-animation-controller-di",
+    "body": ["private animationController: AnimationController$1, $0"]
+  },
+  "ionic gesture controller DI": {
+    "prefix": ";ionic-gesture-controller-di",
+    "body": ["private gestureController: GestureController$1, $0"]
+  },
+  "ionic loading controller DI": {
+    "prefix": ";ionic-loading-controller-di",
+    "body": ["private loadingController: LoadingController$1, $0"]
+  },
+  "ionic menu controller DI": {
+    "prefix": ";ionic-menu-controller-di",
+    "body": ["private menuController: MenuController$1, $0"]
+  },
+  "ionic modal controller DI": {
+    "prefix": ";ionic-modal-controller-di",
+    "body": ["private modalController: ModalController$1, $0"]
+  },
+  "ionic nav controller DI": {
+    "prefix": ";ionic-nav-controller-di",
+    "body": ["private navController: NavController$1, $0"]
+  },
+  "ionic picker controller DI": {
+    "prefix": ";ionic-picker-controller-di",
+    "body": ["private pickerController: PickerController$1, $0"]
+  },
+  "ionic popover controller DI": {
+    "prefix": ";ionic-popover-controller-di",
+    "body": ["private popoverController: PopoverController$1, $0"]
+  },
+  "ionic toast controller DI": {
+    "prefix": ";ionic-toast-controller-di",
+    "body": ["private toastController: ToastController$1, $0"]
+  },
+  "ionic platform DI": {
+    "prefix": ";ionic-platform-di",
+    "body": ["private platform: Platform$1, $0"]
+  },
+
+  // Services DI
+
+  "auth service DI": {
+    "prefix": ";auth-service-di",
+    "body": ["private authService: AuthService$1, $0"]
+  },
+  "api service DI": {
+    "prefix": ";api-service-di",
+    "body": ["private apiService: ApiService$1, $0"]
+  },
+  "app launcher service DI": {
+    "prefix": ";app-launcher-service-di",
+    "body": ["private appLauncherService: AppLauncherService$1, $0"]
+  },
+  "loading service DI": {
+    "prefix": ";loading-service-di",
+    "body": ["private loadingService: LoadingService$1, $0"]
+  },
+  "storage service DI": {
+    "prefix": ";storage-service-di",
+    "body": ["private storageService: StorageService$1, $0"]
+  },
+
+  // end
+
+  "just placed as the last item to conserve the last snippets' tailing comma": {
+    "prefix": ";!@#&*($)&!@#()*$&!@#()*$#&!@*(",
+    "body": ""
+  }
+}

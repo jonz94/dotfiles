@@ -1,0 +1,27 @@
+{
+  "Ionic DI Snippets": {
+    "prefix": ";snippets-ionic-di",
+    "body": [
+      "\"ionic $1\": {",
+      "  \"prefix\": \";ionic-${1/\\ /-/g}-di\",",
+      "  \"body\": [\"private ${1/(.*)/${1:/camelcase}/}: ${1/(.*)/${1:/pascalcase}/}\\$1, \\$0\"]",
+      "},"
+    ]
+  },
+  "Service DI Snippets": {
+    "prefix": ";snippets-service-di",
+    "body": [
+      "\"$1 service DI\": {",
+      "  \"prefix\": \";${1/\\ /-/g}-service-di\",",
+      "  \"body\": [\"private ${1/(.*)/${1:/camelcase}/}Service: ${1/(.*)/${1:/pascalcase}/}Service\\$1, \\$0\"]",
+      "},"
+    ]
+  },
+
+  // end
+
+  "just placed as the last item to conserve the last snippets' tailing comma": {
+    "prefix": ";!@#&*($)&!@#()*$&!@#()*$#&!@*(",
+    "body": ""
+  }
+}
