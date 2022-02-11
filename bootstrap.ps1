@@ -103,4 +103,8 @@ if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
 
 Write-Host "`nINFO: execute following script to setup neovim:`n" -ForegroundColor Cyan
 Write-Host "    .\powershell\scripts\setup-neovim.ps1`n" -ForegroundColor Blue
+
+Write-Host "`nINFO: execute following script to setup vscode snippets:`n" -ForegroundColor Cyan
+Write-Host "    .\powershell\scripts\setup-vscode-snippets.ps1`n" -ForegroundColor Blue
+
 Write-Host 'Done! 🎉'
