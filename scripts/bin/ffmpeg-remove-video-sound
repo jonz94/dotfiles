@@ -1,0 +1,12 @@
+#!/bin/sh
+# remove video's sound using ffmpeg
+
+if ! type ffmpeg &> /dev/null; then
+  printf "${RED}ffmpeg not found... Abort execution...${NORMAL}\n"
+  exit 1
+fi
+
+input_file=$1
+output_file=$2
+
+ffmpeg -i $input_file -c copy -an $output_file
