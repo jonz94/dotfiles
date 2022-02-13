@@ -28,6 +28,24 @@ if (-not $(Select-String -Path $PROFILE -Pattern '^\. \$HOME\\dotfiles\\local\\l
   Add-Content $PROFILE -Encoding UTF8 -Value '. $HOME\dotfiles\local\local.ps1'
 }
 
+$currentScoopBucketList = $(scoop bucket list)
+
+if (-not $currentScoopBucketList.Contains('main')) {
+  scoop bucket add main
+}
+
+if (-not $currentScoopBucketList.Contains('versions')) {
+  scoop bucket add versions
+}
+
+if (-not $currentScoopBucketList.Contains('nerd-fonts')) {
+  scoop bucket add nerd-fonts
+}
+
+if (-not $currentScoopBucketList.Contains('sarasa-nerd-fonts')) {
+  scoop bucket add sarasa-nerd-fonts https://github.com/jonz94/scoop-sarasa-nerd-fonts
+}
+
 # install oh-my-posh3
 if (-not $(scoop which oh-my-posh)) {
   scoop install oh-my-posh3
