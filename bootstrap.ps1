@@ -1,4 +1,4 @@
-# improve powershell performance
+﻿# improve powershell performance
 $ProgressPreference = 'SilentlyContinue'
 
 # setup git
@@ -135,6 +135,17 @@ if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
 
   powershell.exe -NoProfile -Command "$commands > $fnmCompletionsPs1Path"
 }
+
+$setupNodejsEnvironmentViaFnmCommands = @'
+  Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+  fnm env --use-on-cd | Out-String | Invoke-Expression
+  fnm install --lts
+  fnm alias lts-latest default
+  npm i -g npm@latest rimraf@latest yarn@latest
+  npm rm -g corepack
+'@
+
+powershell.exe -NoProfile -Command $setupNodejsEnvironmentViaFnmCommands
 
 Write-Host "`nINFO: execute following script to setup neovim:`n" -ForegroundColor Cyan
 Write-Host "    .\powershell\scripts\setup-neovim.ps1`n" -ForegroundColor Blue
