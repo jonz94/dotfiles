@@ -1,0 +1,18 @@
+{
+  "name": "@jonz94/vscode-settings",
+  "engines": {
+    "vscode": "^1.64.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "jsonc",
+        "path": "./snippets/jsonc.json"
+      }
+    ]
+  }
+}
