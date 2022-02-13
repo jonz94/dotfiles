@@ -19,11 +19,9 @@ else
 
   " write file in insert mode
   inoremap <C-M-s> <Cmd>w<CR>
-  inoremap ;;w     <Cmd>w<CR>
 
   " write file in insert mode, and then return to normal mode
   inoremap <C-s> <Cmd>w<CR>
-  inoremap ;w    <Cmd>w<CR>
 
   " quit file
   nnoremap <Leader>q         <Cmd>q<CR>
