@@ -1,6 +1,6 @@
 {
   "files.associations": {
-    "**/vscode/snippets/*.json": "jsonc"
+    "**/vscode/snippets/*.json": "json"
   },
 
   "[powershell]": {
