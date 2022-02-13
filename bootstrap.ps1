@@ -101,6 +101,18 @@ if (-not $(scoop which sed)) {
   scoop install sed
 }
 
+# install Sarasa Gothic fonts
+if (-not $(scoop which SarasaGothic-ttc)) {
+  scoop install SarasaGothic-ttc
+}
+
+# install Sarasa Mono TC Nerd Font
+if (-not $(scoop which sarasa-mono-tc-nerd-font)) {
+  scoop install sarasa-mono-tc-nerd-font
+}
+
+Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+
 # install posh-git module
 if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contains('posh-git')) ) {
   Install-Module 'posh-git' -Scope CurrentUser
