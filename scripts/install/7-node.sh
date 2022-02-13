@@ -14,4 +14,10 @@ else
 
   echo 'updating npm to latest version'
   npm i -g npm@latest
+
+  echo 'installing yarn via npm'
+  npm i -g yarn@latest
+
+  echo 'removing global corepack package'
+  npm rm -g corepack
 fi
