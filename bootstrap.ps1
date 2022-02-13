@@ -56,9 +56,9 @@ if (-not $(scoop which gsudo)) {
   scoop install gsudo
 }
 
-# install neovim nightly
+# install neovim bare nightly
 if (-not $(scoop which nvim)) {
-  scoop install neovim-nightly
+  scoop install neovim-bare-nightly
 }
 
 # install fzf
