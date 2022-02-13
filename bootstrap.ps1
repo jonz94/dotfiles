@@ -1,4 +1,4 @@
-﻿# improve powershell performance
+# improve powershell performance
 $ProgressPreference = 'SilentlyContinue'
 
 # settiPg up git
@@ -61,6 +61,11 @@ if (-not $(scoop which zoxide)) {
 # install busybox-lean
 if (-not $(scoop which busybox)) {
   scoop install busybox-lean
+}
+
+# install ripgrep
+if (-not $(scoop which ripgrep)) {
+  scoop install ripgrep
 }
 
 # install grep
