@@ -37,3 +37,7 @@ if [ $(uname -r | grep -i microsoft) ]; then
 fi
 
 export LANG=en_US.UTF-8
+
+# set grep highlight colors (green background, white text)
+# See: https://askubuntu.com/questions/1042234/modifying-the-color-of-grep
+export GREP_COLORS="mt=30;42"
