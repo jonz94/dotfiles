@@ -41,3 +41,7 @@ export LANG=en_US.UTF-8
 # set grep highlight colors (green background, white text)
 # See: https://askubuntu.com/questions/1042234/modifying-the-color-of-grep
 export GREP_COLORS="mt=30;42"
+
+# set zsh-users/zsh-history-substring-search highlight colors
+# See: https://github.com/zsh-users/zsh-history-substring-search#configuration
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=green,fg=black,bold"
