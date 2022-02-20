@@ -2,8 +2,8 @@
   "Ionic DI Snippets": {
     "prefix": ";snippets-ionic-di",
     "body": [
-      "\"ionic $1\": {",
-      "  \"prefix\": \";ionic-${1/\\ /-/g}-di\",",
+      "\"ionic $1 DI\": {",
+      "  \"prefix\": \";di-ionic-${1/\\ /-/g}\",",
       "  \"body\": [\"private ${1/(.*)/${1:/camelcase}/}: ${1/(.*)/${1:/pascalcase}/}\\$1, \\$0\"]",
       "},"
     ]
@@ -12,7 +12,7 @@
     "prefix": ";snippets-service-di",
     "body": [
       "\"$1 service DI\": {",
-      "  \"prefix\": \";${1/\\ /-/g}-service-di\",",
+      "  \"prefix\": \";di-${1/\\ /-/g}-service\",",
       "  \"body\": [\"private ${1/(.*)/${1:/camelcase}/}Service: ${1/(.*)/${1:/pascalcase}/}Service\\$1, \\$0\"]",
       "},"
     ]

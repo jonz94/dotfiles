@@ -1,80 +1,84 @@
 {
   "angular http client DI": {
-    "prefix": ";ng-http-di",
+    "prefix": ";di-ng-http",
     "body": ["private http: HttpClient$1, $0"]
   },
   "angular router DI": {
-    "prefix": ";ng-router-di",
+    "prefix": ";di-ng-router",
     "body": ["private router: Router$1, $0"]
+  },
+  "angular zone DI": {
+    "prefix": ";di-ng-zone",
+    "body": ["private zone: NgZone$1, $0"]
   },
 
   "ionic action sheet controller DI": {
-    "prefix": ";ionic-action-sheet-controller-di",
+    "prefix": ";di-ionic-action-sheet-controller",
     "body": ["private actionSheetController: ActionSheetController$1, $0"]
   },
   "ionic alert controller DI": {
-    "prefix": ";ionic-alert-controller-di",
+    "prefix": ";di-ionic-alert-controller",
     "body": ["private alertController: AlertController$1, $0"]
   },
   "ionic animation controller DI": {
-    "prefix": ";ionic-animation-controller-di",
+    "prefix": ";di-ionic-animation-controller",
     "body": ["private animationController: AnimationController$1, $0"]
   },
   "ionic gesture controller DI": {
-    "prefix": ";ionic-gesture-controller-di",
+    "prefix": ";di-ionic-gesture-controller",
     "body": ["private gestureController: GestureController$1, $0"]
   },
   "ionic loading controller DI": {
-    "prefix": ";ionic-loading-controller-di",
+    "prefix": ";di-ionic-loading-controller",
     "body": ["private loadingController: LoadingController$1, $0"]
   },
   "ionic menu controller DI": {
-    "prefix": ";ionic-menu-controller-di",
+    "prefix": ";di-ionic-menu-controller",
     "body": ["private menuController: MenuController$1, $0"]
   },
   "ionic modal controller DI": {
-    "prefix": ";ionic-modal-controller-di",
+    "prefix": ";di-ionic-modal-controller",
     "body": ["private modalController: ModalController$1, $0"]
   },
   "ionic nav controller DI": {
-    "prefix": ";ionic-nav-controller-di",
+    "prefix": ";di-ionic-nav-controller",
     "body": ["private navController: NavController$1, $0"]
   },
   "ionic picker controller DI": {
-    "prefix": ";ionic-picker-controller-di",
+    "prefix": ";di-ionic-picker-controller",
     "body": ["private pickerController: PickerController$1, $0"]
   },
   "ionic popover controller DI": {
-    "prefix": ";ionic-popover-controller-di",
+    "prefix": ";di-ionic-popover-controller",
     "body": ["private popoverController: PopoverController$1, $0"]
   },
   "ionic toast controller DI": {
-    "prefix": ";ionic-toast-controller-di",
+    "prefix": ";di-ionic-toast-controller",
     "body": ["private toastController: ToastController$1, $0"]
   },
   "ionic platform DI": {
-    "prefix": ";ionic-platform-di",
+    "prefix": ";di-ionic-platform",
     "body": ["private platform: Platform$1, $0"]
   },
 
   "auth service DI": {
-    "prefix": ";auth-service-di",
+    "prefix": ";di-auth-service",
     "body": ["private authService: AuthService$1, $0"]
   },
   "api service DI": {
-    "prefix": ";api-service-di",
+    "prefix": ";di-api-service",
     "body": ["private apiService: ApiService$1, $0"]
   },
   "app launcher service DI": {
-    "prefix": ";app-launcher-service-di",
+    "prefix": ";di-app-launcher-service",
     "body": ["private appLauncherService: AppLauncherService$1, $0"]
   },
   "loading service DI": {
-    "prefix": ";loading-service-di",
+    "prefix": ";di-loading-service",
     "body": ["private loadingService: LoadingService$1, $0"]
   },
   "storage service DI": {
-    "prefix": ";storage-service-di",
+    "prefix": ";di-storage-service",
     "body": ["private storageService: StorageService$1, $0"]
   },
 
