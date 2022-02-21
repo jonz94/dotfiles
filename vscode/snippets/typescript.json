@@ -77,6 +77,10 @@
     "prefix": ";di-loading-service",
     "body": ["private loadingService: LoadingService$1, $0"]
   },
+  "status bar service DI": {
+    "prefix": ";di-status-bar-service",
+    "body": ["private statusBarService: StatusBarService$1, $0"]
+  },
   "storage service DI": {
     "prefix": ";di-storage-service",
     "body": ["private storageService: StorageService$1, $0"]
