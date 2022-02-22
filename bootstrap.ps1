@@ -46,9 +46,9 @@ if (-not $currentScoopBucketList.Contains('sarasa-nerd-fonts')) {
   scoop bucket add sarasa-nerd-fonts https://github.com/jonz94/scoop-sarasa-nerd-fonts
 }
 
-# install oh-my-posh3
+# install oh-my-posh
 if (-not $(scoop which oh-my-posh)) {
-  scoop install oh-my-posh3
+  scoop install oh-my-posh
 }
 
 # install gsudo
