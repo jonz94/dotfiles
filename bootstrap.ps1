@@ -46,6 +46,10 @@ if (-not $currentScoopBucketList.Contains('sarasa-nerd-fonts')) {
   scoop bucket add sarasa-nerd-fonts https://github.com/jonz94/scoop-sarasa-nerd-fonts
 }
 
+if (-not $currentScoopBucketList.Contains('jonz94')) {
+  scoop bucket add jonz94 https://github.com/jonz94/scoop-personal
+}
+
 # install oh-my-posh
 if (-not $(scoop which oh-my-posh)) {
   scoop install oh-my-posh
