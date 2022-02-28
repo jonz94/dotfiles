@@ -5,7 +5,7 @@ if [ $(uname -r | grep -i ish) ]; then
 else
   echo 'installing node via fnm'
 
-  export PATH="$HOME/.fnm:$PATH"
+  export PATH="$HOME/.local/share/fnm:$PATH"
   eval "$(fnm env)"
 
   fnm install --lts

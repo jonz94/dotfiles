@@ -94,7 +94,7 @@ setup_tmux() {
 
 setup_fnm_completions_for_linux() {
   if [ $(uname) = "Linux" ]; then
-    export PATH="$HOME/.fnm:$PATH"
+    export PATH="$HOME/.local/share/fnm:$PATH"
     eval "$(fnm env)"
 
     rm -f ~/dotfiles/zsh/functions/_fnm

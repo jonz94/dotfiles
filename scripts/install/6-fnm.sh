@@ -8,5 +8,5 @@ fi
 if type brew &> /dev/null; then
   brew install fnm
 else
-  curl -fsSL https://fnm.vercel.app/install | bash
+  curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.local/share/fnm" --skip-shell
 fi
