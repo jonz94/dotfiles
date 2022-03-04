@@ -77,6 +77,10 @@
     "prefix": ";di-loading-service",
     "body": ["private loadingService: LoadingService$1, $0"]
   },
+  "router service DI": {
+    "prefix": ";di-router-service",
+    "body": ["private routerService: RouterService$1, $0"]
+  },
   "status bar service DI": {
     "prefix": ";di-status-bar-service",
     "body": ["private statusBarService: StatusBarService$1, $0"]
