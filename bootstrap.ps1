@@ -28,7 +28,7 @@ if (-not $(Select-String -Path $PROFILE -Pattern '^\. \$HOME\\dotfiles\\local\\l
   Add-Content $PROFILE -Encoding UTF8 -Value '. $HOME\dotfiles\local\local.ps1'
 }
 
-$currentScoopBucketList = $(scoop bucket list)
+$currentScoopBucketList = $(scoop bucket list).Name
 
 if (-not $currentScoopBucketList.Contains('main')) {
   scoop bucket add main
