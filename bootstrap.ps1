@@ -115,6 +115,10 @@ if (-not $(scoop which sarasa-mono-tc-nerd-font)) {
   scoop install sarasa-mono-tc-nerd-font
 }
 
+# add scoop commmand aliases
+scoop alias add upgrade 'scoop update *' 'Updates all apps, just like brew or apt'
+scoop alias add reinstall 'scoop uninstall $args[0]; scoop install $args[0]' 'Reinstall an app'
+
 Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
 
 # install posh-git module
