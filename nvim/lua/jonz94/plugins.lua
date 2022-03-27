@@ -276,6 +276,11 @@ local plugins = function(use)
       vim.g.XkbSwitchLib = vim.env.HOME .. '\\xkb-switch-win\\bin\\libxkbswitch64.dll'
     end,
   })
+
+  -- automatically creates missing directories on saving a file
+  use({
+    'jghauser/mkdir.nvim',
+  })
 end
 
 return plugins
