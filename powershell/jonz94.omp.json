@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 1,
+  "version": 2,
   "blocks": [
     {
       "type": "prompt",
@@ -11,18 +11,14 @@
           "style": "plain",
           "foreground": "#ffff66",
           "background": "#343A43",
-          "properties": {
-            "template": " "
-          }
+          "template": " "
         },
         {
           "type": "session",
           "style": "powerline",
           "foreground": "#EACA8D",
           "background": "#343A43",
-          "properties": {
-            "template": " {{ if .SSHSession }} {{ end }}{{ .UserName }}@{{ .HostName }} "
-          }
+          "template": " {{ if .SSHSession }} {{ end }}{{ .UserName }}@{{ .HostName }} "
         },
         {
           "type": "os",
@@ -30,9 +26,7 @@
           "powerline_symbol": "",
           "foreground": "#343A43",
           "background": "#DCDFE4",
-          "properties": {
-            "template": " {{.Icon}}  "
-          }
+          "template": " {{.Icon}}  "
         },
         {
           "type": "path",
@@ -40,10 +34,9 @@
           "powerline_symbol": "",
           "foreground": "#343A43",
           "background": "#71BDF2",
-
+          "template": " {{ if eq .Path \"~\" }} {{ else }} {{ end }} {{ .Path }} ",
           "properties": {
-            "style": "agnoster_full",
-            "template": " {{ if eq .Path \"~\" }} {{ else }} {{ end }} {{ .Path }} "
+            "style": "agnoster_full"
           }
         },
         {
@@ -52,6 +45,7 @@
           "powerline_symbol": "",
           "foreground": "#343A43",
           "background": "#A7CB8B",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }} {{ if .Working.Changed }} {{ .Working.String }} {{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} | {{ end }}{{ if .Staging.Changed }} {{ .Staging.String }} {{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }} {{ end }}{{ if gt .WorktreeCount 0 }} {{ .WorktreeCount }} {{ end }}",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
@@ -63,8 +57,7 @@
             "github_icon": "  ",
             "gitlab_icon": "  ",
             "bitbucket_icon": "  ",
-            "git_icon": " ",
-            "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }} {{ if .Working.Changed }} {{ .Working.String }} {{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} | {{ end }}{{ if .Staging.Changed }} {{ .Staging.String }} {{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }} {{ end }}{{ if gt .WorktreeCount 0 }} {{ .WorktreeCount }} {{ end }}"
+            "git_icon": " "
           }
         }
       ]
@@ -78,10 +71,10 @@
           "style": "plain",
           "foreground_templates": ["{{ if gt .Code 0 }}#DCDFE4{{ else }}#A7CB8B{{ end }}"],
           "background_templates": ["{{ if gt .Code 0 }}#E91E63{{ end }}"],
+          "template": " {{ if gt .Code 0 }} {{ .Meaning }}{{ else }}{{ end }} ",
           "properties": {
-            "display_exit_code": true,
             "always_enabled": true,
-            "template": " {{ if gt .Code 0 }} {{ .Meaning }}{{ else }}{{ end }} "
+            "display_exit_code": true
           }
         }
       ]
@@ -95,9 +88,7 @@
           "type": "text",
           "style": "plain",
           "foreground": "#DCDFE4",
-          "properties": {
-            "template": "█ "
-          }
+          "template": "█ "
         }
       ]
     }
