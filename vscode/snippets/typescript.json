@@ -73,6 +73,10 @@
     "prefix": ";di-app-launcher-service",
     "body": ["private appLauncherService: AppLauncherService$1, $0"]
   },
+  "document service DI": {
+    "prefix": ";di-document-service",
+    "body": ["private documentService: DocumentService$1, $0"]
+  },
   "loading service DI": {
     "prefix": ";di-loading-service",
     "body": ["private loadingService: LoadingService$1, $0"]
