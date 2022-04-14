@@ -95,11 +95,8 @@ local plugins = function(use)
   -- virtual text color column
   use({
     'lukas-reineke/virt-column.nvim',
-    setup = function()
-      vim.opt.colorcolumn = '81'
-    end,
     config = function()
-      require('virt-column').setup()
+      require('virt-column').setup({ virtcolumn = '81,121' })
     end,
   })
 
