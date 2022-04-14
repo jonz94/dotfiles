@@ -50,8 +50,8 @@ cmp.setup({
       },
     }),
   },
-  documentation = {
-    border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+  window = {
+    documentation = cmp.config.window.bordered(),
   },
   experimental = {
     native_menu = false,
