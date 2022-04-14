@@ -29,9 +29,26 @@ lsp_installer.settings({
   },
 })
 
+local border = {
+  { '╭', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '╮', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+  { '╯', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '╰', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+}
+
+local handlers = {
+  ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+  ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+}
+
 lsp_installer.on_server_ready(function(server)
   local options = {
     on_attach = on_attach,
+    handlers = handlers,
   }
 
   if server.name == 'sumneko_lua' then
@@ -39,6 +56,7 @@ lsp_installer.on_server_ready(function(server)
       options = require('lua-dev').setup({
         lspconfig = {
           on_attach = on_attach,
+          handlers = handlers,
         },
       })
     end
