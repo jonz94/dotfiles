@@ -220,6 +220,12 @@ local plugins = function(use)
     requires = 'MunifTanjim/nui.nvim',
   })
 
+  -- highlight arguments' definitions and usages
+  use({
+    'm-demare/hlargs.nvim',
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+  })
+
   -- highlight trailing whitespace
   use({
     'ntpeters/vim-better-whitespace',
