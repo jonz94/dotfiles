@@ -45,6 +45,12 @@ else
   " delete buffer
   nnoremap <Leader>db <Cmd>bd<CR>
   nnoremap <Leader>bd <Cmd>bd<CR>
+
+  " christoomey/vim-tmux-navigator
+  nnoremap <silent> <C-h> <Cmd>TmuxNavigateLeft<CR>
+  nnoremap <silent> <C-j> <Cmd>TmuxNavigateDown<CR>
+  nnoremap <silent> <C-k> <Cmd>TmuxNavigateUp<CR>
+  nnoremap <silent> <C-l> <Cmd>TmuxNavigateRight<CR>
 endif
 
 " yank/delete, and put it into system clipboard

@@ -53,7 +53,12 @@ local plugins = function(use)
   })
 
   -- navigation
-  use({ 'christoomey/vim-tmux-navigator' })
+  use({
+    'christoomey/vim-tmux-navigator',
+    setup = function()
+      vim.g.tmux_navigator_no_mappings = 1
+    end,
+  })
 
   -- automatically change the current working directory
   use({ 'ahmedkhalf/project.nvim' })
