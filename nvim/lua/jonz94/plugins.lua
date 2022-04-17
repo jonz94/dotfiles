@@ -197,13 +197,23 @@ local plugins = function(use)
         direction = 'horizontal',
       })
 
-      vim.cmd([[
-        augroup ToggleTerminal
-          autocmd!
-          autocmd TermOpen term://* set signcolumn=no
-          autocmd TermOpen term://* set nocursorline
-        augroup END
-      ]])
+      local group = vim.api.nvim_create_augroup('ToggleTerminal', { clear = true })
+      vim.api.nvim_create_autocmd('TermOpen', {
+        pattern = 'term://*',
+        callback = function()
+          vim.opt.cursorline = false
+        end,
+        group = group,
+        desc = 'turn off cursorline when starting a terminal',
+      })
+      vim.api.nvim_create_autocmd('TermOpen', {
+        pattern = 'term://*',
+        callback = function()
+          vim.opt.signcolumn = 'no'
+        end,
+        group = group,
+        desc = 'turn off sign column when starting a terminal',
+      })
     end,
   })
 

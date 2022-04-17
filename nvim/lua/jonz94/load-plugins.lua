@@ -22,9 +22,9 @@ packer.init({
 packer.startup(plugins)
 
 -- automatically run `:PackerCompile` whenever `plugins.lua` is updated
-vim.cmd([[
-  augroup PackerUserConfig
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup END
-]])
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = 'plugins.lua',
+  command = 'source <afile> | PackerCompile',
+  group = vim.api.nvim_create_augroup('PackerUserConfig', { clear = true }),
+  desc = 'automatically run `:PackerCompile` whenever `plugins.lua` is updated',
+})
