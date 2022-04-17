@@ -23,9 +23,7 @@ neogit.setup({
   },
 })
 
-vim.keymap.set('n', '<Leader>gg', function()
-  neogit.open()
-end)
+vim.keymap.set('n', '<Leader>gg', '<Cmd>Flog<CR>')
 
 vim.keymap.set('n', '<Leader><Leader>g', function()
   neogit.open()

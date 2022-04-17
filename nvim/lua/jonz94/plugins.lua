@@ -132,6 +132,12 @@ local plugins = function(use)
   -- git integration
   use({ 'TimUntersberger/neogit' })
 
+  -- git graph
+  use({
+    'rbong/vim-flog',
+    requires = { 'tpope/vim-fugitive' },
+  })
+
   -- git signs
   use({
     'lewis6991/gitsigns.nvim',
