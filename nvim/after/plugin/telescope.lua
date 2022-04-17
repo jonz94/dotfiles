@@ -38,6 +38,14 @@ if not is_win then
   end
 end
 
+if not pcall(require, 'telescope-file-browser') then
+  telescope.load_extension('file_browser')
+
+  vim.keymap.set('n', '<Leader>fb', function()
+    require('telescope').extensions.file_browser.file_browser()
+  end)
+end
+
 -- stylua: ignore start
 vim.keymap.set('n', '<C-p>',      function() builtin.find_files()   end)
 vim.keymap.set('n', '<Leader>fd', function() builtin.find_files()   end)
@@ -45,7 +53,6 @@ vim.keymap.set('n', '<Leader>fg', function() builtin.live_grep()    end)
 vim.keymap.set('n', '<Leader>ls', function() builtin.buffers()      end)
 vim.keymap.set('n', '<Leader>fh', function() builtin.help_tags()    end)
 vim.keymap.set('n', '<Leader>he', function() builtin.help_tags()    end)
-vim.keymap.set('n', '<Leader>fb', function() builtin.file_browser() end)
 vim.keymap.set('n', '<Leader>gb', function() builtin.git_branches() end)
 vim.keymap.set('n', '<Leader>gc', function() builtin.git_commits()  end)
 vim.keymap.set('n', '<Leader>gs', function() builtin.git_status()   end)

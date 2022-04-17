@@ -49,7 +49,12 @@ local plugins = function(use)
   use({
     'nvim-telescope/telescope-fzf-native.nvim',
     disable = is_windows,
+    requires = 'nvim-telescope/telescope.nvim',
     run = 'make',
+  })
+  use({
+    'nvim-telescope/telescope-file-browser.nvim',
+    requires = 'nvim-telescope/telescope.nvim',
   })
 
   -- navigation
