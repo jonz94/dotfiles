@@ -182,7 +182,7 @@ local plugins = function(use)
 
   -- terminal
   use({
-    'akinsho/nvim-toggleterm.lua',
+    'akinsho/toggleterm.nvim',
     keys = '<M-`>',
     config = function()
       require('toggleterm').setup({

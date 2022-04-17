@@ -1,3 +1,3 @@
-" https://github.com/asvetliakov/vscode-neovim
+" https://github.com/vscode-neovim/vscode-neovim
 
 lua require('jonz94')
