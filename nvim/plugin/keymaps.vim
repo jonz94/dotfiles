@@ -8,6 +8,8 @@ if exists('g:vscode')
   nnoremap <Leader><Leader>q <Cmd>Qall<CR>
   nnoremap <Leader>db        <Cmd>Quit<CR>
   nnoremap <Leader>bd        <Cmd>Quit<CR>
+
+  nnoremap <C-h>             <Cmd>call VSCodeNotify('workbench.action.focusSideBar')<CR>
 else
   " write file
   nnoremap <C-s>             <Cmd>w<CR>

@@ -1,4 +1,9 @@
 if vim.g.vscode then
+  -- stylua: ignore start
+  vim.keymap.set('n', '<Leader>gg',        '<Cmd>call VSCodeNotify("git-graph.view")<CR>')
+  vim.keymap.set('n', '<Leader><Leader>g', '<Cmd>call VSCodeNotify("workbench.view.scm")<CR>')
+  -- stylua: ignore end
+
   return
 end
 

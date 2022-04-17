@@ -1,4 +1,9 @@
 if vim.g.vscode then
+  -- stylua: ignore start
+  vim.keymap.set('n', '<Leader>zz',        '<Cmd >call VSCodeNotify("workbench.action.toggleZenMode")<CR>')
+  vim.keymap.set('n', '<Leader><Leader>z', '<Cmd >call VSCodeNotify("workbench.action.toggleZenMode")<CR>')
+  -- stylua: ignore end
+
   return
 end
 

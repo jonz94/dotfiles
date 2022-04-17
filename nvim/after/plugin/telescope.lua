@@ -1,4 +1,10 @@
 if vim.g.vscode then
+  -- stylua: ignore start
+  vim.keymap.set('n', '<Leader>fd', '<Cmd>call VSCodeNotify("workbench.action.quickOpen")<CR>')
+  vim.keymap.set('n', '<Leader>fg', '<Cmd>call VSCodeNotify("workbench.action.findInFiles")<CR>')
+  vim.keymap.set('n', '<Leader>ls', '<Cmd>call VSCodeNotify("workbench.view.explorer")<CR>')
+  -- stylua: ignore end
+
   return
 end
 

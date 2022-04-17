@@ -1,4 +1,12 @@
 if vim.g.vscode then
+  -- stylua: ignore start
+  vim.keymap.set('n', '<Leader>gd', '<Cmd>call VSCodeNotify("editor.action.revealDefinition")<CR>')
+  vim.keymap.set('n', '<Leader>gr', '<Cmd>call VSCodeNotify("references-view.findReferences")<CR>')
+  vim.keymap.set('n', '<Leader>dj', '<Cmd>call VSCodeNotify("editor.action.marker.nextInFiles")<CR>')
+  vim.keymap.set('n', '<Leader>dk', '<Cmd>call VSCodeNotify("editor.action.marker.prevInFiles")<CR>')
+  vim.keymap.set('n', '<Leader>r',  '<Cmd>call VSCodeNotify("editor.action.rename")<CR>')
+  -- stylua: ignore end
+
   return
 end
 
