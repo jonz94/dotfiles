@@ -14,7 +14,7 @@ end
 
 local telescope = require('telescope')
 local builtin = require('telescope.builtin')
-local is_win = vim.fn.has('win32')
+local is_windows = vim.fn.has('win32') == 1
 
 telescope.setup({
   defaults = {
@@ -32,7 +32,7 @@ telescope.setup({
   },
 })
 
-if not is_win then
+if not is_windows then
   if pcall(require, 'telescope._extensions.fzf') then
     telescope.load_extension('fzf')
   end

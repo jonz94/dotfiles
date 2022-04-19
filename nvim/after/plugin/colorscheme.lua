@@ -8,7 +8,7 @@ end
 
 local onedarkpro = require('onedarkpro')
 local colors = require('jonz94.colors')
-local is_win = vim.fn.has('win32')
+local is_windows = vim.fn.has('win32') == 1
 
 onedarkpro.setup({
   colors = {
@@ -80,8 +80,8 @@ onedarkpro.setup({
     NvimTreeOpenedFolderName = { fg = colors.fg },
     NvimTreeMarkdownFile = { fg = colors.fg },
     NvimTreeExecFile = {
-      fg = is_win and colors.fg or colors.green,
-      style = is_win and 'NONE' or 'bold',
+      fg = is_windows and colors.fg or colors.green,
+      style = is_windows and 'NONE' or 'bold',
     },
     NvimTreeOpenedFile = { fg = colors.yellow, style = 'italic' },
 
