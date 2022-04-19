@@ -33,12 +33,12 @@ telescope.setup({
 })
 
 if not is_win then
-  if not pcall(require, 'telescope-fzf-native') then
+  if pcall(require, 'telescope._extensions.fzf') then
     telescope.load_extension('fzf')
   end
 end
 
-if not pcall(require, 'telescope-file-browser') then
+if pcall(require, 'telescope._extensions.file_browser') then
   telescope.load_extension('file_browser')
 
   vim.keymap.set('n', '<Leader>fb', function()
