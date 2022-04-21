@@ -3,6 +3,7 @@ scriptencoding utf-8
 if exists('g:vscode')
   nnoremap <Leader>s         <Cmd>Write<CR>
   nnoremap <Leader>w         <Cmd>Write<CR>
+  nnoremap <Leader><Leader>w <Cmd>Wall<CR>
   nnoremap <Leader><Tab>     <Cmd>Write<CR>
   nnoremap <Leader>q         <Cmd>Quit<CR>
   nnoremap <Leader><Leader>q <Cmd>Qall<CR>
