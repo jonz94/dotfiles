@@ -225,6 +225,15 @@ local plugins = function(use)
         group = group,
         desc = 'turn off sign column when starting a terminal',
       })
+      vim.api.nvim_create_autocmd('TermOpen', {
+        pattern = 'term://*',
+        callback = function()
+          vim.opt.colorcolumn = {}
+          require('virt-column').setup_buffer({ virtcolumn = '' })
+        end,
+        group = group,
+        desc = 'turn off virtual text color column when starting a terminal',
+      })
     end,
   })
 
