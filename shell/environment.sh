@@ -10,6 +10,11 @@ export TERM=xterm-256color
 # Set neovim as preferred editor
 export EDITOR=nvim
 
+# golang
+if type go &> /dev/null; then
+  export PATH="$(go env GOPATH)/bin:${PATH}"
+fi
+
 # add ~/.local/bin to $PATH
 export PATH="${HOME}/.local/bin:${PATH}"
 
