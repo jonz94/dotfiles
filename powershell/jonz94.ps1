@@ -38,11 +38,20 @@ Set-PSReadLineOption -HistoryNoDuplicate
 # show predictive suggestions from command history
 Set-PSReadLineOption -PredictionSource History
 
-# any command with spaces or tabs at the beginning of the line is not added to the PSReadLine history
+# advanced history ignore configuration
 # credit: https://github.com/PowerShell/PowerShell/issues/10403#issuecomment-523833700
+#
+# any command matches one of the following pattern will not be added to the PSReadLine history
+#
+#     - starts with "spaces" or "tabs"
+#     - starts with "rm"
+#     - starts with "Remove-Item"
+#     - starts with "rimraf"
+#     - ends with "fl"
+#
 Set-PSReadLineOption -AddToHistoryHandler {
   param($line)
-  $line -notmatch '^\s+'
+  $line -notmatch '(^\s+|^rm|^Remove-Item|^rimraf|fl$)'
 }
 
 # print out PSReadline history instead of using powershell's Get-History
