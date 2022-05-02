@@ -25,3 +25,20 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+
+# advanced history ignore configuration
+# credit: https://stackoverflow.com/a/6936301/9979122
+#
+# any command matches one of the following pattern will not be added to the history file
+#
+#     - starts with "rm"
+#     - has "--password" in it
+#     - ends with "fl"
+#
+function zshaddhistory() {
+  emulate -L zsh
+
+  if [[ "$1" =~ "(^rm|--password|.*fl)" ]]; then
+    return 1
+  fi
+}
