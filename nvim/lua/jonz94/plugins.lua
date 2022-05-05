@@ -188,6 +188,21 @@ local plugins = function(use)
     end,
   })
 
+  -- toggle boolean or things
+  use({
+    'rmagatti/alternate-toggler',
+    setup = function()
+      vim.g.at_custom_alternates = {
+        ['=='] = '!=',
+        ['==='] = '!==',
+        public = 'private',
+      }
+    end,
+    config = function()
+      vim.keymap.set('n', '<Leader>ta', 'mn<Cmd>ToggleAlternate<CR>`n')
+    end,
+  })
+
   -- line maniuplation
   use({ 'matze/vim-move' })
 
