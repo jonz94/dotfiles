@@ -1,4 +1,13 @@
 {
+  "generic DI": {
+    "prefix": ";di-generic",
+    "body": ["private $1: ${1/(.*)/${1:/pascalcase}/}$2, $0"]
+  },
+
+  "angular activated route DI": {
+    "prefix": ";di-ng-activated-route",
+    "body": ["private route: ActivatedRoute$1, $0"]
+  },
   "angular http client DI": {
     "prefix": ";di-ng-http",
     "body": ["private http: HttpClient$1, $0"]
@@ -80,6 +89,10 @@
   "loading service DI": {
     "prefix": ";di-loading-service",
     "body": ["private loadingService: LoadingService$1, $0"]
+  },
+  "progress bar service DI": {
+    "prefix": ";di-progress-bar-service",
+    "body": ["private progressBarService: ProgressBarService$1, $0"]
   },
   "router service DI": {
     "prefix": ";di-router-service",
