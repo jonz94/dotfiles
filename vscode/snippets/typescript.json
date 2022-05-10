@@ -1,4 +1,9 @@
 {
+  "angular on push change detection": {
+    "prefix": ";ng-on-push",
+    "body": ["changeDetection: ChangeDetectionStrategy$1.OnPush,$0"]
+  },
+
   "generic DI": {
     "prefix": ";di-generic",
     "body": ["private $1: ${1/(.*)/${1:/pascalcase}/}$2, $0"]
