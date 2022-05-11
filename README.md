@@ -74,6 +74,8 @@ sudo apt install -y git
 
 ### Note for WSL 1
 
+<details>
+
 - Create `/etc/wsl.conf` inside the WSL system
 
 - Copy the content of [wsl.conf](wsl/wsl.conf) into `/etc/wsl.conf`
@@ -97,6 +99,8 @@ net stop LxssManager
     ```powershell
     sudo net stop LxssManager
     ```
+
+</details>
 
 ## Bootstrap
 
@@ -158,6 +162,8 @@ cd ~/dotfiles && bash bootstrap.sh
 
 ### WSL 1
 
+<details>
+
 > NOTE: ALL STEP SHOULD BE DONE INSIDE WSL 1!
 
 - Set `umask` to 0022
@@ -199,6 +205,8 @@ cd ~/dotfiles && bash bootstrap.sh
 ```
 
 - Done 🎉
+
+</details>
 
 ### CMD (Command Prompt) on Windows
 
