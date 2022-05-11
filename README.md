@@ -149,7 +149,7 @@ cd ~/dotfiles && bash bootstrap.sh
     - for powershell version < 7
 
     ```powershell
-    cd \dotfiles; .\bootstrap.ps1
+    cd ~\dotfiles; .\bootstrap.ps1
     ```
 
     - for powershell version >= 7
