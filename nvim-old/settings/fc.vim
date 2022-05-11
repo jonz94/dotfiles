@@ -1,6 +1,6 @@
 " fc
 
-" Aborting the fix and avoiding unwanted re-reruns
+" aborting fc and avoiding unwanted command execution
 command AbortEditLastCommandInEditor :cq!
 command AbortFc :cq!
 command CancelEditLastCommandInEditor :cq!
