@@ -14,8 +14,8 @@ endif
 
 " for mac using iTerm2
 if has('mac')
-  autocmd VimEnter * silent :Dispatch! python3 ~/dotfiles/scripts/iterm2/change-background-to-match-neovim.py
-  autocmd VimLeave * silent :!python3 ~/dotfiles/scripts/iterm2/change-background-to-match-default.py
+  autocmd VimEnter * silent :Dispatch! python3 ~/dotfiles/nvim-old/scripts/iterm2/change-background-to-match-neovim.py
+  autocmd VimLeave * silent :!python3 ~/dotfiles/nvim-old/scripts/iterm2/change-background-to-match-default.py
   finish
 endif
 
