@@ -1,0 +1,17 @@
+{
+  "declare tailwindcss config type": {
+    "prefix": ";declare-tailwindcss-config-type",
+    "body": [
+      "/** @type {import('tailwindcss/tailwind-config').TailwindConfig} */"
+    ]
+  },
+  "declare prettier config type": {
+    "prefix": ";declare-prettier-config-type",
+    "body": ["/** @type {import('prettier').Config} */"]
+  },
+
+  "just placed as the last item to conserve the last snippets' tailing comma": {
+    "prefix": "ɵ",
+    "body": ""
+  }
+}
