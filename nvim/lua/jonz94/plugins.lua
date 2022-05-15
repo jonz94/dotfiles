@@ -65,6 +65,9 @@ local plugins = function(use)
     end,
   })
 
+  -- enhance navigation and highlighting of matching words
+  use({ 'andymass/vim-matchup' })
+
   -- automatically change the current working directory
   use({ 'ahmedkhalf/project.nvim' })
 
