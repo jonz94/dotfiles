@@ -16,5 +16,5 @@ if type npm &> /dev/null; then
   alias br='npm run'
 
   # quickly install prettier related packages
-  alias nip='npm i --save-dev prettier prettier-plugin-packagejson prettier-plugin-organize-imports typescript'
+  alias nip='npm i --save-dev prettier prettier-plugin-packagejson prettier-plugin-organize-imports @types/prettier'
 fi
