@@ -34,6 +34,10 @@ local plugins = function(use)
     'RRethy/nvim-treesitter-endwise',
     requires = 'nvim-treesitter/nvim-treesitter',
   })
+  use({
+    'windwp/nvim-ts-autotag',
+    requires = 'nvim-treesitter/nvim-treesitter',
+  })
 
   -- lsp
   use({ 'neovim/nvim-lspconfig' })
