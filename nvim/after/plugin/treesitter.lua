@@ -47,9 +47,6 @@ require('nvim-treesitter.configs').setup({
   endwise = {
     enable = not inside_vscode,
   },
-  autotag = {
-    enable = true,
-  },
   matchup = {
     enable = true,
   },

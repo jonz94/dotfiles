@@ -34,10 +34,6 @@ local plugins = function(use)
     'RRethy/nvim-treesitter-endwise',
     requires = 'nvim-treesitter/nvim-treesitter',
   })
-  use({
-    'windwp/nvim-ts-autotag',
-    requires = 'nvim-treesitter/nvim-treesitter',
-  })
 
   -- lsp
   use({ 'neovim/nvim-lspconfig' })
@@ -209,6 +205,9 @@ local plugins = function(use)
       vim.keymap.set('n', '<Leader>ta', 'mn<Cmd>ToggleAlternate<CR>`n')
     end,
   })
+
+  -- auto rename tag
+  use({ 'AndrewRadev/tagalong.vim' })
 
   -- line maniuplation
   use({ 'matze/vim-move' })
