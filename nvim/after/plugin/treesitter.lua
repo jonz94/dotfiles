@@ -1,15 +1,13 @@
-if vim.g.vscode then
-  return
-end
-
 if not pcall(require, 'nvim-treesitter') then
   return
 end
 
+local inside_vscode = vim.g.vscode ~= nil
+
 require('nvim-treesitter.configs').setup({
   ensure_installed = nil,
   highlight = {
-    enable = true,
+    enable = not inside_vscode,
     disable = { 'css' },
     additional_vim_regex_highlighting = true,
   },
@@ -29,7 +27,7 @@ require('nvim-treesitter.configs').setup({
     enable = true,
   },
   playground = {
-    enable = true,
+    enable = not inside_vscode,
     disable = {},
     updatetime = 25,
     persist_queries = false,
@@ -47,7 +45,7 @@ require('nvim-treesitter.configs').setup({
     },
   },
   endwise = {
-    enable = true,
+    enable = not inside_vscode,
   },
   autotag = {
     enable = true,
@@ -56,6 +54,10 @@ require('nvim-treesitter.configs').setup({
     enable = true,
   },
 })
+
+if vim.g.vscode then
+  return
+end
 
 vim.keymap.set('n', '<Leader>tp', '<Cmd>TSPlaygroundToggle<CR>')
 vim.keymap.set('n', '<Leader>th', '<Cmd>TSHighlightCapturesUnderCursor<CR>')
