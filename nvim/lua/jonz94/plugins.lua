@@ -207,7 +207,12 @@ local plugins = function(use)
   })
 
   -- auto rename tag
-  use({ 'AndrewRadev/tagalong.vim' })
+  use({
+    'AndrewRadev/tagalong.vim',
+    setup = function()
+      vim.g.tagalong_mappings = { 'c', 'C', 's', 'v', 'i', 'a', 'A' }
+    end,
+  })
 
   -- line maniuplation
   use({ 'matze/vim-move' })
