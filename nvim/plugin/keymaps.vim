@@ -11,6 +11,10 @@ if exists('g:vscode')
   nnoremap <Leader>bd        <Cmd>Quit<CR>
 
   nnoremap <C-h>             <Cmd>call VSCodeNotify('workbench.action.focusSideBar')<CR>
+
+  " workarounds for o and O to avoid strange bug
+  nnoremap o                 A<CR>
+  nnoremap O                 I<CR><Up>
 else
   " write file
   nnoremap <C-s>             <Cmd>w<CR>
