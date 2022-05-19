@@ -52,9 +52,9 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
-if vim.g.vscode then
-  return
+if inside_vscode then
+  vim.keymap.set('n', '<Leader>th', '<Cmd>call VSCodeNotify("editor.action.inspectTMScopes")<CR>')
+else
+  vim.keymap.set('n', '<Leader>tp', '<Cmd>TSPlaygroundToggle<CR>')
+  vim.keymap.set('n', '<Leader>th', '<Cmd>TSHighlightCapturesUnderCursor<CR>')
 end
-
-vim.keymap.set('n', '<Leader>tp', '<Cmd>TSPlaygroundToggle<CR>')
-vim.keymap.set('n', '<Leader>th', '<Cmd>TSHighlightCapturesUnderCursor<CR>')
