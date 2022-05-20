@@ -1,0 +1,15 @@
+{
+  // main
+  "editor.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Segoe UI Emoji'",
+
+  // git related
+  "git.enableCommitSigning": true,
+
+  // font family
+  "editor.codeLensFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Segoe UI Emoji'",
+  "editor.inlayHints.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Segoe UI Emoji'",
+  "scm.inputFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Segoe UI Emoji'",
+
+  // terminal font
+  "terminal.integrated.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Segoe UI Emoji'"
+}

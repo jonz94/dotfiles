@@ -1,0 +1,38 @@
+[
+  // change copy from `ctrl+c` to `ctrl+shift+c`
+  {
+    "key": "ctrl+shift+c",
+    "command": "editor.action.clipboardCopyAction"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "-editor.action.clipboardCopyAction"
+  },
+
+  // change paste from `ctrl+v` to `ctr+shift+v`
+  {
+    "key": "ctrl+shift+v",
+    "command": "editor.action.clipboardPasteAction"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "-editor.action.clipboardPasteAction"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-markdown.extension.togglePreview",
+    "when": "!terminalFocus"
+  },
+
+  // just placed as the last item to conserve the last item's tailing comma
+  {
+    "key": "ɵ",
+    "command": "",
+    "when": ""
+  }
+]
