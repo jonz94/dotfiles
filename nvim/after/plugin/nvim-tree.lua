@@ -10,8 +10,10 @@ local nvim_tree = require('nvim-tree')
 local icons = require('jonz94.icons')
 
 nvim_tree.setup({
+  update_cwd = true,
   update_focused_file = {
     enable = true,
+    update_cwd = true,
   },
   diagnostics = {
     enable = true,

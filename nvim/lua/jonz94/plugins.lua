@@ -76,6 +76,7 @@ local plugins = function(use)
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     setup = function()
+      vim.g.nvim_tree_respect_buf_cwd = 1
       vim.g.nvim_tree_icons = {
         default = '',
         symlink = '',
