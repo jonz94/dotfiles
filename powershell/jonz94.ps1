@@ -96,8 +96,8 @@ Join-Path $PSScriptRoot 'completions' | Get-ChildItem -File -Filter '*.ps1' | Fo
   . $_.FullName
 }
 
-# settings
-Join-Path $PSScriptRoot 'settings' | Get-ChildItem -File -Filter '*.ps1' | ForEach-Object {
+# plugins
+Join-Path $PSScriptRoot 'plugins' | Get-ChildItem -File -Filter '*.ps1' | ForEach-Object {
   . $_.FullName
 }
 
