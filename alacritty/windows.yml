@@ -3,12 +3,11 @@ window:
     x: 0
     y: 0
   dynamic_padding: true
-  opacity: 0.9
   title: Alacritty
   dynamic_title: false
 
 font:
-  size: 19.5
+  size: 16
   offset:
     x: 0
     y: 0
