@@ -30,6 +30,7 @@ onedarkpro.setup({
     keywords = 'bold',
     functions = 'NONE',
     variables = 'NONE',
+    virtual_text = 'NONE',
   },
   options = {
     bold = true,
@@ -37,6 +38,9 @@ onedarkpro.setup({
     underline = false,
     undercurl = false, -- curly underline
     cursorline = true,
+  },
+  plugins = {
+    telescope = false,
   },
   hlgroups = {
     -- 'nbsp', 'space', 'tab' and 'trail' in 'listchars'
@@ -68,8 +72,15 @@ onedarkpro.setup({
 
     -- telescope
     TelescopeSelection = { bg = colors.cursorline, fg = colors.yellow },
-    TelescopeMatching = { style = 'italic' },
-    TelescopePromptPrefix = { link = 'TelescopeNormal' },
+    TelescopeSelectionCaret = { fg = colors.yellow },
+    TelescopeMultiSelection = { bg = colors.cursorline, fg = colors.comment },
+    TelescopeNormal = { fg = colors.fg },
+    TelescopeBorder = { fg = colors.comment },
+    TelescopePromptBorder = { link = 'TelescopeBorder' },
+    TelescopePreviewBorder = { link = 'TelescopeBorder' },
+    TelescopeMatching = { fg = colors.green, style = 'italic' },
+    TelescopePromptPrefix = { line = 'TelescopeNormal' },
+    TelescopePrompt = { link = 'TelescopeNormal' },
 
     -- nvim-tree inactive
     NvimTreeNormalNC = { bg = colors.bg },
