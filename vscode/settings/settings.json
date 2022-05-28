@@ -201,6 +201,8 @@
     "dotenv": "tune"
   },
   "material-icon-theme.files.associations": {
+    "*.jks": "key",
+    "*.keystore": "key",
     ".prettier-plugins-workaround.cjs": "prettier",
     "docker-compose.alpha.yml": "docker",
     "docker-compose.next.yml": "docker"
