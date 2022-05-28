@@ -75,29 +75,6 @@ local plugins = function(use)
   use({
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    setup = function()
-      vim.g.nvim_tree_respect_buf_cwd = 1
-      vim.g.nvim_tree_icons = {
-        default = '',
-        symlink = '',
-        git = {
-          unstaged = '',
-          staged = '✓',
-          unmerged = '',
-          renamed = '',
-          untracked = '',
-          ignored = '',
-        },
-        folder = {
-          default = '',
-          open = '',
-          empty = '',
-          empty_open = '',
-          symlink = '',
-          symlink_open = '',
-        },
-      }
-    end,
   })
 
   -- icons

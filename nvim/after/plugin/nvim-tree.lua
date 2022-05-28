@@ -10,6 +10,7 @@ local nvim_tree = require('nvim-tree')
 local icons = require('jonz94.icons')
 
 nvim_tree.setup({
+  respect_buf_cwd = true,
   update_cwd = true,
   update_focused_file = {
     enable = true,
@@ -22,6 +23,30 @@ nvim_tree.setup({
       hint = icons.hint,
       info = icons.info,
       warning = icons.warn,
+    },
+  },
+  renderer = {
+    icons = {
+      glyphs = {
+        default = '',
+        symlink = '',
+        git = {
+          unstaged = '',
+          staged = '✓',
+          unmerged = '',
+          renamed = '',
+          untracked = '',
+          ignored = '',
+        },
+        folder = {
+          default = '',
+          open = '',
+          empty = '',
+          empty_open = '',
+          symlink = '',
+          symlink_open = '',
+        },
+      },
     },
   },
 })
