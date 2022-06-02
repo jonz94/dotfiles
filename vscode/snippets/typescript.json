@@ -17,6 +17,10 @@
     "prefix": ";di-ng-http",
     "body": ["private http: HttpClient$1, $0"]
   },
+  "angular location client DI": {
+    "prefix": ";di-ng-location",
+    "body": ["private location: Location$1, $0"]
+  },
   "angular router DI": {
     "prefix": ";di-ng-router",
     "body": ["private router: Router$1, $0"]
