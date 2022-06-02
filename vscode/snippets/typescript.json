@@ -25,6 +25,10 @@
     "prefix": ";di-ng-router",
     "body": ["private router: Router$1, $0"]
   },
+  "angular sanitizer DI": {
+    "prefix": ";di-ng-sanitizer",
+    "body": ["private sanitizer: DomSanitizer$1, $0"]
+  },
   "angular zone DI": {
     "prefix": ";di-ng-zone",
     "body": ["private zone: NgZone$1, $0"]
