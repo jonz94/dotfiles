@@ -68,17 +68,6 @@ function edit-history {
 # ctrl + shift + v for paste
 Set-PSReadLineKeyHandler -Key Ctrl+V -Function Paste
 
-# load fnm
-if ( $(scoop which fnm) ) {
-  fnm env --use-on-cd | Out-String | Invoke-Expression
-}
-
-# load zoxide
-if ( $(scoop which zoxide) ) {
-  $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-  Invoke-Expression (& { (zoxide init --hook $hook powershell) -join "`n" })
-}
-
 # test if current powershell is running with administrator privileges
 function Test-Administrator {
   $user = [Security.Principal.WindowsIdentity]::GetCurrent()
