@@ -1,7 +1,6 @@
 scriptencoding utf-8
 
 if exists('g:vscode')
-  nnoremap <Leader>s         <Cmd>Write<CR>
   nnoremap <Leader>w         <Cmd>Write<CR>
   nnoremap <Leader><Leader>w <Cmd>Wall<CR>
   nnoremap <Leader><Tab>     <Cmd>Write<CR>
@@ -18,7 +17,6 @@ if exists('g:vscode')
 else
   " write file
   nnoremap <C-s>             <Cmd>w<CR>
-  nnoremap <Leader>s         <Cmd>w<CR>
   nnoremap <Leader>w         <Cmd>w<CR>
   nnoremap <Leader>W         <Cmd>w!<CR>
   nnoremap <Leader><Leader>w <Cmd>wall<CR>
