@@ -233,7 +233,7 @@ local plugins = function(use)
         pattern = 'term://*',
         callback = function()
           vim.opt.colorcolumn = {}
-          require('virt-column').setup_buffer({ virtcolumn = '' })
+          require('jonz94.virt-column-helper').disable_buffer()
         end,
         group = group,
         desc = 'turn off virtual text color column when starting a terminal',
