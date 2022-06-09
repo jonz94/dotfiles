@@ -1,12 +1,12 @@
 {
   "declare tailwindcss config type": {
-    "prefix": ";declare-tailwindcss-config-type",
+    "prefix": ";type-tailwindcss-config",
     "body": [
       "/** @type {import('tailwindcss/tailwind-config').TailwindConfig} */"
     ]
   },
   "declare prettier config type": {
-    "prefix": ";declare-prettier-config-type",
+    "prefix": ";type-prettier-config",
     "body": ["/** @type {import('prettier').Config} */"]
   },
 
