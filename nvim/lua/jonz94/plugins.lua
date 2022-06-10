@@ -169,6 +169,9 @@ local plugins = function(use)
     end,
   })
 
+  -- extended increment/decrement plugin
+  use({ 'monaqa/dial.nvim' })
+
   -- toggle boolean or things
   use({
     'rmagatti/alternate-toggler',
