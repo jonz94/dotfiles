@@ -172,21 +172,6 @@ local plugins = function(use)
   -- extended increment/decrement plugin
   use({ 'monaqa/dial.nvim' })
 
-  -- toggle boolean or things
-  use({
-    'rmagatti/alternate-toggler',
-    setup = function()
-      vim.g.at_custom_alternates = {
-        ['=='] = '!=',
-        ['==='] = '!==',
-        public = 'private',
-      }
-    end,
-    config = function()
-      vim.keymap.set('n', '<Leader>ta', 'mn<Cmd>ToggleAlternate<CR>`n')
-    end,
-  })
-
   -- auto rename tag
   use({
     'AndrewRadev/tagalong.vim',
