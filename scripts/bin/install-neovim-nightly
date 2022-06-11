@@ -3,7 +3,7 @@
 set -e
 
 install_neovim_nightly_on_linux() {
-  rm -fr "/tmp/nvim-linux64.tar.gz" "/tmp/nvim-osx64"
+  rm -fr "/tmp/nvim-linux64.tar.gz" "/tmp/nvim-linux64"
   curl -fL "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz" -o "/tmp/nvim-linux64.tar.gz"
   tar xf "/tmp/nvim-linux64.tar.gz" --directory=/tmp
   rm -fr "${HOME}/.local/opt/neovim-nightly"
