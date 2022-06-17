@@ -14,6 +14,16 @@ if not pcall(require, 'nvim-lsp-installer') then
   return
 end
 
+if pcall(require, 'neodim') then
+  require('neodim').setup({
+    hide = {
+      virtual_text = true,
+      signs = true,
+      underline = true,
+    },
+  })
+end
+
 local lsp_installer = require('nvim-lsp-installer')
 
 -- stylua: ignore start

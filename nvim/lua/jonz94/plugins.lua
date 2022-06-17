@@ -40,6 +40,10 @@ local plugins = function(use)
   use({ 'williamboman/nvim-lsp-installer' })
   use({ 'folke/lua-dev.nvim' })
   use({ 'onsails/lspkind-nvim' })
+  use({
+    'zbirenbaum/neodim',
+    event = 'LspAttach',
+  })
 
   -- telescope
   use({
