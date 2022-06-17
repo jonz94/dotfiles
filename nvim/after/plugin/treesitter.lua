@@ -48,7 +48,7 @@ require('nvim-treesitter.configs').setup({
     enable = not inside_vscode,
   },
   matchup = {
-    enable = true,
+    enable = not inside_vscode,
   },
 })
 
