@@ -13,3 +13,12 @@ alias p8='ping 8.8.8.8'
 alias p='ping'
 alias psssh='ps aux | grep ssh'
 alias t.='tree .'
+
+# file manager
+if [ $(uname) = "Darwin" ]; then
+  alias e.='open .'
+  alias o.='open .'
+else
+  alias e.='xdg-open .'
+  alias o.='xdg-open .'
+fi
