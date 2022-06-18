@@ -7,6 +7,7 @@ if type git &> /dev/null; then
   alias gdc='git diff --cached'
   alias gls='git log --show-signature'
   alias gpD='git push --delete'
+  alias gpt='git push --follow-tags'
   alias grsh='git reset --soft'
   alias gstaa='git stash push --include-untracked'
   alias gstai='git stash push --include-untracked'
