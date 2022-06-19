@@ -210,8 +210,8 @@ cd ~/dotfiles && bash bootstrap.sh
 
 ### CMD (Command Prompt) on Windows
 
-1. Press `Win` + `r`
-2. Type `regedit` and press `Enter`
+1. Press <kbd>Win</kbd> + <kbd>r</kbd>
+2. Type `regedit` and press <kbd>Enter</kbd>
 3. Find `HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor`
 4. Add a new Key named `AUTORUN` (Type: String)
 5. Set `AUTORUN`'s value to `%USERPROFILE%\dotfiles\cmd\jonz94.cmd`
