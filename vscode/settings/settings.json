@@ -2,7 +2,7 @@
   // main
   "editor.bracketPairColorization.enabled": false,
   "editor.cursorSmoothCaretAnimation": true,
-  "editor.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji'",
+  "editor.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji', 'TW-Sung-Ext-B', 'TW-Sung-Plus'",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
@@ -18,7 +18,7 @@
   "breadcrumbs.enabled": false,
 
   // scroll related settings
-  "editor.cursorSurroundingLines": 5,
+  "editor.cursorSurroundingLines": 3,
   "editor.cursorSurroundingLinesStyle": "all",
   "editor.scrollBeyondLastLine": false,
 
@@ -28,9 +28,9 @@
   "git.inputValidationSubjectLength": null,
 
   // font family
-  "editor.codeLensFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji'",
-  "editor.inlayHints.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji'",
-  "scm.inputFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji'",
+  "editor.codeLensFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji, 'TW-Sung-Ext-B', 'TW-Sung-Plus''",
+  "editor.inlayHints.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji, 'TW-Sung-Ext-B', 'TW-Sung-Plus''",
+  "scm.inputFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji, 'TW-Sung-Ext-B', 'TW-Sung-Plus''",
 
   // make the diff editor not to ignores changes in leading or trailing whitespace
   "diffEditor.ignoreTrimWhitespace": false,
@@ -48,7 +48,7 @@
   },
 
   // terminal font
-  "terminal.integrated.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji'",
+  "terminal.integrated.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji, 'TW-Sung-Ext-B', 'TW-Sung-Plus''",
   "terminal.integrated.fontSize": 15,
 
   // terminal color
@@ -309,6 +309,9 @@
   "Lua.diagnostics.globals": ["vim"],
   "Lua.runtime.version": "LuaJIT",
   "Lua.telemetry.enable": false,
+
+  // [extension] golang.go
+  "go.toolsManagement.autoUpdate": true,
 
   // [extension] onecentlin.laravel-blade
   "blade.format.enable": true,
