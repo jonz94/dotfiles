@@ -38,7 +38,7 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 function zshaddhistory() {
   emulate -L zsh
 
-  if [[ "$1" =~ "(^rm|--password|.*fl)" ]]; then
+  if [[ "$1" =~ "(^rm|--password|.*fl$)" ]]; then
     return 1
   fi
 }
