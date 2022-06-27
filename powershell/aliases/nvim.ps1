@@ -16,6 +16,12 @@ function update-terminal-background-color {
 }
 
 function nvim-with-dynamic-terminal-background-color {
+  if ($args.Contains('-h') -or $args.Contains('--help') -or $args.Contains('-v') -or $args.Contains('--version')) {
+    nvim.exe @args
+
+    return
+  }
+
   update-terminal-background-color -Color '#282c34'
   nvim.exe @args
   update-terminal-background-color -Color '#121212'
