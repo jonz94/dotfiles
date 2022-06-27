@@ -9,13 +9,13 @@
 # credit: https://github.com/alacritty/alacritty/issues/656
 function update-terminal-background-color {
   param(
-    [string] $Color
+    [string] $Color = '#121212'
   )
 
   Write-Host "`e]11;${Color}`a" -NoNewline
 }
 
-function nvim-with-dynamic-terminal-background-color {
+function invoke-nvim-with-dynamic-terminal-background-color {
   if ($args.Contains('-h') -or $args.Contains('--help') -or $args.Contains('-v') -or $args.Contains('--version')) {
     nvim.exe @args
 
@@ -28,10 +28,10 @@ function nvim-with-dynamic-terminal-background-color {
 }
 
 # neovim aliases
-function v { nvim-with-dynamic-terminal-background-color @args }
-function vi { nvim-with-dynamic-terminal-background-color @args }
-function vim { nvim-with-dynamic-terminal-background-color @args }
-function nvim { nvim-with-dynamic-terminal-background-color @args }
+function v { invoke-nvim-with-dynamic-terminal-background-color @args }
+function vi { invoke-nvim-with-dynamic-terminal-background-color @args }
+function vim { invoke-nvim-with-dynamic-terminal-background-color @args }
+function nvim { invoke-nvim-with-dynamic-terminal-background-color @args }
 
 # in case the need to use vim
 function \vim { vim.exe @args }
