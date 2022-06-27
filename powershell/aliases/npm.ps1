@@ -11,6 +11,3 @@ function nrm { npm uninstall @args }
 
 # always typo br
 function br { npm run @args }
-
-# quickly install prettier related packages via npm
-function nip { npm install --save-dev prettier prettier-plugin-packagejson prettier-plugin-organize-imports typescript }

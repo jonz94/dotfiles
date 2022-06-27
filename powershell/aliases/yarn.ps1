@@ -10,6 +10,3 @@ function yci {
   rimraf node_modules
   yarn install --frozen-lockfile
 }
-
-# quickly install prettier related packages via yarn
-function yap { yarn add --dev prettier prettier-plugin-packagejson prettier-plugin-organize-imports typescript }
