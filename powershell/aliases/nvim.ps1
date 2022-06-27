@@ -17,18 +17,18 @@ function update-terminal-background-color {
 
 function nvim-with-dynamic-terminal-background-color {
   update-terminal-background-color -Color '#282c34'
-  nvim.exe $args
+  nvim.exe @args
   update-terminal-background-color -Color '#121212'
 }
 
 # neovim aliases
-function v { nvim-with-dynamic-terminal-background-color $args }
-function vi { nvim-with-dynamic-terminal-background-color $args }
-function vim { nvim-with-dynamic-terminal-background-color $args }
-function nvim { nvim-with-dynamic-terminal-background-color $args }
+function v { nvim-with-dynamic-terminal-background-color @args }
+function vi { nvim-with-dynamic-terminal-background-color @args }
+function vim { nvim-with-dynamic-terminal-background-color @args }
+function nvim { nvim-with-dynamic-terminal-background-color @args }
 
 # in case the need to use vim
-function \vim { vim.exe $args }
+function \vim { vim.exe @args }
 
 # open neovim normally without changing terminal background color
-function \nvim { nvim.exe $args }
+function \nvim { nvim.exe @args }
