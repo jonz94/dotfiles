@@ -6,4 +6,7 @@ if type pnpm &> /dev/null; then
   alias pnlsall='pnpm ls --depth Infinity'
   alias pnlso='pnpm outdated'
   alias pnrm='pnpm remove'
+
+  # equivalent of `npm ci`
+  alias pnci='rm -fr node_modules && pnpm install --frozen-lockfile'
 fi
