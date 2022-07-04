@@ -22,3 +22,8 @@ else
   alias e.='xdg-open .'
   alias o.='xdg-open .'
 fi
+
+# mkdir -p directory & touch file
+touchp () {
+  mkdir -p $(dirname "$1") && touch "$1"
+}
