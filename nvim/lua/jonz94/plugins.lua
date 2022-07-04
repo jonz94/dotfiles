@@ -45,6 +45,7 @@ local plugins = function(use)
     event = 'LspAttach',
   })
   use({ 'jose-elias-alvarez/null-ls.nvim' })
+  use({ 'j-hui/fidget.nvim' })
 
   -- telescope
   use({
