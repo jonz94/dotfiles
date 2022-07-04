@@ -20,4 +20,4 @@ null_ls.setup({
 })
 
 -- stylua: ignore start
-vim.keymap.set('n', '<Leader>fm', function() vim.lsp.buf.format() end)
+vim.keymap.set('n', '<Leader>fm', function() vim.lsp.buf.format({ timeout_ms = 10000 }) end)
