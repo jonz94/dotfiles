@@ -6,12 +6,28 @@
   "contributes": {
     "snippets": [
       {
-        "language": "typescript",
-        "path": "./snippets/typescript.json"
+        "language": "html",
+        "path": "./snippets/html.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
       },
       {
         "language": "jsonc",
         "path": "./snippets/jsonc.json"
+      },
+      {
+        "language": "lua",
+        "path": "./snippets/lua.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/vue.json"
       }
     ]
   }
