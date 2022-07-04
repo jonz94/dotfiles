@@ -7,4 +7,10 @@ if not fidget_status_ok then
   return
 end
 
-fidget.setup()
+fidget.setup({
+  text = {
+    spinner = 'earth',
+    done = '  ',
+    completed = '🚀',
+  },
+})
