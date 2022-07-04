@@ -47,6 +47,13 @@ local plugins = function(use)
   use({ 'jose-elias-alvarez/null-ls.nvim' })
   use({ 'j-hui/fidget.nvim' })
 
+  -- renamer
+  use({
+    'filipdutescu/renamer.nvim',
+    branch = 'master',
+    requires = 'nvim-lua/plenary.nvim',
+  })
+
   -- telescope
   use({
     'nvim-telescope/telescope.nvim',

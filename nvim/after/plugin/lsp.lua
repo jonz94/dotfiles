@@ -4,7 +4,6 @@ if vim.g.vscode then
   vim.keymap.set('n', '<Leader>gr', '<Cmd>call VSCodeNotify("references-view.findReferences")<CR>')
   vim.keymap.set('n', '<Leader>dj', '<Cmd>call VSCodeNotify("editor.action.marker.nextInFiles")<CR>')
   vim.keymap.set('n', '<Leader>dk', '<Cmd>call VSCodeNotify("editor.action.marker.prevInFiles")<CR>')
-  vim.keymap.set('n', '<Leader>r',  '<Cmd>call VSCodeNotify("editor.action.rename")<CR>')
   -- stylua: ignore end
 
   return
@@ -37,7 +36,6 @@ local function setup_keymaps()
   vim.keymap.set('n', '<Leader>gr', function() vim.lsp.buf.references() end, { buffer = 0 })
   vim.keymap.set('n', '<Leader>dj', function() vim.diagnostic.next()    end, { buffer = 0 })
   vim.keymap.set('n', '<Leader>dk', function() vim.diagnostic.prev()    end, { buffer = 0 })
-  vim.keymap.set('n', '<Leader>r',  function() vim.lsp.buf.rename()     end, { buffer = 0 })
 end
 -- stylua: ignore end
 
