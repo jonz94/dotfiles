@@ -69,7 +69,7 @@ local handlers = {
   ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
 
--- angularls for angular
+-- angularls
 lspconfig.angularls.setup({
   handlers = handlers,
   on_attach = setup_keymaps,
@@ -87,7 +87,13 @@ lspconfig.cssls.setup({
   on_attach = setup_keymaps,
 })
 
--- gopls for golang
+-- emmet_ls
+lspconfig.emmet_ls.setup({
+  handlers = handlers,
+  on_attach = setup_keymaps,
+})
+
+-- gopls (go)
 lspconfig.gopls.setup({
   handlers = handlers,
   on_attach = function(client)
@@ -114,7 +120,7 @@ lspconfig.jsonls.setup({
   end,
 })
 
--- lemminx for xml
+-- lemminx (xml)
 lspconfig.lemminx.setup({
   handlers = handlers,
   on_attach = setup_keymaps,
@@ -126,7 +132,7 @@ lspconfig.prismals.setup({
   on_attach = setup_keymaps,
 })
 
--- pyright
+-- pyright (python)
 lspconfig.pyright.setup({
   handlers = handlers,
   on_attach = setup_keymaps,
@@ -141,7 +147,7 @@ lspconfig.rust_analyzer.setup({
   end,
 })
 
--- sumneko_lua for lua
+-- sumneko_lua (lua)
 local luadev = require('lua-dev').setup({
   lspconfig = {
     handlers = handlers,
@@ -159,7 +165,7 @@ lspconfig.tailwindcss.setup({
   on_attach = setup_keymaps,
 })
 
--- tsserver
+-- tsserver (typescript, javascript)
 lspconfig.tsserver.setup({
   handlers = handlers,
   on_attach = function(client)
@@ -174,7 +180,7 @@ lspconfig.vimls.setup({
   on_attach = setup_keymaps,
 })
 
--- volar
+-- volar (vue)
 lspconfig.volar.setup({
   handlers = handlers,
   on_attach = function(client)
