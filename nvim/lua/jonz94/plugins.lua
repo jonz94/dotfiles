@@ -205,7 +205,15 @@ local plugins = function(use)
       require('toggleterm').setup({
         size = 10,
         hide_numbers = true,
+
+        -- NOTE: for macOS iterm2
+        -- 1. Go to Preferences > Keys > Key Bindings
+        -- 2. Add new shortcut by pressing + button at the bottom left corner
+        --     - Keyboard Shortcut  ⌘`
+        --     -            Action: Send Escape Sequence
+        --     -              Esc+  `
         open_mapping = [[<M-`>]],
+
         shade_filetypes = {},
         shade_terminals = true,
         shading_factor = 1,
