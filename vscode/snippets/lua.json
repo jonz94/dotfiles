@@ -1,0 +1,21 @@
+{
+  "early return when using neovim in vscode": {
+    "prefix": ";nvim-vscode",
+    "body": ["if vim.g.vscode then", "  return", "end"]
+  },
+
+  "require plugin with checks": {
+    "prefix": ";nvim-require",
+    "body": [
+      "local ${1/-/_/g}_status_ok, ${1/-/_/g} = pcall(require, '$1')",
+      "if not ${1/-/_/g}_status_ok then",
+      "  return",
+      "end"
+    ]
+  },
+
+  "just placed as the last item to conserve the last snippets' tailing comma": {
+    "prefix": "ɵ",
+    "body": ""
+  }
+}
