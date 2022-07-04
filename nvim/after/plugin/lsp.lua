@@ -24,10 +24,11 @@ if pcall(require, 'neodim') then
   })
 end
 
+local lspconfig = require('lspconfig')
 local lsp_installer = require('nvim-lsp-installer')
 
 -- stylua: ignore start
-local function on_attach()
+local function setup_keymaps()
   vim.keymap.set('n', 'K',          function() vim.lsp.buf.hover()      end, { buffer = 0 })
   vim.keymap.set('n', '<Leader>gd', function() vim.lsp.buf.definition() end, { buffer = 0 })
   vim.keymap.set('n', '<Leader>gr', function() vim.lsp.buf.references() end, { buffer = 0 })
@@ -37,7 +38,11 @@ local function on_attach()
 end
 -- stylua: ignore end
 
-lsp_installer.settings({
+local function disable_formatter(client)
+  client.server_capabilities.documentFormattingProvider = false
+end
+
+lsp_installer.setup({
   ui = {
     icons = {
       server_installed = ' ',
@@ -63,22 +68,110 @@ local handlers = {
   ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
 
-lsp_installer.on_server_ready(function(server)
-  local options = {
-    on_attach = on_attach,
+-- angularls for angular
+lspconfig.angularls.setup({
+  handlers = handlers,
+  on_attach = setup_keymaps,
+})
+
+-- bashls
+lspconfig.bashls.setup({
+  handlers = handlers,
+  on_attach = setup_keymaps,
+})
+
+-- cssls
+lspconfig.cssls.setup({
+  handlers = handlers,
+  on_attach = setup_keymaps,
+})
+
+-- gopls for golang
+lspconfig.gopls.setup({
+  handlers = handlers,
+  on_attach = function(client)
+    disable_formatter(client)
+    setup_keymaps()
+  end,
+})
+
+-- html
+lspconfig.html.setup({
+  handlers = handlers,
+  on_attach = function(client)
+    disable_formatter(client)
+    setup_keymaps()
+  end,
+})
+
+-- jsonls
+lspconfig.jsonls.setup({
+  handlers = handlers,
+  on_attach = function(client)
+    disable_formatter(client)
+    setup_keymaps()
+  end,
+})
+
+-- prismals
+lspconfig.prismals.setup({
+  handlers = handlers,
+  on_attach = setup_keymaps,
+})
+
+-- pyright
+lspconfig.pyright.setup({
+  handlers = handlers,
+  on_attach = setup_keymaps,
+})
+
+-- rust_analyzer
+lspconfig.rust_analyzer.setup({
+  handlers = handlers,
+  on_attach = function(client)
+    disable_formatter(client)
+    setup_keymaps()
+  end,
+})
+
+-- sumneko_lua for lua
+local luadev = require('lua-dev').setup({
+  lspconfig = {
     handlers = handlers,
-  }
+    on_attach = function(client)
+      disable_formatter(client)
+      setup_keymaps()
+    end,
+  },
+})
+lspconfig.sumneko_lua.setup(luadev)
 
-  if server.name == 'sumneko_lua' then
-    if pcall(require, 'nvim-lsp-installer') then
-      options = require('lua-dev').setup({
-        lspconfig = {
-          on_attach = on_attach,
-          handlers = handlers,
-        },
-      })
-    end
-  end
+-- tailwindcss
+lspconfig.tailwindcss.setup({
+  handlers = handlers,
+  on_attach = setup_keymaps,
+})
 
-  server:setup(options)
-end)
+-- tsserver
+lspconfig.tsserver.setup({
+  handlers = handlers,
+  on_attach = function(client)
+    disable_formatter(client)
+    setup_keymaps()
+  end,
+})
+
+-- vimls
+lspconfig.vimls.setup({
+  handlers = handlers,
+  on_attach = setup_keymaps,
+})
+
+-- volar
+lspconfig.volar.setup({
+  handlers = handlers,
+  on_attach = function(client)
+    disable_formatter(client)
+    setup_keymaps()
+  end,
+})
