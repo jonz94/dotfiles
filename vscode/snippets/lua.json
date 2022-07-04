@@ -1,9 +1,16 @@
 {
+  "check is windows": {
+    "prefix": ";nvim-is-windows",
+    "body": "local is_windows = vim.fn.has('win32') == 1"
+  },
+  "check is inside vscode": {
+    "prefix": ";nvim-is-inside-vscode",
+    "body": "local inside_vscode = vim.g.vscode ~= nil"
+  },
   "early return when using neovim in vscode": {
     "prefix": ";nvim-vscode",
     "body": ["if vim.g.vscode then", "  return", "end"]
   },
-
   "require plugin with checks": {
     "prefix": ";nvim-require",
     "body": [
