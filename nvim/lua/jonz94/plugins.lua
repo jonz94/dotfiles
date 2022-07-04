@@ -174,6 +174,7 @@ local plugins = function(use)
       vim.g.surround_no_mappings = 1
     end,
   })
+  use({ 'johmsalas/text-case.nvim' })
 
   -- extended increment/decrement plugin
   use({ 'monaqa/dial.nvim' })
