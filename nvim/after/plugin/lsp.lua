@@ -116,6 +116,12 @@ lspconfig.jsonls.setup({
   end,
 })
 
+-- lemminx for xml
+lspconfig.lemminx.setup({
+  handlers = handlers,
+  on_attach = setup_keymaps,
+})
+
 -- prismals
 lspconfig.prismals.setup({
   handlers = handlers,
