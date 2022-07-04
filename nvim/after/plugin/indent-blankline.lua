@@ -2,11 +2,12 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'indent_blankline') then
+local indent_blankline_status_ok, indent_blankline = pcall(require, 'indent_blankline')
+if not indent_blankline_status_ok then
   return
 end
 
-require('indent_blankline').setup({
+indent_blankline.setup({
   char = '│',
   buftype_exclude = { 'terminal', 'nofile', 'help' },
   space_char_blankline = ' ',

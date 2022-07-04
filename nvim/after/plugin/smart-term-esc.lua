@@ -2,11 +2,12 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'smart-term-esc') then
+local smart_term_esc_status_ok, smart_term_esc = pcall(require, 'smart-term-esc')
+if not smart_term_esc_status_ok then
   return
 end
 
-require('smart-term-esc').setup({
+smart_term_esc.setup({
   key = '<Esc>',
   except = { 'nvim', 'fzf' },
 })

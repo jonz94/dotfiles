@@ -10,7 +10,13 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'nvim-lsp-installer') then
+local lspconfig_status_ok, lspconfig = pcall(require, 'lspconfig')
+if not lspconfig_status_ok then
+  return
+end
+
+local nvim_lsp_installer_status_ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
+if not nvim_lsp_installer_status_ok then
   return
 end
 
@@ -23,9 +29,6 @@ if pcall(require, 'neodim') then
     },
   })
 end
-
-local lspconfig = require('lspconfig')
-local lsp_installer = require('nvim-lsp-installer')
 
 -- stylua: ignore start
 local function setup_keymaps()

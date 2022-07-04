@@ -7,7 +7,13 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'twilight') then
+local twilight_status_ok, twilight = pcall(require, 'twilight')
+if twilight_status_ok then
+  twilight.setup()
+end
+
+local zen_mode_status_ok, zen_mode = pcall(require, 'zen-mode')
+if not zen_mode_status_ok then
   return
 end
 
@@ -15,11 +21,7 @@ if not pcall(require, 'zen-mode') then
   return
 end
 
-require('twilight').setup()
-
-local zen = require('zen-mode')
-
-zen.setup({
+zen_mode.setup({
   window = {
     backdrop = 0.999,
     height = 0.9,
@@ -32,7 +34,7 @@ zen.setup({
 })
 
 vim.keymap.set('n', '<Leader><Leader>z', function()
-  zen.toggle({
+  zen_mode.toggle({
     window = {
       width = 120,
     },
@@ -40,5 +42,5 @@ vim.keymap.set('n', '<Leader><Leader>z', function()
 end)
 
 vim.keymap.set('n', '<Leader>zz', function()
-  zen.toggle()
+  zen_mode.toggle()
 end)

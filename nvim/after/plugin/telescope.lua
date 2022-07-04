@@ -8,11 +8,11 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'telescope') then
+local telescope_status_ok, telescope = pcall(require, 'telescope')
+if not telescope_status_ok then
   return
 end
 
-local telescope = require('telescope')
 local builtin = require('telescope.builtin')
 local is_windows = vim.fn.has('win32') == 1
 

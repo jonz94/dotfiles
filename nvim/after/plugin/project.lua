@@ -2,8 +2,9 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'project_nvim') then
+local project_nvim_status_ok, project_nvim = pcall(require, 'project_nvim')
+if not project_nvim_status_ok then
   return
 end
 
-require('project_nvim').setup()
+project_nvim.setup()

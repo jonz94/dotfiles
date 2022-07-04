@@ -2,11 +2,11 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'onedarkpro') then
+local onedarkpro_status_ok, onedarkpro = pcall(require, 'onedarkpro')
+if not onedarkpro_status_ok then
   return
 end
 
-local onedarkpro = require('onedarkpro')
 local colors = require('jonz94.colors')
 local is_windows = vim.fn.has('win32') == 1
 

@@ -2,8 +2,9 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'package-info') then
+local package_info_status_ok, package_info = pcall(require, 'package-info')
+if not package_info_status_ok then
   return
 end
 
-require('package-info').setup()
+package_info.setup()

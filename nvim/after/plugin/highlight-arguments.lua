@@ -2,8 +2,9 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'hlargs') then
+local hlargs_status_ok, hlargs = pcall(require, 'hlargs')
+if not hlargs_status_ok then
   return
 end
 
-require('hlargs').setup()
+hlargs.setup()

@@ -2,11 +2,12 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'gitsigns') then
+local gitsigns_status_ok, gitsigns = pcall(require, 'gitsigns')
+if not gitsigns_status_ok then
   return
 end
 
-require('gitsigns').setup({
+gitsigns.setup({
   signs = {
     add = {
       hl = 'GitSignsAdd',

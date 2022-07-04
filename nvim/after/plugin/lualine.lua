@@ -2,7 +2,8 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'lualine') then
+local lualine_status_ok, lualine = pcall(require, 'lualine')
+if not lualine_status_ok then
   return
 end
 
@@ -30,7 +31,7 @@ local theme = {
   },
 }
 
-require('lualine').setup({
+lualine.setup({
   options = {
     theme = theme,
     component_separators = '',

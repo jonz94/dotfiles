@@ -5,24 +5,25 @@ end
 vim.opt.completeopt = { 'menu', 'menuone' }
 vim.opt.shortmess:append('c')
 
-if not pcall(require, 'cmp') then
+local cmp_status_ok, cmp = pcall(require, 'cmp')
+if not cmp_status_ok then
   return
 end
 
-if not pcall(require, 'luasnip') then
+local luasnip_status_ok, luasnip = pcall(require, 'luasnip')
+if not luasnip_status_ok then
   return
 end
 
-if not pcall(require, 'lspkind') then
+local lspkind_status_ok, lspkind = pcall(require, 'lspkind')
+if not lspkind_status_ok then
   return
 end
-
-local cmp = require('cmp')
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
   mapping = {
@@ -57,7 +58,7 @@ cmp.setup({
     { name = 'path' },
   },
   formatting = {
-    format = require('lspkind').cmp_format({
+    format = lspkind.cmp_format({
       mode = 'symbol_text',
       menu = {
         buffer = '[buf]',

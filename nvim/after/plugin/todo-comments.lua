@@ -2,8 +2,9 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'todo-comments') then
+local todo_comments_status_ok, todo_comments = pcall(require, 'todo-comments')
+if not todo_comments_status_ok then
   return
 end
 
-require('todo-comments').setup()
+todo_comments.setup()

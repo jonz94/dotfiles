@@ -2,11 +2,10 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'luasnip') then
+local luasnip_status_ok, luasnip = pcall(require, 'luasnip')
+if not luasnip_status_ok then
   return
 end
-
-local luasnip = require('luasnip')
 
 -- from https://github.com/L3MON4D3/LuaSnip/blob/eb84bb89933141fa0cd0683cb960fef975106dfd/lua/luasnip/loaders/from_vscode.lua#L118-L122
 local function get_snippet_runtimepath()

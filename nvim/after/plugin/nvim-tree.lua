@@ -2,11 +2,11 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'nvim-tree') then
+local nvim_tree_status_ok, nvim_tree = pcall(require, 'nvim-tree')
+if not nvim_tree_status_ok then
   return
 end
 
-local nvim_tree = require('nvim-tree')
 local icons = require('jonz94.icons')
 
 nvim_tree.setup({

@@ -1,4 +1,5 @@
-if not pcall(require, 'dial.map') then
+local dial_status_ok, map = pcall(require, 'dial.map')
+if not dial_status_ok then
   return
 end
 
@@ -43,8 +44,6 @@ require('dial.config').augends:register_group({
     }),
   },
 })
-
-local map = require('dial.map')
 
 -- stylua: ignore start
 vim.keymap.set('n', '<C-a>',  map.inc_normal() )

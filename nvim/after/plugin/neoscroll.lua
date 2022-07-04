@@ -2,11 +2,12 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'neoscroll') then
+local neoscroll_status_ok, neoscroll = pcall(require, 'neoscroll')
+if not neoscroll_status_ok then
   return
 end
 
-require('neoscroll').setup()
+neoscroll.setup()
 
 local map = {}
 

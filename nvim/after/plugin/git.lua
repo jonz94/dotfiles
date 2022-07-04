@@ -7,11 +7,10 @@ if vim.g.vscode then
   return
 end
 
-if not pcall(require, 'neogit') then
+local neogit_status_ok, neogit = pcall(require, 'neogit')
+if not neogit_status_ok then
   return
 end
-
-local neogit = require('neogit')
 
 neogit.setup({
   disable_context_highlighting = true,
