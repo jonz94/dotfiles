@@ -28,6 +28,10 @@
       {
         "language": "vue",
         "path": "./snippets/vue.json"
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/yaml.json"
       }
     ]
   }

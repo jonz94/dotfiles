@@ -1,0 +1,15 @@
+{
+  "github actions run single commands": {
+    "prefix": ";github-run-single-commands",
+    "body": ["- name: $1", "  run: $2"]
+  },
+  "github actions run multiple commands": {
+    "prefix": ";github-run-multiple-commands",
+    "body": ["- name: $1", "  run: |$2", "    $3"]
+  },
+
+  "just placed as the last item to conserve the last snippets' tailing comma": {
+    "prefix": "ɵ",
+    "body": ""
+  }
+}
