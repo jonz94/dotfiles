@@ -9,7 +9,7 @@ style="mono"
 orthography="tc"
 
 # user font directory: "$HOME/.local/share/fonts"
-# system font directory: "/usr/local/share/fonts" (root privilege is required)
+# system font directory: "/usr/local/share/fonts/ttf/sarasa-${style}-${orthography}-nerd-font" (root privilege is required)
 fontDir="$HOME/.local/share/fonts"
 
 abort () {
@@ -49,5 +49,7 @@ pattern="sarasa-${style}-${orthography}-*-nerd-font.ttf"
 find -L /tmp -name $pattern 2>/dev/null | cut -d '/' -f 3 | xargs -I {} rm -f ${fontDir}/{}
 mkdir -p $fontDir
 find -L /tmp -name $pattern 2>/dev/null | xargs -I {} mv {} ${fontDir}/
+
+fc-cache -r
 
 echo "Done!"

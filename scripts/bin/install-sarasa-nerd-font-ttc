@@ -1,0 +1,49 @@
+#!/bin/sh
+
+set -e
+
+# user font directory: "$HOME/.local/share/fonts"
+# system font directory: "/usr/local/share/fonts/ttf/sarasa-nerd-font-ttc" (root privilege is required)
+fontDir="$HOME/.local/share/fonts"
+
+abort () {
+  echo $1
+  exit 1
+}
+
+# check things before running the script
+if [ ! $(uname) = "Linux" ]; then
+  abort "This script only support Linux!"
+elif ! type curl > /dev/null 2>&1; then
+  abort "curl is needed to running this script!"
+elif ! type unzip > /dev/null 2>&1; then
+  abort "unzip is needed to running this script!"
+fi
+
+# main
+
+rm -f "/tmp/sarasa-nerd-font.zip"
+
+echo "Downloading latest version of sarasa-nerd-font.zip"
+
+curl -fsSL "https://api.github.com/repos/jonz94/ttc-sarasa-gothic-nerd-fonts/releases/latest" | \
+  grep "browser_download_url.*sarasa-nerd-font-ttc.zip" | \
+  head -n 1 | \
+  cut -d '"' -f 4 | \
+  xargs curl -fL -o "/tmp/sarasa-nerd-font-ttc.zip"
+
+echo "Unzip sarasa-nerd-font-ttc.zip"
+
+unzip -d /tmp "/tmp/sarasa-nerd-font-ttc.zip"
+
+echo "Installing fonts into $fontDir"
+
+pattern="sarasa-*-nerd-font.ttc"
+
+find -L /tmp -name $pattern 2>/dev/null | cut -d '/' -f 3 | xargs -I {} rm -f ${fontDir}/{}
+mkdir -p $fontDir
+find -L /tmp -name $pattern 2>/dev/null | xargs -I {} mv {} ${fontDir}/
+
+fc-cache -r
+
+echo "Done!"
