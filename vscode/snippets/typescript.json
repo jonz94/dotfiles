@@ -1,4 +1,13 @@
 {
+  "export interface": {
+    "prefix": ";export-interface",
+    "body": ["export interface $1 {", "\t$2", "}"]
+  },
+  "import statement": {
+    "prefix": ";import",
+    "body": "import {$2} from '$1'"
+  },
+
   "angular on push change detection": {
     "prefix": ";ng-on-push",
     "body": ["changeDetection: ChangeDetectionStrategy$1.OnPush,$0"]
