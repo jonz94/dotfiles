@@ -84,6 +84,8 @@ function gp { git push $args }
 
 function gpD { git push --delete $args }
 
+function gpt { git push --follow-tags }
+
 # Note: `Get-GitBranch` is a helper from posh-git module
 function gpsup { git push -u origin $((Get-GitStatus).Branch) $args }
 
