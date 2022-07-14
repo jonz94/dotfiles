@@ -302,6 +302,9 @@ local plugins = function(use)
     end,
   })
 
+  -- syntax highlighting for browserslist
+  use({ 'browserslist/vim-browserslist' })
+
   -- syntax highlighting for kitty.conf
   use({ 'fladson/vim-kitty' })
 
