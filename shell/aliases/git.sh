@@ -8,6 +8,8 @@ if type git &> /dev/null; then
   alias gls='git log --show-signature'
   alias gpD='git push --delete'
   alias gpt='git push --follow-tags'
+  alias grao='git remote add origin'
+  alias grau='git remote add upstream'
   alias grsh='git reset --soft'
   alias gstaa='git stash push --include-untracked'
   alias gstai='git stash push --include-untracked'
