@@ -63,6 +63,7 @@ yabai -m rule --add app="^Android File Transfer$" manage=off
 yabai -m rule --add app="^Android Studio$" title="^Generate Signed Bundle or APK$" manage=off
 yabai -m rule --add app="^Android Studio$" title="^New Key Store$" manage=off
 yabai -m rule --add app="^Android Studio$" title="^Preferences$" manage=off
+yabai -m rule --add app="^Finder$" title=" Info$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Microsoft AutoUpdate$" manage=off
 yabai -m rule --add app="^Parallels Desktop$" manage=off
