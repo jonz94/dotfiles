@@ -205,7 +205,8 @@
     "*.keystore": "key",
     ".prettier-plugins-workaround.cjs": "prettier",
     "docker-compose.alpha.yml": "docker",
-    "docker-compose.next.yml": "docker"
+    "docker-compose.next.yml": "docker",
+    "*.page.ts": "angular-component"
   },
   "material-icon-theme.folders.associations": {
     "bootstrap": "core",
