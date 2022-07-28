@@ -38,6 +38,11 @@ require('dial.config').augends:register_group({
       cyclic = true,
     }),
     augend.constant.new({
+      elements = { '||', '&&' },
+      word = false,
+      cyclic = true,
+    }),
+    augend.constant.new({
       elements = { 'public', 'private' },
       word = true,
       cyclic = true,
