@@ -59,6 +59,8 @@ function gfa { git fetch --all --prune $args }
 Remove-Item Alias:\gl -Force *> $null
 function gl { git pull $args }
 
+function gl1 { git log -n 1 }
+
 function glg { git log --stat $args }
 
 function glgg { git log --graph $args }
