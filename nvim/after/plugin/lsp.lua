@@ -14,8 +14,13 @@ if not lspconfig_status_ok then
   return
 end
 
-local nvim_lsp_installer_status_ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
-if not nvim_lsp_installer_status_ok then
+local mason_status_ok, mason = pcall(require, 'mason')
+if not mason_status_ok then
+  return
+end
+
+local mason_lspconfig_status_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
+if not mason_lspconfig_status_ok then
   return
 end
 
@@ -43,15 +48,17 @@ local function disable_formatter(client)
   client.server_capabilities.documentFormattingProvider = false
 end
 
-lsp_installer.setup({
+mason.setup({
   ui = {
     icons = {
-      server_installed = ' ',
-      server_pending = ' ',
-      server_uninstalled = ' ',
+      package_installed = ' ',
+      package_pending = ' ',
+      package_uninstalled = ' ',
     },
   },
 })
+
+mason_lspconfig.setup()
 
 local border = {
   { '╭', 'FloatBorder' },
