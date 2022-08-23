@@ -7,6 +7,10 @@
     "prefix": ";import",
     "body": "import { $2 } from '$1'"
   },
+  "log via JSON.parse(JSON.stringify())": {
+    "prefix": ";ls",
+    "body": "console.log($2JSON.parse(JSON.stringify($1)))"
+  },
 
   "angular on push change detection": {
     "prefix": ";ng-on-push",

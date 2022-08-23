@@ -1,13 +1,15 @@
 {
   "declare tailwindcss config type": {
     "prefix": ";type-tailwindcss-config",
-    "body": [
-      "/** @type {import('tailwindcss/tailwind-config').TailwindConfig} */"
-    ]
+    "body": ["/** @type {import('tailwindcss').Config} */"]
   },
   "declare prettier config type": {
     "prefix": ";type-prettier-config",
     "body": ["/** @type {import('prettier').Config} */"]
+  },
+  "log via JSON.parse(JSON.stringify())": {
+    "prefix": ";ls",
+    "body": "console.log($2JSON.parse(JSON.stringify($1)))"
   },
 
   "just placed as the last item to conserve the last snippets' tailing comma": {
