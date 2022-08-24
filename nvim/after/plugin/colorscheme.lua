@@ -39,7 +39,7 @@ onedarkpro.setup({
     undercurl = false, -- curly underline
     cursorline = true,
   },
-  hlgroups = {
+  highlights = {
     -- 'nbsp', 'space', 'tab' and 'trail' in 'listchars'
     Whitespace = { fg = colors.cursorline },
 
