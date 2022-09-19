@@ -45,7 +45,7 @@
           "powerline_symbol": "",
           "foreground": "#343A43",
           "background": "#A7CB8B",
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }} {{ if .Working.Changed }} {{ .Working.String }} {{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} | {{ end }}{{ if .Staging.Changed }} {{ .Staging.String }} {{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }} {{ end }}{{ if gt .WorktreeCount 0 }} {{ .WorktreeCount }} {{ end }}",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }} {{ .BranchStatus }} {{ if .Working.Changed }} {{ .Working.String }} {{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} | {{ end }}{{ if .Staging.Changed }} {{ .Staging.String }} {{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }} {{ end }}{{ if gt .WorktreeCount 0 }} {{ .WorktreeCount }} {{ end }}",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
