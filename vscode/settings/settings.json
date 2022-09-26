@@ -101,6 +101,7 @@
 
   // manually configure file associations to languages
   "files.associations": {
+    "*.xccolortheme": "xml",
     "composer.lock": "json"
   },
 
@@ -203,10 +204,11 @@
   "material-icon-theme.files.associations": {
     "*.jks": "key",
     "*.keystore": "key",
+    "*.page.ts": "angular-component",
     ".prettier-plugins-workaround.cjs": "prettier",
     "docker-compose.alpha.yml": "docker",
     "docker-compose.next.yml": "docker",
-    "*.page.ts": "angular-component"
+    "tsconfig.config.json": "tsconfig"
   },
   "material-icon-theme.folders.associations": {
     "bootstrap": "core",
