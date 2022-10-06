@@ -12,11 +12,15 @@ if [ -f $script_path ]; then
   nvim-with-dynamic-terminal-background-color () {
     if [ $# -gt 0 ]; then
       if [ "-h" = "$@" ] || [ "--help" = "$@" ] || [ "-v" = "$@" ] || [ "--version" = "$@" ]; then
-      nvim "$@"
+        nvim "$@"
+      else
+        bash $script_path "#282c34"
+        nvim "$@"
+        bash $script_path "#121212"
       fi
     else
       bash $script_path "#282c34"
-      nvim "$@"
+      nvim
       bash $script_path "#121212"
     fi
   }
