@@ -1,5 +1,5 @@
 local colors = require('onedarkpro').get_colors('onedark')
-local lighten = require('onedarkpro.utils').lighten
+local lighten = require('onedarkpro.lib.color').lighten
 
 colors.bg = '#282c34'
 colors.black = colors.bg
