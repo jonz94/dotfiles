@@ -18,6 +18,9 @@ fnm alias lts-latest default
 echo 'updating npm to latest version'
 npm i -g npm@latest
 
+echo 'installing pnpm via npm'
+npm i -g pnpm@latest
+
 echo 'installing yarn via npm'
 npm i -g yarn@latest
 
