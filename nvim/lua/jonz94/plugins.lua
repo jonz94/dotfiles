@@ -39,7 +39,7 @@ local plugins = function(use)
   use({ 'neovim/nvim-lspconfig' })
   use({ 'williamboman/mason.nvim' })
   use({ 'williamboman/mason-lspconfig.nvim' })
-  use({ 'folke/lua-dev.nvim' })
+  use({ 'folke/neodev.nvim' })
   use({ 'onsails/lspkind-nvim' })
   use({
     'zbirenbaum/neodim',

@@ -9,6 +9,10 @@ if vim.g.vscode then
   return
 end
 
+if pcall(require, 'neodev') then
+  require('neodev').setup()
+end
+
 local lspconfig_status_ok, lspconfig = pcall(require, 'lspconfig')
 if not lspconfig_status_ok then
   return
@@ -155,16 +159,13 @@ lspconfig.rust_analyzer.setup({
 })
 
 -- sumneko_lua (lua)
-local luadev = require('lua-dev').setup({
-  lspconfig = {
-    handlers = handlers,
-    on_attach = function(client)
-      disable_formatter(client)
-      setup_keymaps()
-    end,
-  },
+lspconfig.sumneko_lua.setup({
+  handlers = handlers,
+  on_attach = function(client)
+    disable_formatter(client)
+    setup_keymaps()
+  end,
 })
-lspconfig.sumneko_lua.setup(luadev)
 
 -- tailwindcss
 lspconfig.tailwindcss.setup({
