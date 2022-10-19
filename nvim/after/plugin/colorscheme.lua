@@ -53,20 +53,6 @@ onedarkpro.setup({
     -- remove italic style on operator
     Operator = { style = 'NONE' },
 
-    -- operators that are English words, e.g. `and`, `as`, `or`
-    TSKeywordOperator = { fg = colors.purple },
-
-    -- html tag attributes.
-    TSTagAttribute = { fg = colors.orange },
-
-    TSConstructor = { fg = colors.yellow },
-
-    TSTypeBuiltin = { fg = colors.yellow },
-
-    TSLabel = { fg = colors.red, style = 'NONE' },
-
-    TSInclude = { fg = colors.purple },
-
     -- telescope
     TelescopeSelection = { bg = colors.cursorline, fg = colors.yellow },
     TelescopeMatching = { fg = colors.green, style = 'italic' },
@@ -87,6 +73,9 @@ onedarkpro.setup({
 
     -- virtual color column
     VirtColumn = { fg = colors.cursorline, bg = colors.bg },
+
+    -- html tag attributes.
+    ['@tag.attribute'] = { fg = colors.orange },
   },
 })
 
