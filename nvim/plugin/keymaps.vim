@@ -138,5 +138,3 @@ nnoremap <Leader>g= <Cmd>norm! gg=G<C-o><CR>
 " plugin management
 nnoremap <Leader>ps <Cmd>PackerSync<CR>
 nnoremap <Leader>pu <Cmd>PackerSync<CR>
-
-nnoremap <Leader>mt <Cmd>MarkdownPreviewToggle<CR>

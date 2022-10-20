@@ -311,13 +311,17 @@ local plugins = function(use)
 
   -- markdown preview
   use({
-    'iamcco/markdown-preview.nvim',
-    ft = 'markdown',
-    run = 'cd app && yarn install',
-    setup = function()
-      vim.g.mkdp_port = '9487'
-    end,
+    'toppair/peek.nvim',
+    run = 'deno task --quiet build:fast',
   })
+  -- use({
+  --   'iamcco/markdown-preview.nvim',
+  --   ft = 'markdown',
+  --   run = 'cd app && yarn install',
+  --   setup = function()
+  --     vim.g.mkdp_port = '9487'
+  --   end,
+  -- })
 
   -- input method switcher
   use({
