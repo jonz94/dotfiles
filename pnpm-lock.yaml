@@ -1,12 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@types/prettier': ^2.7.0
+  '@types/prettier': ^2.7.1
   prettier: ^2.7.1
   prettier-plugin-packagejson: ^2.2.18
 
 devDependencies:
-  '@types/prettier': 2.7.0
+  '@types/prettier': 2.7.1
   prettier: 2.7.1
   prettier-plugin-packagejson: 2.2.18_prettier@2.7.1
 
@@ -48,8 +48,8 @@ packages:
     resolution: {integrity: sha512-CmR8+Tsy95hhwtZBKJBs0/FFq4XX7sDZHlGGf+0q+BRZfMbOTkzkj0AFAuTyXbObDIoanaBBW0+KEW+m3N16Wg==}
     dev: true
 
-  /@types/prettier/2.7.0:
-    resolution: {integrity: sha512-RI1L7N4JnW5gQw2spvL7Sllfuf1SaHdrZpCHiBlCXjIlufi1SMNnbu2teze3/QE67Fg2tBlH7W+mi4hVNk4p0A==}
+  /@types/prettier/2.7.1:
+    resolution: {integrity: sha512-ri0UmynRRvZiiUJdiz38MmIblKK+oH30MztdBVR95dv/Ubw6neWSb8u1XpRb72L4qsZOhz+L+z9JD40SJmfWow==}
     dev: true
 
   /array-union/2.1.0:
