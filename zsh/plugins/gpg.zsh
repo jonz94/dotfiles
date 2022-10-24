@@ -8,3 +8,5 @@ gpg-login() {
 gpg-logout() {
   echo RELOADAGENT | gpg-connect-agent
 }
+
+alias in='gpg-login'
