@@ -65,6 +65,8 @@ yabai -m rule --add app="^Android Studio$" title="^New Key Store$" manage=off
 yabai -m rule --add app="^Android Studio$" title="^Preferences$" manage=off
 yabai -m rule --add app="^Android Studio$" title="^Project Structure$" manage=off
 yabai -m rule --add app="^Finder$" title=" Info$" manage=off
+yabai -m rule --add app="^LINE$" title="設定" manage=off
+yabai -m rule --add app="^LINE$" title="^Setttings$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Microsoft AutoUpdate$" manage=off
 yabai -m rule --add app="^Parallels Desktop$" manage=off
