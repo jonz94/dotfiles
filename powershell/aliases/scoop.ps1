@@ -1,7 +1,8 @@
 # scoop aliases
 function i { scoop install $args }
 function scl { scoop cleanup $args }
-function scl* { scoop cleanup * }
+function scla { scoop cleanup --all }
+function scl* { scoop cleanup --all }
 function si { scoop info $args }
 
 Remove-Item Alias:\sls -Force *> $null
@@ -12,5 +13,5 @@ function sst { scoop status }
 
 function sup { scoop update $args }
 
-function sug { scoop upgrade }
-function ug { scoop upgrade }
+function sug { scoop update --all }
+function ug { scoop update --all }
