@@ -38,6 +38,10 @@
   // disable telemetry
   "telemetry.telemetryLevel": "off",
 
+  // fix "integrated terminal icons are cut off" issue
+  // credits: https://github.com/microsoft/vscode/issues/148999#issuecomment-1125176205
+  "terminal.integrated.gpuAcceleration": "canvas",
+
   // terminal profile
   "terminal.integrated.defaultProfile.windows": "pwsh -NoLogo",
   "terminal.integrated.profiles.windows": {
