@@ -93,6 +93,10 @@ function gpsup { git push -u origin $((Get-GitStatus).Branch) $args }
 
 function gr { git remote $args }
 
+function grao { git remote add origin $args }
+
+function grau { git remote add upstream $args }
+
 function grb { git rebase $args }
 
 function grbi { git rebase -i $args }
@@ -100,6 +104,8 @@ function grbi { git rebase -i $args }
 function grbm { git rebase master $args }
 
 function grmv { git remote rename $args }
+
+function grmvou { git remote rename origin upstream }
 
 function grv { git remote -v $args }
 
