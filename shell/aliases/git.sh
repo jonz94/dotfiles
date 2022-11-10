@@ -11,6 +11,7 @@ if type git &> /dev/null; then
   alias gpt='git push --follow-tags'
   alias grao='git remote add origin'
   alias grau='git remote add upstream'
+  alias grmvou='git remote rename origin upstream'
   alias grsh='git reset --soft'
   alias gstaa='git stash push --include-untracked'
   alias gstai='git stash push --include-untracked'
