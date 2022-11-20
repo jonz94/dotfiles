@@ -1,4 +1,4 @@
-﻿# improve powershell performance
+# improve powershell performance
 $ProgressPreference = 'SilentlyContinue'
 
 # setup git
@@ -149,8 +149,9 @@ $setupNodejsEnvironmentViaFnmCommands = @'
   fnm env --use-on-cd | Out-String | Invoke-Expression
   fnm install --lts
   fnm alias lts-latest default
-  npm i -g npm@latest rimraf@latest yarn@latest
+  npm i -g npm@latest
   npm rm -g corepack
+  npm i -g pnpm@latest rimraf@latest yarn@latest
 '@
 
 powershell.exe -NoProfile -Command $setupNodejsEnvironmentViaFnmCommands
