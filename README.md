@@ -44,7 +44,7 @@ brew install git
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+irm get.scoop.sh | iex
 ```
 
 - Install `mingit` or `git` via `scoop`
