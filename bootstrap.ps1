@@ -1,4 +1,4 @@
-# improve powershell performance
+﻿# improve powershell performance
 $ProgressPreference = 'SilentlyContinue'
 
 # setup git
@@ -32,10 +32,6 @@ $currentScoopBucketList = $(scoop bucket list).Name
 
 if (-not $currentScoopBucketList.Contains('main')) {
   scoop bucket add main
-}
-
-if (-not $currentScoopBucketList.Contains('versions')) {
-  scoop bucket add versions
 }
 
 if (-not $currentScoopBucketList.Contains('nerd-fonts')) {
