@@ -196,7 +196,7 @@ local plugins = function(use)
   })
 
   -- line maniuplation
-  use({ 'matze/vim-move' })
+  use({ 'fedepujol/move.nvim' })
 
   -- terminal
   use({
