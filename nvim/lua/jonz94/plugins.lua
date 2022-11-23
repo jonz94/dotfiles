@@ -173,7 +173,7 @@ local plugins = function(use)
     },
   })
 
-  -- text maniuplation
+  -- text manipulation
   use({ 'godlygeek/tabular' })
   use({ 'tpope/vim-repeat' })
   use({
@@ -195,7 +195,7 @@ local plugins = function(use)
     end,
   })
 
-  -- line maniuplation
+  -- line manipulation
   use({ 'fedepujol/move.nvim' })
 
   -- terminal
