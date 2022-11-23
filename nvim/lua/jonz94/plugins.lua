@@ -198,6 +198,12 @@ local plugins = function(use)
   -- line manipulation
   use({ 'fedepujol/move.nvim' })
 
+  -- block manipulation
+  use({
+    'Wansmer/treesj',
+    requires = { 'nvim-treesitter' },
+  })
+
   -- terminal
   use({
     'akinsho/toggleterm.nvim',
