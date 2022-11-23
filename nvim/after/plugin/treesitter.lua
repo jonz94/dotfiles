@@ -45,10 +45,10 @@ require('nvim-treesitter.configs').setup({
     },
   },
   endwise = {
-    enable = not inside_vscode,
+    enable = true,
   },
   matchup = {
-    enable = not inside_vscode,
+    enable = true,
   },
 })
 
