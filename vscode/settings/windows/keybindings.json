@@ -29,6 +29,109 @@
     "when": "!terminalFocus"
   },
 
+  // let vscode handle `ctrl+k`, don't send `ctrl+k` to neovim
+  {
+    "key": "ctrl+k",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+
+  // quickly access git-graph panel
+  {
+    "key": "alt+g",
+    "command": "git-graph.view"
+  },
+
+  // neovim like keybinding to show help
+  {
+    "key": "shift+k",
+    "command": "editor.action.showDefinitionPreviewHover",
+    "when": "editorTextFocus && neovim.mode == normal"
+  },
+
+  // toggle sidebar
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+
+  // toggle terminal
+  {
+    "key": "alt+`",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+
+  // change focus from sidebar to editor
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "listFocus && !inputFocus"
+  },
+
+  // move lines
+  {
+    "key": "alt+j",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode != 'visual'",
+    "args": "<A-j>"
+  },
+  {
+    "key": "alt+k",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode != 'visual'",
+    "args": "<A-k>"
+  },
+  {
+    "key": "alt+h",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode != 'visual'",
+    "args": "<A-h>"
+  },
+  {
+    "key": "alt+l",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode != 'visual'",
+    "args": "<A-l>"
+  },
+  {
+    "key": "alt+j",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode == 'visual'",
+    "args": "<A-j>"
+  },
+  {
+    "key": "alt+k",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode == 'visual'",
+    "args": "<A-k>"
+  },
+  {
+    "key": "alt+h",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode == 'visual'",
+    "args": "<A-h>"
+  },
+  {
+    "key": "alt+l",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode == 'visual'",
+    "args": "<A-l>"
+  },
+
   // just placed as the last item to conserve the last item's tailing comma
   {
     "key": "ɵ",

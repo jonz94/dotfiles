@@ -12,6 +12,7 @@
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [80, 120],
   "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": true,
   "editor.wordWrap": "on",
 
   // disable navigation breadcrumbs
@@ -21,6 +22,9 @@
   "editor.cursorSurroundingLines": 3,
   "editor.cursorSurroundingLinesStyle": "all",
   "editor.scrollBeyondLastLine": false,
+
+  // disable middle-click paste on Linux
+  "editor.selectionClipboard": false,
 
   // git related
   "git.ignoreMissingGitWarning": true,
@@ -87,10 +91,6 @@
   // start without any editor, only show welcome page if current session is empty
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
 
-  // disable keyboard navigation in lists and trees triggered simply by typing
-  // this will enable vscode neovim's explorer list navigation feature
-  "workbench.list.automaticKeyboardNavigation": false,
-
   // smooth scrolling
   "workbench.list.smoothScrolling": true,
 
@@ -102,12 +102,6 @@
 
   // zoom in!
   "window.zoomLevel": 2,
-
-  // manually configure file associations to languages
-  "files.associations": {
-    "*.xccolortheme": "xml",
-    "composer.lock": "json"
-  },
 
   // Dockerfile
   "[dockerfile]": {
@@ -198,6 +192,13 @@
     }
   },
 
+  // manually configure file associations to languages
+  "files.associations": {
+    ".env.*": "dotenv",
+    "*.xccolortheme": "xml",
+    "composer.lock": "json"
+  },
+
   // icon theme: [extension] pkief.material-icon-theme
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.activeIconPack": "angular_ngrx",
@@ -210,9 +211,11 @@
     "*.keystore": "key",
     "*.page.ts": "angular-component",
     ".prettier-plugins-workaround.cjs": "prettier",
+    ".ruby-version": "ruby",
     "docker-compose.alpha.yml": "docker",
     "docker-compose.next.yml": "docker",
-    "tsconfig.config.json": "tsconfig"
+    "tsconfig.config.json": "tsconfig",
+    "tsconfig.vitest.json": "tsconfig"
   },
   "material-icon-theme.folders.associations": {
     "bootstrap": "core",
@@ -263,6 +266,7 @@
   "vscode-neovim.neovimInitVimPaths.linux": "/home/jonz94/.config/nvim/vscode-neovim/init.vim",
   "vscode-neovim.neovimExecutablePaths.win32": "C:\\Users\\jonz94\\scoop\\apps\\neovim-bare-nightly\\current\\bin\\nvim.exe",
   "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\jonz94\\AppData\\Local\\nvim\\vscode-neovim\\init.vim",
+  "vscode-neovim.mouseSelectionStartVisualMode": true,
 
   // [extension] vscodevim.vim
   "vim.leader": " ",
@@ -331,9 +335,6 @@
 
   // [extension] nrwl.angular-console
   "nxConsole.enableTelemetry": false,
-
-  // [extension] ultram4rine.vscode-choosealicense
-  "license.default": "Unlicense",
 
   // [extension] jgclark.vscode-todo-highlight
   "todohighlight.keywords": [
