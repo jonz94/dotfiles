@@ -3,3 +3,4 @@ Thumbs.db
 local/
 node_modules/
 Session.vim
+.luarc.json
