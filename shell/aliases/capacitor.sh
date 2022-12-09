@@ -2,5 +2,8 @@
 
 if type npx &> /dev/null; then
   alias coa='npx cap open android'
-  alias coi='npx cap open ios'
+
+  if [ "$(uname)" = "Darwin" ]; then
+    alias coi='npx cap open ios'
+  fi
 fi
