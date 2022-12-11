@@ -21,6 +21,12 @@ export PATH="${HOME}/.local/bin:${PATH}"
 # Disable less history file
 export LESSHISTFILE=-
 
+# Android
+if [ -d "${HOME}/Android/Sdk" ]; then
+  export ANDROID_HOME="${HOME}/Android/Sdk"
+  export ANDROID_SDK_ROOT="${ANDROID_HOME}"
+fi
+
 # bat
 if type bat &> /dev/null; then
   export BAT_CONFIG_PATH=${DOTS}/shell/bat.conf
