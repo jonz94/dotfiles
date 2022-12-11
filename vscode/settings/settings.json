@@ -210,7 +210,6 @@
     "*.jks": "key",
     "*.keystore": "key",
     "*.page.ts": "angular-component",
-    ".prettier-plugins-workaround.cjs": "prettier",
     ".ruby-version": "ruby",
     "docker-compose.alpha.yml": "docker",
     "docker-compose.next.yml": "docker",
@@ -218,6 +217,7 @@
     "tsconfig.vitest.json": "tsconfig"
   },
   "material-icon-theme.folders.associations": {
+    ".github/workflows": "ci",
     "bootstrap": "core",
     "concerns": "utils",
     "console": "tasks",
@@ -227,6 +227,7 @@
     "feature": "coverage",
     "framework": "core",
     "http": "global",
+    "interceptors": "global",
     "migrations": "upload",
     "notifications": "mail",
     "requests": "rules",
@@ -343,7 +344,7 @@
       "regex": {
         "pattern": "(?<=^|\"|\\s)TODO(\\([A-Za-z0-9-]+\\))?:"
       },
-      "color": "#fff",
+      "color": "white",
       "backgroundColor": "#ffbd2a",
       "overviewRulerColor": "rgba(255,189,42,0.8)"
     },
@@ -352,7 +353,7 @@
       "regex": {
         "pattern": "(?<=^|\"|\\s)FIXME(\\([A-Za-z0-9-]+\\))?:"
       },
-      "color": "#fff",
+      "color": "white",
       "backgroundColor": "#f06292",
       "overviewRulerColor": "rgba(240,98,146,0.8)"
     },
