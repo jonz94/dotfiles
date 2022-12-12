@@ -1,3 +1,3 @@
-# Lazy alias for change directory
+# lazy aliases for change directory
 
 alias dot='cd ${DOTS}'

@@ -12,6 +12,6 @@ if type npm &> /dev/null; then
   alias nrm='npm uninstall'
   alias nug='npm update -g'
 
-  # Always typo nr into br...
+  # always typo nr into br...
   alias br='npm run'
 fi

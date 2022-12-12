@@ -1,4 +1,4 @@
-# load carge bin directory
+# load cargo bin directory
 
 if [ -f $HOME/.cargo/env ]; then
   source $HOME/.cargo/env

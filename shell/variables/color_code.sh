@@ -1,4 +1,4 @@
-# Variables of the special shell escape characters for printing colorful text.
+# variables of the special shell escape characters for printing colorful text
 
 export NORMAL="\033[0m"
 export BOLD="\033[1m"
