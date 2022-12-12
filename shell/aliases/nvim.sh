@@ -40,6 +40,16 @@ alias vd="nvim -c 'cd ${DOTS}' ${DOTS}"
 alias vz="nvim -c 'cd ${DOTS}' ${DOTS}/local/local.zsh"
 alias vv="nvim -c 'cd ${DOTS}' ${DOTS}/nvim/jonz94.vim"
 
+# aliases for quickly editing shell history file
+if [ -f "${HOME}/.zhistory" ]; then
+  alias vh="nvim -c 'normal! G' ${HOME}/.zhistory"
+elif [ -f "${HOME}/.zsh_history" ]; then
+  alias vh="nvim -c 'normal! G' ${HOME}/.zsh_history"
+else
+  echo "${RED}shell history file not found...${NORMAL}"
+  exit 1
+fi
+
 # aliases with sudo
 alias sv.='sudo nvim .'
 alias sv,='sudo nvim .'
