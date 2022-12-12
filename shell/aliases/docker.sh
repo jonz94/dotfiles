@@ -36,9 +36,7 @@ if type docker &> /dev/null; then
   }
 fi
 
-# docker-compose
-if type docker-compose &> /dev/null; then
-  alias dc='docker-compose'
-  alias dcd='docker-compose down'
-  alias dcu='docker-compose up'
-fi
+# docker compose
+alias dc='docker compose'
+alias dcd='docker compose down'
+alias dcu='docker compose up'
