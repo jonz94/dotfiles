@@ -35,3 +35,9 @@
 .__CUSTOM_CSS_JS_INDICATOR_CLS {
   display: none !important;
 }
+
+/* center verified publisher icon on extensions sidebar */
+.sidebar .codicon.codicon-extensions-verified-publisher {
+  margin-top: 0.125rem;
+  margin-right: 0.125rem;
+}
