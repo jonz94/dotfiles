@@ -5,22 +5,34 @@ if ! type nvim &> /dev/null; then
 fi
 
 # dynamic chaning terminal's background color when entering/leaving neovim
-# see: https://medium.com/@joao.paulo.silvasouza/change-your-terminals-background-color-dynamically-using-escape-sequences-aba6e5ed2b29
+# credit: https://medium.com/@joao.paulo.silvasouza/change-your-terminals-background-color-dynamically-using-escape-sequences-aba6e5ed2b29
 script_path="$DOTS/scripts/bin/change-terminal-background-color"
 
 if [ -f $script_path ]; then
   nvim-with-dynamic-terminal-background-color () {
+    # preserve "$@" as an array
+    # credit: https://unix.stackexchange.com/questions/472589/pass-to-command-preserving-quotes
+    args=("$@")
+    do_not_change_background="false"
+
     if [ $# -gt 0 ]; then
-      if [ "-h" = "$@" ] || [ "--help" = "$@" ] || [ "-v" = "$@" ] || [ "--version" = "$@" ]; then
-        nvim "$@"
-      else
-        bash $script_path "#282c34"
-        nvim "$@"
-        bash $script_path "#121212"
-      fi
+      # check for command line flag
+      # credit: https://stackoverflow.com/a/2875513/9979122
+      while test $# != 0
+      do
+        case "$1" in
+        -h|--help|-v|--version|-hv|-vh)
+          do_not_change_background="true" ;;
+        esac
+        shift
+      done
+    fi
+
+    if [ "$do_not_change_background" = "true" ]; then
+      nvim "${args[@]}"
     else
       bash $script_path "#282c34"
-      nvim
+      nvim "${args[@]}"
       bash $script_path "#121212"
     fi
   }
