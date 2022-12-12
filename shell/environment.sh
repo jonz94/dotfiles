@@ -1,8 +1,10 @@
 # dotfiles location
 export DOTS=${HOME}/dotfiles
 
-# shell variables
-export VAR_DIR=${DOTS}/shell/variables
+# load custom shell environment variables
+for file in ${DOTS}/shell/variables/*.sh; do
+  source ${file}
+done
 
 # Italic Font Setting for tmux
 export TERM=xterm-256color

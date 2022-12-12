@@ -1,10 +1,5 @@
-# First include shell environment
+# setup environment first before doing anything else
 source ${HOME}/dotfiles/shell/environment.sh
-
-# custom shell variables
-for file in ${DOTS}/shell/variables/*.sh; do
-  source ${file}
-done
 
 # custom plugins
 for file in ${DOTS}/zsh/plugins/*.zsh; do
