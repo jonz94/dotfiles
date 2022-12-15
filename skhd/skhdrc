@@ -124,11 +124,11 @@ alt - 9 : yabai -m space --focus 9
 alt - 0 : yabai -m space --focus 10
 
 # fast focus desktop (extended)
-alt - q : yabai -m space --focus 6
-alt - w : yabai -m space --focus 7
-alt - e : yabai -m space --focus 8
-alt - r : yabai -m space --focus 9
-alt - t : yabai -m space --focus 10
+alt - a : yabai -m space --focus 6
+alt - s : yabai -m space --focus 7
+alt - d : yabai -m space --focus 8
+alt - f : yabai -m space --focus 9
+alt - g : yabai -m space --focus 10
 
 # send window to desktop and follow focus
 shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
@@ -142,10 +142,10 @@ shift + alt - 8 : yabai -m window --space 8; yabai -m space --focus 8
 shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9
 
 # send window to desktop and follow focus (extended)
-shift + alt - q : yabai -m window --space 6; yabai -m space --focus 6
-shift + alt - w : yabai -m window --space 7; yabai -m space --focus 7
-shift + alt - e : yabai -m window --space 8; yabai -m space --focus 8
-shift + alt - r : yabai -m window --space 9; yabai -m space --focus 9
+shift + alt - a : yabai -m window --space 6; yabai -m space --focus 6
+shift + alt - s : yabai -m window --space 7; yabai -m space --focus 7
+shift + alt - d : yabai -m window --space 8; yabai -m space --focus 8
+shift + alt - f : yabai -m window --space 9; yabai -m space --focus 9
 
 # focus monitor
 #ctrl + alt - z : yabai -m display --focus prev
