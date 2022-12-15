@@ -57,19 +57,12 @@ onedarkpro.setup({
     TelescopeSelection = { bg = colors.cursorline, fg = colors.yellow },
     TelescopeMatching = { fg = colors.green, style = 'italic' },
 
-    -- nvim-tree inactive
-    NvimTreeNormalNC = { bg = colors.bg },
-
-    -- nvim-tree
-    NvimTreeFolderName = { fg = colors.fg },
-    NvimTreeFolderIcon = { fg = colors.yellow },
-    NvimTreeOpenedFolderName = { fg = colors.fg },
-    NvimTreeMarkdownFile = { fg = colors.fg },
-    NvimTreeExecFile = {
-      fg = is_windows and colors.fg or colors.green,
-      style = is_windows and 'NONE' or 'bold',
-    },
-    NvimTreeOpenedFile = { fg = colors.yellow, style = 'italic' },
+    -- neo-tree
+    NeoTreeRootName = { fg = colors.fg },
+    NeoTreeDirectoryName = { fg = colors.fg },
+    NeoTreeDirectoryIcon = { fg = colors.yellow },
+    NeoTreeFileNameOpened = { fg = colors.yellow, style = 'italic' },
+    NeoTreeGitUntracked = { fg = colors.green },
 
     -- virtual color column
     VirtColumn = { fg = colors.cursorline, bg = colors.bg },
