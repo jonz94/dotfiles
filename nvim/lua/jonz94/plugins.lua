@@ -351,6 +351,14 @@ local plugins = function(use)
   use({
     'jghauser/mkdir.nvim',
   })
+
+  -- show unicode character metadata
+  use({
+    'jonz94/vim-characterize',
+    setup = function()
+      vim.g.characterize_no_mappings = 1
+    end,
+  })
 end
 
 return plugins

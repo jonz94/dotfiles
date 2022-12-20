@@ -4,6 +4,9 @@ vim.keymap.set('n', 'ge', '<Nop>')
 vim.keymap.set('n', '<Leader>ga', 'ga')
 vim.keymap.set('n', '<Leader>ge', 'ge')
 
+-- show unicode character metadata
+vim.keymap.set('n', '<Leader>sc', '<Plug>(characterize)')
+
 if vim.g.vscode then
   -- stylua: ignore start
   -- [extension] hjdarnel.vscode-change-case
