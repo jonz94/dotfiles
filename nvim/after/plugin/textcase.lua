@@ -1,4 +1,6 @@
 -- preserve original `ga` & `ge` keymap
+vim.keymap.set('n', 'ga', '<Nop>')
+vim.keymap.set('n', 'ge', '<Nop>')
 vim.keymap.set('n', '<Leader>ga', 'ga')
 vim.keymap.set('n', '<Leader>ge', 'ge')
 
