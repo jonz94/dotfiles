@@ -3,6 +3,14 @@
     "prefix": "{{",
     "body": ["{{ $0 }}"]
   },
+  "class": {
+    "prefix": ";c",
+    "body": ["class=\"$0\""]
+  },
+  "bind class": {
+    "prefix": ";bc",
+    "body": ["[class]=\"$0\""]
+  },
 
   "just placed as the last item to conserve the last snippets' tailing comma": {
     "prefix": "ɵ",
