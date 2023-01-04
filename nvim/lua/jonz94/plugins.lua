@@ -10,9 +10,6 @@ local plugins = function(use)
   -- neovim's lua functions library
   use({ 'nvim-lua/plenary.nvim' })
 
-  -- editorconfig
-  use({ 'editorconfig/editorconfig-vim' })
-
   -- fix CursorHold issue of neovim
   use({
     'antoinemadec/FixCursorHold.nvim',
