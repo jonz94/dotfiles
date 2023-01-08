@@ -36,6 +36,11 @@
   display: none !important;
 }
 
+/* hide linked editing background color */
+.monaco-workbench {
+  --vscode-editor-linkedEditingBackground: transparent !important;
+}
+
 /* center verified publisher icon on extensions sidebar */
 .sidebar .codicon.codicon-extensions-verified-publisher {
   margin-top: 0.125rem;
