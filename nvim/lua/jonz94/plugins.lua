@@ -189,12 +189,7 @@ local plugins = function(use)
   use({ 'monaqa/dial.nvim' })
 
   -- auto rename tag
-  use({
-    'AndrewRadev/tagalong.vim',
-    setup = function()
-      vim.g.tagalong_mappings = { 'c', 'C', 's', 'v', 'i', 'a', 'A' }
-    end,
-  })
+  use({ 'windwp/nvim-ts-autotag' })
 
   -- line manipulation
   use({ 'fedepujol/move.nvim' })

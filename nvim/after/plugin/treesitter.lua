@@ -50,6 +50,9 @@ require('nvim-treesitter.configs').setup({
   matchup = {
     enable = true,
   },
+  autotag = {
+    enable = true,
+  },
 })
 
 if inside_vscode then
