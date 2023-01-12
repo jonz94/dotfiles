@@ -32,13 +32,6 @@ onedarkpro.setup({
     variables = 'NONE',
     virtual_text = 'NONE',
   },
-  options = {
-    bold = true,
-    italic = true,
-    underline = false,
-    undercurl = false, -- curly underline
-    cursorline = true,
-  },
   highlights = {
     -- 'nbsp', 'space', 'tab' and 'trail' in 'listchars'
     Whitespace = { fg = colors.cursorline },
