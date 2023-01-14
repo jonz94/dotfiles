@@ -191,9 +191,6 @@ local plugins = function(use)
   -- auto rename tag
   use({ 'windwp/nvim-ts-autotag' })
 
-  -- line manipulation
-  use({ 'fedepujol/move.nvim' })
-
   -- block manipulation
   use({
     'Wansmer/treesj',
