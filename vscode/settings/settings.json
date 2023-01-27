@@ -15,8 +15,17 @@
   "editor.stickyScroll.enabled": true,
   "editor.wordWrap": "on",
 
+  // auto rename html tag
+  "editor.linkedEditing": true,
+
+  // move side bar to the right
+  "workbench.sideBar.location": "right",
+
   // disable navigation breadcrumbs
   "breadcrumbs.enabled": false,
+
+  // disable compact folders
+  "explorer.compactFolders": false,
 
   // scroll related settings
   "editor.cursorSurroundingLines": 3,
