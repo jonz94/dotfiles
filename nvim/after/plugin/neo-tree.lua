@@ -12,6 +12,9 @@ local icons = require('jonz94.icons')
 neo_tree.setup({
   enable_git_status = true,
   enable_diagnostics = true,
+  window = {
+    position = 'right',
+  },
   default_component_configs = {
     indent = {
       indent_size = 2,
