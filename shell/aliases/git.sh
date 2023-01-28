@@ -3,6 +3,7 @@
 if type git &> /dev/null; then
   alias gbv='git branch -v'
   alias gbvv='git branch -vv'
+  alias gcl1='git clone --recurse-submodules --depth 1'
   alias gcot='git checkout --track'
   alias gdc='git diff --cached'
   alias ginit='git init && git add -A && git commit -m "initial commit"'
