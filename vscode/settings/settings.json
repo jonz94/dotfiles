@@ -51,9 +51,13 @@
   // disable telemetry
   "telemetry.telemetryLevel": "off",
 
+  // NOTE: this does not works for vscode version 1.75.0 (Universal) on Darwin x64 22.2.0
   // fix "integrated terminal icons are cut off" issue
   // credits: https://github.com/microsoft/vscode/issues/148999#issuecomment-1125176205
-  "terminal.integrated.gpuAcceleration": "canvas",
+  // "terminal.integrated.gpuAcceleration": "canvas",
+
+  // NOTE: for vscode version 1.75.0 (Universal) on Darwin x64 22.2.0
+  "terminal.integrated.gpuAcceleration": "on",
 
   // terminal profile
   "terminal.integrated.defaultProfile.windows": "pwsh -NoLogo",
