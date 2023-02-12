@@ -137,6 +137,15 @@ lspconfig.lemminx.setup({
   on_attach = setup_keymaps,
 })
 
+-- lua_ls
+lspconfig.lua_ls.setup({
+  handlers = handlers,
+  on_attach = function(client)
+    disable_formatter(client)
+    setup_keymaps()
+  end,
+})
+
 -- prismals
 lspconfig.prismals.setup({
   handlers = handlers,
@@ -151,15 +160,6 @@ lspconfig.pyright.setup({
 
 -- rust_analyzer
 lspconfig.rust_analyzer.setup({
-  handlers = handlers,
-  on_attach = function(client)
-    disable_formatter(client)
-    setup_keymaps()
-  end,
-})
-
--- sumneko_lua (lua)
-lspconfig.sumneko_lua.setup({
   handlers = handlers,
   on_attach = function(client)
     disable_formatter(client)
