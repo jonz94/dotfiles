@@ -38,3 +38,8 @@ function \vim { vim.exe @args }
 
 # open neovim normally without changing terminal background color
 function \nvim { nvim.exe @args }
+
+# edit PSReadLine history file via neovim
+function vh {
+  nvim.exe -c 'normal! G' (Get-PSReadLineOption).HistorySavePath
+}
