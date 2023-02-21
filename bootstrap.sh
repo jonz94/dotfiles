@@ -54,6 +54,7 @@ setup_neovim() {
     mv ${NVIM_CONFIG_DIR} ${NVIM_CONFIG_DIR}.backup.${TIMESTAMP}
   fi
 
+  mkdir -p $(dirname ${NVIM_CONFIG_DIR})
   ln -s $HOME/dotfiles/nvim $NVIM_CONFIG_DIR
 
   echo 'neovim is ready!'
