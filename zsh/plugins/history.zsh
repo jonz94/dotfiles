@@ -9,6 +9,10 @@
 
 # History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
+
+# make sure history file exists
+touch $HISTFILE
+
 HISTSIZE=10000000
 SAVEHIST=10000000
 
