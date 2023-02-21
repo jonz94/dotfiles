@@ -7,6 +7,9 @@ function pnrm { pnpm remove @args }
 
 # equivalent of `npm ci`
 function pnci {
-  rimraf node_modules
+  if (Test-Path node_modules) {
+    Remove-Item -Recurse node_modules
+  }
+
   pnpm install --frozen-lockfile
 }

@@ -46,12 +46,11 @@ Set-PSReadLineOption -PredictionSource History
 #     - starts with "spaces" or "tabs"
 #     - starts with "rm"
 #     - starts with "Remove-Item"
-#     - starts with "rimraf"
 #     - ends with "fl"
 #
 Set-PSReadLineOption -AddToHistoryHandler {
   param($line)
-  $line -notmatch '(^\s+|^rm|^Remove-Item|^rimraf|fl$)'
+  $line -notmatch '(^\s+|^rm|^Remove-Item|fl$)'
 }
 
 # print out PSReadline history instead of using powershell's Get-History

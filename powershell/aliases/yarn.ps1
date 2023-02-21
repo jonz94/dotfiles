@@ -7,6 +7,9 @@ function yrm { yarn remove @args }
 
 # equivalent of `npm ci`
 function yci {
-  rimraf node_modules
+  if (Test-Path node_modules) {
+    Remove-Item -Recurse node_modules
+  }
+
   yarn install --frozen-lockfile
 }
