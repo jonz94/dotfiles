@@ -3,8 +3,6 @@
 $vscodeSnippetsDirectory = Join-Path $env:APPDATA 'Code\User\snippets'
 $dotfilesVscodeSnippetsDirectory = "${HOME}\dotfiles\vscode\snippets"
 
-Write-Host $vscodeSnippetsDirectory
-
 if (Test-Path $vscodeSnippetsDirectory -PathType Container) {
   $time = $(Get-Date -Format "yyyy-MM-dd-HH-mm-ss")
   $backupSinnetsDirectory = "$vscodeSnippetsDirectory-backup-$time"

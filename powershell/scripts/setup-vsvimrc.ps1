@@ -3,8 +3,6 @@
 $vsvimrcPath = "${HOME}\.vsvimrc"
 $dotfilesVsvimrcPath = "${HOME}\dotfiles\vsvim\vsvimrc"
 
-Write-Host $vsvimrcPath
-
 if (Test-Path $vsvimrcPath) {
   $time = $(Get-Date -Format "yyyy-MM-dd-HH-mm-ss")
   $backupVsvimrcPath = "$vsvimrcPath-backup-$time"
