@@ -158,4 +158,7 @@ Write-Host "    .\powershell\scripts\setup-neovim.ps1`n" -ForegroundColor Blue
 Write-Host "`nINFO: execute following script to setup vscode snippets:`n" -ForegroundColor Cyan
 Write-Host "    .\powershell\scripts\setup-vscode-snippets.ps1`n" -ForegroundColor Blue
 
+Write-Host "`nINFO: execute following script to setup vsvimrc:`n" -ForegroundColor Cyan
+Write-Host "    .\powershell\scripts\setup-vsvimrc.ps1`n" -ForegroundColor Blue
+
 Write-Host 'Done! 🎉'
