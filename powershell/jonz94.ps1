@@ -94,6 +94,14 @@ if ( $HOST.Version.Major -ge 7 ) {
   # only source this profile when powershell major version number is >= 7
   . $(Join-Path $PSScriptRoot 'pwsh.ps1')
 } else {
+  function ginit {
+    if ( $(git init) ) {
+      if ( $(git add -A) ) {
+        git commit -m "initial commit"
+      }
+    }
+  }
+
   function gpoat {
     if ( $(git push origin --all) ) {
       git push origin --tags
