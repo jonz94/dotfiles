@@ -1,0 +1,15 @@
+set number relativenumber
+set scrolloff=5
+set incsearch
+
+let mapleader=" "
+
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+
+vnoremap <Leader>y "+y
+
+map <Leader>fm         <Action>(ReformatCode)
+map <Leader>r          <Action>(RenameElement)
+map <Leader>gr         <Action>(FindUsages)
+map <Leader><Leader>rr <Action>(RestartIde)
