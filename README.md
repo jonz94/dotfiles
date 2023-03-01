@@ -24,7 +24,7 @@
     - https://brew.sh/
     - https://docs.brew.sh/Installation
 
-```bash
+```shell
 xcode-select --install
 # or just install entire Xcode from Apple App Store
 
@@ -33,7 +33,7 @@ xcode-select --install
 
 - Then install `git` via `brew`
 
-```bash
+```shell
 brew install git
 ```
 
@@ -66,7 +66,7 @@ irm get.scoop.sh | iex
 - Latest `git` can be installed via **git-core ppa**
     - https://launchpad.net/~git-core/+archive/ubuntu/ppa
 
-```bash
+```shell
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git
@@ -110,13 +110,13 @@ net stop LxssManager
 
     - via https
 
-    ```bash
+    ```shell
     git clone https://github.com/jonz94/dotfiles.git ~/dotfiles
     ```
 
     - or via ssh
 
-    ```bash
+    ```shell
     git clone git@github.com:jonz94/dotfiles.git ~/dotfiles
     ```
 
@@ -168,7 +168,7 @@ cd ~/dotfiles && bash bootstrap.sh
 
 - Set `umask` to 0022
 
-```bash
+```shell
 umask 0022
 ```
 
@@ -176,19 +176,19 @@ umask 0022
 
     - via https
 
-    ```bash
+    ```shell
     git clone https://github.com/jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
     ```
 
     - or via ssh
 
-    ```bash
+    ```shell
     git clone git@github.com:jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
     ```
 
 - **In WSL 1**, create a symbolic link via following command:
 
-```bash
+```shell
 ln -s /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles ~/dotfiles
 ```
 
@@ -200,7 +200,7 @@ ln -s /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles ~/dotfil
 
 - Execute `bootstrap.sh` via `bash` to settting up WSL.
 
-```bash
+```shell
 cd ~/dotfiles && bash bootstrap.sh
 ```
 
