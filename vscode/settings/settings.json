@@ -36,6 +36,7 @@
   "editor.selectionClipboard": false,
 
   // git related
+  "git.enableCommitSigning": true,
   "git.ignoreMissingGitWarning": true,
   "git.inputValidationLength": 72,
   "git.inputValidationSubjectLength": null,
@@ -51,12 +52,7 @@
   // disable telemetry
   "telemetry.telemetryLevel": "off",
 
-  // NOTE: this does not works for vscode version 1.75.0 (Universal) on Darwin x64 22.2.0
   // fix "integrated terminal icons are cut off" issue
-  // credits: https://github.com/microsoft/vscode/issues/148999#issuecomment-1125176205
-  // "terminal.integrated.gpuAcceleration": "canvas",
-
-  // NOTE: for vscode version 1.75.0 (Universal) on Darwin x64 22.2.0
   "terminal.integrated.gpuAcceleration": "on",
 
   // terminal profile
@@ -69,7 +65,7 @@
   },
 
   // terminal font
-  "terminal.integrated.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji, 'TW-Sung-Ext-B', 'TW-Sung-Plus''",
+  "terminal.integrated.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji', 'TW-Sung-Ext-B', 'TW-Sung-Plus'",
   "terminal.integrated.fontSize": 15,
 
   // terminal color
@@ -115,6 +111,9 @@
 
   // zoom in!
   "window.zoomLevel": 2,
+
+  // improve typescript imports
+  "typescript.preferences.importModuleSpecifier": "non-relative",
 
   // Dockerfile
   "[dockerfile]": {
@@ -209,6 +208,8 @@
   "files.associations": {
     ".env.*": "dotenv",
     "*.xccolortheme": "xml",
+    "ideavimrc": "viml",
+    "vsvimrc": "viml",
     "composer.lock": "json"
   },
 
@@ -222,7 +223,7 @@
   "material-icon-theme.files.associations": {
     "*.jks": "key",
     "*.keystore": "key",
-    "*.page.ts": "angular-component",
+    "*.page.ts": "ionic",
     ".ruby-version": "ruby",
     "docker-compose.alpha.yml": "docker",
     "docker-compose.next.yml": "docker",
@@ -274,6 +275,7 @@
   "namespaceResolver.showMessageOnStatusBar": true,
 
   // [extension] asvetliakov.vscode-neovim
+  "vscode-neovim.useWSL": true,
   "vscode-neovim.neovimExecutablePaths.darwin": "/Users/jonz94/.local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "/Users/jonz94/.config/nvim/vscode-neovim/init.vim",
   "vscode-neovim.neovimExecutablePaths.linux": "/home/jonz94/.local/bin/nvim",
@@ -333,7 +335,6 @@
   // [extension] sumneko.lua
   "Lua.diagnostics.globals": ["vim"],
   "Lua.runtime.version": "LuaJIT",
-  "Lua.telemetry.enable": false,
 
   // [extension] golang.go
   "go.toolsManagement.autoUpdate": true,
