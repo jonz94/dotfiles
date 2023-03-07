@@ -1,0 +1,20 @@
+;; See keymap/tutorial.kbd for a more complete tutorial
+
+(defcfg
+  input  (low-level-hook)
+  output (send-event-sink 500 20)
+  fallthrough true
+  allow-cmd false
+)
+
+(defsrc
+  caps
+)
+
+(defalias
+  cesc (tap-next-release esc lctl)
+)
+
+(deflayer default
+  @cesc
+)
