@@ -12,6 +12,18 @@
     "command": "git-graph.view"
   },
 
+  // quickly copy git commit message
+  {
+    "key": "ctrl+shift+c",
+    "command": "gitlens.copyMessageToClipboard",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+
   // neovim like keybinding to show help
   {
     "key": "shift+k",
