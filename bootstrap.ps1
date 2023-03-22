@@ -66,6 +66,11 @@ if (-not $(scoop which fzf)) {
   scoop install fzf
 }
 
+# install fzf powershell module
+if (-not $(scoop which psfzf)) {
+  scoop install psfzf
+}
+
 # install fnm
 if (-not $(scoop which fnm)) {
   scoop install fnm

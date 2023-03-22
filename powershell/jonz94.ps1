@@ -67,6 +67,9 @@ function edit-history {
 # ctrl + shift + v for paste
 Set-PSReadLineKeyHandler -Key Ctrl+V -Function Paste
 
+# fzf powershell module
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+
 # test if current powershell is running with administrator privileges
 function Test-Administrator {
   $user = [Security.Principal.WindowsIdentity]::GetCurrent()
