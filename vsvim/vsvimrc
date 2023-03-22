@@ -6,4 +6,6 @@ nnoremap gi :vsc Edit.GoToImplementation<CR>
 nnoremap <Space>w :w<CR>
 nnoremap <Space>q :q<CR>
 
+nnoremap <Space>p "+p
+nnoremap <Space>P "+P
 vnoremap <Space>y "+y
