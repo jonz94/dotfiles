@@ -58,3 +58,6 @@ export GREP_COLORS="mt=30;42"
 # set zsh-users/zsh-history-substring-search highlight colors
 # see: https://github.com/zsh-users/zsh-history-substring-search#configuration
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=green,fg=black,bold"
+
+# opt-out .NET SDK telemetry
+export DOTNET_CLI_TELEMETRY_OPTOUT="1"
