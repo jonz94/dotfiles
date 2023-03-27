@@ -1,7 +1,7 @@
 {
   // main
   "editor.bracketPairColorization.enabled": false,
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "explicit",
   "editor.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji', 'TW-Sung-Ext-B', 'TW-Sung-Plus'",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
