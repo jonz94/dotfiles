@@ -34,6 +34,10 @@ if (-not $currentScoopBucketList.Contains('main')) {
   scoop bucket add main
 }
 
+if (-not $currentScoopBucketList.Contains('extras')) {
+  scoop bucket add extras
+}
+
 if (-not $currentScoopBucketList.Contains('nerd-fonts')) {
   scoop bucket add nerd-fonts
 }
