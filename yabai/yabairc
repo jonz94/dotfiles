@@ -79,6 +79,7 @@ yabai -m rule --add app="^Rectangle$" manage=off
 yabai -m rule --add app="^Simulator.*$" manage=off
 yabai -m rule --add app="^Software Update$" manage=off
 yabai -m rule --add app="^Sourcetree$" manage=off
+yabai -m rule --add app="^Steam$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
