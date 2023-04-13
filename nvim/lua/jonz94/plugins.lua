@@ -267,10 +267,7 @@ local plugins = function(use)
   })
 
   -- highlight arguments' definitions and usages
-  use({
-    'm-demare/hlargs.nvim',
-    requires = { 'nvim-treesitter/nvim-treesitter' },
-  })
+  use({ 'm-demare/hlargs.nvim' })
 
   -- highlight trailing whitespace
   use({
