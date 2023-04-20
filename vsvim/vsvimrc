@@ -2,6 +2,8 @@ set number relativenumber
 
 nnoremap gd :vsc Edit.GoToDefinition<CR>
 nnoremap gi :vsc Edit.GoToImplementation<CR>
+nnoremap <Space>r :vsc Refactor.Rename<CR>
+nnoremap <Space>gr :vsc Edit.FindAllReferences<CR>
 
 nnoremap <Space>w :w<CR>
 nnoremap <Space>q :q<CR>
