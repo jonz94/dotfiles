@@ -24,7 +24,7 @@ luasnip.config.set_config({
 local snippets_provided_by_other_vim_plugins = get_snippet_runtimepath()
 local snippets_from_my_vscode = { '~/dotfiles/vscode' }
 local paths = vim.list_extend(snippets_provided_by_other_vim_plugins, snippets_from_my_vscode)
-require('luasnip.loaders.from_vscode').load({ paths = paths })
+require('luasnip.loaders.from_vscode').lazy_load({ paths = paths })
 
 vim.cmd([[
   imap <silent><expr> <c-j> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<c-j>'
