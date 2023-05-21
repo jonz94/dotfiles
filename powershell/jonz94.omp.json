@@ -18,7 +18,7 @@
           "style": "powerline",
           "foreground": "#EACA8D",
           "background": "#343A43",
-          "template": " {{ if .SSHSession }} {{ end }}{{ .UserName }}@{{ .HostName }} "
+          "template": " {{ if .SSHSession }}󰌘 {{ end }}{{ .UserName }}@{{ .HostName }} "
         },
         {
           "type": "os",
@@ -52,7 +52,7 @@
             "fetch_upstream_icon": true,
             "branch_ahead_icon": " ",
             "branch_behind_icon": " ",
-            "branch_icon": " ",
+            "branch_icon": " ",
             "tag_icon": " ",
             "github_icon": "  ",
             "gitlab_icon": "  ",
