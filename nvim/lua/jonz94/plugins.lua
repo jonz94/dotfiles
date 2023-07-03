@@ -126,7 +126,7 @@ local plugins = function(use)
   })
 
   -- git integration
-  use({ 'TimUntersberger/neogit' })
+  use({ 'NeogitOrg/neogit' })
 
   -- git graph
   use({
