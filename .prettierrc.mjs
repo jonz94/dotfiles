@@ -1,6 +1,7 @@
 /** @type {import('prettier').Config} */
-module.exports = {
-  bracketSpacing: true,
+const config = {
   printWidth: 120,
   singleQuote: true,
 };
+
+export default config;
