@@ -1,5 +1,5 @@
 # jabba related settings
-# https://github.com/shyiko/jabba
+# https://github.com/Jabba-Team/jabba
 
 # switch java version globally via jabba
 function switch-java-version-globally {
