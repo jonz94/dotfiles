@@ -132,8 +132,8 @@ if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contain
 }
 
 # install Terminal-Icons module
-if ( (-not $(Get-InstalledModule)) -or (-not $(Get-InstalledModule).Name.contains('Terminal-Icons')) ) {
-  Install-Module 'Terminal-Icons' -Scope CurrentUser
+if (-not $(scoop which terminal-icons)) {
+  scoop install terminal-icons
 }
 
 # load fnm & generate fnm's completions file
