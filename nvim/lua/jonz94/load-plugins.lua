@@ -7,11 +7,11 @@ local is_windows = vim.fn.has('win32') == 1
 packer.init({
   maxjobs = is_windows and 10 or nil,
   display = {
-    working_sym = ' ',
-    error_sym = ' ',
-    done_sym = ' ',
+    working_sym = '󰝥 ',
+    error_sym = '󰅙 ',
+    done_sym = '󰄳 ',
     removed_sym = ' ',
-    moved_sym = ' ',
+    moved_sym = '󰳟 ',
     open_fn = function()
       return require('packer.util').float({ border = 'none' })
     end,
