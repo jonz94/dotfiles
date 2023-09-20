@@ -1,0 +1,23 @@
+#!/bin/bash
+
+backup() {
+  if [ -f ${1} ]; then
+    mkdir -p $(dirname ${1})
+
+    TIMESTAMP=$(date +"%Y-%m-%d,%H:%M:%S")
+
+    echo "Backup old ${1} to ${1}.backup.${TIMESTAMP}"
+    mv ${1} ${1}.backup.${TIMESTAMP}
+  fi
+}
+
+setup_ideavim() {
+  echo 'Setting up ideavim...'
+
+  backup $HOME/.ideavimrc
+  ln -s $HOME/dotfiles/ideavim/ideavimrc $HOME/.ideavimrc
+
+  echo 'ideavim is ready!'
+}
+
+setup_ideavim
