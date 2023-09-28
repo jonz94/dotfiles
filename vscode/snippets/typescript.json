@@ -17,6 +17,11 @@
     "body": ["changeDetection: ChangeDetectionStrategy$1.OnPush,$0"]
   },
 
+  "angular host binding for display contents": {
+    "prefix": ";ng-host-display-contents",
+    "body": ["@HostBinding$1('style.display') displayStyle = 'contents';$0"]
+  },
+
   "generic DI": {
     "prefix": ";di-generic",
     "body": ["private $1: ${1/(.*)/${1:/pascalcase}/}$2, $0"]
