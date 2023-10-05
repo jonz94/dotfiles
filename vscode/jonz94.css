@@ -46,3 +46,12 @@
   margin-top: 0.125rem;
   margin-right: 0.125rem;
 }
+
+/* hide the annoying GitHub Actions extension login prompt */
+/* https://github.com/github/vscode-github-actions/issues/112 */
+.monaco-workbench
+  > .notifications-toasts.visible
+  > .notification-toast-container:has([title='GitHub Actions (Extension)']) {
+  position: absolute;
+  top: 100vh;
+}
