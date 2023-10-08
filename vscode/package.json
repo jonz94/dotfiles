@@ -1,8 +1,6 @@
 {
   "name": "@jonz94/vscode-settings",
-  "engines": {
-    "vscode": "^1.64.0"
-  },
+  "private": true,
   "contributes": {
     "snippets": [
       {
@@ -34,5 +32,8 @@
         "path": "./snippets/yaml.json"
       }
     ]
+  },
+  "engines": {
+    "vscode": "^1.64.0"
   }
 }
