@@ -96,11 +96,7 @@ local plugins = function(use)
     end,
   })
 
-  -- TODO: upgrade to v3
-  use({
-    'lukas-reineke/indent-blankline.nvim',
-    tag = 'v2.20.8',
-  })
+  use({ 'lukas-reineke/indent-blankline.nvim' })
 
   -- virtual text color column
   use({
