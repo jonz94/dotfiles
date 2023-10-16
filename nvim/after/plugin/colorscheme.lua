@@ -8,7 +8,6 @@ if not onedarkpro_status_ok then
 end
 
 local colors = require('jonz94.colors')
-local is_windows = vim.fn.has('win32') == 1
 
 onedarkpro.setup({
   colors = {
