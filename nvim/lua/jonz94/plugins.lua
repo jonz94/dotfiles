@@ -333,6 +333,9 @@ local plugins = function(use)
     end,
   })
 
+  -- edit filesystem like a buffer
+  use({ 'stevearc/oil.nvim' })
+
   -- automatically creates missing directories on saving a file
   use({
     'jghauser/mkdir.nvim',
