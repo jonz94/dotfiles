@@ -177,19 +177,19 @@ umask 0022
     - via https
 
     ```shell
-    git clone https://github.com/jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
+    git clone https://github.com/jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:USERNAME' | tr -d $'\r')/dotfiles
     ```
 
     - or via ssh
 
     ```shell
-    git clone git@github.com:jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles
+    git clone git@github.com:jonz94/dotfiles.git /c/Users/$(powershell.exe '$env:USERNAME' | tr -d $'\r')/dotfiles
     ```
 
 - **In WSL 1**, create a symbolic link via following command:
 
 ```shell
-ln -s /c/Users/$(powershell.exe '$env:UserName' | tr -d $'\r')/dotfiles ~/dotfiles
+ln -s /c/Users/$(powershell.exe '$env:USERNAME' | tr -d $'\r')/dotfiles ~/dotfiles
 ```
 
 > These step are important! And the reason is [Do not change Linux files using Windows apps and tools](https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/)

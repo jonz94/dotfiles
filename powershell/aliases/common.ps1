@@ -9,7 +9,7 @@ function wslshutdown { wsl.exe --shutdown }
 function wslpoweroff { wsl.exe --shutdown }
 
 # echo path in pretty format
-function echopath { (Write-Output $Env:PATH).split(';') }
+function echopath { (Write-Output $env:PATH).split(';') }
 
 # echo powershell's escape character, because I've always thought it is backslash...
 function echo-powershell-escape-character {
