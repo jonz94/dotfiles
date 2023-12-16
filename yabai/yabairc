@@ -104,4 +104,4 @@ elif [[ $CURRENT_WORKSPACES_COUNT -gt 9 ]]; then
 fi
 
 # add some padding to the top and 0 padding to the bottom of every space located on the main display
-#yabai -m config external_bar main:32:0
+yabai -m config external_bar main:32:0
