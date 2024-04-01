@@ -17,6 +17,11 @@ if type go &> /dev/null; then
   export PATH="$(go env GOPATH)/bin:${PATH}"
 fi
 
+# docker cli
+if type docker &> /dev/null; then
+  export DOCKER_CLI_HINTS=false
+fi
+
 # add ~/.local/bin to $PATH
 export PATH="${HOME}/.local/bin:${PATH}"
 
