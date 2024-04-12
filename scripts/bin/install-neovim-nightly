@@ -13,13 +13,14 @@ install_neovim_nightly_on_linux() {
 }
 
 install_neovim_nightly_on_macos() {
-  rm -fr "/tmp/nvim-macos.tar.gz" "/tmp/nvim-macos"
-  curl -fL "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz" -o "/tmp/nvim-macos.tar.gz"
-  xattr -c "/tmp/nvim-macos.tar.gz"
-  tar xf "/tmp/nvim-macos.tar.gz" --directory=/tmp
+  arch=$(uname -m)
+  rm -fr "/tmp/nvim-macos-${arch}.tar.gz" "/tmp/nvim-macos-${arch}"
+  curl -fL "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-${arch}.tar.gz" -o "/tmp/nvim-macos-${arch}.tar.gz"
+  xattr -c "/tmp/nvim-macos-${arch}.tar.gz"
+  tar xf "/tmp/nvim-macos-${arch}.tar.gz" --directory=/tmp
   rm -fr "${HOME}/.local/opt/neovim-nightly"
   mkdir -p "${HOME}/.local/bin" "${HOME}/.local/opt"
-  mv "/tmp/nvim-macos" "${HOME}/.local/opt/neovim-nightly"
+  mv "/tmp/nvim-macos-${arch}" "${HOME}/.local/opt/neovim-nightly"
   ln -sf "${HOME}/.local/opt/neovim-nightly/bin/nvim" "${HOME}/.local/bin/nvim"
 }
 
