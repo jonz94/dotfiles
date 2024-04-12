@@ -105,7 +105,7 @@ function grbm {
   if ($(git rev-parse --verify --quiet main)) {
     git rebase main $args
   } else {
-    git rebase master $argser
+    git rebase master $args
   }
 }
 
