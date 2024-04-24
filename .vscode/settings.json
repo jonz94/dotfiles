@@ -8,5 +8,8 @@
     "editor.codeLens": false
   },
   "powershell.codeFormatting.preset": "OTBS",
-  "powershell.codeFormatting.useCorrectCasing": true
+  "powershell.codeFormatting.useCorrectCasing": true,
+
+  // stylua
+  "stylua.targetReleaseVersion": "latest"
 }
