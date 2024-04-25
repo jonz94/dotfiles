@@ -8,9 +8,12 @@ if not fidget_status_ok then
 end
 
 fidget.setup({
-  text = {
-    spinner = 'earth',
-    done = '  ',
-    completed = '🚀',
+  progress = {
+    display = {
+      done_icon = ' ',
+      progress_icon = {
+        pattern = 'earth',
+      },
+    },
   },
 })
