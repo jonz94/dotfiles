@@ -67,7 +67,7 @@
       "alignment": "right",
       "segments": [
         {
-          "type": "exit",
+          "type": "status",
           "style": "plain",
           "foreground_templates": ["{{ if gt .Code 0 }}#DCDFE4{{ else }}#A7CB8B{{ end }}"],
           "background_templates": ["{{ if gt .Code 0 }}#E91E63{{ end }}"],
