@@ -175,7 +175,9 @@ local plugins = function(use)
   })
 
   -- text manipulation
+  -- TODO: replace with junegunn/vim-easy-align
   use({ 'godlygeek/tabular' })
+
   use({ 'tpope/vim-repeat' })
   use({
     'tpope/vim-surround',
