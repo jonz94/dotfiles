@@ -100,7 +100,7 @@ if ( $HOST.Version.Major -ge 7 ) {
   function ginit {
     if ( $(git init) ) {
       if ( $(git add -A) ) {
-        git commit -m "initial commit"
+        git commit -m "feat: initial commit"
       }
     }
   }
