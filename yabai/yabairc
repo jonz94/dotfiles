@@ -60,10 +60,12 @@ yabai -m config window_gap                   6
 #
 # float system preferences
 yabai -m rule --add app="^Android File Transfer$" manage=off
+yabai -m rule --add app="^Android Studio$" title="^Generate Signed App Bundle or APK$" manage=off
 yabai -m rule --add app="^Android Studio$" title="^Generate Signed Bundle or APK$" manage=off
 yabai -m rule --add app="^Android Studio$" title="^New Key Store$" manage=off
 yabai -m rule --add app="^Android Studio$" title="^Preferences$" manage=off
 yabai -m rule --add app="^Android Studio$" title="^Project Structure$" manage=off
+yabai -m rule --add app="^Android Studio$" title="^Settings$" manage=off
 yabai -m rule --add app="^Discord$" title="^Discord Updater$" manage=off
 yabai -m rule --add app="^Finder$" title=" Info$" manage=off
 yabai -m rule --add app="^Keychain Access$" manage=off
@@ -85,6 +87,7 @@ yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^TeamViewer$" manage=off
 yabai -m rule --add app="^Xcode$" title="^Archives$" manage=off
+yabai -m rule --add app="^fontforge$" manage=off
 yabai -m rule --add app="^qemu-system-x86_64$" manage=off
 
 # make sure always has 9 workspaces
