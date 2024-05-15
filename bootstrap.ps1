@@ -143,7 +143,7 @@ if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
   $commands = @'
     Set-ExecutionPolicy RemoteSigned -scope CurrentUser
     fnm env --use-on-cd | Out-String | Invoke-Expression
-    fnm completions --shell powershell
+    fnm completions --shell power-shell
 '@
 
   powershell.exe -NoProfile -Command "$commands > $fnmCompletionsPs1Path"
