@@ -46,10 +46,6 @@ if pcall(require, 'telescope._extensions.file_browser') then
   end)
 end
 
-if pcall(require, 'project_nvim') then
-  require('telescope').load_extension('projects')
-end
-
 -- stylua: ignore start
 vim.keymap.set('n', '<C-p>',      function() builtin.find_files()   end)
 vim.keymap.set('n', '<Leader>fd', function() builtin.find_files()   end)

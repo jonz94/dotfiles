@@ -76,9 +76,6 @@ local plugins = function(use)
     end,
   })
 
-  -- automatically change the current working directory
-  use({ 'ahmedkhalf/project.nvim' })
-
   -- file explorer
   use({
     'nvim-neo-tree/neo-tree.nvim',
