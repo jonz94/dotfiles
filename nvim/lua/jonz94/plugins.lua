@@ -42,7 +42,6 @@ local plugins = function(use)
     'zbirenbaum/neodim',
     event = 'LspAttach',
   })
-  use({ 'jose-elias-alvarez/null-ls.nvim' })
   use({ 'j-hui/fidget.nvim' })
 
   -- renamer
