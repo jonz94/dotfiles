@@ -119,10 +119,7 @@ local plugins = function(use)
   })
 
   -- git integration
-  use({
-    'NeogitOrg/neogit',
-    branch = vim.version().prerelease == 'dev' and 'nightly' or nil,
-  })
+  use({ 'NeogitOrg/neogit' })
 
   -- git graph
   use({
