@@ -149,6 +149,7 @@ if (-not $(Test-Path $fnmCompletionsPs1Path -PathType Leaf)) {
   powershell.exe -NoProfile -Command "$commands > $fnmCompletionsPs1Path"
 }
 
+# load fnm, remove corepack, install pnpm and yarn
 $setupNodejsEnvironmentViaFnmCommands = @'
   Set-ExecutionPolicy RemoteSigned -scope CurrentUser
   fnm env --use-on-cd | Out-String | Invoke-Expression
@@ -160,6 +161,19 @@ $setupNodejsEnvironmentViaFnmCommands = @'
 '@
 
 powershell.exe -NoProfile -Command $setupNodejsEnvironmentViaFnmCommands
+
+# load fnm & generate pnpm's completions file
+$pnpmCompletionsPs1Path = Join-Path $PSScriptRoot 'powershell\completions\_pnpm.completions.ps1'
+
+if (-not $(Test-Path $pnpmCompletionsPs1Path -PathType Leaf)) {
+  $commands = @'
+    Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+    fnm env --use-on-cd | Out-String | Invoke-Expression
+    pnpm completion --shell pwsh
+'@
+
+  powershell.exe -NoProfile -Command "$commands > $pnpmCompletionsPs1Path"
+}
 
 Write-Host "`nINFO: execute following script to setup neovim:`n" -ForegroundColor Cyan
 Write-Host "    .\powershell\scripts\setup-neovim.ps1`n" -ForegroundColor Blue
