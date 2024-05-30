@@ -2,7 +2,7 @@
 
 # load fnm
 if ( $(scoop which fnm) ) {
-  fnm env --use-on-cd | Out-String | Invoke-Expression
+  fnm env --shell power-shell --use-on-cd | Out-String | Invoke-Expression
 }
 
 # load zoxide
