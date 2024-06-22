@@ -23,10 +23,14 @@ backup() {
 setup_zsh() {
   echo 'Setting up zsh...'
 
-  ln -s $HOME/dotfiles/zsh/zim/zshenv $HOME/.zshenv
-  ln -s $HOME/dotfiles/zsh/zim/zlogin $HOME/.zlogin
-  ln -s $HOME/dotfiles/zsh/zim/zimrc $HOME/.zimrc
-  echo "source $HOME/dotfiles/zsh/zim/zshrc" > $HOME/.zshrc
+  backup $HOME/.zshenv
+  backup $HOME/.zlogin
+  backup $HOME/.zimrc
+
+  ln -s $HOME/dotfiles/zsh/zim/zshenv.zsh $HOME/.zshenv
+  ln -s $HOME/dotfiles/zsh/zim/zlogin.zsh $HOME/.zlogin
+  ln -s $HOME/dotfiles/zsh/zim/zimrc.zsh $HOME/.zimrc
+  echo "source $HOME/dotfiles/zsh/zim/zshrc.zsh" > $HOME/.zshrc
 
   # setup local configurations for zsh
   mkdir -p ~/dotfiles/local
