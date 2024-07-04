@@ -1,9 +1,7 @@
 scriptencoding utf-8
 
 if exists('g:vscode')
-  nnoremap <Leader>w         <Cmd>Write<CR>
-  nnoremap <Leader><Leader>w <Cmd>Wall<CR>
-  nnoremap <Leader><Tab>     <Cmd>Write<CR>
+  nnoremap <Leader><Tab>     <Cmd>w<CR>
   nnoremap <Leader>q         <Cmd>Quit<CR>
   nnoremap <Leader><Leader>q <Cmd>Qall<CR>
   nnoremap <Leader>db        <Cmd>Quit<CR>
@@ -11,13 +9,6 @@ if exists('g:vscode')
 
   nnoremap <C-h>             <Cmd>call VSCodeNotify('workbench.action.focusSideBar')<CR>
 else
-  " write file
-  nnoremap <C-s>             <Cmd>w<CR>
-  nnoremap <Leader>w         <Cmd>w<CR>
-  nnoremap <Leader>W         <Cmd>w!<CR>
-  nnoremap <Leader><Leader>w <Cmd>wall<CR>
-  nnoremap <Leader><Leader>W <Cmd>wall!<CR>
-
   " write file in insert mode
   inoremap <C-M-s> <Cmd>w<CR>
 
@@ -53,6 +44,12 @@ else
   nnoremap <silent> <C-k> <Cmd>TmuxNavigateUp<CR>
   nnoremap <silent> <C-l> <Cmd>TmuxNavigateRight<CR>
 endif
+
+" write file
+nnoremap <Leader>w         <Cmd>w<CR>
+nnoremap <Leader>W         <Cmd>w!<CR>
+nnoremap <Leader><Leader>w <Cmd>wall<CR>
+nnoremap <Leader><Leader>W <Cmd>wall!<CR>
 
 " yank/delete, and put it into system clipboard
 nnoremap <Leader>dd "+dd
