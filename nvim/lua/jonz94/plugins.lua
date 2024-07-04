@@ -262,36 +262,6 @@ local plugins = function(use)
   -- highlight arguments' definitions and usages
   use({ 'm-demare/hlargs.nvim' })
 
-  -- highlight trailing whitespace
-  use({
-    'ntpeters/vim-better-whitespace',
-    setup = function()
-      vim.g.better_whitespace_filetypes_blacklist = {
-        -- following is default
-        'diff',
-        'git',
-        'gitcommit',
-        'unite',
-        'qf',
-        'help',
-        'markdown',
-        'fugitive',
-        -- disabled when using neogit
-        'NeogitCommitMessage',
-        'NeogitCommitView',
-        'NeogitGitCommandHistory',
-        'NeogitLogView',
-        'NeogitNotification',
-        'NeogitPopup',
-        'NeogitStatus',
-        'NeogitStatusNew',
-      }
-
-      -- ignore empty lines
-      vim.g.better_whitespace_skip_empty_lines = 1
-    end,
-  })
-
   -- syntax highlighting for browserslist
   use({ 'browserslist/vim-browserslist' })
 
