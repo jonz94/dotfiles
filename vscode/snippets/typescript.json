@@ -1,4 +1,8 @@
 {
+  "log json stringify": {
+    "prefix": ";log-json-stringify",
+    "body": ["console.log(JSON.stringify($1, null, ${2:2}))$0"]
+  },
   "export interface": {
     "prefix": ";export-interface",
     "body": ["export interface $1 {", "\t$2", "}"]
@@ -11,22 +15,18 @@
     "prefix": ";ls",
     "body": "console.log($2JSON.parse(JSON.stringify($1)))"
   },
-
   "angular on push change detection": {
     "prefix": ";ng-on-push",
     "body": ["changeDetection: ChangeDetectionStrategy$1.OnPush,$0"]
   },
-
   "angular host binding for display contents": {
     "prefix": ";ng-host-display-contents",
     "body": ["@HostBinding$1('style.display') displayStyle = 'contents';$0"]
   },
-
   "generic DI": {
     "prefix": ";di-generic",
     "body": ["private $1: ${1/(.*)/${1:/pascalcase}/}$2, $0"]
   },
-
   "angular activated route DI": {
     "prefix": ";di-ng-activated-route",
     "body": ["private route: ActivatedRoute$1, $0"]
@@ -51,7 +51,6 @@
     "prefix": ";di-ng-zone",
     "body": ["private zone: NgZone$1, $0"]
   },
-
   "ionic action sheet controller DI": {
     "prefix": ";di-ionic-action-sheet-controller",
     "body": ["private actionSheetController: ActionSheetController$1, $0"]
@@ -100,7 +99,6 @@
     "prefix": ";di-ionic-platform",
     "body": ["private platform: Platform$1, $0"]
   },
-
   "auth service DI": {
     "prefix": ";di-auth-service",
     "body": ["private authService: AuthService$1, $0"]
@@ -137,7 +135,6 @@
     "prefix": ";di-storage-service",
     "body": ["private storageService: StorageService$1, $0"]
   },
-
   "just placed as the last item to conserve the last snippets' tailing comma": {
     "prefix": "ɵ",
     "body": ""

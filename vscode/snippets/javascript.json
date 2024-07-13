@@ -1,4 +1,8 @@
 {
+  "log json stringify": {
+    "prefix": ";log-json-stringify",
+    "body": ["console.log(JSON.stringify($1, null, ${2:2}))$0"]
+  },
   "declare tailwindcss config type": {
     "prefix": ";type-tailwindcss-config",
     "body": ["/** @type {import('tailwindcss').Config} */"]
@@ -11,7 +15,6 @@
     "prefix": ";ls",
     "body": "console.log($2JSON.parse(JSON.stringify($1)))"
   },
-
   "just placed as the last item to conserve the last snippets' tailing comma": {
     "prefix": "ɵ",
     "body": ""
