@@ -25,4 +25,5 @@ for file in ${DOTS}/shell/aliases/*.sh; do
 done
 
 # enable wildcard matching
-unsetopt no_match
+# details: https://askubuntu.com/a/335212/792820
+unsetopt nomatch
