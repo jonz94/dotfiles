@@ -102,8 +102,8 @@ setup_fnm_completions_for_linux() {
     export PATH="$HOME/.local/share/fnm:$PATH"
     eval "$(fnm env)"
 
-    rm -f ~/dotfiles/zsh/functions/_fnm
-    fnm completions --shell zsh > ~/dotfiles/zsh/functions/_fnm
+    rm -f ~/dotfiles/zsh/completions/_fnm
+    fnm completions --shell zsh > ~/dotfiles/zsh/completions/_fnm
   fi
 }
 

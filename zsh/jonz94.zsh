@@ -1,6 +1,11 @@
 # setup environment first before doing anything else
 source ${HOME}/dotfiles/shell/environment.sh
 
+# shell completions
+for file in ${DOTS}/zsh/completions/_*; do
+  source ${file}
+done
+
 # custom plugins
 for file in ${DOTS}/zsh/plugins/*.zsh; do
   source ${file}
