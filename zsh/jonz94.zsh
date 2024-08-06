@@ -2,7 +2,10 @@
 source ${HOME}/dotfiles/shell/environment.sh
 
 # shell completions
-for file in ${DOTS}/zsh/completions/_*; do
+# NOTE: the `(N)` parts is to set the `NULL_GLOB` option for the current pattern
+# details: https://unix.stackexchange.com/a/504718/378105
+# details: https://zsh.sourceforge.io/Doc/Release/Expansion.html#Glob-Qualifiers
+for file in ${DOTS}/zsh/completions/_*(N); do
   source ${file}
 done
 
