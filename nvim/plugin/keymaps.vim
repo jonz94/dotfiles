@@ -114,10 +114,10 @@ nnoremap <expr> <CR> {-> v:hlsearch ? ":noh\<CR>:\<BS>" : '<CR>'}()
 noremap <silent> <Leader>cs <Cmd>let @/ = ''<CR>
 
 " map u to scroll up half page when browsing help file
-nnoremap <expr> u {-> &buftype == 'help' ? '<Cmd>lua require("neoscroll").scroll(-vim.wo.scroll, true, 80)<CR>' : 'u'}()
+nnoremap <expr> u {-> &buftype == 'help' ? '<Cmd>lua require("neoscroll").scroll(-vim.wo.scroll, { move_cursor = true, duration = 80 })<CR>' : 'u'}()
 
 " map d to scroll down half page when browsing help file
-nnoremap <expr> d {-> &buftype == 'help' ? '<Cmd>lua require("neoscroll").scroll(vim.wo.scroll, true, 80)<CR>' : 'd'}()
+nnoremap <expr> d {-> &buftype == 'help' ? '<Cmd>lua require("neoscroll").scroll(vim.wo.scroll, { move_cursor = true, duration = 80 })<CR>' : 'd'}()
 
 " fold
 nnoremap <Leader>zf zfip
