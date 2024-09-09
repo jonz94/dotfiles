@@ -173,8 +173,8 @@ lspconfig.tailwindcss.setup({
   on_attach = setup_keymaps,
 })
 
--- tsserver (typescript, javascript)
-lspconfig.tsserver.setup({
+-- ts_ls (typescript, javascript)
+lspconfig.ts_ls.setup({
   handlers = handlers,
   on_attach = function(client)
     disable_formatter(client)
