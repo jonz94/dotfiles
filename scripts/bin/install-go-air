@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# air - live reload for go apps
+# https://github.com/air-verse/air
+
+set -e
+
+if ! type go &> /dev/null; then
+  printf "${RED}Please install go first.${NORMAL}\n"
+  exit 1
+fi
+
+go install github.com/air-verse/air@latest
