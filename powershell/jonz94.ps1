@@ -19,7 +19,7 @@ $env:POSH_GIT_ENABLED = $true
 $env:AZ_ENABLED = $false
 if ( $(scoop which oh-my-posh) ) {
   $config = Join-Path $PSScriptRoot 'jonz94.omp.json'
-  Invoke-Expression (oh-my-posh --init --shell pwsh --config $config)
+  Invoke-Expression (oh-my-posh init pwsh --config $config)
 }
 
 # terminal icons for powershell
