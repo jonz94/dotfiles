@@ -147,3 +147,9 @@ function gwip {
 function git-fix-ignoring-broken-ref-warning {
   git remote set-head origin $((Get-GitStatus).Branch)
 }
+
+# fix `Filename too long` issue on Windows
+# credits: https://stackoverflow.com/questions/22575662/filename-too-long-in-git-for-windows
+function git-fix-filename-too-long {
+  git config --global core.longpaths true
+}
