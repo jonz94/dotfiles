@@ -1,4 +1,14 @@
 {
+  "color-scheme-dark-light": {
+    "prefix": ";color-scheme-dark-light",
+    "description": "The page supports both dark and light color schemes, and the page author prefers dark.",
+    "body": ["<meta name=\"color-scheme\" content=\"dark light\">"]
+  },
+  "color-scheme-light-dark": {
+    "prefix": ";color-scheme-light-dark",
+    "description": "The page supports both dark and light color schemes, and the page author prefers light.",
+    "body": ["<meta name=\"color-scheme\" content=\"light dark\">"]
+  },
   "text interpolation": {
     "prefix": "{{",
     "body": ["{{ $0 }}"]
