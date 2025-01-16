@@ -206,10 +206,12 @@
 
   // manually configure file associations to languages
   "files.associations": {
+    ".env": "dotenv",
     ".env.*": "dotenv",
     "*.xccolortheme": "xml",
     "ideavimrc": "viml",
     "vsvimrc": "viml",
+    "apple-app-site-association": "json",
     "composer.lock": "json"
   },
 
@@ -225,8 +227,6 @@
     "*.keystore": "key",
     "*.page.ts": "ionic",
     ".ruby-version": "ruby",
-    "docker-compose.alpha.yml": "docker",
-    "docker-compose.next.yml": "docker",
     "tsconfig.config.json": "tsconfig",
     "tsconfig.vitest.json": "tsconfig"
   },
@@ -352,6 +352,29 @@
   "nxConsole.enableTelemetry": false,
 
   // [extension] jgclark.vscode-todo-highlight
+  "todohighlight.include": [
+    "**/*.js",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.cts",
+    "**/*.mts",
+    "**/*.tsx",
+
+    "**/*.css",
+    "**/*.scss",
+
+    "**/*.html",
+    "**/*.php",
+    "**/*.rb",
+    "**/*.go",
+
+    "**/*.txt",
+    "**/*.markdown",
+    "**/*.mdown",
+    "**/*.md"
+  ],
   "todohighlight.keywords": [
     {
       "text": "TODO(string):",
