@@ -42,9 +42,9 @@
   "git.inputValidationSubjectLength": null,
 
   // font family
-  "editor.codeLensFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji, 'TW-Sung-Ext-B', 'TW-Sung-Plus''",
-  "editor.inlayHints.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji, 'TW-Sung-Ext-B', 'TW-Sung-Plus''",
-  "scm.inputFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji, 'TW-Sung-Ext-B', 'TW-Sung-Plus''",
+  "editor.codeLensFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji', 'TW-Sung-Ext-B', 'TW-Sung-Plus'",
+  "editor.inlayHints.fontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji', 'TW-Sung-Ext-B', 'TW-Sung-Plus'",
+  "scm.inputFontFamily": "'Sarasa Mono TC', 'Sarasa Mono TC Nerd Font', 'Noto Color Emoji', 'TW-Sung-Ext-B', 'TW-Sung-Plus'",
 
   // make the diff editor not to ignores changes in leading or trailing whitespace
   "diffEditor.ignoreTrimWhitespace": false,
