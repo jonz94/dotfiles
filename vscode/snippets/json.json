@@ -1,0 +1,11 @@
+{
+  "clean with git": {
+    "prefix": ";git-clean",
+    "body": ["git clean -xdf ${1|node_modules|} ${2|.turbo|} ${3:other directory}"]
+  },
+
+  "just placed as the last item to conserve the last snippets' tailing comma": {
+    "prefix": "ɵ",
+    "body": ""
+  }
+}
