@@ -21,11 +21,6 @@
   font-family: var(--prefer-fonts) !important;
 }
 
-/* center command palette */
-.quick-input-widget {
-  top: 25% !important;
-}
-
 /* hide "show welcome page on startup" footer */
 .footer > .showOnStartup {
   display: none !important;
