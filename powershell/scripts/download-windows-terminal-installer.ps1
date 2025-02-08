@@ -1,9 +1,9 @@
-# download the latest powershell installer
+# download the latest windows terminal installer
 
-$release = Invoke-RestMethod -Uri "https://api.github.com/repos/PowerShell/PowerShell/releases/latest"
+$release = Invoke-RestMethod -Uri "https://api.github.com/repos/microsoft/terminal/releases/latest"
 $version = $release.tag_name -replace '^v', ''
-$downloadFilename = "PowerShell-$version-win-x64.msi"
-$downloadUrl = "https://github.com/PowerShell/PowerShell/releases/download/$($release.tag_name)/$downloadFilename"
+$downloadFilename = "Microsoft.WindowsTerminal_${version}_8wekyb3d8bbwe.msixbundle"
+$downloadUrl = "https://github.com/microsoft/terminal/releases/download/$($release.tag_name)/$downloadFilename"
 
 $registryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders"
 $downloadsGuid = "{374DE290-123F-4565-9164-39C4925E467B}"
@@ -17,4 +17,4 @@ $outputFile = Join-Path -Path $downloadsPath -ChildPath $downloadFilename
 
 Invoke-WebRequest -Uri $downloadUrl -OutFile $outputFile
 
-Write-Host "Downloaded PowerShell $version to $outputFile 🎉"
+Write-Host "Downloaded Windows Terminal $version to $outputFile 🎉"
