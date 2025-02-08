@@ -4,6 +4,14 @@
     "body": ["git clean -xdf ${1|node_modules|} ${2|.turbo|} ${3:other directory}"]
   },
 
+  "vercel schema": {
+    "prefix": ";vercel-schema",
+    "body": ["\"$$schema\": \"https://openapi.vercel.sh/vercel.json\""],
+    "description": [
+      "Add JSON Schema Metadata to the `vercel.json` file for enhanced autocomplete and validation. Reference: https://vercel.com/changelog/schema-autocomplete-and-validation-for-vercel-json"
+    ]
+  },
+
   "just placed as the last item to conserve the last snippets' tailing comma": {
     "prefix": "ɵ",
     "body": ""
