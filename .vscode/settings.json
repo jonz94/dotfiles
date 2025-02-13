@@ -1,15 +1,15 @@
 {
   "files.associations": {
-    "**/vscode/snippets/*.json": "json"
+    "**/vscode/snippets/*.json": "json",
   },
 
   "[powershell]": {
     // hide n reference(s) on top of the function declaration
-    "editor.codeLens": false
+    "editor.codeLens": false,
   },
   "powershell.codeFormatting.preset": "OTBS",
   "powershell.codeFormatting.useCorrectCasing": true,
 
   // stylua
-  "stylua.targetReleaseVersion": "latest"
+  "stylua.targetReleaseVersion": "latest",
 }
