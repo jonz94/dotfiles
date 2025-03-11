@@ -6,7 +6,10 @@
 
 .linux,
 .mac,
-.windows {
+.windows,
+.monaco-workbench.linux,
+.monaco-workbench.mac,
+.monaco-workbench.windows {
   font-family: var(--prefer-fonts);
   --monaco-monospace-font: var(--prefer-fonts);
 }
