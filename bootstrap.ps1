@@ -110,9 +110,14 @@ if (-not $(scoop which sed)) {
   scoop install sed
 }
 
-# install Sarasa Gothic fonts
-if (-not $(scoop which SarasaGothic-ttc)) {
-  scoop install SarasaGothic-ttc
+# install Source Han Sans TC
+if (-not $(scoop which Source-Han-Sans-TC)) {
+  scoop install Source-Han-Sans-TC
+}
+
+# install Source Han Serif TC
+if (-not $(scoop which Source-Han-Serif-TC)) {
+  scoop install Source-Han-Serif-TC
 }
 
 # install Sarasa Mono TC Nerd Font
