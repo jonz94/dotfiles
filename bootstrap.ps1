@@ -162,7 +162,7 @@ $setupNodejsEnvironmentViaFnmCommands = @'
   fnm alias lts-latest default
   npm i -g npm@latest
   npm rm -g corepack
-  npm i -g pnpm@latest yarn@latest
+  npm i -g @antfu/ni@latest pnpm@latest yarn@latest
 '@
 
 powershell.exe -NoProfile -Command $setupNodejsEnvironmentViaFnmCommands

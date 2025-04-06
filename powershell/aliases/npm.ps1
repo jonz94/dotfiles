@@ -6,8 +6,5 @@ function nis { npm install --save @args }
 function nls { npm ls --depth 0 }
 function nlsg { node -v; npm ls --depth 0 -g }
 function nlso { npm outdated }
-function nr { npm run @args }
-function nrm { npm uninstall @args }
 
-# always typo br
-function br { npm run @args }
+function nrm { Write-Host "please use ``nun`` instead (https://github.com/antfu-collective/ni?tab=readme-ov-file#nun---uninstall)" }

@@ -4,7 +4,6 @@ function bis { bun add @args }
 function bls { bun pm ls }
 function blsall { bun pm ls --all }
 function blso { bun outdated }
-function brm { bun remove @args }
 
 # equivalent of `npm ci`
 function bci {
