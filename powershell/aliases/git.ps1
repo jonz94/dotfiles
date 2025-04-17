@@ -65,6 +65,8 @@ function glg { git log --stat $args }
 
 function glgg { git log --graph $args }
 
+function glgga { git log --graph --decorate --all $args }
+
 function glo { git log --oneline --decorate $args }
 
 function gloga { git log --oneline --decorate --graph --all $args }
