@@ -5,6 +5,7 @@ $ProgressPreference = 'SilentlyContinue'
 git config --global user.name 'jonz94'
 git config --global user.email 'jody16888@gmail.com'
 git config --global pull.rebase true
+git config --global core.ignoreCase false
 git config --global init.defaultBranch main
 
 # create local profile if it does not exist
