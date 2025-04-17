@@ -71,6 +71,7 @@ setup_git() {
   git config --global user.email ${GIT_MAIL}
   git config --global pull.rebase true
   git config --global core.editor nvim
+  git config --global core.ignoreCase false
   git config --global init.defaultBranch main
 
   echo 'git is ready!'
