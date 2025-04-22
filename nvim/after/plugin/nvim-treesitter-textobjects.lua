@@ -17,6 +17,10 @@ require('nvim-treesitter.configs').setup({
         ['if'] = '@function.inner',
         ['ac'] = '@class.outer',
         ['ic'] = '@class.inner',
+
+        -- custom textobjects treesitter queries
+        ['at'] = '@tag.outer',
+        ['it'] = '@tag.inner',
       },
       selection_modes = {
         ['@function.outer'] = 'V',
