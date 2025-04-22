@@ -16,7 +16,9 @@
   "editor.wordWrap": "on",
 
   // auto rename html tag
-  "editor.linkedEditing": true,
+  // "editor.linkedEditing": true,
+  // FIXME: temporarily disabled due to conflicts with neovim's tree-sitter textobjects (e.g. `dat` for custom @tag.outer)
+  "editor.linkedEditing": false,
 
   // move side bar to the right
   "workbench.sideBar.location": "right",
