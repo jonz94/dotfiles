@@ -17,10 +17,6 @@ if not zen_mode_status_ok then
   return
 end
 
-if not pcall(require, 'zen-mode') then
-  return
-end
-
 zen_mode.setup({
   window = {
     backdrop = 0.999,
