@@ -145,6 +145,16 @@ function gwip {
   git commit --no-verify --no-gpg-sign -m "🚧 WIP: work in progress...";
 }
 
+function git-fix-filename-ignorecase {
+  Write-Host "apply the fix for filename ignore case issue by: ``git config core.ignorecase false``"
+  git config core.ignorecase false
+}
+
+function git-fix-filename-ignorecase-revert {
+  Write-Host "revert the fix for filename ignore case issue by: ``git config core.ignorecase true``"
+  git config core.ignorecase true
+}
+
 # fix `warning: ignoring broken ref refs/remotes/origin/HEAD` message
 function git-fix-ignoring-broken-ref-warning {
   git remote set-head origin $((Get-GitStatus).Branch)
