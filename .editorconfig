@@ -17,3 +17,6 @@ indent_size = 4
 
 [*.ps1]
 charset = uft-8-bom
+
+[*.cmd]
+end_of_line = crlf
