@@ -148,7 +148,11 @@ local plugins = function(use)
   })
 
   -- intuitive auto pairs
-  use({ 'windwp/nvim-autopairs' })
+  use({
+    'windwp/nvim-autopairs',
+    after = 'nvim-treesitter',
+    requires = 'nvim-treesitter/nvim-treesitter',
+  })
 
   -- snippets
   use({ 'rafamadriz/friendly-snippets' })

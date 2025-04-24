@@ -15,9 +15,7 @@
   "editor.stickyScroll.enabled": true,
   "editor.wordWrap": "on",
 
-  // auto rename html tag
-  // "editor.linkedEditing": true,
-  // FIXME: temporarily disabled due to conflicts with neovim's tree-sitter textobjects (e.g. `dat` for custom @tag.outer)
+  // disable auto rename html tag to prevent conflicts with `windwp/nvim-ts-autotag` neovim plugin
   "editor.linkedEditing": false,
 
   // move side bar to the right
