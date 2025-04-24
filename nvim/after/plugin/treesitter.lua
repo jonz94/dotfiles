@@ -47,9 +47,6 @@ require('nvim-treesitter.configs').setup({
   endwise = {
     enable = true,
   },
-  autotag = {
-    enable = true,
-  },
 })
 
 if inside_vscode then
