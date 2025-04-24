@@ -1,7 +1,14 @@
 # open current directory in vscode
-function c. { code . }
-function c.. { code .. }
 
-# open current directory in vscode-insiders
-function ci. { code-insiders . }
-function ci { code-insiders }
+# NOTE: using `Start-Process` allows the shell to close immediately, without waiting for vscode to exit.
+function c. {
+  Start-Process -ArgumentList "." -WorkingDirectory $PWD -WindowStyle Hidden "code"
+}
+
+# legacy method: (❌ not recommended)
+#
+# function c. {
+#   code .
+# }
+#
+# the above method launches vscode synchronously, causing the shell to remain open until vscode is closed.
