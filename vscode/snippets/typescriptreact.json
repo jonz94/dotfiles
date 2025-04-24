@@ -15,6 +15,16 @@
     "prefix": ";ls",
     "body": "console.log($2JSON.parse(JSON.stringify($1)))"
   },
+  "next.js meta tag with color schema dark light": {
+    "prefix": ";nextjs-color-schema-dark-light",
+    "description": "The page supports both dark and light color schemes, and the page author prefers dark.",
+    "body": ["export const viewport: Viewport$0 = {", "  colorScheme: 'dark light',", "}"]
+  },
+  "next.js meta tag with color schema light dark": {
+    "prefix": ";nextjs-color-schema-light-dark",
+    "description": "The page supports both dark and light color schemes, and the page author prefers light.",
+    "body": ["export const viewport: Viewport$0 = {", "  colorScheme: 'light dark',", "}"]
+  },
 
   "just placed as the last item to conserve the last snippets' tailing comma": {
     "prefix": "ɵ",
