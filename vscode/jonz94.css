@@ -7,11 +7,13 @@
 .linux,
 .mac,
 .windows,
-.monaco-workbench.linux,
-.monaco-workbench.mac,
-.monaco-workbench.windows {
+/* NOTE: add body selector in order to increase specificity */
+body .monaco-workbench.linux,
+body .monaco-workbench.mac,
+body .monaco-workbench.windows {
   font-family: var(--prefer-fonts);
   --monaco-monospace-font: var(--prefer-fonts);
+  --cursor-font-family: var(--prefer-fonts);
 }
 
 /* inline-style of sidebar */
@@ -21,8 +23,22 @@
 .shadow-root-host,
 
 /* search bar of user's setting panel */
-.search-container .view-lines {
+.search-container .view-lines,
+
+/* cursor's agent panel */
+.agent-layout-quick-menu__label,
+.agent-layout-quick-menu__keybinding,
+
+/* cursor's hover widget (change font family) */
+.cursorHoverWidget,
+.cursorHoverWidget .hoverButton .text,
+.cursorHoverWidget .commandHelpText {
   font-family: var(--prefer-fonts) !important;
+}
+
+/* cursor's hover widget (improve text spacing) */
+.cursorHoverWidget .hoverButton .commandHelpText {
+  margin-left: 1ch;
 }
 
 /* hide "show welcome page on startup" footer */
