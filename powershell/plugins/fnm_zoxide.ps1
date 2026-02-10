@@ -1,14 +1,14 @@
 # fnm & zoxide
 
 # load fnm
-if ( $(scoop which fnm) ) {
+if ( $(Get-Command fnm -ErrorAction SilentlyContinue) ) {
   fnm env --shell power-shell --use-on-cd | Out-String | Invoke-Expression
 }
 
 # load zoxide
 if ( $(scoop which zoxide) ) {
   # integrate with fnm's `use-on-cd` feature
-  if ( $(scoop which fnm) ) {
+  if ( $(Get-Command fnm -ErrorAction SilentlyContinue) ) {
     Invoke-Expression (& { (zoxide init --hook 'prompt' --no-cmd powershell) -join "`n" })
 
     function z {

@@ -1,8 +1,8 @@
 function vs. {
   if ((Get-Command fd -ErrorAction SilentlyContinue).Count -gt 0) {
-    $solutions = $(fd --absolute-path ".sln")
+    $solutions = $(fd --absolute-path ".slnx?$")
   } else {
-    $solutions = $(Get-ChildItem -Filter *.sln -Recurse | ForEach-Object { $_.FullName })
+    $solutions = $(Get-ChildItem -Include "*.sln", "*.slnx" -Recurse | ForEach-Object { $_.FullName })
   }
 
   if ($solutions.Count -lt 1) {

@@ -2,7 +2,11 @@
 
 # NOTE: using `Start-Process` allows the shell to close immediately, without waiting for vscode to exit.
 function c. {
-  Start-Process -ArgumentList "." -WorkingDirectory $PWD -WindowStyle Hidden "code"
+  Start-Process "code" -ArgumentList "." -WorkingDirectory $PWD -WindowStyle Hidden
+}
+
+function cs. {
+  Start-Process "cursor" -ArgumentList "." -WorkingDirectory $PWD -WindowStyle Hidden
 }
 
 # legacy method: (❌ not recommended)

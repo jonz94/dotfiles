@@ -29,6 +29,9 @@ body .monaco-workbench.windows {
 .agent-layout-quick-menu__label,
 .agent-layout-quick-menu__keybinding,
 
+/* cursor's fix in chat button (change font family) */
+button.fix-in-composer,
+
 /* cursor's hover widget (change font family) */
 .cursorHoverWidget,
 .cursorHoverWidget .hoverButton .text,

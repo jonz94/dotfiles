@@ -191,7 +191,7 @@ local plugins = function(use)
   use({ 'monaqa/dial.nvim' })
 
   -- auto rename tag
-  use({ 'windwp/nvim-ts-autotag' })
+  -- use({ 'windwp/nvim-ts-autotag' })
 
   -- block manipulation
   use({
